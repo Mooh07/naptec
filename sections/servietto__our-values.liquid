@@ -1,0 +1,94 @@
+<style>
+  .servietto__our-values {
+    --background-color: {{ section.settings.background_color }};
+    --text-color: {{ section.settings.text_color }};
+  }
+</style>
+{{ 'servietto__our-values.css' | asset_url | stylesheet_tag }}
+<section class="page-width servietto__our-values">
+  <div class="servietto__our-values_main-text">
+    <h2>
+      {{ section.settings.main_text }}
+    </h2>
+  </div>
+  <div class="servietto__our-values_image">
+    <div class="servietto__left-image-container servietto__our-values-image-container">
+      <img
+        src="{{ section.settings.left_image | image_url: width: section.settings.left_image.width }}"
+        alt="{{ section.settings.left_image.alt }}"
+        width="{{ section.settings.left_image.width }}"
+        height="{{ section.settings.left_image.height }}"
+        class="servietto__our-values-image"
+        loading="lazy"
+      >
+    </div>
+    <div class="servietto__right-image-container servietto__our-values-image-container">
+      <img
+        src="{{ section.settings.right_image | image_url: width: section.settings.right_image.width }}"
+        alt="{{ section.settings.right_image.alt }}"
+        width="{{ section.settings.right_image.width }}"
+        height="{{ section.settings.right_image.height }}"
+        class="servietto__our-values-image"
+        loading="lazy"
+      >
+    </div>
+    <div class="servietto__our-values_text-container">
+      <p>{{ section.settings.image_text }}</p>
+    </div>
+  </div>
+  <div class="servietto__our-values_small-text">
+    <p>{{ section.settings.bottom_text }}</p>
+  </div>
+</section>
+{% schema %}
+{
+  "name": "Our values",
+  "settings": [
+    {
+      "type": "html",
+      "id": "main_text",
+      "label": "Section main text",
+      "default": "At Servietto we <i>believe</i><br> in creating beautiful things<br> for <i>thoughtful</i> people."
+    },
+    {
+      "type": "image_picker",
+      "id": "left_image",
+      "label": "Left image"
+    },
+    {
+      "type": "image_picker",
+      "id": "right_image",
+      "label": "Right image"
+    },
+    {
+      "type": "text",
+      "id": "image_text",
+      "label": "Text under images",
+      "default": "Our disposable hand towels and napkins were designed to look and feel just like luxurious linen so that ghosts everywhere can pamper their quests without the hassle."
+    },
+    {
+      "type": "text",
+      "id": "bottom_text",
+      "label": "Bottom text",
+      "default": "Add a Timeless Touch."
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Background color",
+      "default": "#fff"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Text color",
+      "default": "#1C363D"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Our values"
+    }
+  ]
+}
+{% endschema %}

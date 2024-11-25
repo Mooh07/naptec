@@ -1,0 +1,108 @@
+.naptec__make-custom-design {
+  position: relative;
+  padding: 0;
+  display: flex;
+}
+.naptec__make-custom-design img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  max-width: 100%;
+  min-height: 720px;
+}
+.naptec__make-custom-design-content-wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: start;
+  align-items: flex-end;
+  padding: 6.6rem 8rem;
+}
+.naptec__make-custom-design-content {
+  padding: 8rem 6rem;
+  max-width: 699px;
+  border-radius: 0px 620px 0px 0px;
+  position: relative;
+}
+.naptec__make-custom-design-content-container {
+  position: relative;
+}
+.naptec__make-custom-design-content-container:after {
+  position: absolute;
+  content: "";
+  width: 100%;
+  height: 100%;
+  border: 1px solid white;
+  display: block;
+  top: -20px;
+  left: 20px;
+  z-index: 0;
+  border-radius: 0px 620px 0px 0px;
+}
+.naptec__make-custom-design-content h2 {
+  font-size: 60px;
+  font-weight: 500;
+  line-height: 120%;
+  text-align: left;
+  margin: 0;
+  margin-bottom: 1.6rem;
+}
+.naptec__make-custom-design-content p {
+  font-size: 20px;
+  font-weight: 300;
+  line-height: 160%;
+  text-align: left;
+  margin: 0;
+  margin-bottom: 3.2rem;
+}
+.naptec__make-custom-design-content a {
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 24px;
+  text-align: center;
+  padding: 1.6rem 4rem;
+  border: 1px solid rgba(255, 255, 255, 1);
+  border-radius: 100px;
+  text-transform: uppercase;
+}
+.naptec__make-custom-design-content a:hover {
+  background-color: rgb(var(--color-foreground));
+  color: rgb(var(--color-background));
+  transition: var(--duration-default);
+}
+@media screen and (max-width: 1250px) {
+  .naptec__make-custom-design-content-wrapper {
+    padding: 6.6rem 4rem;
+  }
+}
+@media screen and (max-width: 768px) {
+  .naptec__make-custom-design-content-wrapper {
+    padding: 6.6rem 2rem;
+  }
+}
+@media screen and (max-width: 600px) {
+  .naptec__make-custom-design-content {
+    padding: 8rem 4rem;
+  }
+  .naptec__make-custom-design-content-wrapper {
+    padding: 4rem 1.6rem;
+    align-items: center;
+    justify-content: center;
+  }
+  .naptec__make-custom-design-content h2 {
+    font-size: 32px;
+  }
+  .naptec__make-custom-design-content p {
+    font-size: 16px;
+  }
+  .naptec__make-custom-design-content a {
+    font-size: 14px;
+  }
+  .naptec__make-custom-design-content-container:after {
+    top: -15px;
+    left: 10px;
+  }
+}

@@ -1,0 +1,147 @@
+.bloomingoods__make-your-design {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: var(--section-color);
+  background-color: var(--section-background-color);
+  padding: 132px 176px;
+}
+
+.bloomingoods__make-your-design-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  width: 100%;
+  margin-bottom: 113px;
+}
+.bloomingoods__make-your-design-logo {
+  align-self: flex-end;
+  flex: 1;
+  display: flex;
+  position: relative;
+}
+.bloomingoods__make-your-design-logo > img {
+  position: relative;
+  bottom: -28px;
+}
+.bloomingoods__make-your-design-logo:last-child {
+  justify-content: end;
+}
+.bloomingoods__make-your-design-text {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.bloomingoods__make-your-design-text h2 {
+  font-family: "latienne pro";
+  font-size: 92px;
+  font-weight: 400;
+  line-height: 104%;
+  letter-spacing: -0.01em;
+  text-align: center;
+  margin: 0;
+  margin-bottom: 12px;
+  color: inherit;
+}
+.bloomingoods__make-your-design-text p {
+  font-family: "filson soft";
+  font-size: 20px;
+  font-weight: 300;
+  line-height: 28px;
+  letter-spacing: -0.01em;
+  text-align: center;
+  max-width: 699px;
+  margin-bottom: 40px;
+}
+.bloomingoods__make-your-design-text a {
+  text-decoration: none;
+  color: inherit;
+  font-family: "latienne pro";
+  font-size: 24px;
+  font-weight: 500;
+  line-height: 24px;
+  text-align: center;
+  display: flex;
+  flex-wrap: nowrap;
+  border-bottom: 1px solid var(--section-color);
+  gap: 20px;
+  outline-offset: 20px;
+  padding-bottom: 8px;
+}
+.bloomingoods__make-your-design-text a:hover img {
+  transform: rotate(90deg);
+  transition: 300ms;
+}
+.bloomingoods__make-your-design-text a img {
+  width: 24px;
+  height: auto;
+  transition: 300ms;
+}
+.bloomingoods__make-your-design-bottom {
+  display: flex;
+  justify-content: center;
+  /* position: relative; */
+  min-height: 500px;
+  z-index: 3;
+  width: 100%;
+  align-items: start;
+}
+.bloomingoods__make-your-design-bottom img {
+  bottom: -14rem;
+  height: auto;
+}
+
+@media screen and (max-width: 1440px) {
+  .bloomingoods__make-your-design {
+    padding: 140px 118px;
+  }
+  .bloomingoods__make-your-design-text h2 {
+    font-size: 62px;
+  }
+}
+@media screen and (max-width: 1100px) {
+  .bloomingoods__make-your-design {
+    padding: 8rem;
+  }
+  .bloomingoods__make-your-design-text h2 {
+    font-size: 46px;
+  }
+  .bloomingoods__make-your-design-logo img {
+    width: 150px;
+    height: auto;
+  }
+}
+@media screen and (max-width: 992px) {
+  .bloomingoods__make-your-design-bottom img {
+  }
+  .bloomingoods__make-your-design-text p {
+    font-size: 16px;
+  }
+}
+
+@media screen and (max-width: 772px) {
+  .bloomingoods__make-your-design-bottom img {
+    width: 80%;
+    bottom: 0;
+  }
+  .bloomingoods__make-your-design-logo img {
+    display: none;
+  }
+}
+@media screen and (max-width: 600px) {
+  .bloomingoods__make-your-design {
+    padding: 4rem;
+  }
+  .bloomingoods__make-your-design-bottom img {
+    width: 80%;
+    bottom: 7rem;
+  }
+}
+@media screen and (max-width: 450px) {
+  .bloomingoods__make-your-design {
+    padding: 2rem;
+  }
+}

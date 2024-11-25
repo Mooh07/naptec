@@ -1,0 +1,32 @@
+{{ "naptec__separation-image.css" | asset_url | stylesheet_tag }}
+<section
+  class="page-width naptec__separation-image color-scheme-1"
+>
+  <div class='naptec__separation-image-top'>
+    <img
+      src="{{ section.settings.image | image_url: width: section.settings.image.width  }}"
+      width="{{ section.settings.image.width }}"
+      height="{{ section.settings.image.height }}"
+      alt="{{ section.settings.image.alt }}"
+      loading="lazy"
+    >
+  </div>
+  <div class='naptec__separation-image-bottom'>
+    {% render 'elegance-always' %}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Naptec separation image",
+  "settings": [{
+    "type": "image_picker",
+    "id": "image",
+    "label": "Section's image"
+  }
+  ],
+  "presets": [{
+    "name": "Naptec separation image"
+  }]
+}
+{% endschema %}

@@ -1,0 +1,47 @@
+{{ "naptec__perks.css" | asset_url | stylesheet_tag }}
+<section class="page-width naptec__perks color-scheme-2">
+  {% for block in section.blocks %}
+    <div class="naptec__perks-item">
+      <img
+        src="{{ block.settings.icon | image_url: width: 44 }}"
+        width="44"
+        height="44"
+        alt="{{ block.settings.icon.alt }}"
+        loading="lazy"
+      >
+      <h3>{{ block.settings.header }}</h3>
+      <p>{{ block.settings.description }}</p>
+    </div>
+  {% endfor %}
+</section>
+{% schema %}
+{
+  "name": "Naptec perks",
+  "settings": [],
+  "blocks": [{
+    "type": "perk",
+    "name": "Perk",
+    "settings": [{
+      "type": "text",
+      "id": "header",
+      "label": "Perk header",
+      "default": "Premium Quality"
+    },
+    {
+      "type": "text",
+      "id": "description",
+      "label": "Perk description",
+      "default": "As manufacturers, we ensure top-notch quality and durability in all our napkin products."
+    },
+    {
+      "type": "image_picker",
+      "id": "icon",
+      "label": "Perk Icon"
+    }]
+  }],
+
+  "presets": [{
+    "name": "Naptec perks"
+  }]
+}
+{% endschema %}

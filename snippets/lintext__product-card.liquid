@@ -1,0 +1,107 @@
+    <a href="{{ product.url }}">
+
+<div class="lintext__product-card-img-container">
+    <div>
+      <img
+        class="lintext__product-card-img"
+        src="{{ product | image_url: width: product.images.first.width }}"
+        alt="{{ product.images.first.alt }}"
+        width="{{ product.images.first.width }}"
+        height="332px"
+        loading="lazy"
+      >
+    </div>
+
+</div>
+<div class="lintext__product-card-information">
+  <p class="lintext__product-card-title">
+      {{ product.title }}
+  </p>
+  <div class="lintext__product-card-review">
+    <span>
+      {% for i in (1..5) %}
+        {% render 'lintext__review-star' %}
+      {% endfor %}
+    </span>
+    <span>(20 reviews)</span>
+  </div>
+  <div class="lintext__product-card-price">
+    {{ product.price | money }}
+    {% comment %} {% render 'price', product: product, show_compare_at_price: false %} {% endcomment %}
+  </div>
+</div>
+    </a>
+      
+<style>
+  .lintext__product-card-img-container {
+    width: 100%;
+    position: relative;
+  }
+  .lintext__product-card-img-container > div {
+    padding-bottom: 100%;
+  }
+  .lintext__product-card-img {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+  }
+  .lintext__product-card-information {
+    width: 100%;
+    color: #383735;
+    padding-top: 1.6rem;
+  }
+  .lintext__product-card-information p {
+    margin: 0;
+    padding: 0;
+    padding-bottom: 10px;
+  }
+  .lintext__product-card-title {
+    font-family: 'pp agrandir';
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 24px;
+    text-align: left;
+    color: var(--text-color);
+  }
+  .lintext__product-card-title a {
+    color: rgba(56, 55, 53, 1);
+    text-decoration: none;
+  }
+  .lintext__product-card-review {
+    display: flex;
+    gap: 12px;
+    padding-bottom: 12px;
+  }
+  .lintext__product-card-review span {
+    font-family: 'pp agrandir';
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 24px;
+    text-align: left;
+    color: #383735CC;
+  }
+
+  .lintext__product-card-price {
+    font-family: 'pp agrandir';
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 28px;
+    text-align: left;
+    color: #000000;
+  }
+  .lintext__product-card-title a::after {
+    bottom: 0;
+    content: '';
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    z-index: 1;
+  }
+  @media screen and (max-width: 1250px) {
+    .lintext__product-card-review span {
+      font-size: 12px;
+    }
+  }
+</style>

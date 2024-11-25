@@ -1,0 +1,60 @@
+{{ "naptec__wholesale-partner.css" | asset_url | stylesheet_tag }}
+<section
+  class="page-width naptec__wholesale-partner color-scheme-2"
+>
+  <div class="naptec__wholesale-partner-image">
+    <img
+      src="{{ section.settings.image | image_url: width: 464  }}"
+      width="{{ 464 }}"
+      height="{{ section.settings.image.height }}"
+      alt="{{ section.settings.image.alt }}"
+      loading="lazy"
+    >
+    <div class="naptec__wholesale-partner-outer-outline"></div>
+  </div>
+  <div
+    class="naptec__wholesale-partner-content"
+  >
+    <h2>
+      {{ section.settings.header }}
+    </h2>
+    <div>{{ section.settings.content }}</div>
+    <a
+      href="{{ section.settings.cta-url }}"
+    >
+      {{- section.settings['cta-label'] -}}
+    </a>
+  </div>
+</section>
+{% schema %}
+{
+  "name": "Naptec wholesale partner",
+  "settings": [{
+    "type": "html",
+    "id": "header",
+    "label": "Section's header",
+    "default": "How to become <br> a wholesale partner"
+  },{
+    "type": "richtext",
+    "id": "content",
+    "label": "Section's Content"
+  },{
+    "type": "text",
+    "id": "cta-label",
+    "label": "Section's button label",
+    "default": "BECOME A PARTNER"
+  },{
+    "type": "url",
+    "id": "cta-url",
+    "label": "Section's button url"
+  },{
+    "type": "image_picker",
+    "id": "image",
+    "label": "Section's image"
+  }
+  ],
+  "presets": [{
+    "name": "Naptec wholesale partner"
+  }]
+}
+{% endschema %}

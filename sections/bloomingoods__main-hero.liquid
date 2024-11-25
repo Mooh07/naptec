@@ -1,0 +1,97 @@
+<style>
+  .bloomingoods__main-hero {
+    --section-color: {{ section.settings.section_color }};
+    --button-label-color: {{ section.settings.button_label_color }};
+  }
+</style>
+{{ 'bloomingoods__main-hero.css' | asset_url | stylesheet_tag }}
+<section class="bloomingoods__main-hero page-width">
+  <div class="bloomingoods__main-hero-heading-container">
+    <h1>
+      {%- assign split_header = section.settings.header | split: ' ' -%}
+      {% for word in split_header %}
+        {% if forloop.index == 1 %}
+          {{ word | capitalize }}
+          {% else %}
+          {{ word }}
+        {% endif %}
+        {% if forloop.index == 2 %}<br>{% endif %}
+      {% endfor %}
+    </h1>
+  </div>
+  <div class="bloomingoods__main-hero-content">
+    <div class="bloomingoods__main-hero-content-left">
+      <a href="{{ section.settings.cta_url }}">
+        {{- section.settings.cta_text | upcase -}}
+        <img
+          src="https://cdn.shopify.com/s/files/1/0611/8129/6700/files/bloomingoods-icon.png?v=1723919059"
+          alt="bloomingoods icon"
+          width="24px"
+          height="24px"
+        >
+      </a>
+    </div>
+    <div class="bloomingoods__main-hero-content-middle">
+      <img
+        src="{{ section.settings.center_image | image_url: width: section.settings.center_image.width }}"
+        alt="{{ section.settings.center_image.alt }}"
+        width="{{ section.settings.center_image.width }}"
+        height="{{ section.settings.center_image.height }}"
+      >
+    </div>
+    <div class="bloomingoods__main-hero-content-right">
+        {{ section.settings.right_text | upcase }}
+    </div>
+  </div>
+</section>
+{% schema %}
+{
+  "name": "Bloomingoods main hero",
+  "settings": [
+    {
+      "type": "text",
+      "id": "header",
+      "label": "header",
+      "default": "<h1>Bringing unforgettable to the table.</h1>"
+    },
+    {
+      "type": "image_picker",
+      "id": "center_image",
+      "label": "Center image"
+    },
+    {
+      "type": "richtext",
+      "id": "right_text",
+      "label": "Right side text"
+    },
+    {
+      "type": "url",
+      "id": "cta_url",
+      "label": "Call to action button URL"
+    },
+    {
+      "type": "text",
+      "id": "cta_text",
+      "label": "Call to action button text",
+      "default": "get a quote"
+    },
+    {
+      "type": "color",
+      "id": "section_color",
+      "label": "Section color",
+      "default": "#F5DBE9"
+    },
+    {
+      "type": "color",
+      "id": "button_label_color",
+      "label": "Call to action button label color",
+      "default": "#fff"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Bloomingoods main hero"
+    }
+  ]
+}
+{% endschema %}

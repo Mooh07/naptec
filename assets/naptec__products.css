@@ -1,0 +1,108 @@
+.naptec__products {
+  padding: 14rem 8rem;
+}
+.naptec__products-top {
+  margin-bottom: 8rem;
+  display: flex;
+  justify-content: space-between;
+}
+.naptec__products-top-view-all {
+  display: flex;
+  align-items: start;
+}
+.naptec__products-top-view-all a {
+  padding: 1.2rem 3.2rem;
+  color: white;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 24px;
+  text-align: center;
+  border: 1px solid rgba(255, 255, 255, 1);
+  border-radius: 100px;
+}
+.naptec__products-top h2 {
+  font-size: 60px;
+  font-weight: 500;
+  line-height: 72px;
+  text-align: left;
+  margin: 0;
+  margin-bottom: 1.2rem;
+}
+.naptec__products-top p {
+  font-size: 21px;
+  font-weight: 200;
+  line-height: 154%;
+  text-align: left;
+}
+
+.naptec__products-wrapper {
+}
+.naptec__products-container {
+  display: flex;
+  justify-content: start;
+  list-style-type: none;
+  gap: 3.2rem;
+  padding: 0;
+  flex-wrap: nowrap;
+  margin: 0;
+}
+.naptec__products-list-item {
+  width: 25%;
+}
+
+@media screen and (max-width: 1440px) {
+  .naptec__products-container {
+    justify-content: center;
+  }
+}
+@media screen and (max-width: 1250px) {
+  .naptec__products {
+    padding: 10rem 4rem;
+  }
+  .naptec__products-list-item {
+    width: calc(50% - 3rem);
+  }
+  .naptec__products-container {
+    flex-wrap: wrap;
+  }
+}
+
+@media screen and (max-width: 992px) {
+  .naptec__products-container {
+    gap: 1rem;
+    row-gap: 4rem;
+    justify-content: space-between;
+  }
+  .naptec__products-list-item {
+    width: calc(50% - 1rem);
+  }
+  .naptec__products {
+    padding: 8rem 4rem;
+  }
+}
+@media screen and (max-width: 768px) {
+  .naptec__products-top h2 {
+    font-size: 38px;
+  }
+  .naptec__products-top p {
+    font-size: 16px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .naptec__products {
+    padding: 4.8rem 1.6rem;
+  }
+  .naptec__products-list-item {
+    width: 100%;
+  }
+  .naptec__products-top {
+    flex-direction: column;
+  }
+  .naptec__products-top {
+    gap: 3rem;
+  }
+  .naptec__products-top-view-all a {
+    width: 100%;
+  }
+}

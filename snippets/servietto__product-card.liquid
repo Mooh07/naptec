@@ -1,0 +1,33 @@
+    <a href="{{ product.url }}">
+
+<div class="servietto__product-card-img-container">
+    <div>
+      <img
+        class="servietto__product-card-img"
+        src="{{ product | image_url: width: product.images.first.width }}"
+        alt="{{ product.images.first.alt }}"
+        width="{{ product.images.first.width }}"
+        height="332px"
+        loading="lazy"
+      >
+    </div>
+
+</div>
+<div class="servietto__product-card-information">
+  <p class="servietto__product-card-title">
+      {{ product.title }}
+  </p>
+  <div class="servietto__product-card-review">
+    <span>
+      {% for i in (1..5) %}
+        {% render 'servietto__review-star' %}
+      {% endfor %}
+    </span>
+    <span>(20 reviews)</span>
+  </div>
+  <div class="servietto__product-card-price">
+    {% render 'price', product: product, show_compare_at_price: false %}
+  </div>
+</div>
+    </a>
+      

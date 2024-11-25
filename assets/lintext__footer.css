@@ -1,0 +1,208 @@
+.lintext__footer {
+  padding: 80px;
+  display: flex;
+  justify-content: space-between;
+}
+.lintext__footer * {
+  padding: 0;
+  margin: 0;
+}
+.lintext__footer-left {
+  display: flex;
+  flex-direction: column;
+  gap: 132px;
+}
+.lintext__footer-subscription-wrapper {
+  max-width: 484px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+.lintext__footer-subscription-wrapper > h3 {
+  font-family: "pp agrandir";
+  font-size: 28px;
+  font-weight: 800;
+  line-height: 157%;
+  text-align: left;
+}
+.lintext__footer-subscription-wrapper > form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.lintext__footer-subscription-input-container {
+  display: flex;
+  flex: 0.87;
+  align-items: center;
+  justify-content: center;
+  padding-right: 4px;
+  height: 56px;
+  border-radius: 100px;
+  background-color: #ffffff;
+  padding: 4px;
+}
+.lintext__footer-subscription-input-container input {
+  flex: 1;
+  border: none;
+  outline: none;
+  background-color: transparent;
+  height: 100%;
+  outline: none;
+  border: none;
+  color: #073b43;
+  font-family: "pp agrandir";
+  font-size: 16px;
+  font-weight: 300;
+  line-height: 24px;
+  text-align: left;
+  padding-left: 24px;
+}
+.lintext__footer-subscription-input-container input::placeholder {
+  color: #073b43;
+  font-family: "pp agrandir";
+  font-size: 16px;
+  font-weight: 300;
+  line-height: 24px;
+  text-align: left;
+}
+
+.newsletter-submit-btn {
+  border: none;
+  background-color: #d86752;
+  padding: 12px 31px;
+  border-radius: 100px;
+  font-family: "pp agrandir";
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 24px;
+  text-align: center;
+  color: #ffffff;
+}
+
+.lintext__footer-logo {
+  /* width: 161px;
+    height: auto; */
+}
+.lintext__footer-contact {
+  display: flex;
+  flex-direction: column;
+}
+.lintext__footer-contact h5 {
+  font-family: "pp agrandir";
+  font-size: 18px;
+  font-weight: 800;
+  line-height: 24px;
+  text-align: left;
+  padding-bottom: 20px;
+}
+.lintext__footer-contact a {
+  padding-bottom: 16px;
+  font-family: "pp agrandir";
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 150%;
+  text-align: left;
+  text-decoration: none;
+  color: white;
+}
+.lintext__footer-right-top {
+  display: flex;
+}
+.lintext__footer-links {
+  padding-left: 120px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.lintext__footer-links h5 {
+  font-family: "pp agrandir";
+  font-size: 18px;
+  font-weight: 800;
+  line-height: 24px;
+  text-align: left;
+  /* padding-bottom: 20px; */
+}
+.lintext__footer-links ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  /* gap: 16px; */
+}
+.lintext__footer-links ul li {
+  padding-bottom: 16px;
+}
+.lintext__footer-links ul a {
+  font-family: "pp agrandir";
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 150%;
+  text-align: left;
+  text-decoration: none;
+  color: white;
+  text-decoration: none;
+}
+.lintext__footer-right {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.lintext__footer-right-bottom {
+  text-align: right;
+  font-family: "pp agrandir";
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+  /* text-align: left; */
+}
+
+@media screen and (max-width: 992px) {
+  .lintext__footer {
+    padding: 8.2rem 4rem;
+    flex-direction: column;
+  }
+  .lintext__footer-links {
+    padding-left: 100px;
+  }
+  .lintext__footer-right-bottom {
+    text-align: center;
+  }
+  .lintext__footer-right-top {
+    justify-content: space-between;
+    padding-bottom: 4rem;
+  }
+  .lintext__footer-subscription-wrapper {
+    max-width: 100%;
+  }
+  .lintext__footer-subscription-wrapper h3 {
+    text-align: center;
+  }
+  .lintext__footer-subscription-wrapper > form {
+    display: block;
+  }
+  .lintext__footer-left {
+    align-items: center;
+    padding-bottom: 4rem;
+  }
+}
+@media screen and (max-width: 768px) {
+  .lintext__footer {
+    padding: 4.2rem 1.6rem;
+  }
+  .lintext__footer-subscription-wrapper h3 {
+    font-size: 30px;
+  }
+}
+@media screen and (max-width: 600px) {
+  .lintext__footer-links {
+    padding-left: 30px;
+  }
+  .lintext__footer-subscription-wrapper h3 {
+    font-size: 24px;
+  }
+}
+@media screen and (max-width: 400px) {
+  .newsletter-submit-btn {
+    padding: 1rem;
+    font-size: 14px;
+  }
+}

@@ -1,0 +1,87 @@
+<style>
+  .lintext__bestsellers {
+    --background-color: {{ section.settings.background_color }};
+    --text-color: {{ section.settings.text_color }};
+    
+  }
+</style>
+{{ 'lintext__bestsellers.css' | asset_url | stylesheet_tag }}
+<section class="page-width lintext__bestsellers">
+  <div class="lintext__bestsellers-text">
+    <h2>{{ section.settings.heading }}</h2>
+    <p>{{ section.settings.text }}</p>
+  </div>
+  <ul class="lintext__bestsellers-products">
+    {% if section.settings.collection != blank %}
+      {% for product in section.settings.collection.products %}
+        <li>
+          {% render 'lintext__product-card', product: product %}
+        </li>
+      {% endfor %}
+    {% else %}
+      {% for block in section.blocks %}
+        {% case block.type %}
+          {% when 'product' %}
+          <li>
+            {% render 'lintext__product-card', product: block.settings.product %}
+          </li>
+        {% endcase %}
+      {% endfor %}
+    {% endif %}
+  </ul>
+</section>
+{% schema %}
+  {
+    "name": "Lintext bestseller",
+    "settings": [
+      {
+        "type": "text",
+        "id": "heading",
+        "label": "Section heading",
+        "default": "Bestsellers"
+      },
+      {
+        "type": "text",
+        "id": "text",
+        "label": "Text",
+        "default": "Explore our curated collection of premium-quality tableware and discover the perfect pieces to elevate every detail of your table setting with sophistication and style."
+      },
+      {
+        "type": "collection",
+        "id": "collection",
+        "label": "Collection"
+      },
+      {
+        "type": "color",
+        "id": "background_color",
+        "label": "Background color",
+        "default": "#fff"
+      },
+      {
+        "type": "color",
+        "id": "text_color",
+        "label": "Text color",
+        "default": "#1A3748"
+      }
+    ],
+    "blocks": [
+      {
+        "type": "product",
+        "name": "product",
+        "limit": 4,
+        "settings": [
+          {
+            "type": "product",
+            "id": "product",
+            "label": "product"
+          }
+        ]
+      }
+    ],
+    "presets": [
+      {
+        "name": "Lintext bestseller"
+      }
+    ]
+  }
+{% endschema %}

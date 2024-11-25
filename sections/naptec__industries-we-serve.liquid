@@ -1,0 +1,41 @@
+{{ "naptec__industries-we-serve.css" | asset_url | stylesheet_tag }}
+<section class="page-width naptec__industries-we-serve color-scheme-1">
+  <div class="naptec__industries-wrapper">
+    <h1>
+      Industries we serve
+    </h1>
+    <ul class="naptec__industries-items">
+      {% for block in section.blocks %}
+        {% case block.type %}
+          {% when 'industriy' %}
+            <li>{{ block.settings.industry_name }}</li>
+        {% endcase %}
+      {% endfor %}
+    </ul>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Industries we serve",
+  "settings": [],
+  "blocks": [
+    {
+      "type": "industriy",
+      "name": "Industry",
+      "settings": [
+        {
+          "type": "text",
+          "id": "industry_name",
+          "label": "Industry name"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Industries we serve"
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,75 @@
+{{ "naptec__our-brands.css" | asset_url | stylesheet_tag }}
+<section class="page-width color-scheme-2 naptec__our-brands">
+  <div class="naptec__our-brands-title">
+    <h2>{{ section.settings.text }}</h2>
+  </div>
+  <div class="glide">
+    <div class="glide__track" data-glide-el="track">
+      <ul class="glide__slides">
+        {% for block in section.blocks %}
+          <li class="glide__slide">
+            <a href="{{ block.settings.url }}">
+              <img
+                src="{{ block.settings.image |image_url: width: block.settings.image.width }}"
+                width="{{ block.settings.image.width }}"
+                height="{{ block.settings.image.height }}"
+                alt="{{ block.settings.image.alt }}"
+                loading="lazy"
+              >
+            </a>
+          </li>
+        {% endfor %}
+      </ul>
+    </div>
+  </div>
+</section>
+<script>
+    document.addEventListener("DOMContentLoaded", (event) => {
+      const glide = new Glide('.naptec__our-brands .glide',{
+        perTouch: 1,
+        type:"carousel",
+        perView: 4,
+        bound: true,
+        autoplay: 5000,
+        breakpoints:{
+    600: {
+      perView: 3
+    }
+  }
+      })
+      glide.mount()
+  });
+</script>
+{% schema %}
+{
+  "name": "Naptec our brands",
+  "settings": [
+    {
+      "type": "text",
+      "id": "text",
+      "label": "Text on left",
+      "default": "Our brands"
+    }
+  ],
+  "blocks": [
+      {
+        "type": "brand",
+        "name": "Brand",
+        "settings": [
+          {
+            "type": "image_picker",
+            "id": "image",
+            "label": "Brand's image"
+          },
+          {
+            "type": "url",
+            "id": "url",
+            "label": "Brand's page url"
+          }
+      ]
+  }],
+  "presets": [{
+    "name": "Naptec our brands"
+  }]
+}
+{% endschema %}

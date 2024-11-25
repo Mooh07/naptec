@@ -1,0 +1,322 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "naptec_main_hero_fxjbYa": {
+      "type": "naptec__main-hero",
+      "settings": {
+        "background": "shopify://shop_images/155899f183464ab2ac83921215657d95_1_1.png",
+        "header": "Style without <br> the hassle",
+        "subheading": "Premium, practical tabletop products,<br> and styles that wow.",
+        "cta-content": "get a quote",
+        "cta-url": ""
+      }
+    },
+    "featured_collection": {
+      "type": "featured-collection",
+      "disabled": true,
+      "settings": {
+        "title": "Featured products",
+        "heading_size": "h2",
+        "description": "",
+        "show_description": false,
+        "description_style": "body",
+        "collection": "all",
+        "products_to_show": 8,
+        "columns_desktop": 4,
+        "full_width": false,
+        "show_view_all": true,
+        "view_all_style": "solid",
+        "enable_desktop_slider": false,
+        "color_scheme": "scheme-1",
+        "image_ratio": "adapt",
+        "image_shape": "default",
+        "show_secondary_image": true,
+        "show_vendor": false,
+        "show_rating": false,
+        "enable_quick_add": false,
+        "columns_mobile": "2",
+        "swipe_on_mobile": false,
+        "padding_top": 44,
+        "padding_bottom": 36
+      }
+    },
+    "naptec_perks_JbpjXN": {
+      "type": "naptec__perks",
+      "blocks": {
+        "perk_myhRxm": {
+          "type": "perk",
+          "settings": {
+            "header": "Made in USA",
+            "description": "",
+            "icon": "shopify://shop_images/flag-usa_1.png"
+          }
+        },
+        "perk_k3VQCt": {
+          "type": "perk",
+          "settings": {
+            "header": "Premium Quality",
+            "description": "",
+            "icon": "shopify://shop_images/2024-03-20_19.07_2.png"
+          }
+        },
+        "perk_6RJnyR": {
+          "type": "perk",
+          "settings": {
+            "header": "Custom",
+            "description": "",
+            "icon": "shopify://shop_images/2024-03-20_19.07_2_1.png"
+          }
+        },
+        "perk_ARfHTm": {
+          "type": "perk",
+          "settings": {
+            "header": "Trusted by hundreds  of thousands of customers",
+            "description": "",
+            "icon": "shopify://shop_images/verify.png"
+          }
+        }
+      },
+      "block_order": [
+        "perk_myhRxm",
+        "perk_k3VQCt",
+        "perk_6RJnyR",
+        "perk_ARfHTm"
+      ],
+      "settings": {}
+    },
+    "naptec_half_image_half_text_F9BQc8": {
+      "type": "naptec__half-image-half-text",
+      "settings": {
+        "image": "shopify://shop_images/bf5407583bd3e260bfb0fa72c64caf72_1_1.png",
+        "header": "About Neptech",
+        "content": "<p>Naptec is the manufacturer behind four premium napkin brands, setting us apart as leaders in the industry. Beginning with our flagship brand and product, we set            out on our mission to help every host, be it at home, a hall, a hotel, or anywhere visitors frequent, add a touch of class to their guest experience. Since then, we’ve launched 4 brands and numerous products, all with the same mission of bringing practical elegance to anyone, anywhere.</p>",
+        "image-bottom": "shopify://shop_images/Group_9.png",
+        "image-right": false
+      }
+    },
+    "naptec_our_brands_LdjaVG": {
+      "type": "naptec__our-brands",
+      "blocks": {
+        "brand_xWMx4X": {
+          "type": "brand",
+          "settings": {
+            "logo": "shopify://shop_images/Group_27_f2b62b53-4a64-4647-b304-aff78043b938.png",
+            "image": "shopify://shop_images/Frame_427319488_1.png",
+            "url": "shopify://pages/bloomingoods"
+          }
+        },
+        "brand_faVbXc": {
+          "type": "brand",
+          "settings": {
+            "logo": "shopify://shop_images/servietto_logo.png",
+            "image": "shopify://shop_images/Frame_427319489_1.png",
+            "url": "shopify://pages/servietto"
+          }
+        },
+        "brand_VTM33q": {
+          "type": "brand",
+          "settings": {
+            "logo": "shopify://shop_images/naperee_logo.png",
+            "image": "shopify://shop_images/Frame_427319490.png",
+            "url": "shopify://pages/naperee"
+          }
+        },
+        "brand_8BWK7a": {
+          "type": "brand",
+          "settings": {
+            "logo": "shopify://shop_images/lintext_logo.png",
+            "image": "shopify://shop_images/Frame_427319491.png",
+            "url": "shopify://pages/lintext"
+          }
+        }
+      },
+      "block_order": [
+        "brand_xWMx4X",
+        "brand_faVbXc",
+        "brand_VTM33q",
+        "brand_8BWK7a"
+      ],
+      "settings": {
+        "text": "Naptec Brands"
+      }
+    },
+    "naptec_products_QkVi6i": {
+      "type": "naptec__products",
+      "blocks": {
+        "products_product_af7HAU": {
+          "type": "products_product",
+          "settings": {
+            "collection": "white-napkins",
+            "title": "WHITE <br> NAPKINS",
+            "image": "shopify://shop_images/image_7.png"
+          }
+        },
+        "products_product_VzXrVh": {
+          "type": "products_product",
+          "settings": {
+            "collection": "colored-napkins",
+            "title": "WHITE <br> NAPKINS",
+            "image": "shopify://shop_images/image_6.png"
+          }
+        },
+        "products_product_XhHdi7": {
+          "type": "products_product",
+          "settings": {
+            "collection": "tabletop-decor-runners",
+            "title": "WHITE <br> NAPKINS",
+            "image": "shopify://shop_images/image_7_8e266ead-6fc4-462e-afcb-2e806edee29d.png"
+          }
+        },
+        "products_product_hVnUAN": {
+          "type": "products_product",
+          "settings": {
+            "collection": "tabletop-decor-tablecloths",
+            "title": "WHITE <br> NAPKINS",
+            "image": "shopify://shop_images/image_6_683ab160-b170-450e-9ae6-95f2c4330c16.png"
+          }
+        }
+      },
+      "block_order": [
+        "products_product_af7HAU",
+        "products_product_VzXrVh",
+        "products_product_XhHdi7",
+        "products_product_hVnUAN"
+      ],
+      "settings": {
+        "text_content": "<p>Bring something new to the table.</p>",
+        "view-all-label": "ALL CATEGORIES",
+        "view-all-url": "shopify://collections/all-products"
+      }
+    },
+    "naptec_make_custom_design_UK9UWn": {
+      "type": "naptec__make-custom-design",
+      "settings": {
+        "header": "Make your<br> custom design",
+        "content": "Tailor napkins to fit your brand or establishment  by exploring our customization options, including branding and packaging solutions.",
+        "cta-label": "Get a Quote",
+        "image": "shopify://shop_images/image_8.png"
+      }
+    },
+    "naptec_industries_we_serve_jyN4Kt": {
+      "type": "naptec__industries-we-serve",
+      "blocks": {
+        "industriy_cjbhVb": {
+          "type": "industriy",
+          "settings": {
+            "industry_name": "Hotels"
+          }
+        },
+        "industriy_TLkPXw": {
+          "type": "industriy",
+          "settings": {
+            "industry_name": "Cruise"
+          }
+        },
+        "industriy_qLPR3P": {
+          "type": "industriy",
+          "settings": {
+            "industry_name": "Campaigns"
+          }
+        },
+        "industriy_9V6jip": {
+          "type": "industriy",
+          "settings": {
+            "industry_name": "Events"
+          }
+        },
+        "industriy_9cygLf": {
+          "type": "industriy",
+          "settings": {
+            "industry_name": "Businesses"
+          }
+        },
+        "industriy_iWcAYG": {
+          "type": "industriy",
+          "settings": {
+            "industry_name": "Conventions and Trade"
+          }
+        },
+        "industriy_Cy8eGh": {
+          "type": "industriy",
+          "settings": {
+            "industry_name": "Wedding"
+          }
+        },
+        "industriy_Q94dkf": {
+          "type": "industriy",
+          "settings": {
+            "industry_name": "School"
+          }
+        },
+        "industriy_Un4cFt": {
+          "type": "industriy",
+          "settings": {
+            "industry_name": "Store"
+          }
+        },
+        "industriy_qNDBXN": {
+          "type": "industriy",
+          "settings": {
+            "industry_name": "Party Planner"
+          }
+        },
+        "industriy_haHDTX": {
+          "type": "industriy",
+          "settings": {
+            "industry_name": "Restaurants and Bars"
+          }
+        }
+      },
+      "block_order": [
+        "industriy_cjbhVb",
+        "industriy_TLkPXw",
+        "industriy_qLPR3P",
+        "industriy_9V6jip",
+        "industriy_9cygLf",
+        "industriy_iWcAYG",
+        "industriy_Cy8eGh",
+        "industriy_Q94dkf",
+        "industriy_Un4cFt",
+        "industriy_qNDBXN",
+        "industriy_haHDTX"
+      ],
+      "settings": {}
+    },
+    "naptec_separation_image_TCe6z7": {
+      "type": "naptec__separation-image",
+      "settings": {
+        "image": "shopify://shop_images/image_6_6102c829-6dbc-42bd-8c36-b239b57323c1.png"
+      }
+    },
+    "naptec_wholesale_partner_YQMNBe": {
+      "type": "naptec__wholesale-partner",
+      "settings": {
+        "header": "How to become <br> a wholesale partner",
+        "content": "<p>Becoming a Naptech wholesale partner is easy. Simply fill out our wholesale account registration form, and one of our representatives <br/>will get in touch with you shortly to discuss your requirements <br/>and set up your wholesale account.</p>",
+        "cta-label": "BECOME A PARTNER",
+        "cta-url": "",
+        "image": "shopify://shop_images/image_7_73d33d0d-359e-43c1-8b8a-91aaa3ce5a91.png"
+      }
+    }
+  },
+  "order": [
+    "naptec_main_hero_fxjbYa",
+    "featured_collection",
+    "naptec_perks_JbpjXN",
+    "naptec_half_image_half_text_F9BQc8",
+    "naptec_our_brands_LdjaVG",
+    "naptec_products_QkVi6i",
+    "naptec_make_custom_design_UK9UWn",
+    "naptec_industries_we_serve_jyN4Kt",
+    "naptec_separation_image_TCe6z7",
+    "naptec_wholesale_partner_YQMNBe"
+  ]
+}

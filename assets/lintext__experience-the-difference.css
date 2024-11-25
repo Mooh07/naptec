@@ -1,0 +1,115 @@
+.lintext__experience-the-difference {
+  position: relative;
+  padding: 74px 0;
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  color: var(--text-color);
+}
+.lintext__experience-the-difference_background-image {
+  display: flex;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+.lintext__experience-the-difference_background-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.lintext__experience-the-difference_text {
+  z-index: 1;
+  background-color: var(--background-color);
+  max-width: 50%;
+  padding: 132px 124px 132px 80px;
+  border-top-right-radius: 400px;
+  border-bottom-right-radius: 400px;
+}
+.lintext__experience-the-difference_text h2,
+.lintext__experience-the-difference_text p {
+  padding: 0;
+  margin: 0;
+  color: inherit;
+}
+.lintext__experience-the-difference_text h2 {
+  font-family: "pp agrandir";
+  font-size: 52px;
+  font-weight: 800;
+  line-height: 130%;
+  text-align: left;
+  padding-bottom: 28px;
+}
+.lintext__experience-the-difference-h2-rest {
+  text-wrap: nowrap;
+}
+.lintext__experience-the-difference_text p {
+  font-family: "pp agrandir";
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 155%;
+  text-align: left;
+  padding-bottom: 40px;
+}
+.lintext__experience-the-difference_text a {
+  color: var(--button-label-color);
+  text-decoration: none;
+  font-family: "pp agrandir";
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 120%;
+  text-align: center;
+  background-color: var(--text-color);
+  padding: 16px 71.5px;
+  border-radius: 100px;
+}
+@media screen and (max-width: 1440px) {
+  .lintext__experience-the-difference_text h2 {
+    font-size: 42px;
+  }
+  .lintext__experience-the-difference_text p {
+    font-size: 16px;
+  }
+}
+@media screen and (max-width: 1250px) {
+  .lintext__experience-the-difference_text {
+    max-width: 55%;
+    padding-left: 40px;
+  }
+}
+@media screen and (max-width: 992px) {
+  .lintext__experience-the-difference_text {
+    max-width: 70%;
+  }
+}
+@media screen and (max-width: 768px) {
+  .lintext__experience-the-difference_text {
+    max-width: 85%;
+  }
+}
+@media screen and (max-width: 600px) {
+  .lintext__experience-the-difference_text {
+    padding-left: 16px;
+    max-width: 95%;
+  }
+  .lintext__experience-the-difference_text h2 {
+    font-size: 32px;
+  }
+  .lintext__experience-the-difference_text p {
+    font-size: 14px;
+  }
+  .lintext__experience-the-difference_text a {
+    font-size: 16px;
+    padding: 16px 51.5px;
+  }
+}
+@media screen and (max-width: 400px) {
+  .lintext__experience-the-difference_text h2 {
+    font-size: 22px;
+  }
+  .lintext__experience-the-difference_text a {
+    font-size: 14px;
+    padding: 16px 41.5px;
+  }
+}

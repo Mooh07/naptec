@@ -1,0 +1,130 @@
+.bloomingoods__missions {
+  background-color: #f48062;
+  padding: 0 80px 64px 80px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: var(--section-color);
+}
+
+.bloomingoods__missions-text {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  margin-bottom: 72px;
+}
+
+.bloomingoods__missions-text h2 {
+  margin: 0;
+  font-family: "latienne pro";
+  font-size: 76px;
+  font-weight: 400;
+  line-height: 122%;
+  text-align: center;
+  color: inherit;
+}
+
+.bloomingoods__missions-text p {
+  margin: 0;
+  font-family: "filson soft";
+  font-size: 24px;
+  font-weight: 300;
+  line-height: 133%;
+  text-align: center;
+  max-width: 762px;
+  color: inherit;
+}
+
+.bloomingoods__missions-blocks ul {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  gap: 108px;
+}
+
+.bloomingoods__missions-blocks ul li {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  max-width: 25%;
+  gap: 16px;
+}
+
+.bloomingoods__missions-blocks ul li span {
+  text-align: center;
+  font-family: "latienne pro";
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 133%;
+  text-align: center;
+  text-wrap: balance;
+}
+.bloomingoods__missions-bottom-image-container {
+  width: 100%;
+  overflow: hidden;
+  margin-top: 64px;
+  position: relative;
+}
+.bloomingoods__missions-bottom-image-container img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  position: relative;
+}
+@media screen and (max-width: 1100px) {
+  .bloomingoods__missions {
+    padding: 0 8rem;
+  }
+  .bloomingoods__missions-text h2 {
+    font-size: 56px;
+  }
+  .bloomingoods__missions-text p {
+    font-size: 18px;
+  }
+  .bloomingoods__missions-blocks ul {
+    gap: 36px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .bloomingoods__missions {
+    padding: 4rem 1rem 0 1rem;
+  }
+  .bloomingoods__missions-blocks ul {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .bloomingoods__missions-text h2 {
+    font-size: 42px;
+  }
+  .bloomingoods__missions-text p {
+    font-size: 16px;
+  }
+  .bloomingoods__missions-text {
+    margin-bottom: 54px;
+  }
+  .bloomingoods__missions-blocks ul li {
+    max-width: unset;
+    width: calc(50% - 36px);
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .bloomingoods__missions {
+    padding: 2rem 1rem 0 1rem;
+  }
+  .bloomingoods__missions-text {
+    margin-bottom: 36px;
+  }
+  .bloomingoods__missions-text h2 {
+    font-size: 32px;
+  }
+  .bloomingoods__missions-text p {
+    font-size: 14px;
+  }
+  .bloomingoods__missions-bottom-image-container {
+    height: 324px;
+  }
+}

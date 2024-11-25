@@ -1,0 +1,111 @@
+<style>
+  .bloomingoods__missions {
+    --section-color: {{ section.settings.section_color }};
+  }
+</style>
+{{ 'bloomingoods__missions.css' | asset_url | stylesheet_tag }}
+<section class="bloomingoods__missions page-width">
+  <div class="bloomingoods__missions-text">
+    <div>
+      {{ section.settings.heading }}
+    </div>
+    <p>
+      {{ section.settings.small_text | capitalize }}
+    </p>
+  </div>
+  <div class="bloomingoods__missions-blocks">
+    <ul>
+      {% for block in section.blocks %}
+        {% case block.type %}
+          {% when 'mission' %}
+            <li>
+              <img
+                src="{{ block.settings.icon | image_url: width:block.settings.icon.width }}"
+                alt="{{ section.settings.icon.alt }}"
+                width="{{ section.settings.icon.width }}"
+                height="{{ section.settings.icon.height }}"
+                loading="lazy"
+              >
+              <span>
+                {% assign split_text = block.settings.text | split: ' ' %}
+                {% for word in split_text %}
+                  {% if forloop.first %}
+                    {{ word | capitalize }}
+                  {% else %}
+                    {{ word }}
+                    {% if forloop.index == 2 %}
+                      <br>
+                    {% endif %}
+                  {% endif %}
+                {% endfor %}
+              </span>
+            </li>
+        {% endcase %}
+      {% endfor %}
+    </ul>
+  </div>
+  <div class="bloomingoods__missions-bottom-image-container">
+    <img 
+      src="{{ section.settings.bottom_image | image_url: width: section.settings.bottom_image.width}}"
+      alt="{{ section.settings.bottom_image.alt }}"
+      width="{{ section.settings.bottom_image.width }}"
+      height="{{ section.settings.bottom_image.height }}"
+      loading="lazy"
+    >
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Bloomingoods missions",
+  "settings": [
+    {
+      "type": "color",
+      "id": "section_color",
+      "label": "Section text color",
+      "info": "Main text color for this section"
+    },
+    {
+      "type": "richtext",
+      "id": "heading",
+      "label": "Section heading"
+    },
+    {
+      "type": "text",
+      "id": "small_text",
+      "label": "Small text",
+      "default": "Our goal is to design products that are both stylish, practical, and affordable-striking the balance between form and function, aesthetic and hygiene.",
+      "info": "controls the small paragraph under the heading"
+    },
+    {
+      "type": "image_picker",
+      "id": "bottom_image",
+      "label": "Bottom image"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "mission",
+      "name": "Mission",
+      "limit": 5,
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "icon",
+          "label": "Icon"
+        },
+        {
+          "type": "text",
+          "id": "text",
+          "label": "Mission name"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Bloomingoods missions"
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,91 @@
+<style>
+  .bloomingoods__about-us {
+    --text-color: {{ section.settings.text_color }};
+    --background-color: {{ section.settings.background_color }};
+  }
+</style>
+{{ 'bloomingoods__about-us.css' | asset_url | stylesheet_tag }}
+<section class="bloomingoods__about-us page-width">
+  <div class="bloomingoods__about-us-image-container">
+    <img 
+      src="{{ section.settings.image | image_url: width: section.settings.image.width }}"
+      href="{{ section.settings.image.alt }}"
+      width="{{ section.settings.image.width }}px"
+      height="{{ section.settings.image.height }}px"
+      loading="lazy"
+    >
+  </div>
+  <div class="bloomingoods__about-us-text-container">
+    <h2>
+      {% assign split_header = section.settings.header | split: ' ' %}
+      {% for word in split_header %}
+        {% assign word_size = word | size %}
+
+        {% assign word_first_letter = word | slice: 0 %}
+        {% assign word_rest = word | slice: 1, word_size %}
+        {% if word_size < 3 %}
+          <span class="bloomingoods__section-title-rest">{{ word | upcase }}</span>
+          {% break %}
+        {% endif %}
+        <span class="bloomingoods__section-title-first-letter">{{ word_first_letter | upcase }}</span>
+        <span class="bloomingoods__section-title-rest">{{ word_rest | upcase }}</span>
+      {% endfor %}
+    </h2>
+    <p>
+      {{ section.settings.content }}
+    </p>
+    <img 
+      src="{{ section.settings.small_image | image_url: width: section.settings.small_image.width }}"
+      href="{{ section.settings.small_image.alt }}"
+      width="197px"
+      height="197px"
+      loading="lazy"
+    >
+  </div>
+</section>
+{% schema %}
+  {
+    "name": "About us",
+    "settings": [
+      {
+        "type": "image_picker",
+        "id": "image",
+        "label": "Image"
+      },
+      {
+        "type": "text",
+        "id": "header",
+        "label": "Section header",
+        "default": "About us"
+      },
+      {
+        "type": "text",
+        "id": "content",
+        "label": "Section text",
+        "default": "At BloominGoods, we’re on a mission to make hosting with flair a total no-brainer. Our goal is to design products that are both stylish, practical, and affordable-striking the balance between form and function, aesthetic and hygiene."
+      },
+      {
+        "type": "image_picker",
+        "id": "small_image",
+        "label": "Small image"
+      },
+      {
+        "type": "color",
+        "id": "background_color",
+        "label": "Background color",
+        "default": "#EDEFEE"
+      },
+      {
+        "type": "color",
+        "id": "text_color",
+        "label": "Text color",
+        "default": "#022D33"
+      }
+    ],
+    "presets": [
+      {
+        "name": "About us"
+      }
+    ]
+  }
+{% endschema %}

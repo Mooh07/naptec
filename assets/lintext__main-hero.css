@@ -1,0 +1,92 @@
+.lintext__main-hero {
+  height: min(100vh, 760px);
+  padding: 296px 80px;
+  background-color: #f4f4f4;
+  position: relative;
+  color: var(--text-color);
+  background-color: var(--background-color);
+}
+.lintext__main-hero-content {
+  max-width: 547px;
+  position: relative;
+  z-index: 2;
+}
+.lintext__main-hero-content h1,
+.lintext__main-hero-content p {
+  margin: 0;
+  padding: 0;
+  color: inherit;
+}
+.lintext__main-hero-content h1 {
+  font-family: "pp agrandir";
+  font-size: 88px;
+  font-weight: 800;
+  line-height: 122%;
+  text-align: left;
+  padding-bottom: 24px;
+}
+.lintext__main-hero-content p {
+  font-family: "pp agrandir";
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 155%;
+  text-align: left;
+  padding-bottom: 40px;
+}
+.lintext__main-hero-content a {
+  font-family: "pp agrandir";
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 24px;
+  text-align: center;
+  text-decoration: none;
+  color: var(--button-label-color);
+  padding: 1.6rem 7.15rem;
+  background-color: var(--button-background-color);
+  border-radius: 100px;
+}
+.lintext__main-hero-images {
+  position: absolute;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  margin-bottom: 17px;
+}
+.lintext__main-hero-images img {
+  position: absolute;
+  right: 0;
+  z-index: 1;
+  height: 100%;
+  width: auto;
+}
+@media screen and (max-width: 1250px) {
+  .lintext__main-hero {
+    padding: 296px 40px;
+  }
+}
+@media screen and (max-width: 992px) {
+  .lintext__main-hero-content h1 {
+    font-size: 68px;
+    padding-bottom: 16px;
+  }
+  .lintext__main-hero-content p {
+    font-size: 14px;
+  }
+  .lintext__main-hero-content {
+    max-width: 95%;
+  }
+}
+@media screen and (max-width: 600px) {
+  .lintext__main-hero {
+    padding: 296px 16px;
+  }
+  .lintext__main-hero-content h1 {
+    font-size: 48px;
+    padding-bottom: 12px;
+  }
+  .lintext__main-hero-content p {
+    font-size: 12px;
+  }
+}
+@media screen and (max-width: 444px) {
+}

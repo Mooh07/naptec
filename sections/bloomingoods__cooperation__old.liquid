@@ -1,0 +1,93 @@
+<style>
+  .bloomingoods__cooperation {
+    --text-color: {{ section.settings.text_color }};
+    --background-color: {{ section.settings.background_color }};
+  }
+</style>
+{{ 'bloomingoods__cooperation.css' | asset_url | stylesheet_tag }}
+<section class="bloomingoods__cooperation page-width">
+  <div class="bloomingoods__cooperation-text-container">
+    <h2>
+      {% assign split_header = section.settings.header | split: ' ' %}
+      {% for word in split_header %}
+        {% assign word_size = word | size %}
+
+        {% assign word_first_letter = word | slice: 0 %}
+        {% assign word_rest = word | slice: 1, word_size %}
+        {% if word_size < 3 %}
+          <span class="bloomingoods__section-title-rest">{{ word | upcase }}</span>
+          {% break %}
+        {% endif %}
+        <span class="bloomingoods__section-title-first-letter">{{ word_first_letter | upcase }}</span>
+        <span class="bloomingoods__section-title-rest">{{ word_rest | upcase }}</span>
+      {% endfor %}
+    </h2>
+    <p>
+      {{ section.settings.content }}
+    </p>
+    <a href="{{ section.settings.cta-url }}">
+      {{ section.settings.cta-label }}
+    </a>
+  </div>
+  <div class="bloomingoods__cooperation-image-container">
+      <img 
+        src="{{ section.settings.image | image_url: width: section.settings.image.width }}"
+        alt="{{ section.settings.image.alt }}"
+        width="{{ section.settings.image.width }}px"
+        height="{{ section.settings.image.height }}px"
+        loading="lazy"
+      />
+  </div>
+</section>
+{% schema %}
+{
+  "name": "Cooperation",
+  "settings": [
+    {
+      "type": "text",
+      "id": "header",
+      "label": "Section header",
+      "default": "Cooperation"
+    },
+    {
+      "type": "text",
+      "id": "content",
+      "label": "Section text",
+      "default": "Together, we can create beautiful spaces and inspire others to live beautifully. Contact us today to explore partnership opportunities and let's make magic happen together."
+    },
+    {
+      "type": "text",
+      "id": "cta-label",
+      "label": "CTA label",
+      "default": "Contact Us"
+    },
+    {
+      "type": "text",
+      "id": "cta-url",
+      "label": "CTA url"
+    },
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Section image"
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Background color",
+      "default": "#EDEFEE"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Text color",
+      "default": "#022D33"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Cooperation"
+    }
+  ]
+}
+{% endschema %}

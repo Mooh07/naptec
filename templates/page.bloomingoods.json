@@ -1,0 +1,304 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "layout": "theme.bloomingoods",
+  "sections": {
+    "bloomingoods_main_hero_XYM6tD": {
+      "type": "bloomingoods__main-hero",
+      "settings": {
+        "header": "Bringing unforgettable to the table.",
+        "center_image": "shopify://shop_images/center-image.png",
+        "right_text": "<p>A fresh one, </p><p>every time.</p>",
+        "cta_url": "",
+        "cta_text": "get a quote",
+        "section_color": "#f5dbe9",
+        "button_label_color": "#ffffff"
+      }
+    },
+    "bloomingoods_mission_Nkwgtc": {
+      "type": "bloomingoods__mission",
+      "blocks": {
+        "mission_YJKdNT": {
+          "type": "mission",
+          "settings": {
+            "icon": "shopify://shop_images/Group_25.png",
+            "text": "Decorative linen-feel paper napkins"
+          }
+        },
+        "mission_gAwyAT": {
+          "type": "mission",
+          "settings": {
+            "icon": "shopify://shop_images/Group_26.png",
+            "text": "Variety of colors"
+          }
+        },
+        "mission_egneip": {
+          "type": "mission",
+          "settings": {
+            "icon": "shopify://shop_images/Group_27.png",
+            "text": "One towel, multi purpose"
+          }
+        },
+        "mission_YwRNqJ": {
+          "type": "mission",
+          "settings": {
+            "icon": "shopify://shop_images/Group_28.png",
+            "text": "Soft and absorbant"
+          }
+        },
+        "mission_Lm9BWC": {
+          "type": "mission",
+          "settings": {
+            "icon": "shopify://shop_images/Group_29.png",
+            "text": "The right size"
+          }
+        }
+      },
+      "block_order": [
+        "mission_YJKdNT",
+        "mission_gAwyAT",
+        "mission_egneip",
+        "mission_YwRNqJ",
+        "mission_Lm9BWC"
+      ],
+      "settings": {
+        "section_color": "#ffffff",
+        "heading": "<h2>Our mission is to </h2><h2>make hosting with flair </h2><h2>a total no-brainer</h2>",
+        "small_text": "Our goal is to design products that are both stylish, practical, and affordable-striking the balance between form and function, aesthetic and hygiene.",
+        "bottom_image": "shopify://shop_images/new-bg.png"
+      }
+    },
+    "bloomingoods_product_categories_LpPpLH": {
+      "type": "bloomingoods__product-categories",
+      "blocks": {
+        "category_tcMRkc": {
+          "type": "category",
+          "settings": {
+            "image": "shopify://shop_images/1_d53faf12-5514-4c8c-b378-8f5d571b7f2b.png",
+            "text": "White Napkins",
+            "url": "shopify://collections/bloomingoods-tableware-sets"
+          }
+        },
+        "category_bP7eAP": {
+          "type": "category",
+          "settings": {
+            "image": "shopify://shop_images/2_d4f280cc-d8d5-418d-99fd-d957d38321db.png",
+            "text": "Colored Napkins",
+            "url": "shopify://collections/bloomingoods-napkins"
+          }
+        },
+        "category_YMXDzi": {
+          "type": "category",
+          "settings": {
+            "image": "shopify://shop_images/1c16a9e55c8d049abe47b303b3cedfe7.png",
+            "text": "Tablecloths",
+            "url": "shopify://collections/bloomingoods-tablerunner"
+          }
+        },
+        "category_FPNeK7": {
+          "type": "category",
+          "settings": {
+            "image": "shopify://shop_images/da02513de33468b39d19e8b67000644d.png",
+            "text": "Tabletop",
+            "url": "shopify://collections/bloomingoods-towels"
+          }
+        }
+      },
+      "block_order": [
+        "category_tcMRkc",
+        "category_bP7eAP",
+        "category_YMXDzi",
+        "category_FPNeK7"
+      ],
+      "settings": {
+        "section_color": "#383735",
+        "background_color": "#f5e9db",
+        "heading": "Product Categories",
+        "small_text": "Each item in our collection is thoughtfully chosen to bring joy and elegance into your home, reflecting our commitment to quality and uniqueness."
+      }
+    },
+    "bloomingoods_make_your_design_NGE34W": {
+      "type": "bloomingoods__make-your-design",
+      "settings": {
+        "section_color": "#f5e9db",
+        "background_color": "#1d3b2c",
+        "heading": "Make your custom design",
+        "paragraph": "Tailor napkins to fit your brand or establishment by exploring our customization options, including branding and packaging solutions.",
+        "cta_url": "",
+        "cta_label": "get a quote",
+        "smaller_image": "shopify://shop_images/smaller_logo.png",
+        "bottom_image": "shopify://shop_images/new-biglogo.png"
+      }
+    },
+    "bloomingoods_cooperation_77rLhh": {
+      "type": "bloomingoods__cooperation",
+      "settings": {
+        "section_color": "#ffffff",
+        "background_color": "#1d3b2c",
+        "heading": "Cooperation",
+        "paragraph": "Together, we can create beautiful spaces and inspire others to live beautifully. Contact us today to explore partnership opportunities and let's make magic happen together.",
+        "cta_url": "",
+        "cta_label": "get a quote",
+        "background_image": "shopify://shop_images/new-bg_b943a85d-c307-48a3-82ec-3497ca99af1e.png"
+      }
+    },
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "padding_top": 28,
+        "padding_bottom": 28
+      }
+    },
+    "bloomingoods_about_us_KepUWY": {
+      "type": "bloomingoods__about-us",
+      "disabled": true,
+      "settings": {
+        "image": "shopify://shop_images/about_us_image.jpg",
+        "header": "About us",
+        "content": "At BloominGoods, we’re on a mission to make hosting with flair a total no-brainer. Our goal is to design products that are both stylish, practical, and affordable-striking the balance between form and function, aesthetic and hygiene.",
+        "small_image": "shopify://shop_images/about_us_image_small_7e8bd8c8-9d8a-466b-aeed-f396ff1f6ee2.png",
+        "background_color": "#edefee",
+        "text_color": "#022d33"
+      }
+    },
+    "bloomingoods_quality_assurance_h8Bw6C": {
+      "type": "bloomingoods__quality-assurance",
+      "blocks": {
+        "quality_XaBYhd": {
+          "type": "quality",
+          "settings": {
+            "quality_title": "Affordability",
+            "quality_description": "Premium quality at competitive prices for accessible luxury living.",
+            "quality_icon": "shopify://shop_images/icon.png"
+          }
+        },
+        "quality_mxCFPN": {
+          "type": "quality",
+          "settings": {
+            "quality_title": "Innovative Designs",
+            "quality_description": "Stylish and sophisticated designs elevate home decor.",
+            "quality_icon": "shopify://shop_images/icon.png"
+          }
+        },
+        "quality_hJNNkf": {
+          "type": "quality",
+          "settings": {
+            "quality_title": "Eco-Friendly Practices",
+            "quality_description": "Dedication to eco-friendly practices in materials and production.",
+            "quality_icon": "shopify://shop_images/icon.png"
+          }
+        },
+        "quality_JtmFN7": {
+          "type": "quality",
+          "settings": {
+            "quality_title": "Versatility",
+            "quality_description": "Diverse range of products to meet various needs.",
+            "quality_icon": "shopify://shop_images/icon.png"
+          }
+        }
+      },
+      "block_order": [
+        "quality_XaBYhd",
+        "quality_mxCFPN",
+        "quality_hJNNkf",
+        "quality_JtmFN7"
+      ],
+      "disabled": true,
+      "settings": {
+        "header": "Quality assurance",
+        "content": "We source materials from trusted suppliers and rigorously test our products to ensure they meet the highest standards of durability, functionality, and safety. Shop with confidence, knowing that each item is built to last.",
+        "background_color": "#edefee",
+        "text_color": "#022d33",
+        "quality_title_color": "#022d33",
+        "quality_small_text_color": "#000000"
+      }
+    },
+    "bloomingoods_product_categories_47dArG": {
+      "type": "bloomingoods__product-categories",
+      "disabled": true,
+      "settings": {
+        "section_color": "",
+        "background_color": "",
+        "heading": "Product Categories",
+        "small_text": "Each item in our collection is thoughtfully chosen to bring joy and elegance into your home, reflecting our commitment to quality and uniqueness."
+      }
+    },
+    "bloomingoods_bestsellers_JdircT": {
+      "type": "bloomingoods_bestsellers",
+      "blocks": {
+        "product_bEJLjV": {
+          "type": "product",
+          "settings": {
+            "product": "disposable-linen-feel-dinner-napkins-with-built-in-flatware-pocket"
+          }
+        },
+        "product_M8Wedz": {
+          "type": "product",
+          "settings": {
+            "product": "disposable-linen-feel-dinner-napkins-with-built-in-flatware-pocket-1"
+          }
+        },
+        "product_n4iVJb": {
+          "type": "product",
+          "settings": {
+            "product": "linen-feel-guest-disposable-cloth-like-paper-dinner-napkins"
+          }
+        },
+        "product_fim9eR": {
+          "type": "product",
+          "disabled": true,
+          "settings": {
+            "product": "dinner-napkins"
+          }
+        }
+      },
+      "block_order": [
+        "product_bEJLjV",
+        "product_M8Wedz",
+        "product_n4iVJb",
+        "product_fim9eR"
+      ],
+      "disabled": true,
+      "settings": {
+        "header": "Bestsellers",
+        "collection": "",
+        "background_color": "#ffffff",
+        "title_color": "#022d33",
+        "card_text_color": "#383735"
+      }
+    },
+    "bloomingoods_cooperation_zbcXjk": {
+      "type": "bloomingoods__cooperation",
+      "disabled": true,
+      "settings": {
+        "section_color": "#f5e9db",
+        "background_color": "#edefee",
+        "heading": "Cooperation",
+        "paragraph": "Together, we can create beautiful spaces and inspire others to live beautifully. Contact us today to explore partnership opportunities and let's make magic happen together.",
+        "cta_url": "",
+        "cta_label": "get a quote"
+      }
+    }
+  },
+  "order": [
+    "bloomingoods_main_hero_XYM6tD",
+    "bloomingoods_mission_Nkwgtc",
+    "bloomingoods_product_categories_LpPpLH",
+    "bloomingoods_make_your_design_NGE34W",
+    "bloomingoods_cooperation_77rLhh",
+    "main",
+    "bloomingoods_about_us_KepUWY",
+    "bloomingoods_quality_assurance_h8Bw6C",
+    "bloomingoods_product_categories_47dArG",
+    "bloomingoods_bestsellers_JdircT",
+    "bloomingoods_cooperation_zbcXjk"
+  ]
+}

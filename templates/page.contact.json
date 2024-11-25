@@ -1,0 +1,79 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "form": {
+      "type": "contact-form",
+      "disabled": true,
+      "settings": {
+        "heading": "",
+        "heading_size": "h1",
+        "color_scheme": "scheme-1",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "naptec_contact_main_hero_LgHLQG": {
+      "type": "naptec_contact__main-hero",
+      "settings": {
+        "background": "shopify://shop_images/new_bg_9f4abb08-9e3a-47da-b6c9-c12c15e6c2fd.png",
+        "heading": "Contact Us",
+        "text": "We would love to hear from you!",
+        "logo": "shopify://shop_images/Group_9.png"
+      }
+    },
+    "naptec_contact_form_8CDjKB": {
+      "type": "naptec_contact__form",
+      "blocks": {
+        "information_NHqd3c": {
+          "type": "information",
+          "settings": {
+            "info_text": "845-200-3344",
+            "info_image": "shopify://shop_images/icon_1_e3848508-f9bc-4d24-833b-857203a687e7.png"
+          }
+        },
+        "information_jMzX39": {
+          "type": "information",
+          "settings": {
+            "info_text": "Sales@NaptecPaper.com",
+            "info_image": "shopify://shop_images/icon_2_2f4a58cd-4160-48cf-be9d-8b0c40aae20c.png"
+          }
+        },
+        "information_9YbBxa": {
+          "type": "information",
+          "settings": {
+            "info_text": "New Hampton, NY, 10958",
+            "info_image": "shopify://shop_images/icon_3_e042b432-a0b7-464d-82e8-4529ba5daebe.png"
+          }
+        }
+      },
+      "block_order": [
+        "information_NHqd3c",
+        "information_jMzX39",
+        "information_9YbBxa"
+      ],
+      "settings": {}
+    }
+  },
+  "order": [
+    "main",
+    "form",
+    "naptec_contact_main_hero_LgHLQG",
+    "naptec_contact_form_8CDjKB"
+  ]
+}

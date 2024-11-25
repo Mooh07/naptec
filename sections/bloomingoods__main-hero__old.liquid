@@ -1,0 +1,75 @@
+<style>
+  .bloomingoods__main-hero {
+    --section-color: {{ section.settings.section_color }};
+    --button-label-color: {{ section.settings.button_label_color }};
+  }
+</style>
+{{ 'bloomingoods__main-hero.css' | asset_url | stylesheet_tag }}
+<section class="bloomingoods__main-hero page-width">
+  <img 
+    src="{{ section.settings.background_image | image_url: width: section.settings.background_image.width }}" 
+    width="{{ section.settings.background_image.width }}px"
+    height="{{ section.settings.background_image.height }}px"
+    alt="{{ section.settings.background_image.alt }}"
+  />
+  <div class="bloomingoods__main-hero-content">
+    {% render 'bloomingoods__text-bubble' %}
+    <div class="bloomingoods__main-hero-text-container">
+      {{ section.settings.header }}
+      <p>{{ section.settings.small_text }}</p>
+      <a href="{{ section.settings.cta_url }}">{{ section.settings.cta_text | upcase }}</a>
+    </div>
+  </div>
+</section>
+{% schema %}
+  {
+    "name": "Bloomingoods main hero",
+    "settings": [
+      {
+        "type": "image_picker",
+        "id": "background_image",
+        "label": "Background image"
+      },
+      {
+        "type": "richtext",
+        "id": "header",
+        "label": "header",
+        "default": "<h1>Bringing unforgettable to the table.</h1>"
+      },
+      {
+        "type": "text",
+        "id": "small_text",
+        "label": "Small text",
+        "default": "More class. Less mess."
+      },
+      {
+        "type": "url",
+        "id": "cta_url",
+        "label": "Call to action button URL"
+      },
+      {
+        "type": "text",
+        "id": "cta_text",
+        "label": "Call to action button text",
+        "default": "get a quote"
+      },
+      {
+        "type": "color",
+        "id": "section_color",
+        "label": "Section color",
+        "default": "#022D33"
+      },
+      {
+        "type": "color",
+        "id": "button_label_color",
+        "label": "Call to action button label color",
+        "default": "#fff"
+      }
+    ],
+    "presets": [
+      {
+        "name": "Bloomingoods main hero"
+      }
+    ]
+  }
+{% endschema %}

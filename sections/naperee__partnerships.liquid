@@ -1,0 +1,101 @@
+<style>
+  .naperee__become-partner {
+    --background-color: {{ section.settings.background_color }};
+    --text-color: {{ section.settings.text_color }};
+    --button-label-color: {{ section.settings.button_label_color }};
+    --button-background-color: {{ section.settings.button_background_color }};
+  }
+</style>
+{{ "naperee__become-partner.css" | asset_url | stylesheet_tag }}
+<section class="page-width naperee__become-partner">
+  <div class="naperee__become-partner_left-image-container">
+    <img loading="lazy" src="{{ section.settings.left_image | image_url: width: section.settings.left_image.width }}" width="{{ section.settings.left_image.width }}" height="{{ section.settings.left_image.height }}" />
+  </div>
+  <div class="naperee__become-partner_text-body-container">
+    <h6 class="naperee__naperee__become-partner_heading">{{ section.settings.section_title }}</h6>
+    <h2 class="naperee__naperee__become-partner_text-title">{{ section.settings.text_body_title }}</h2>
+    <p class="naperee__naperee__become-partner_text-body">{{ section.settings.text_body }}</p>
+    <a class="naperee__become-partner_cta-button" href="{{ section.settings.cta_button_url }}">{{ section.settings.cta_button_text }}</a>
+  </div>
+  <div class="naperee__become-partner_right-image-container">
+    <img loading="lazy" src="{{ section.settings.right_image_top | image_url: width: section.settings.right_image_top.width  }}" width="{{ section.settings.right_image_top.width }}" height="{{ section.settings.right_image_top.height }}" />
+    <img loading="lazy" src="{{ section.settings.right_image_bottom | image_url: width: section.settings.right_image_bottom.width }}" width="{{ section.settings.right_image_bottom.width }}" height="{{ section.settings.right_image_bottom.height }}" />
+  </div>
+</section>
+{% schema %}
+  {
+    "name": "Partner",
+    "settings": [
+      {
+        "type": "image_picker",
+        "id": "left_image",
+        "label": "Left image"
+      }, 
+      {
+        "type": "text",
+        "id": "section_title",
+        "label": "Section title"
+      },
+      {
+        "type": "text",
+        "id": "text_body_title",
+        "label": "Main text title"
+      },
+      {
+        "type": "text",
+        "id": "text_body",
+        "label": "Main text body"
+      },
+      {
+        "type": "text",
+        "id": "cta_button_text",
+        "label": "Call to action button text",
+        "default": "Become a partner"
+      },
+      {
+        "type": "url",
+        "id": "cta_button_url",
+        "label": "Call to action button url"
+      },
+      {
+        "type": "image_picker",
+        "id": "right_image_top",
+        "label": "Top right image"
+      }, 
+      {
+        "type": "image_picker",
+        "id": "right_image_bottom",
+        "label": "Bottom right image"
+      },
+      {
+        "type": "color",
+        "id": "background_color",
+        "label": "Background color",
+        "default": "#DDD4C8"
+      }, 
+      {
+        "type": "color",
+        "id": "text_color",
+        "label": "Text color",
+        "default": "#383735"
+      },
+      {
+        "type": "color",
+        "id": "button_background_color",
+        "label": "Call to action button background color",
+        "default": "#383735"
+      },
+      {
+        "type": "color",
+        "id": "button_label_color",
+        "label": "Call to action text color",
+        "default": "#fff"
+      }
+    ],
+    "presets": [
+      {
+        "name": "Partner"
+      }
+    ]
+  }
+{% endschema %}

@@ -1,0 +1,104 @@
+<style>
+  .servietto__values {
+    --section-color: {{ section.settings.section_color }};
+    --background-color: {{ section.settings.background_color }};
+  }
+</style>
+{{ 'servietto__values.css' | asset_url | stylesheet_tag }}
+
+<section class="servietto__values page-width">
+  <div class="servietto__values-images">
+    <div class="servietto__values-images-left">
+      <div class="servietto__values-top-image">
+        <img
+          src="{{ section.settings.top_image |  image_url: width: section.settings.top_image.width }}"
+          alt="{{ section.settings.top_image.alt }}"
+          width="{{ section.settings.top_image.width }}"
+          height="{{ section.settings.top_image.height }}"
+          loading="lazy">
+      </div>
+      <div class="servietto__values-bottom-image">
+        <img
+          src="{{ section.settings.bottom_image |  image_url: width: section.settings.bottom_image.width }}"
+          alt="{{ section.settings.bottom_image.alt }}"
+          width="{{ section.settings.bottom_image.width }}"
+          height="{{ section.settings.bottom_image.height }}"
+          loading="lazy">
+      </div>
+    </div>
+    <div class="servietto__values-images-right">
+      <img
+        src="{{ section.settings.right_image |  image_url: width: section.settings.right_image.width }}"
+        alt="{{ section.settings.right_image.alt }}"
+        width="{{ section.settings.right_image.width }}"
+        height="{{ section.settings.right_image.height }}"
+        loading="lazy">
+    </div>
+  </div>
+  <div class="servietto__values-text">
+    <h4>
+      {{ section.settings.heading }}
+    </h4>
+    <p>
+      {{ section.settings.paragraph }}
+    </p>
+    <span>
+      {{ section.settings.script_text }}
+    </span>
+  </div>
+</section>
+
+{% schema %}
+  {
+    "name": "servietto values",
+    "settings": [
+      {
+        "type": "color",
+        "id": "section_color",
+        "label": "Section Color",
+        "info": "Text color for this section",
+        "default": "#1C363D"
+      },
+      {
+        "type": "color",
+        "id": "background_color",
+        "label": "Background Color",
+        "default": "#F9F9F9"
+      },
+      {
+        "type": "html",
+        "id": "heading",
+        "label": "Heading",
+        "default": "At Servietto we <i>believe</i> in creating beautiful things for <i>thoughtful</i> people."
+      },
+      {
+        "type": "text",
+        "id": "paragraph",
+        "label": "Paragraph",
+        "default": "Our disposable hand towels and napkins were designed to look and feel just like luxurious linen so that ghosts everywhere can pamper their quests without the hassle."
+      }, {
+        "type": "text",
+        "id": "script_text",
+        "label": "Script Text",
+        "default": "Add a Timeless Touch."
+      }, {
+        "type": "image_picker",
+        "id": "top_image",
+        "label": "Top left image"
+      }, {
+        "type": "image_picker",
+        "id": "bottom_image",
+        "label": "Bottom left image"
+      }, {
+        "type": "image_picker",
+        "id": "right_image",
+        "label": "right image"
+      }
+    ],
+    "presets": [
+      {
+        "name": "servietto values"
+      }
+    ]
+  }
+{% endschema %}

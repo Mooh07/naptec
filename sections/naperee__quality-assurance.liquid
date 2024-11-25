@@ -1,0 +1,136 @@
+<style>
+  .naperee__qualities {
+    --background-color: {{ section.settings.background_color }};
+    --text-color: {{ section.settings.text_color }};
+  }
+</style>
+{{ "naperee__qualities.css" | asset_url | stylesheet_tag }}
+<section class="page-width naperee__qualities">
+  <h6 class="naperee__qualities-subheader">{{ section.settings.header }}</h6>
+  <h2 class="naperee__qualities-header">{{ section.settings.subheader }}</h2>
+  <ul class="naperee__qualities_images">
+    {% for block in section.blocks %}
+      {% case block.type %}
+        {% when 'quality' %}
+          <li>
+            {% if block.setting.url %}
+              <a href="{{ block.setting.url }}"></a>
+            {% endif %}
+            <div style="position: relative; display: flex;">
+              <img style="aspect-ratio: 1 / 1;object-fit: cover;" loading="lazy" alt="{{ block.settings.image.alt }} "src="{{ block.settings.image | image_url: width: block.settings.image.width }}" width="{{ block.settings.image.width }}px" height="{{ block.settings.image.height }}px" />
+              <div class="naperee__qualities-quality-text-container">
+                <p style="text-wrap: nowrap; margin-bottom: 0; margin-top: 0;">
+                  {{ block.settings.quality_text_line_1 }}
+                </p>
+                  <p style="text-wrap: nowrap; margin-left:{{ block.settings.second_line_left_margin }}px; margin-bottom: 0; margin-top: 0;">
+                  {{ block.settings.quality_text_line_2 }}
+                </p>
+              </div>
+            </div>
+          </li>
+      {% endcase %}
+    {% endfor %}
+  </ul>
+</section>
+{% schema %}
+  {
+    "name": "Naperee qualities",
+    "settings": [
+      {
+        "type": "text",
+        "id": "header",
+        "label": "header",
+        "default": "Versatility Redefined"
+      },
+      {
+        "type": "text",
+        "id": "subheader",
+        "label": "subheader",
+        "default": "Quality Assurance"
+      },
+      {
+        "type": "color",
+        "id": "background_color",
+        "label": "Background color",
+        "default": "#DDD4C8"
+      },
+      {
+        "type": "color",
+        "id": "text_color",
+        "label": "Text color",
+        "default": "#383735"
+      }
+    ],
+    "blocks": [
+      {
+        "type": "quality",
+        "name": "quality",
+        "limit": 4,
+        "settings": [
+          {
+            "type": "image_picker",
+            "id": "image",
+            "label": "image"
+          }, 
+          {
+            "type": "inline_richtext",
+            "id": "quality_text_line_1",
+            "label": "Quality first line"
+          },
+          {
+            "type": "inline_richtext",
+            "id": "quality_text_line_2",
+            "label": "Quality second line"
+          },
+          {
+            "type": "select",
+            "id": "text_position",
+            "label": "Text Vertical Position",
+            "default": "center",
+            "options": [
+              {
+                "value": "start",
+                "label": "Top"
+              },
+              {
+                "value": "center",
+                "label": "Middle"
+              },
+              {
+                "value": "end",
+                "label": "Bottom"
+              }
+            ]
+          },
+          {
+            "type": "range",
+            "id": "second_line_left_margin",
+            "label": "Second Line Left Margin",
+            "min": 0,
+            "max": 100,
+            "step": 1,
+            "unit": "px",
+            "default": 0
+          },
+          {
+            "type": "text",
+            "id": "feature_description",
+            "label": "Feature description"
+          },
+          {
+            "type": "url",
+            "id": "url",
+            "label": "Item URL"
+          }
+        ]
+      }
+    ],
+    "presets": [
+      {
+        "name": "Naperee qualities"
+      }
+    ]
+  }
+{% endschema %}
+
+

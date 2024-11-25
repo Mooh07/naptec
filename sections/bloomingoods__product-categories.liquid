@@ -1,0 +1,99 @@
+<style>
+  .bloomingoods__product-categories {
+    --section-color: {{ section.settings.section_color }};
+    --section-background-color: {{ section.settings.background_color }};
+  }
+</style>
+{{ 'bloomingoods__product-categories.css' | asset_url | stylesheet_tag }}
+<section class="bloomingoods__product-categories page-width">
+  <div class="bloomingoods__product-categories-text">
+    <h2>
+      {{ section.settings.heading | capitalize }}
+    </h2>
+    <p>
+      {{ section.settings.small_text }}
+    </p>
+  </div>
+  <div class="bloomingoods__product-categories-list">
+    <ul>
+      {% for block in section.blocks %}
+        {% case block.type %}
+          {% when "category" %}
+            <li>
+              <img
+                src="{{ block.settings.image | image_url: width: block.settings.image.width }}"
+                alt="{{ block.settings.image.alt }}"
+                width="{{ block.settings.image.width }}"
+                height="{{ block.settings.image.height }}"
+                loading="lazy"
+              >
+              <span>
+                {{ block.settings.text  }}
+              </span>
+              <a href="{{ block.settings.url }}"></a>
+            </li>
+        {% endcase %}
+      {% endfor %}
+    </ul>
+  </div>
+</section>
+{% schema %}
+  {
+    "name": "Bg prod categories",
+    "settings": [
+      {
+        "type": "color",
+        "id": "section_color",
+        "label": "Section text color",
+        "info": "Main text color for this section"
+      },
+      {
+        "type": "color",
+        "id": "background_color",
+        "label": "Section background color",
+        "info": "Background color for this section"
+      },
+      {
+        "type": "text",
+        "id": "heading",
+        "label": "heading",
+        "default": "Product Categories"
+      },
+      {
+        "type": "text",
+        "id": "small_text",
+        "label": "Small text",
+        "default": "Each item in our collection is thoughtfully chosen to bring joy and elegance into your home, reflecting our commitment to quality and uniqueness.",
+        "info": "controls the small paragraph under the heading"
+      },
+    ],
+    "blocks": [
+      {
+        "type": "category",
+        "name": "Category",
+        "settings": [
+          {
+            "type": "image_picker",
+            "id": "image",
+            "label": "Image"
+          },
+          {
+            "type": "text",
+            "id": "text",
+            "label": "Category name"
+          },
+          {
+            "type": "url",
+            "id": "url",
+            "label": "URL to category"
+          }
+        ]
+      }
+    ],
+    "presets": [
+      {
+        "name": "Bg prod categories"
+      }
+    ]
+  }
+{% endschema %}

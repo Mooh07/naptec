@@ -1,0 +1,153 @@
+<style>
+  .naperee__welcome-section {
+    --text-color: {{ section.settings.text_color }};
+    --background-color: {{ section.settings.background_color }};
+    --block-text-color: {{ section.settings.block_text_color }};
+    --block-background-color: {{ section.settings.block_background_color }};
+  }
+</style>
+
+{{ 'naperee__welcome-section.css' | asset_url | stylesheet_tag }}
+
+<section class="page-width naperee__welcome-section">
+  <div class="naperee__welcome-section_wrapper">
+    <div class="naperee__welcome-section_image-wrapper welcome-section-image-left welcome-section-part">
+      <img
+        src="{{ section.settings.left_image | image_url: width: section.settings.left_image.width }}"
+        width="{{ section.settings.left_image.width }}"
+        height="{{ section.settings.left_image.height }}"
+        loading="lazy"
+      >
+    </div>
+    <div class="naperee__welcome-section_body welcome-section-part">
+      <h6 class="naperee__welcome-section_heading">{{ section.settings.section_title }}</h6>
+      {{ section.settings.main_text_title }}
+      <p class="naperee__welcome-section_text-body">{{ section.settings.main_text_body }}</p>
+      <div class="naperee__welcome-section_body-product-feature">
+        <ul>
+          {% for block in section.blocks %}
+            {% case block.type %}
+              {% when 'product-feature' %}
+                <li class="product-feature">
+                  <div>
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 291.57 358.5">
+                      <defs><style>.cls-1{fill:var(--block-background-color);stroke:#383735;stroke-miterlimit:10;stroke-width:3.5px;}</style></defs><g id="Layer_2" data-name="Layer 2"><g id="Layer_1-2" data-name="Layer 1"><polygon class="cls-1" points="1.75 29.22 29.28 1.75 264.04 1.75 289.82 27.47 289.82 332.9 265.92 356.75 29.78 356.75 2.82 329.84 1.75 29.22"/></g></g>
+                    </svg>
+
+                    <div class="product-feature-icon-container">
+                      <img
+                        src="{{ block.settings.product_feature_icon | image_url: width: block.settings.product_feature_icon.width }}"
+                        width="{{ block.settings.product_feature_icon.width }}"
+                        height="{{ block.settings.product_feature_icon.height }}"
+                        loading="lazy"
+                      >
+                    </div>
+                    <div class="product-feature-description-container">
+                      {% liquid
+                        assign first_word = block.settings.product_feature_description | split: ' ' | first
+                        assign rest = block.settings.product_feature_description | replace: first_word, '' | strip
+                      %}
+                      <h6>
+                        <span>{{ first_word }}</span> <br>
+                        <span>{{ rest }}</span>
+                      </h6>
+                    </div>
+                  </div>
+                </li>
+            {% endcase %}
+          {% endfor %}
+        </ul>
+      </div>
+    </div>
+    <div class="naperee__welcome-section_image-wrapper welcome-section-image-right welcome-section-part">
+      <img
+        src="{{ section.settings.right_image | image_url: width: section.settings.right_image.width }}"
+        width="{{ section.settings.right_image.width }}"
+        height="{{ section.settings.right_image.height }}"
+        loading="lazy"
+      >
+    </div>
+  </div>
+</section>
+{% schema %}
+{
+  "name": "Naperee welcome section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "section_title",
+      "label": "Section title",
+      "default": "Welcome to Napree"
+    },
+    {
+      "type": "richtext",
+      "id": "main_text_title",
+      "label": "Main text title",
+      "default": "<h2>Discover the <i>luxury napkins</i> created for your <i>finest moments.</i></h2>"
+    },
+    {
+      "type": "text",
+      "id": "main_text_body",
+      "label": "Main text body",
+      "default": "Our commitment to excellence ensures that every Napree product not only enhances the aesthetics of your table but also adds a touch of refinement to your dining occasions."
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Text color",
+      "default": "#373835"
+    },
+    {
+      "type": "image_picker",
+      "id": "left_image",
+      "label": "Left image"
+    },
+    {
+      "type": "image_picker",
+      "id": "right_image",
+      "label": "Right image"
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Background color",
+      "default": "#DAD4C8"
+    },
+    {
+      "type": "color",
+      "id": "block_background_color",
+      "label": "Product feature background color",
+      "default": "#fff"
+    },
+    {
+      "type": "color",
+      "id": "block_text_color",
+      "label": "Product feature text color",
+      "default": "#373835"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "product-feature",
+      "name": "Product feature",
+      "settings": [
+        {
+          "type": "image_picker",
+          "label": "feature icon",
+          "id": "product_feature_icon"
+        },
+        {
+          "type": "text",
+          "label": "feature description",
+          "id": "product_feature_description"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Naperee welcome section"
+    }
+  ]
+}
+{% endschema %}

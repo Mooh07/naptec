@@ -1,0 +1,175 @@
+.naptec__our-brands {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  padding: 112px 146px;
+}
+
+.naptec__our-brands-title h2 {
+  margin: 0;
+  font-family: "faktum";
+  font-size: 52px;
+  font-weight: 500;
+  line-height: 96%;
+  text-align: center;
+  margin-bottom: 80px;
+}
+
+.naptec__our-brands-list ul {
+  padding: 0;
+  margin: 0;
+  display: flex;
+  list-style: none;
+  width: 100%;
+  justify-content: space-between;
+}
+
+.naptec__our-brands-list ul li {
+  width: calc(25% - 100px);
+  position: relative;
+  border-radius: 50%;
+  overflow: hidden;
+}
+.naptec__our-brands-list ul li::after {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  content: "";
+  display: block;
+  background-color: rgba(0, 0, 0, 0.2);
+  pointer-events: none;
+}
+.naptec__our-brands-list ul li a {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+.naptec__our-brands-list ul li a .hidden-span {
+  visibility: hidden;
+}
+
+.naptec__our-brands-brand-background-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  aspect-ratio: 1/1;
+}
+.naptec__our-brands-brand-logo-image {
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 90%;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+  pointer-events: auto;
+  transition: 500ms ease;
+  width: 100%;
+  height: 100%;
+}
+.naptec__our-brands-brand-logo-image:hover > img {
+  transform: scale(0.6) translate(0, -20px);
+  transition: 500ms ease;
+
+  bottom: 0;
+}
+.naptec__our-brands-brand-logo-image:hover > div {
+  opacity: 1;
+  transition: 500ms ease;
+}
+.naptec__our-brands-brand-logo-image > div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  pointer-events: none;
+  opacity: 0;
+  transition: 500ms ease;
+}
+.naptec__our-brands-brand-logo-image > div p {
+  text-align: center;
+  margin: 0;
+  color: #fff;
+  text-align: center;
+  font-family: "Faktum";
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: 133.333%;
+}
+.naptec__our-brands-brand-logo-image > div span {
+  border-bottom: 1px solid white;
+}
+
+.naptec__our-brands-brand-logo-image img {
+  /* width: 60%; */
+  height: auto;
+  max-width: 100%;
+  pointer-events: none;
+  transition: 500ms ease;
+  position: relative;
+  bottom: -30px;
+}
+
+@media screen and (max-width: 1500px) {
+  .naptec__our-brands-list ul li {
+    width: calc(25% - 50px);
+  }
+}
+@media screen and (max-width: 1300px) {
+  .naptec__our-brands-list ul li {
+    width: calc(25% - 30px);
+  }
+}
+@media screen and (max-width: 1250px) {
+  .naptec__our-brands {
+    padding: 10rem 4rem;
+  }
+  .naptec__our-brands-list ul {
+    flex-wrap: wrap;
+    row-gap: 100px;
+  }
+  /* .naptec__our-brands-list ul li {
+    width: calc(50% - 100px);
+  } */
+}
+@media screen and (max-width: 1250px) {
+  .naptec__our-brands-list ul {
+    flex-wrap: wrap;
+    row-gap: 30px;
+  }
+}
+
+@media screen and (max-width: 992px) {
+  .naptec__our-brands {
+    padding: 8rem 4rem;
+  }
+}
+@media screen and (max-width: 768px) {
+  .naptec__our-brands-list ul li {
+    width: calc(50% - 30px);
+  }
+}
+@media screen and (max-width: 600px) {
+  .naptec__our-brands {
+    padding: 4.8rem 1.6rem;
+  }
+  .naptec__our-brands-list ul li {
+    width: calc(100% - 0px);
+  }
+}

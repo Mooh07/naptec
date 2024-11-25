@@ -1,0 +1,22 @@
+{% if product.metafields[namespace][key].size > 0 %}
+  <li>
+    <span class="product__meta-details-title">{{ label }}</span>
+    <span class="product__meta-details-value">{{ product.metafields[namespace][key] }}</span>
+  </li>
+{% endif %}
+{% if product.selected_or_first_available_variant.metafields[namespace][key].size > 0 %}
+  <li>
+    <span class="product__meta-details-title">{{ label }}</span>
+    <span class="product__meta-details-value">
+      {{- product.selected_or_first_available_variant.metafields[namespace][key] -}}
+    </span>
+  </li>
+{% endif %}
+{% if label and value %}
+  <li>
+    <span class="product__meta-details-title">{{ label }}</span>
+    <span class="product__meta-details-value">
+      {{- value -}}
+    </span>
+  </li>
+{% endif %}

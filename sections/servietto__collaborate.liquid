@@ -1,0 +1,121 @@
+<style>
+  .servietto__collaborate {
+    --background-color: {{ section.settings.background_color }};
+    --text-color: {{ section.settings.text_color }};
+    --button-label-color: {{ section.settings.button_label_color }};
+    --button-border-color: {{ section.settings.button_border_color }};
+  }
+</style>
+{{ 'servietto__collaborate.css' | asset_url | stylesheet_tag }}
+<section class="page-width servietto__collaborate">
+  {% liquid
+    assign heading_top_last_word = section.settings.upper_title | split: ' ' | last
+  
+  %}
+  <h2>
+    {{ section.settings.upper_title | remove: heading_top_last_word }}
+    <span>{{ heading_top_last_word }}</span>
+  </h2>
+  <div class="servietto__collaborate-content">
+    <img 
+      src="{{ section.settings.first_image | image_url: width: section.settings.first_image.width }}"
+      alt="{{ section.settings.first_image.alt }}"
+      width="{{ section.settings.first_image.width }}"
+      height="{{ section.settings.first_image.height }}"
+      loading="lazy"
+    />
+    <div class="servietto__collaborate-content-middle">
+      <h2>{{ section.settings.lower_title }}</h2>
+        <img 
+          src="{{ section.settings.second_image | image_url: width: section.settings.second_image.width }}"
+          alt="{{ section.settings.second_image.alt }}"
+          width="{{ section.settings.second_image.width }}"
+          height="{{ section.settings.second_image.height }}"
+          loading="lazy"
+      />
+    </div>
+    <div class="servietto__collaborate-content-text">
+      <p>
+        {{ section.settings.text }}
+      </p>
+      <a href="{{ section.settings.cta_url }}">
+        {{ section.settings.cta_text }}
+      </a>
+    </div>
+  </div>
+</section>
+{% schema %}
+  {
+    "name": "Servietto collaborate",
+    "settings": [
+      {
+        "type": "text",
+        "id": "upper_title",
+        "label": "Heading part one",
+        "default": "Interested in collaborating "
+      },
+      {
+        "type": "text",
+        "id": "lower_title",
+        "label": "Heading part two",
+        "default": "with Servietto?"
+      },
+      {
+        "type": "image_picker",
+        "id": "first_image",
+        "label": "First image"
+      },
+      {
+        "type": "image_picker",
+        "id": "second_image",
+        "label": "Second image"
+      },
+      {
+        "type": "text",
+        "id": "text",
+        "label": "Text",
+        "default": "Joining as a Servietto wholesale partner is hassle-free. Just fill out our wholesale account registration form, and our team will promptly contact you to delve into your specific needs and swiftly set up your wholesale account."
+      },
+      {
+        "type": "url",
+        "id": "cta_url",
+        "label": "Call to action button url"
+      },
+      {
+        "type": "text",
+        "id": "cta_text",
+        "label": "Call to action button label",
+        "default": "Join us"
+      },
+      {
+        "type": "color",
+        "id": "background_color",
+        "label": "Background color",
+        "default": "#EAE7E2"
+      },
+      {
+        "type": "color",
+        "id": "text_color",
+        "label": "Text color",
+        "default": "#1C363D"
+      },
+      {
+        "type": "color",
+        "id": "button_label_color",
+        "label": "Button label color",
+        "default": "#292D32"
+      },
+      {
+        "type": "color",
+        "id": "button_border_color",
+        "label": "Button border color",
+        "default": "#000"
+      }
+    ],
+    "presets": [
+      {
+        "name": "Servietto collaborate"
+      }
+    ]
+  }
+{% endschema %}

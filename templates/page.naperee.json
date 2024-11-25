@@ -1,0 +1,341 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "layout": "theme.naperee",
+  "sections": {
+    "naperee_main_hero_mEjrEQ": {
+      "type": "naperee__main-hero",
+      "custom_css": [],
+      "settings": {
+        "background_image": "shopify://shop_images/new_bg.png",
+        "title": "<p>Elevate your dining </p><p>experience with Napree.</p>",
+        "subtitle": "Elegant, Durable, Premium napkins.",
+        "text_color": "#ffffff",
+        "cta_button_url": "",
+        "cta_button_text": "Get a Quote",
+        "button_label_color": "#292d32",
+        "button_background_color": "#ffffff"
+      }
+    },
+    "naperee_welcome_dzby8m": {
+      "type": "naperee__welcome",
+      "blocks": {
+        "product_feature_cWdqRa": {
+          "type": "product-feature",
+          "settings": {
+            "product_feature_icon": "shopify://shop_images/3d-modeling.png",
+            "product_feature_description": "Thick and Soft"
+          }
+        },
+        "product_feature_n4nr3N": {
+          "type": "product-feature",
+          "settings": {
+            "product_feature_icon": "shopify://shop_images/3d-modeling.png",
+            "product_feature_description": "Elegant Design"
+          }
+        },
+        "product_feature_TFrkHn": {
+          "type": "product-feature",
+          "settings": {
+            "product_feature_icon": "shopify://shop_images/3d-modeling.png",
+            "product_feature_description": "Great Absorption"
+          }
+        },
+        "product_feature_LA9qFc": {
+          "type": "product-feature",
+          "settings": {
+            "product_feature_icon": "shopify://shop_images/3d-modeling.png",
+            "product_feature_description": "Multi Purpose"
+          }
+        }
+      },
+      "block_order": [
+        "product_feature_cWdqRa",
+        "product_feature_n4nr3N",
+        "product_feature_TFrkHn",
+        "product_feature_LA9qFc"
+      ],
+      "settings": {
+        "section_title": "Welcome to Napree",
+        "main_text_title": "<h2>Discover the <em>luxury napkins</em> created for your <em>finest moments.</em></h2>",
+        "main_text_body": "Our commitment to excellence ensures that every Napree product not only enhances the aesthetics of your table but also adds a touch of refinement to your dining occasions.",
+        "text_color": "#373835",
+        "left_image": "shopify://shop_images/left_39d16f1d-6fc4-40fb-abde-26a85dbe1298.png",
+        "right_image": "shopify://shop_images/right_ecefba9a-338c-4506-b5f1-620862e1eb6f.png",
+        "background_color": "#dad4c8",
+        "block_background_color": "#ffffff",
+        "block_text_color": "#373835"
+      }
+    },
+    "naptec_main_hero_fxjbYa": {
+      "type": "naptec__main-hero",
+      "disabled": true,
+      "settings": {
+        "background": "shopify://shop_images/main_hero_background.jpg",
+        "header": "Style without <br> the hassle",
+        "subheading": "Premium, practical tabletop products,<br> and styles that wow.",
+        "cta-content": "get a quote",
+        "cta-url": ""
+      }
+    },
+    "naperee_screen_wide_image_aHkUxV": {
+      "type": "naperee__screen-wide-image",
+      "blocks": {
+        "word_gxPdU6": {
+          "type": "word",
+          "settings": {
+            "word": "talk",
+            "left_offset": 140,
+            "top_offset": 171,
+            "italic": false
+          }
+        },
+        "word_nWcnmC": {
+          "type": "word",
+          "settings": {
+            "word": "of",
+            "left_offset": -14,
+            "top_offset": 211,
+            "italic": false
+          }
+        },
+        "word_MzWKad": {
+          "type": "word",
+          "settings": {
+            "word": "the",
+            "left_offset": 60,
+            "top_offset": 233,
+            "italic": true
+          }
+        },
+        "word_iKmHzK": {
+          "type": "word",
+          "settings": {
+            "word": "table",
+            "left_offset": 172,
+            "top_offset": 283,
+            "italic": false
+          }
+        }
+      },
+      "block_order": [
+        "word_gxPdU6",
+        "word_nWcnmC",
+        "word_MzWKad",
+        "word_iKmHzK"
+      ],
+      "settings": {
+        "image": "shopify://shop_images/1_88b828a0-5cb4-494a-b615-c7887ba111db.png",
+        "text": "Whether you’re hosting at home, throwing a party, or want to give your public space a touch of class, you’re sure to find something you’ll love in our vast selection of quality napkins.",
+        "section_color": "#ffffff"
+      }
+    },
+    "naperee_product_categories_qWxr4x": {
+      "type": "naperee__product-categories",
+      "blocks": {
+        "category_mh99xB": {
+          "type": "category",
+          "settings": {
+            "image": "shopify://shop_images/image_6_31fc362d-f357-478a-8054-1cac34c3b9c7.png",
+            "category_name": "Natural Cloth",
+            "category_url": "shopify://collections/naperee-dinner-napkins"
+          }
+        },
+        "category_pkPW6F": {
+          "type": "category",
+          "settings": {
+            "image": "shopify://shop_images/image_7_0a9e4d03-0026-4850-a339-e34a264d1ce7.png",
+            "category_name": "Denim Cloth",
+            "category_url": "shopify://collections/naperee-cocktail-napkin"
+          }
+        },
+        "category_TwTyA6": {
+          "type": "category",
+          "settings": {
+            "image": "shopify://shop_images/3_724d332b-286a-413a-815b-af24ac27be71.png",
+            "category_name": "Quilted Napkins",
+            "category_url": "shopify://collections/naperee-lunchoen-napkin"
+          }
+        },
+        "category_eWPzCE": {
+          "type": "category",
+          "settings": {
+            "image": "shopify://shop_images/image_8_a5c955e7-22d1-4f55-88b5-7cb2fbc678b8.png",
+            "category_name": "3ply Napkins",
+            "category_url": "shopify://collections/naperee-guest-towels"
+          }
+        }
+      },
+      "block_order": [
+        "category_mh99xB",
+        "category_pkPW6F",
+        "category_TwTyA6",
+        "category_eWPzCE"
+      ],
+      "settings": {
+        "text_color": "#403c3c",
+        "background_color": "#ffffff",
+        "script_text": "Leading the fold",
+        "heading": "Product Categories"
+      }
+    },
+    "naperee_two_images_n3tk9Y": {
+      "type": "naperee__two-images",
+      "disabled": true,
+      "settings": {
+        "left-image": "shopify://shop_images/left-image.jpg",
+        "left-title": "Classic collection",
+        "left-text": "Explore Napree's Classic Collection, boasting timeless elegance and exceptional quality in a range of sophisticated colors",
+        "left_button_url": "",
+        "right-image": "shopify://shop_images/right-image_515f26de-8a89-41f0-95ba-e9b63b93080f.png",
+        "right-title": "Decorative napkins",
+        "right-text": "Indulge in Napree's Decorative Napkins, each intricately designed to add a touch of flair and personality to your dining ambiance.",
+        "right_button_url": "",
+        "button_label_color": "#ffffff",
+        "section_color": "#373835"
+      }
+    },
+    "naperee_quality_assurance_8t86NL": {
+      "type": "naperee__quality-assurance",
+      "blocks": {
+        "quality_m8ebCy": {
+          "type": "quality",
+          "settings": {
+            "image": "shopify://shop_images/4_c7aea279-107d-4c31-8e3a-8bdb84bab2b9.png",
+            "quality_text_line_1": "Bringing <em>style</em>",
+            "quality_text_line_2": "to the table",
+            "text_position": "end",
+            "second_line_left_margin": 65,
+            "feature_description": "",
+            "url": ""
+          }
+        },
+        "quality_xTe4UJ": {
+          "type": "quality",
+          "settings": {
+            "image": "shopify://shop_images/3_eaa3676a-1459-4211-a6b2-45d78ada1d08.png",
+            "quality_text_line_1": "<em>Extra</em>",
+            "quality_text_line_2": "absorbent.",
+            "text_position": "start",
+            "second_line_left_margin": 25,
+            "feature_description": "",
+            "url": ""
+          }
+        },
+        "quality_3GY79B": {
+          "type": "quality",
+          "settings": {
+            "image": "shopify://shop_images/2_5ae2f6bb-7f39-4a90-b5c7-e1e90101a1af.png",
+            "quality_text_line_1": "Superior",
+            "quality_text_line_2": "<em>design</em>",
+            "text_position": "end",
+            "second_line_left_margin": 60,
+            "feature_description": "",
+            "url": ""
+          }
+        },
+        "quality_gJHELH": {
+          "type": "quality",
+          "settings": {
+            "image": "shopify://shop_images/2_7d8041ff-ffac-4ea6-841d-97b4ca868b31.png",
+            "quality_text_line_1": "Elegance",
+            "quality_text_line_2": "for <em>all</em>.",
+            "text_position": "center",
+            "second_line_left_margin": 93,
+            "feature_description": "",
+            "url": ""
+          }
+        }
+      },
+      "block_order": [
+        "quality_m8ebCy",
+        "quality_xTe4UJ",
+        "quality_3GY79B",
+        "quality_gJHELH"
+      ],
+      "settings": {
+        "header": "Versatility Redefined",
+        "subheader": "Quality Assurance",
+        "background_color": "#ddd4c8",
+        "text_color": "#383735"
+      }
+    },
+    "naperee_bestsellers_Dj4cXp": {
+      "type": "naperee__bestsellers",
+      "blocks": {
+        "product_Pb8bkN": {
+          "type": "product",
+          "settings": {
+            "product": "100-linen-feel-colored-paper-napkins-decorative-cloth-like-beige-dinner-napkins-soft-and-absorbent-for-kitchen-party-wedding-bathroom-or-any-occasion-pack-of-100"
+          }
+        },
+        "product_pdqjKX": {
+          "type": "product",
+          "settings": {
+            "product": "1000-linen-feel-beverage-napkins-disposable-cocktail-napkins-soft-absorbant-elelgant-paper-napkins-for-bar-cafe-restaurant-or-event"
+          }
+        },
+        "product_j6Mc3K": {
+          "type": "product",
+          "settings": {
+            "product": "disposable-cloth-like-cocktail-napkins-100-pack-10-x-10-linen-feel-blue-beverage-paper-napkins-for-bar-cafe-wedding-or-party"
+          }
+        },
+        "product_4zrnBt": {
+          "type": "product",
+          "settings": {
+            "product": "disposable-napkins-with-pocket-for-flatware-100-pack-black-napkins-paper-for-wedding-dinner-or-party-built-in-pocket-for-silverware-prefolded"
+          }
+        }
+      },
+      "block_order": [
+        "product_Pb8bkN",
+        "product_pdqjKX",
+        "product_j6Mc3K",
+        "product_4zrnBt"
+      ],
+      "settings": {
+        "header": "Discover Your Style",
+        "collection": "",
+        "subheader": "Bestsellers",
+        "background_color": "#ffffff",
+        "text_color": "#383735"
+      }
+    },
+    "naperee_partnerships_rpqe9f": {
+      "type": "naperee__partnerships",
+      "settings": {
+        "left_image": "shopify://shop_images/big-left-img_1_1.png",
+        "section_title": "Stay Inspired",
+        "text_body_title": "Trusted Partnerships",
+        "text_body": "At Napree, we believe in the power of collaboration to achieve excellence. We are proud to partner with a select network of distributors, retailers, and event planners who share our commitment to quality and sophistication.",
+        "cta_button_text": "Become a partner",
+        "cta_button_url": "",
+        "right_image_top": "shopify://shop_images/top_right_img_1_1_1.png",
+        "right_image_bottom": "shopify://shop_images/bottom_right_img_2c8fd5d2-e70b-43e1-8092-75b510d11dbd.png",
+        "background_color": "#ddd4c8",
+        "text_color": "#383735",
+        "button_background_color": "#383735",
+        "button_label_color": "#ffffff"
+      }
+    }
+  },
+  "order": [
+    "naperee_main_hero_mEjrEQ",
+    "naperee_welcome_dzby8m",
+    "naptec_main_hero_fxjbYa",
+    "naperee_screen_wide_image_aHkUxV",
+    "naperee_product_categories_qWxr4x",
+    "naperee_two_images_n3tk9Y",
+    "naperee_quality_assurance_8t86NL",
+    "naperee_bestsellers_Dj4cXp",
+    "naperee_partnerships_rpqe9f"
+  ]
+}

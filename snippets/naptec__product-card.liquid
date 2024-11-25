@@ -1,0 +1,35 @@
+{% assign category_title = collection.title %}
+{% assign category_image = collection.featured_image %}
+{% if title %}
+  {% assign category_title = collection.title %}
+{% endif %}
+{% if image %}
+  {% assign category_image = image %}
+{% endif %}
+
+
+<div class="naptec__product-card">
+  <div class="naptec__product-card-image-container">
+    <img loading="lazy" src="{{ category_image | image_url: width: category_image.width }}" alt="{{ category_image.images.first.alt }}" width="{{ category_image.width }}" height="{{ category_image.height }}"/>
+  </div>
+  <div class="naptec__product-card-information-container">
+    <div class='naptec__product-card-information-top'>
+      {% assign firstWordSplitBySpace = category_title | upcase | split: " " | first %}
+      {% assign restOfTitle = category_title | upcase | replace: firstWordSplitBySpace, "" | strip %}
+      <h5>
+        <span>{{ firstWordSplitBySpace }}</span>
+        <span>{{ restOfTitle }}</span>
+      </h5>
+      <div class='naptec__product-card-arrow'>
+        <a href="{{ collection.url }}">
+          {% render 'naptec__arrow-circle' %}
+        </a>
+      </div>
+    </div>
+    {% comment %} <div class='naptec__product-card-information-bottom'>
+      <span>
+        10“x10” 1/4 Fold
+      </span>
+    </div> {% endcomment %}
+  </div>
+</div>

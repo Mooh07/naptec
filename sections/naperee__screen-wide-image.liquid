@@ -1,0 +1,103 @@
+<style>
+  .naperee__the-talk-of-the-table {
+    --section-color: {{ section.settings.section_color }};
+  }
+</style>
+{{ "naperee__screen-wide-image.css" | asset_url | stylesheet_tag }}
+<section class="page-width naperee__the-talk-of-the-table">
+  <div class="naperee__the-talk-of-the-table_image-wrapper">
+    <img
+      src="{{ section.settings.image | image_url: width: section.settings.image.width }}"
+      width="{{ section.settings.image.width }}"
+      height="{{ section.settings.image.height }}"
+      loading="lazy"
+    >
+  </div>
+  <div class="naperee__the-talk-of-the-table_text-container">
+    {{ section.settings.text }}
+    <div class="naperee__the-talk-of-the-table_title-container">
+      {% for block in section.blocks %}
+        {% case block.type %}
+          {% when 'word' %}
+            <h6
+              style="
+                left: {{ block.settings.left_offset }}px;
+                top: {{ block.settings.top_offset }}px;
+                font-style: {% if block.settings.italic == true %} italic {% else %} normal {% endif %}
+              "
+            >
+              {{ block.settings.word }}
+            </h6>
+        {% endcase %}
+      {% endfor %}
+    </div>
+  </div>
+</section>
+{% schema %}
+{
+  "name": "The talk of the table",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Image"
+    },
+    {
+      "type": "text",
+      "id": "text",
+      "label": "Section's text body",
+      "default": "Whether you’re hosting at home, throwing a party, or want to give your public space a touch of class, you’re sure to find something you’ll love in our vast selection of quality napkins."
+    },
+    {
+      "type": "color",
+      "id": "section_color",
+      "label": "Text color",
+      "default": "#fff"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "word",
+      "name": "word",
+      "settings": [
+        {
+          "type": "text",
+          "id": "word",
+          "label": "Word"
+        },
+        {
+          "type": "range",
+          "id": "left_offset",
+          "min": -14,
+          "max": 186,
+          "step": 2,
+          "unit": "px",
+          "label": "Left offset",
+          "default": 0
+        },
+        {
+          "type": "range",
+          "id": "top_offset",
+          "min": 115,
+          "max": 295,
+          "step": 2,
+          "unit": "px",
+          "label": "Top offset",
+          "default": 115
+        },
+        {
+          "type": "checkbox",
+          "id": "italic",
+          "label": "Italic",
+          "default": false
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "The talk of the table"
+    }
+  ]
+}
+{% endschema %}

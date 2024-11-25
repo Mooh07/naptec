@@ -1,0 +1,68 @@
+.naptec__product-card {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  height: 100%;
+  position: relative;
+}
+.naptec__product-card-image-container {
+  display: flex;
+  background-color: white;
+  border-radius: 12px;
+  flex: 1;
+  overflow: hidden;
+}
+.naptec__product-card-image-container img {
+  /* max-height: 452px; */
+  object-fit: cover;
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  min-height: 452px;
+}
+.naptec__product-card-information-container {
+  width: 100%;
+  flex-shrink: 0;
+}
+.naptec__product-card-information-top {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  align-items: center;
+}
+.naptec__product-card-information-top h5 {
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 28px;
+  text-align: left;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  white-space: nowrap;
+}
+.naptec__product-card-arrow {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.naptec__product-card-arrow > a svg {
+  transition: var(--duration-default) ease;
+}
+.naptec__product-card-arrow > a:hover svg {
+  transform: rotate(-90deg);
+  fill: white;
+  transition: var(--duration-default) ease;
+}
+.naptec__product-card-arrow > a:hover path {
+  fill: rgb(var(--color-background));
+  transition: var(--duration-default) ease;
+}
+
+.naptec__product-card-arrow a::after {
+  content: " ";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}

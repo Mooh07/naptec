@@ -1,0 +1,83 @@
+<style>
+  .naperee__bestsellers {
+    --background-color: {{ section.settings.background_color }};
+    --text-color: {{ section.settings.text_color }};
+  }
+</style>
+{{ "naperee__bestsellers.css" | asset_url | stylesheet_tag }}
+<section class="page-width naperee__bestsellers ">
+  <h6 class="naperee__bestsellers-subheader">{{ section.settings.header }}</h6>
+  <h2 class="naperee__bestsellers-header">{{ section.settings.subheader }}</h2>
+  <ul class="naperee__bestsellers_products">
+    {% if section.settings.collection != blank %}
+      {% for product in section.settings.collection.products %}
+        {% render 'naperee__product-card', product: product %}
+      {% endfor %}
+      {% else %}
+          {% for block in section.blocks %}
+      {% case block.type %}
+        {% when 'product' %}
+          <li>
+            {% render 'naperee__product-card', product: block.settings.product %}
+          </li>
+      {% endcase %}
+    {% endfor %}
+    {% endif %}
+  </ul>
+</section>
+
+{% schema %}
+{
+  "name": "Bestsellers",
+  "settings": [
+    {
+      "type": "text",
+      "id": "header",
+      "label": "header",
+      "default": "Discover Your Style"
+    },
+    {
+      "type": "collection",
+      "id": "collection",
+      "label": "collection"
+    },
+    {
+      "type": "text",
+      "id": "subheader",
+      "label": "subheader",
+      "default": "Bestsellers"
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Background color",
+      "default": "#fff"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Text color",
+      "default": "#383735"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "product",
+      "name": "product",
+      "limit": 4,
+      "settings": [
+        {
+          "type": "product",
+          "id": "product",
+          "label": "product"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Bestsellers"
+    }
+  ]
+}
+{% endschema %}

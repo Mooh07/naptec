@@ -1,0 +1,93 @@
+<style>
+  .lintext__main-hero {
+    --text-color: {{ section.settings.text_color }};
+    --background-color: {{ section.settings.background_color }};
+    --button-label-color: {{ section.settings.button_label_color }};
+    --button-background-color: {{ section.settings.button_background_color }};
+  }
+</style>
+{{ 'lintext__main-hero.css' | asset_url | stylesheet_tag }}
+<section class="page-width lintext__main-hero">
+  <div class="lintext__main-hero-content">
+    {{ section.settings.heading }}
+
+    <p>
+      {{ section.settings.paragraph }}
+    </p>
+    <a href="{{ section.settings.cta_button_url }}">{{ section.settings.cta_button_label | upcase }}</a>
+  </div>
+  <div class="lintext__main-hero-images">
+    {% comment %} <img
+      src="{{ section.settings.background-image |image_url: width: section.settings.background-image.width }}"
+      alt="{{ section.settings.background-image.alt }}"
+      width="{{ section.settings.background-image.width }}px"
+      height="{{ section.settings.background-image.height }}px"
+    > {% endcomment %}
+    {% render 'lintext__heading-pattern' %} 
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Lintext main hero",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "background-image",
+      "label": "Background image"
+    },
+    {
+      "type": "richtext",
+      "id": "heading",
+      "label": "Section heading",
+      "default": "<h1>A touch <br>of class.</h1>"
+    },
+    {
+      "type": "text",
+      "id": "paragraph",
+      "label": "Text content",
+      "default": "We design elegant disposables that feel like heaven at the fingertips – and achieve the delicate balance between form and function, aesthetic and hygiene."
+    },
+    {
+      "type": "text",
+      "id": "cta_button_label",
+      "label": "Button label",
+      "default": "Get a Quote"
+    },
+    {
+      "type": "url",
+      "id": "cta_button_url",
+      "label": "Button url"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Text color",
+      "default": "#1A3748"
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Background color",
+      "default": "#F4F4F4"
+    },
+    {
+      "type": "color",
+      "id": "button_background_color",
+      "label": "Button background color",
+      "default": "#1A3748"
+    },
+    {
+      "type": "color",
+      "id": "button_label_color",
+      "label": "Button label color",
+      "default": "#fff"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Lintext main hero"
+    }
+  ]
+}
+{% endschema %}

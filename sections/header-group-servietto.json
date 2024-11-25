@@ -1,0 +1,67 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "name": "t:sections.header.name",
+  "type": "header",
+  "sections": {
+    "header": {
+      "type": "header",
+      "disabled": true,
+      "settings": {
+        "logo_image": "shopify://shop_images/Naperee_logo_png.png",
+        "cta-content": "get a quote",
+        "cta_url": "",
+        "logo_position": "middle-center",
+        "menu": "main-menu",
+        "menu_type_desktop": "dropdown",
+        "sticky_header_type": "on-scroll-up",
+        "show_line_separator": true,
+        "color_scheme": "scheme-1",
+        "menu_color_scheme": "scheme-1",
+        "header_background": "#073b43",
+        "text_color": "#ffffff",
+        "enable_country_selector": true,
+        "enable_language_selector": true,
+        "mobile_logo_position": "center",
+        "margin_bottom": 0,
+        "padding_top": 20,
+        "padding_bottom": 20
+      }
+    },
+    "servietto_header_G7bW6h": {
+      "type": "servietto__header",
+      "settings": {
+        "root-page": "servietto",
+        "header_background": "#eae7e2",
+        "text_color": "#073b43",
+        "logo_image": "shopify://shop_images/logo_2d9c8f68-45b4-4768-a2d1-ad5487f89ef5.png",
+        "cta-content": "get a quote",
+        "cta_url": "",
+        "logo_position": "middle-left",
+        "menu": "servietto-header-menu",
+        "menu_type_desktop": "dropdown",
+        "sticky_header_type": "on-scroll-up",
+        "show_line_separator": true,
+        "color_scheme": "",
+        "menu_color_scheme": "scheme-f477799e-5ebb-46a2-a5f2-9b315e78eb17",
+        "enable_country_selector": false,
+        "enable_language_selector": false,
+        "mobile_logo_position": "center",
+        "margin_bottom": 0,
+        "padding_top": 20,
+        "padding_bottom": 20
+      }
+    }
+  },
+  "order": [
+    "header",
+    "servietto_header_G7bW6h"
+  ]
+}

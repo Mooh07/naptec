@@ -1,0 +1,95 @@
+    <a href="{{ product.url }}">
+
+<div class="naperee__product-card-img-container">
+    <div>
+      <img
+        class="naperee__product-card-img"
+        src="{{ product | image_url: width: product.images.first.width }}"
+        alt="{{ product.images.first.alt }}"
+        width="{{ product.images.first.width }}"
+        height="332px"
+        loading="lazy"
+      >
+    </div>
+
+</div>
+<div class="naperee__product-card-information">
+  <p class="naperee__product-card-title">
+      {{ product.title }}
+  </p>
+  <div class="naperee__product-card-review">
+    <span>
+      {% for i in (1..5) %}
+        {% render 'naperee__review-star' %}
+      {% endfor %}
+    </span>
+    <span>(20 reviews)</span>
+  </div>
+  <div class="naperee__product-card-price">
+    {% render 'price', product: product, show_compare_at_price: false %}
+  </div>
+</div>
+    </a>
+      
+<style>
+  .naperee__product-card-img-container {
+    width: 100%;
+    position: relative;
+  }
+  .naperee__product-card-img-container > div {
+    padding-bottom: 100%;
+  }
+  .naperee__product-card-img {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+  }
+  .naperee__product-card-information {
+    width: 100%;
+    color: #383735;
+    padding-top: 1.6rem;
+  }
+  .naperee__product-card-title {
+    margin:0;
+    font-family: 'dm sans';
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 24px;
+    text-align: left;
+    padding-bottom: 8px;
+  }
+  .naperee__product-card-title a {
+    color: rgba(56, 55, 53, 1);
+    text-decoration: none;
+  }
+  .naperee__product-card-review {
+    display: flex;
+    gap: 12px;
+    padding-bottom: 12px;
+  }
+  .naperee__product-card-review {
+    font-family: 'dm sans';
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 24px;
+    text-align: left;
+  }
+  .naperee__product-card-price {
+    font-family: DM Sans;
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 28px;
+    text-align: left;
+
+  }
+  .naperee__product-card-title a::after {
+    bottom: 0;
+    content: '';
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    z-index: 1;
+  }
+</style>

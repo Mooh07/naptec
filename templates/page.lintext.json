@@ -1,0 +1,218 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "layout": "theme.lintext",
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "padding_top": 28,
+        "padding_bottom": 28
+      }
+    },
+    "lintext_main_hero_7jNgch": {
+      "type": "lintext__main-hero",
+      "settings": {
+        "background-image": "shopify://shop_images/header-image.png",
+        "heading": "<h1>A touch <br/>of class.</h1>",
+        "paragraph": "We design elegant disposables that feel like heaven at the fingertips – and achieve the delicate balance between form and function, aesthetic and hygiene.",
+        "cta_button_label": "Get a Quote",
+        "cta_button_url": "",
+        "text_color": "#1a3748",
+        "background_color": "#ede6db",
+        "button_background_color": "#f76752",
+        "button_label_color": "#ffffff"
+      }
+    },
+    "lintext_product_features_RCxcFK": {
+      "type": "lintext__product-features",
+      "blocks": {
+        "feature_FPJW8x": {
+          "type": "feature",
+          "settings": {
+            "feature_icon": "shopify://shop_images/Pillow_soft.png",
+            "feature_description": "Pillow soft"
+          }
+        },
+        "feature_E37HMW": {
+          "type": "feature",
+          "settings": {
+            "feature_icon": "shopify://shop_images/Air-laid_Technology.png",
+            "feature_description": "Air-laid Technology"
+          }
+        },
+        "feature_WH8VVr": {
+          "type": "feature",
+          "settings": {
+            "feature_icon": "shopify://shop_images/Elegant_Design.png",
+            "feature_description": "Elegant Design"
+          }
+        },
+        "feature_MmtzK7": {
+          "type": "feature",
+          "settings": {
+            "feature_icon": "shopify://shop_images/ultra-absorbent.png",
+            "feature_description": "ultra-absorbent"
+          }
+        },
+        "feature_Qed69R": {
+          "type": "feature",
+          "settings": {
+            "feature_icon": "shopify://shop_images/premium_thickness.png",
+            "feature_description": "premium thickness"
+          }
+        }
+      },
+      "block_order": [
+        "feature_FPJW8x",
+        "feature_E37HMW",
+        "feature_WH8VVr",
+        "feature_MmtzK7",
+        "feature_Qed69R"
+      ],
+      "settings": {
+        "background": "shopify://shop_images/background_e97b609d-bf8a-4c37-a295-886bc7b55d23_1.png",
+        "text": "<h2>At Lintext, we have <br/>a soft spot for small, <br/>thoughtful touches.</h2>",
+        "logo": "shopify://shop_images/logo_ef6b9b55-d899-400f-80ca-634176595aa6.png",
+        "text_color": "#ffffff"
+      }
+    },
+    "lintext_mission_DrwrKW": {
+      "type": "lintext__mission",
+      "settings": {
+        "image": "shopify://shop_images/image_660605ee-6d39-4602-baec-6929af37e111_1_1.png",
+        "heading": "Our mission",
+        "text": "<p>Our mission is simple- design elegant disposables that feel like heaven at the fingertips – and achieve the delicate balance between form and function, aesthetic and hygiene. </p><p><br/> With a line of hand towels and napkins that look and feel just like luxurious linen, hosts everywhere can pamper their guests and then throw out the mess.</p>",
+        "background_color": "#f4f4f4",
+        "text_color": "#1a3748"
+      }
+    },
+    "lintext_product_line_htdAEU": {
+      "type": "lintext__product-line",
+      "blocks": {
+        "card_QJMbfH": {
+          "type": "card",
+          "settings": {
+            "image": "shopify://shop_images/1_592a5074-0d22-4d6c-a57f-0b67c1b33ba6.png",
+            "title": "Guest Towels",
+            "subtitle": "Towels to elevate your home",
+            "url": "shopify://collections/lintext-guest-towels"
+          }
+        },
+        "card_8fGVQN": {
+          "type": "card",
+          "settings": {
+            "image": "shopify://shop_images/2_645e9e8a-5b29-4ca4-bd9d-752a1724dcfd.png",
+            "title": "Dinner Napkins",
+            "subtitle": "Use and toss, no need to wash",
+            "url": "shopify://collections/lintext"
+          }
+        },
+        "card_fmqzBr": {
+          "type": "card",
+          "settings": {
+            "image": "shopify://shop_images/Rectangle_18.png",
+            "title": "Beverage Napkins",
+            "subtitle": "Hygienic and hassle-free",
+            "url": "shopify://collections/lintext-beverage-napkins"
+          }
+        },
+        "card_QrXtpW": {
+          "type": "card",
+          "settings": {
+            "image": "shopify://shop_images/image_9.png",
+            "title": "Luncheon Tablecloths",
+            "subtitle": "Elegance for every dining occasion",
+            "url": "shopify://collections/lintext"
+          }
+        }
+      },
+      "block_order": [
+        "card_QJMbfH",
+        "card_8fGVQN",
+        "card_fmqzBr",
+        "card_QrXtpW"
+      ],
+      "settings": {
+        "heading": "Products",
+        "subheading": "Elevating Every Detail of Your Table Setting",
+        "background": "shopify://shop_images/background-2_66519a48-d7bc-4f54-9ce6-de1f5359785d.png",
+        "background_color": "#dad4c7",
+        "text_color": "#1a3748",
+        "card_color": "#ffffff"
+      }
+    },
+    "lintext_bestsellers_rgtQRg": {
+      "type": "lintext__bestsellers",
+      "blocks": {
+        "product_nhJVbY": {
+          "type": "product",
+          "settings": {
+            "product": "lintext-disposable-linen-feel-guest-towels-medium-size-pack-of-150-disposable-cloth-like-hand-towels-soft-and-absorbent-paper-napkin-for-kitchen-bathroom-party-wedding-or-event"
+          }
+        },
+        "product_J8Vh9c": {
+          "type": "product",
+          "settings": {
+            "product": "disposable-guest-towel-paper-napkin-disposable-cloth-like-guest-towels-soft-and-absorbent-tissue-paper-for-bathroom-kitchen-or-event-pack-of-100-12-x-17"
+          }
+        },
+        "product_R3gziR": {
+          "type": "product",
+          "settings": {
+            "product": "750-linen-feel-lunch-napkins-disposable-cloth-like-luncheon-paper-napkins-soft-and-absorbent-cloth-like-napkins-for-kitchen-parties-weddings-dinners-or-events-pack-of-750"
+          }
+        },
+        "product_9Uwxyc": {
+          "type": "product",
+          "settings": {
+            "product": "750-linen-feel-dessert-and-beverage-napkins-disposable-cloth-like-cocktail-paper-napkins-soft-and-absorbent-for-bar-restaurant-cafe-wedding-parties-750-pack"
+          }
+        }
+      },
+      "block_order": [
+        "product_nhJVbY",
+        "product_J8Vh9c",
+        "product_R3gziR",
+        "product_9Uwxyc"
+      ],
+      "settings": {
+        "heading": "Bestsellers",
+        "text": "Explore our curated collection of premium-quality tableware and discover the perfect pieces to elevate every detail of your table setting with sophistication and style.",
+        "collection": "",
+        "background_color": "#ffffff",
+        "text_color": "#1a3748"
+      }
+    },
+    "lintext_experience_the_difference_dVL6xi": {
+      "type": "lintext__experience-the-difference",
+      "settings": {
+        "background": "shopify://shop_images/background_9ac56dc0-ce12-4a65-8438-0578deb0bbb6_2.png",
+        "heading": "Experience the Difference",
+        "content": "Discover the luxury of Lintext and elevate your hosting experience to new heights. Whether you're hosting a lavish dinner party or an intimate gathering, our elegant disposables will add a touch of sophistication to any occasion. Indulge in the beauty of simplicity with Lintext—where elegance meets convenience.",
+        "cta_url": "",
+        "cta_content": "Get a Quote",
+        "background_color": "#f4f4f4",
+        "text_color": "#1a3748",
+        "button_label_color": "#ffffff"
+      }
+    }
+  },
+  "order": [
+    "main",
+    "lintext_main_hero_7jNgch",
+    "lintext_product_features_RCxcFK",
+    "lintext_mission_DrwrKW",
+    "lintext_product_line_htdAEU",
+    "lintext_bestsellers_rgtQRg",
+    "lintext_experience_the_difference_dVL6xi"
+  ]
+}

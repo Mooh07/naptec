@@ -1,0 +1,105 @@
+<style>
+  .naperee__two-images {
+    --section-color: {{ section.settings.section_color }};
+    --button-label-color: {{ section.settings.button_label_color }}
+  }
+</style>
+{{ "naperee__two-images.css" | asset_url | stylesheet_tag }}
+<section class="page-width naperee__two-images">
+  <div class="naperee__two-images-wrapper">
+    <div class="naperee__two-images_side">
+      <div class="naperee__two-images_side-image">
+        <img loading="lazy" src="{{ section.settings.left-image | image_url: width: section.settings.left-image.width }}" width="{{ section.settings.left-image.width }}" height="{{ section.settings.left-image.height }}"/>
+      </div>
+      <div class="naperee__two-images_text-container">
+        <h2 class="naperee__two-images_title">{{ section.settings.left-title }}</h2>
+        <p class="naperee__two-images_text">{{ section.settings.left-text }}</p>
+        <a class="naperee__two-images_button" href="{{ section.settings.left_button_url }}">{{ 'explore' | upcase }}</a>
+      </div>
+    </div>
+    <div class="naperee__two-images_side">
+      <div class="naperee__two-images_side-image">
+        <img loading="lazy" src="{{ section.settings.right-image | image_url: width: section.settings.right-image.width }}" width="{{ section.settings.right-image.width }}" height="{{ section.settings.right-image.height }}"/>
+      </div>
+      <div class="naperee__two-images_text-container">
+        <h2 class="naperee__two-images_title">{{ section.settings.right-title }}</h2>
+        <p class="naperee__two-images_text">{{ section.settings.right-text }}</p>
+        <a class="naperee__two-images_button" href="{{ section.settings.right_button_url }}">{{ 'explore' | upcase }}</a>
+      </div>
+    </div>
+  </div>
+</section>
+{% schema %}
+  {
+    "name": "Explore",
+    "settings": [
+      {
+        "type": "header",
+        "content": "Left side settings"
+      },
+      {
+        "type": "image_picker",
+        "label": "Left image",
+        "id": "left-image"
+      },
+      {
+        "type": "text",
+        "label": "Left title",
+        "id": "left-title"
+      },
+      {
+        "type": "text",
+        "label": "Left text",
+        "id": "left-text"
+      },
+      {
+        "type": "url",
+        "label": "left button url",
+        "id": "left_button_url",
+        "default": "/"
+      },
+      {
+        "type": "header",
+        "content": "Right side settings"
+      },
+      {
+        "type": "image_picker",
+        "label": "right image",
+        "id": "right-image"
+      },
+      {
+        "type": "text",
+        "label": "right title",
+        "id": "right-title"
+      },
+      {
+        "type": "text",
+        "label": "right text",
+        "id": "right-text"
+      },
+      {
+        "type": "url",
+        "label": "right button url",
+        "id": "right_button_url",
+        "default": "/"
+      },
+      {
+        "type": "color",
+        "id": "button_label_color",
+        "label": "Button label color",
+        "default": "#fff"
+      },
+      {
+        "type": "color",
+        "id": "section_color",
+        "label": "Section's color",
+        "default": "#373835"
+      }
+    ],
+    "presets": [
+      {
+        "name": "Explore"
+      }
+    ]
+  }
+{% endschema %}

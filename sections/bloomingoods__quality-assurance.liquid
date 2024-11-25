@@ -1,0 +1,127 @@
+<style>
+  .bloomingoods__quality-assurance {
+    --background-color: {{ section.settings.background_color }};
+    --text-color: {{ section.settings.text_color}};
+    --quality-title-color: {{ section.settings.quality_title_color }};
+    --quality-small-text-color: {{ section.settings.quality_small_text_color }};
+  }
+</style>
+{{ 'bloomingoods__quality-assurance.css' | asset_url | stylesheet_tag }}
+<section class="bloomingoods__quality-assurance page-width">
+  <div class="bloomingoods__quality-assurance-text-container">
+    <h2>
+      {% assign split_header = section.settings.header | split: ' ' %}
+      {% for word in split_header %}
+        {% assign word_size = word | size %}
+
+        {% assign word_first_letter = word | slice: 0 %}
+        {% assign word_rest = word | slice: 1, word_size %}
+        {% if word_size < 3 %}
+          <span class="bloomingoods__section-title-rest">{{ word | upcase }}</span>
+          {% break %}
+        {% endif %}
+        <span class="bloomingoods__section-title-first-letter">{{ word_first_letter | upcase }}</span>
+        <span class="bloomingoods__section-title-rest">{{ word_rest | upcase }}</span>
+      {% endfor %}
+    </h2>
+    <p>
+      {{ section.settings.content }}
+    </p>
+  </div>
+  <div class="bloomingoods__quality-assurance-qualities-container">
+    <ul>
+      {% for block in section.blocks %}
+        {% case block.type %}
+          {% when 'quality' %}
+            <li>
+              <img
+                src="{{ block.settings.quality_icon | image_url: width: block.settings.quality_icon.width }}"
+                alt="{{ block.settings.quality_icon.alt }}"
+                width="{{ block.settings.quality_icon.width }}px"
+                height="{{ block.settings.quality_icon.height }}px"
+                loading="lazy"
+              >
+              <h4>
+                {{ block.settings.quality_title | capitalize }}
+              </h4>
+              <p>
+                {{ block.settings.quality_description | capitalize }}
+              </p>
+            </li>
+        {% endcase %}
+      {% endfor %}
+    </ul>
+  </div>
+</section>
+{% schema %}
+{
+  "name": "Quality assurance",
+  "settings": [
+    {
+      "type": "text",
+      "id": "header",
+      "label": "Section header",
+      "default": "Quality assurance"
+    },
+    {
+      "type": "text",
+      "id": "content",
+      "label": "Section text",
+      "default": "We source materials from trusted suppliers and rigorously test our products to ensure they meet the highest standards of durability, functionality, and safety. Shop with confidence, knowing that each item is built to last."
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Background_color",
+      "default": "#EDEFEE"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Text color",
+      "default": "#022D33"
+    },
+    {
+      "type": "color",
+      "id": "quality_title_color",
+      "label": "Qualities title color",
+      "default": "#022D33"
+    },
+    {
+      "type": "color",
+      "id": "quality_small_text_color",
+      "label": "Qualities small text color",
+      "default": "#000"
+    }
+  ],
+  "blocks": [
+    {
+      "limit": 4,
+      "type": "quality",
+      "name": "quality",
+      "settings": [
+        {
+          "type": "text",
+          "id": "quality_title",
+          "label": "Quality name"
+        },
+        {
+          "type": "text",
+          "id": "quality_description",
+          "label": "Quality description"
+        },
+        {
+          "type": "image_picker",
+          "id": "quality_icon",
+          "label": "Quality icon"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Quality assurance"
+    }
+  ]
+}
+{% endschema %}

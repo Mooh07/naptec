@@ -1,0 +1,123 @@
+.naptec_contact__form {
+  padding: 112px 80px;
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 0.5px solid rgba(255, 255, 255, 1);
+}
+.naptec_contact__form-information {
+  display: flex;
+  flex-direction: column;
+  gap: 88px;
+  justify-content: space-evenly;
+}
+.naptec_contact__information {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  font-family: "faktum";
+  font-size: 20px;
+  font-weight: 300;
+  line-height: 28px;
+  text-align: left;
+  color: white;
+}
+.naptec_contact__information a {
+  color: white;
+  text-decoration: none;
+}
+.naptec_contact__information img {
+  width: 40px;
+  height: 40px;
+}
+.naptec_contact__information p {
+  padding: 0;
+  margin: 0;
+}
+.naptec_contact__form-form {
+  max-width: 617px;
+  border-radius: 40px;
+  background-color: rgba(222, 209, 179, 1);
+  flex: 1;
+  padding: 40px;
+}
+.naptec_contact__form-form > h2 {
+  margin: 0;
+  font-family: "faktum";
+  font-size: 40px;
+  font-weight: 500;
+  line-height: 48px;
+  text-align: left;
+  color: rgba(7, 59, 67, 1);
+  padding-bottom: 40px;
+}
+.naptec_contact__form-form form {
+  display: flex;
+  flex-direction: column;
+}
+.naptec_contact__form-form input,
+.naptec_contact__form-form textarea {
+  background-color: transparent;
+  margin-bottom: 40px;
+}
+.naptec_contact__form-form .contact__fields {
+  display: flex;
+  flex-direction: column;
+}
+.naptec_contact__form-form form .field input,
+.naptec_contact__form-form form .field textarea {
+  border: 1px solid rgba(20, 51, 56, 0.5);
+  border-radius: 12px;
+}
+.naptec_contact__form-form form label {
+  color: rgba(20, 51, 56, 0.8);
+  font-family: "faktum";
+  font-size: 18px;
+  font-weight: 300;
+  line-height: 24px;
+  text-align: left;
+}
+.naptec_contact__form-form form .field::after {
+  content: none;
+}
+.naptec_contact__form-form form .field__input:focus {
+  outline: none;
+  box-shadow: none;
+  margin-bottom: 40px;
+}
+.naptec_contact__form-form form .contact__button {
+  display: flex;
+}
+.naptec_contact__form-form form .contact__button button {
+  flex: 1;
+  background-color: rgba(6, 47, 54, 1);
+  color: rgba(222, 209, 179, 1);
+  border-radius: 100px;
+}
+.naptec_contact__form-form form .field {
+  position: relative;
+}
+.naptec_contact__form-form form .field small {
+  position: absolute;
+  top: 50px;
+}
+.naptec_contact__form-form form ul {
+  margin: 1rem 0;
+}
+@media screen and (max-width: 1250px) {
+  .naptec_contact__form {
+    flex-direction: column;
+    gap: 40px;
+    padding: 0 40px 112px 40px;
+  }
+  .naptec_contact__form-information {
+    gap: 40px;
+  }
+  .naptec_contact__form-form {
+    max-width: 100%;
+  }
+}
+@media screen and (max-width: 600px) {
+  .naptec_contact__form {
+    padding: 0 16px 112px 16px;
+  }
+}

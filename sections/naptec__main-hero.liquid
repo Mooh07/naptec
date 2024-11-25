@@ -1,0 +1,61 @@
+{{ "naptec__main-hero.css" | asset_url | stylesheet_tag }}
+<section class="page-width naptec__main-hero color-scheme-1">
+  <div class="naptec__main-hero-background-container">
+    <img src="{{ section.settings.background | image_url: width: section.settings.background.width }}" alt="{{ section.settings.background.alt }}" width="{{ section.settings.background.width }}" height="{{ section.settings.background.height }}"/>
+  </div>
+  <div class="naptec__main-hero-content">
+    <h2>
+      {{ section.settings.header }}
+    </h2>
+    <p>
+      {{ section.settings.subheading }}
+    </p>
+    <a href="{{ section.settings.cta-cta-url }}" class="naptec__main-hero-cta">
+      {{ section.settings.cta-content | upcase }}
+    </a>
+  </div>
+</section>
+{% schema %}
+  {
+    "name": "Naptec main hero",
+    "settings": [
+      {
+        "type": "image_picker",
+        "id": "background",
+        "label": "Background image"
+      },
+      {
+        "type": "html",
+        "id": "header",
+        "label": "Header",
+        "default": "Style without <br> the hassle"
+      },
+      {
+        "type": "html",
+        "id": "subheading",
+        "label": "Text content",
+        "default": "Premium, practical tabletop products,<br> and styles that wow."
+      },
+      {
+        "type": "header",
+        "content": "Call to action button"
+      },
+      {
+        "type": "text",
+        "id": "cta-content",
+        "label": "Button content",
+        "default": "get a quote"
+      },
+      {
+        "type": "url",
+        "id": "cta-url",
+        "label": "Button url"
+      }
+    ],
+    "presets": [
+      {
+        "name": "naptec main hero"
+      }
+    ]
+  }
+{% endschema %}

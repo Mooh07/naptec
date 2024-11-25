@@ -1,0 +1,63 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "name": "t:sections.footer.name",
+  "type": "footer",
+  "sections": {
+    "lintext_footer_ay3FGg": {
+      "type": "lintext__footer",
+      "settings": {
+        "contact_number": "845-200-3344",
+        "contact_email": "sales@lintext.com",
+        "link_list": "lintext-footer-menu",
+        "logo_image": "shopify://shop_images/footer_logo_794ae570-71c0-40f0-a1df-ed20064c990c.png",
+        "text-above-subscription": "Get our news straight to your inbox",
+        "all-rights-reserved": "Copyright © 2024 All right reserved.",
+        "copyright": "Copyright by NaptecPaper.com"
+      }
+    },
+    "naperee_footer_KzygjW": {
+      "type": "naperee__footer",
+      "disabled": true,
+      "settings": {
+        "contact_number": "845-200-3344",
+        "contact_email": "sales@naperee.com",
+        "link_list": "footer-first-column-menu",
+        "logo_image": "shopify://shop_images/Naperee_logo_png.png",
+        "text-above-subscription": "Get our news straight to your inbox",
+        "all-rights-reserved": "Copyright © 2024 All right reserved.",
+        "copyright": "Copyright by NaptecPaper.com"
+      }
+    },
+    "footer": {
+      "type": "footer",
+      "disabled": true,
+      "settings": {
+        "color_scheme": "scheme-1",
+        "newsletter_enable": true,
+        "newsletter_heading": "Subscribe to our emails",
+        "enable_follow_on_shop": true,
+        "show_social": true,
+        "enable_country_selector": true,
+        "enable_language_selector": true,
+        "payment_enable": true,
+        "show_policy": false,
+        "margin_top": 0,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    }
+  },
+  "order": [
+    "lintext_footer_ay3FGg",
+    "naperee_footer_KzygjW",
+    "footer"
+  ]
+}

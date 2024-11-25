@@ -1,0 +1,88 @@
+<style>
+  .naperee__main-hero {
+    --text-color: {{ section.settings.text_color }};
+    --button-background-color: {{ section.settings.button_background_color }};
+    --button-label-color: {{ section.settings.button_label_color }};
+  }
+</style>
+{{ "naperee__main-hero.css" | asset_url | stylesheet_tag }}
+<section class="naperee__main-hero page-width">
+  
+  <img
+    src="{{ section.settings.background_image | image_url: width: section.settings.background_image.width }}"
+    alt="{{ section.settings.background_image.alt }}"
+    width="{{ section.settings.background_image.width }}"
+    height="{{ section.settings.background_image.height }}"
+  >
+  <div class="naperee__main-hero-content">
+    <h1 class="naperee__main-hero-title">
+      {{ section.settings.title }}
+    </h1>
+    <h2 class="naperee__main-hero-subtitle">
+      {{ section.settings.subtitle }}
+    </h2>
+    <a
+      href="{{ section.settings.cta_button_url }}"
+      class="naperee__main-hero-call_to_action_button"
+    >
+      {{ section.settings.cta_button_text }}
+    </a>
+  </div>
+</section>
+{% schema %}
+{
+  "name": "Naperee main hero",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "background_image",
+      "label": "Background image"
+    },
+    {
+      "type": "richtext",
+      "id": "title",
+      "label": "Main hero title"
+    },
+    {
+      "type": "text",
+      "id": "subtitle",
+      "label": "Main hero subtitle",
+      "default": "Elegant, Durable, Premium napkins."
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Text color",
+      "default": "#fff"
+    },
+    {
+      "type": "url",
+      "id": "cta_button_url",
+      "label": "Call to action button url"
+    },
+    {
+      "type": "text",
+      "id": "cta_button_text",
+      "label": "Call to action button text",
+      "default": "Get a Quote"
+    },
+    {
+      "type": "color",
+      "id": "button_label_color",
+      "label": "Call to action button label color",
+      "default": "#292D32"
+    },
+    {
+      "type": "color",
+      "id": "button_background_color",
+      "label": "Call to action button background color",
+      "default": "#fff"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Naperee main hero"
+    }
+  ]
+}
+{% endschema %}

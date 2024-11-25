@@ -1,0 +1,98 @@
+.bloomingoods__main-hero {
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: 100vh;
+  color: var(--section-color);
+}
+.bloomingoods__main-hero img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: grayscale(100%);
+  grid-area: 1 / 1 / 2 / 4;
+  z-index: 1;
+}
+.bloomingoods__main-hero-content {
+  z-index: 2;
+  grid-area: 1 / 2 / 2 / 3;
+  position: relative;
+  display: grid;
+  align-items: center;
+}
+.bloomingoods__main-hero-content svg {
+  left: 0;
+  right: 0;
+  grid-area: 1 / 1 / 2 / 2;
+}
+.bloomingoods__main-hero-text-container {
+  grid-area: 1 / 1 / 2 / 2;
+  z-index: 1;
+  max-width: 682px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.bloomingoods__main-hero-text-container h1,
+.bloomingoods__main-hero-text-container p {
+  margin: 0;
+  padding: 0 91px;
+  color: inherit;
+  
+}
+.bloomingoods__main-hero-text-container h1 {
+  font-family: "milanesa serif";
+  font-size: 80px;
+  font-weight: 400;
+  line-height: 115%;
+  text-align: center;
+  text-wrap: nowrap;
+}
+.bloomingoods__main-hero-text-container p {
+  font-family: "latienne pro";
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 150%;
+  text-align: center;
+  padding-bottom: 32px;
+}
+.bloomingoods__main-hero-text-container a {
+  padding: 16px 72.5px;
+  font-family: "milanesa serif";
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 24px;
+  text-align: center;
+  border-radius: 100px;
+  background-color: var(--section-color);
+  color: var(--button-label-color);;
+  text-decoration: none;
+}
+@media screen and (max-width: 768px) {
+  .bloomingoods__main-hero-content {
+    grid-area: 1 / 1 / 2 / 4;
+    justify-items: center;
+  }
+  .bloomingoods__main-hero-content svg {
+    max-width: 90%;
+  }
+  .bloomingoods__main-hero-text-container h1 {
+    font-size: 70px;
+  }
+}
+@media screen and (max-width: 600px) {
+  .bloomingoods__main-hero-text-container h1 {
+    font-size: 48px;
+  }
+  .bloomingoods__main-hero-text-container p {
+    font-size: 20px;
+  }
+}
+@media screen and (max-width: 450px) {
+  .bloomingoods__main-hero-text-container h1 {
+    font-size: 30px;
+  }
+  .bloomingoods__main-hero-text-container p {
+    font-size: 18px;
+  }
+}

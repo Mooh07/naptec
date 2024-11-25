@@ -1,0 +1,185 @@
+.naptec__footer {
+  display: flex;
+  padding: 7.2rem 8rem 5rem 8rem;
+  flex-direction: column;
+}
+.naptec__footer-wrapper {
+  flex: 1;
+  display: flex;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  padding-bottom: 6rem;
+  justify-content: space-between;
+  margin-bottom: 4rem;
+}
+.naptec__footer-left {
+  display: flex;
+  flex-direction: column;
+  gap: 8rem;
+}
+.napte__logo {
+  display: flex;
+  flex-direction: column;
+  gap: 2.4rem;
+  min-height: 127px;
+}
+.napte__logo svg {
+  width: 100%;
+}
+.naptec__contact {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+.naptec__contact h5 {
+  font-size: 18px;
+  font-weight: 300;
+  line-height: 24px;
+  text-align: left;
+  margin: 0;
+  margin-bottom: 0.8rem;
+}
+.naptec__contact * {
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 24px;
+  text-align: left;
+  color: white;
+  text-decoration: none;
+}
+.naptec__footer-right {
+  display: flex;
+  flex-direction: column;
+  gap: 8rem;
+}
+.naptec__footer-links-container {
+  display: flex;
+  gap: 15rem;
+}
+.naptec__footer-links {
+  padding: 0;
+  list-style-type: none;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+.naptec__footer-list-item {
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 150%;
+  text-align: left;
+}
+.naptec__footer-list-item a {
+  text-decoration: none;
+  color: white;
+}
+.naptec__footer-copy-right {
+  display: flex;
+  justify-content: space-between;
+}
+.naptec__footer-copy-right p {
+  font-size: 16px;
+  font-weight: 300;
+  line-height: 150%;
+  text-align: left;
+  margin: 0;
+}
+.naptec__footer-subscription-wrapper > h3 {
+  font-size: 32px;
+  font-weight: 300;
+  line-height: 150%;
+  text-align: left;
+  margin: 0;
+  margin-bottom: 2.4rem;
+}
+.naptec__footer-subscription-wrapper > form{
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.naptec__footer-subscription-input-container {
+  display: flex;
+  gap: 1.2rem;
+}
+.naptec__footer-subscription-input-container input {
+  border: 1px solid rgba(255, 255, 255, 1);
+  padding: 1.6rem 2.4rem;
+  border-radius: 100px;
+  width: 100%;
+  max-width: 352px;
+  background: rgba(255, 255, 255, 0.08);
+}
+.naptec__footer-subscription-input-container input::placeholder {
+  color: white;
+}
+.naptec__footer-subscription-input-container button {
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 120%;
+  text-align: center;
+  text-transform: uppercase;
+  padding: 1.6rem 4.15rem;
+  border-radius: 100px;
+  outline: none;
+  border: none;
+  cursor: pointer;
+}
+.naptec__footer-logo {
+  width: 195px;
+  height: auto;
+}
+
+@media screen and (max-width: 1250px) {
+  .naptec__footer {
+    padding: 7.2rem 4rem 5rem 4rem;
+  }
+}
+@media screen and (max-width: 992px) {
+  .naptec__footer-wrapper {
+    flex-direction: column-reverse;
+    gap: 6rem;
+    align-items: center;
+  }
+  .naptec__footer-left {
+    flex-direction: row-reverse;
+    gap: initial;
+    justify-content: space-between;
+  }
+  .naptec__footer-links-container {
+    gap: intial;
+    justify-content: space-between;
+  }
+  .naptec__footer-left,
+  .naptec__footer-right {
+    width: 100%;
+    max-width: 600px;
+  }
+  .naptec__footer-logo {
+    width: 120px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .naptec__footer {
+    padding: 7.2rem 1.6rem 5rem 1.6rem;
+  }
+  .naptec__footer-copy-right {
+    flex-direction: column;
+    gap: 1.6rem;
+  }
+  .naptec__footer-list-item {
+    font-size: 16px;
+  }
+  .naptec__footer-subscription-wrapper > h3 {
+    font-size: 24px;
+  }
+  .naptec__footer-subscription-input-container {
+    flex-direction: column;
+  }
+  .naptec__footer-subscription-input-container input {
+    max-width: 100%;
+  }
+  .naptec__footer-subscription-input-container button {
+    font-size: 16px;
+  }
+}

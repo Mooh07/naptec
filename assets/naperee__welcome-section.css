@@ -1,0 +1,193 @@
+.naperee__welcome-section {
+  padding-top: 148px;
+  padding-bottom: 148px;
+  padding-left: 0;
+  padding-right: 0;
+  color: var(--text-color);
+  background-color: var(--background-color);
+}
+.naperee__welcome-section_wrapper {
+  display: flex;
+}
+.welcome-section-part {
+  flex: 1;
+}
+/* Section images style */
+.naperee__welcome-section_image-wrapper {
+  max-width: 309px;
+  max-height: 400px;
+  display: flex;
+}
+.naperee__welcome-section_image-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  max-width: 100%;
+  max-height: 100%;
+  height: auto;
+}
+.welcome-section-image-right {
+  margin-top: 141px;
+  align-self: baseline;
+  overflow: hidden;
+}
+/* Section body style */
+.naperee__welcome-section_body {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0 5rem;
+}
+.naperee__welcome-section_body * {
+  margin: 0;
+}
+.naperee__welcome-section_body > p {
+  font-family: "dm sans";
+  padding-top: 16px;
+  max-width: 726px;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 24px;
+  text-align: center;
+  color: var(--text-color);
+}
+.naperee__welcome-section_heading {
+  font-family: "eye catching pro";
+  font-size: 88px;
+  /* font-size: 43px; */
+  font-weight: 400;
+  line-height: 64px;
+  text-align: center;
+  padding-bottom: 16px;
+  max-width: 810px;
+  color: var(--text-color);
+}
+.naperee__welcome-section_text-title {
+  font-family: "etna";
+  font-size: 60px;
+  font-weight: 400;
+  line-height: 72px;
+  text-align: center;
+  padding-bottom: 16px;
+  max-width: 810px;
+  color: var(--text-color);
+}
+.naperee__welcome-section_body h2 {
+  font-family: "etna";
+  font-size: 60px;
+  font-weight: 400;
+  line-height: 72px;
+  text-align: center;
+  color: var(--text-color);
+}
+/* Product features style */
+
+.naperee__welcome-section_body-product-feature {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 40px;
+}
+.naperee__welcome-section_body-product-feature ul {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 3rem;
+  padding: 0;
+  flex-wrap: wrap;
+}
+.product-feature {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--block-text-color);
+}
+.product-feature * {
+  color: inherit;
+}
+/* .naperee__welcome-section_body-product-feature ul :nth-child(odd) {
+     justify-content: end;
+   }
+   .naperee__welcome-section_body-product-feature ul :nth-child(even) {
+     justify-content: start;
+   }
+  */
+.product-feature > div {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  align-items: center;
+  justify-content: center;
+  max-width: 100px;
+  padding: 20px;
+}
+.product-feature svg {
+  position: absolute;
+}
+.product-feature-icon-container {
+  width: 100%;
+  z-index: 2;
+}
+.product-feature-icon-container img {
+  width: 80%;
+  height: auto;
+}
+.product-feature-description-container {
+  z-index: 2;
+}
+@media screen and (max-width: 1250px) {
+  .naperee__welcome-section_heading {
+    font-size: 68px;
+    line-height: 64px;
+  }
+  .naperee__welcome-section_body h2 {
+    font-size: 48px;
+  }
+  .naperee__welcome-section_text-title {
+    font-size: 30px;
+    line-height: 42px;
+  }
+  .naperee__welcome-section_body > p {
+    font-size: 14px;
+  }
+  .welcome-section-image-right {
+    align-self: start;
+  }
+  .product-feature {
+    width: calc(50% - 3rem);
+  }
+  .naperee__welcome-section_image-wrapper {
+    max-height: 300px;
+  }
+  .naperee__welcome-section_body {
+    padding: 0 2.5rem;
+  }
+  .naperee__welcome-section {
+    padding: 7.4rem 0;
+  }
+}
+@media screen and (max-width: 992px) {
+  .naperee__welcome-section_wrapper {
+    flex-direction: column;
+  }
+  .naperee__welcome-section {
+    padding: 0;
+  }
+  .welcome-section-image-right {
+    margin-top: 0;
+    align-self: flex-end;
+  }
+  .naperee__welcome-section_wrapper {
+    gap: 2rem;
+  }
+  .naperee__welcome-section_body {
+    padding: 0 4rem;
+  }
+}
+@media screen and (max-width: 600px) {
+  .naperee__welcome-section_body {
+    padding: 0 1.6rem;
+  }
+}

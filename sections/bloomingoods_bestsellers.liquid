@@ -1,0 +1,96 @@
+{{ "bloomingoods_bestsellers.css" | asset_url | stylesheet_tag }}
+<section class="bloomingoods__bestsellers page-width">
+  <div class="bloomingoods__bestsellers-text-container">
+    <h2>
+      {% assign split_header = section.settings.header | split: ' ' %}
+      {% for word in split_header %}
+        {% assign word_size = word | size %}
+
+        {% assign word_first_letter = word | slice: 0 %}
+        {% assign word_rest = word | slice: 1, word_size %}
+        {% if word_size < 3 %}
+          <span class="bloomingoods__section-title-rest">{{ word | upcase }}</span>
+          {% break %}
+        {% endif %}
+        <span class="bloomingoods__section-title-first-letter">{{ word_first_letter | upcase }}</span>
+        <span class="bloomingoods__section-title-rest">{{ word_rest | upcase }}</span>
+      {% endfor %}
+    </h2>
+  </div>
+  <div class="bloomingoods__bestsellers-products-container">
+    <ul>
+      {% if section.settings.collection != blank %}
+        {% for product in section.settings.collection.products %}
+          <li>
+            {% render 'naperee__product-card'
+              , product: product %}
+          </li>
+        {% endfor %}
+      {% else %}
+        {% for block in section.blocks %}
+          {% case block.type %}
+            {% when 'product' %}
+              <li>
+                {% render 'naperee__product-card'
+                  , product: block.settings.product %}
+              </li>
+          {% endcase %}
+        {% endfor %}
+      {% endif %}
+    </ul>
+  </div>
+</section>
+{% schema %}
+  {
+    "name": "Bloomingoods bestsellers",
+    "settings": [
+      {
+        "type": "text",
+        "id": "header",
+        "label": "Section header",
+        "default": "Bestsellers"
+      },
+      {
+        "type": "collection",
+        "id": "collection",
+        "label": "Collection"
+      },
+      {
+        "type": "color",
+        "id": "background_color",
+        "label": "Background color",
+        "default": "#fff"
+      },
+      {
+        "type": "color",
+        "id": "title_color",
+        "label": "Title color",
+        "default": "#022D33"
+      }, {
+        "type": "color",
+        "id": "card_text_color",
+        "label": "Card text color",
+        "default": "#383735"
+      }
+    ],
+    "blocks": [
+      {
+        "type": "product",
+        "name": "product",
+        "limit": 4,
+        "settings": [
+          {
+            "type": "product",
+            "id": "product",
+            "label": "product"
+          }
+        ]
+      }
+    ],
+    "presets": [
+      {
+        "name": "Bloomingoods bestsellers"
+      }
+    ]
+  }
+{% endschema %}

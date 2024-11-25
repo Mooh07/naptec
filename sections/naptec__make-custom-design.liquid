@@ -1,0 +1,47 @@
+{{ "naptec__make-custom-design.css" | asset_url | stylesheet_tag }}
+<section class="page-width naptec__make-custom-design">
+  <img
+    src="{{ section.settings.image | image_url: width: section.settings.image.width  }}"
+    width="{{ section.settings.image.width }}"
+    height="{{ section.settings.image.height }}"
+    alt="{{ section.settings.image.alt }}"
+    loading="lazy"
+  >
+  <div class="naptec__make-custom-design-content-wrapper">
+    <div class="naptec__make-custom-design-content-container ">
+      <div class="naptec__make-custom-design-content color-scheme-1" style="position:relative; z-index: 1">
+        <h2>{{ section.settings.header }}</h2>
+        <p>{{ section.settings.content }}</p>
+        <a>{{ section.settings['cta-label'] }}</a>
+      </div>
+    </div>
+  </div>
+</section>
+{% schema %}
+{
+  "name": "Make your custom design",
+  "settings": [{
+    "type": "html",
+    "id": "header",
+    "label": "Section's header",
+    "default": "Make your<br> custom design"
+  },{
+    "type": "text",
+    "id": "content",
+    "label": "Section's content",
+    "default": "Tailor napkins to fit your brand or establishment  by exploring our customization options, including branding and packaging solutions."
+  },{
+    "type": "text",
+    "default": "Get a Quote",
+    "id": "cta-label",
+    "label": "Get a Quote"
+  },{
+    "id": "image",
+    "type": "image_picker",
+    "label": "Image of section"
+  }],
+  "presets": [{
+    "name": "Make your custom design"
+  }]
+}
+{% endschema %}

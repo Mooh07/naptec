@@ -1,0 +1,120 @@
+<style>
+  .bloomingoods__make-your-design {
+    --section-color: {{ section.settings.section_color }};
+    --section-background-color: {{ section.settings.background_color }};
+  }
+</style>
+{{ 'bloomingoods__make-your-design.css' | asset_url | stylesheet_tag }}
+<section class="bloomingoods__make-your-design page-width">
+  <div class="bloomingoods__make-your-design-top">
+    <div class="bloomingoods__make-your-design-logo">
+      <img
+        src="{{ section.settings.smaller_image | image_url: width: section.settings.smaller_image.width }}"
+        alt=" {{ section.settings.smaller_image.alt }}"
+        width="{{ section.settings.smaller_image.width }}"
+        height="{{ section.settings.smaller_image.height }}"
+      >
+    </div>
+    <div class="bloomingoods__make-your-design-text">
+      <h2>
+        {% assign split_heading = section.settings.heading | split: " " %}
+        {% for word in split_heading %}
+          {{ word }}
+          {% if forloop.index == 2 %}
+            <br>
+          {% endif %}
+        {% endfor %}
+      </h2>
+      <p>
+        {{ section.settings.paragraph }}
+      </p>
+      <a href="{{ section.settings.cta_url }}">
+        {{ section.settings.cta_label |  upcase }}
+        <img
+          src="https://cdn.shopify.com/s/files/1/0611/8129/6700/files/bloomingoods-icon.png?v=1723919059"
+          alt="bloomingoods icon"
+          width="24px"
+          height="24px"
+          loading="lazy"
+        >
+      </a>
+    </div>
+    <div class="bloomingoods__make-your-design-logo">
+      <img
+      src="{{ section.settings.smaller_image | image_url: width: section.settings.smaller_image.width }}"
+      alt=" {{ section.settings.smaller_image.alt }}"
+      width="{{ section.settings.smaller_image.width }}"
+      height="{{ section.settings.smaller_image.height }}"
+      loading="lazy"
+    >
+    </div>
+  </div>
+  <div class="bloomingoods__make-your-design-bottom">
+    <img 
+      src="{{ section.settings.bottom_image | image_url: width: section.settings.bottom_image.width }}" 
+      alt="{{ section.settings.bottom_image.alt }}"
+      width="{{ section.settings.bottom_image.width }}"
+      height="{{ section.settings.bottom_image.height }}"
+      loading="lazy"
+    >
+  </div>
+</section>
+{% schema %}
+{
+  "name": "Bg make your design",
+  "settings": [
+    {
+        "type": "color",
+        "id": "section_color",
+        "label": "Section text color",
+        "default": "#F5E9DB",
+        "info": "Main text color for this section",
+      },
+      {
+        "type": "color",
+        "id": "background_color",
+        "label": "Section background color",
+        "default": "#1D3B2C",
+        "info": "Background color for this section",
+      },
+      {
+        "type": "text",
+        "id": "heading",
+        "label": "Heading",
+        "default": "Make your custom design"
+      },
+      {
+        "type": "text",
+        "id": "paragraph",
+        "label": "Paragraph",
+        "default": "Tailor napkins to fit your brand or establishment by exploring our customization options, including branding and packaging solutions."
+      },
+      {
+        "type": "url",
+        "id": "cta_url",
+        "label": "Call to action button url"
+      },
+      {
+        "type": "text",
+        "id": "cta_label",
+        "label": "Call to action button label",
+        "default": "get a quote"
+      },
+      {
+        "type": "image_picker",
+        "id": "smaller_image",
+        "label": "Left and right image"
+      },
+      {
+        "type": "image_picker",
+        "id": "bottom_image",
+        "label": "Big bottom image"
+      }
+    ],
+    "presets": [
+      {
+        "name": "Bg make your design"
+      }
+    ]
+}
+{% endschema %}

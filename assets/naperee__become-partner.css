@@ -1,0 +1,101 @@
+.naperee__become-partner {
+  display: flex;
+  gap: 84px;
+  padding-top: 100px;
+  padding-bottom: 100px;
+  padding: 10rem 5rem;
+  background-color: var(--background-color);
+  color: var(--text-color);
+}
+.naperee__become-partner_left-image-container {
+  max-width: 472px;
+  display: flex;
+  flex-grow: 1;
+  flex-shrink:0;
+}
+.naperee__become-partner_left-image-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.naperee__become-partner_right-image-container {
+  max-width: 280px;
+  display: flex;
+  flex-direction: column;
+  gap: 56px;
+}
+.naperee__become-partner_right-image-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.naperee__become-partner_text-body-container {
+  align-self: end;
+}
+.naperee__become-partner_text-body-container * {
+  margin: 0;
+}
+.naperee__naperee__become-partner_text-body {
+  font-family: "dm sans";
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 24px;
+  text-align: left;
+  padding-bottom: 40px;
+}
+.naperee__naperee__become-partner_heading {
+  font-family: "eye catching pro";
+  font-size: 88px;
+  font-weight: 400;
+  line-height: 72.72%;
+  text-align: left;
+  padding-bottom: 16px;
+  color: inherit;
+}
+.naperee__naperee__become-partner_text-title {
+  font-family: "etna";
+  font-size: 60px;
+  font-weight: 400;
+  line-height: 116%;
+  text-align: left;
+  padding-bottom: 32px;
+  color: inherit;
+}
+.naperee__become-partner_cta-button {
+  text-decoration: none;
+  font-family: "etna";
+  font-size: 16px;
+  font-style: italic;
+  font-weight: 400;
+  line-height: 20px;
+  text-align: center;
+  padding: 12px 32px;
+  border-radius: 100px;
+  background-color: var(--button-background-color);
+  color: var(--button-label-color);
+}
+@media screen and (max-width: 1250px) {
+  .naperee__become-partner {
+    padding: 5rem 2.5rem;
+    gap: 4.2rem;
+  }
+  .naperee__naperee__become-partner_text-title {
+    font-size: 48px;
+  }
+  .naperee__naperee__become-partner_heading {
+    font-size: 76px;
+  }
+}
+@media screen and (max-width: 992px) {
+  .naperee__become-partner {
+    flex-direction: column;
+  }
+  .naperee__become-partner_left-image-container {
+    align-self: center;
+  }
+  .naperee__become-partner_right-image-container {
+    max-width: 100%;
+    gap: 28px;
+  }
+}

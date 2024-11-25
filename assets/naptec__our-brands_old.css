@@ -1,0 +1,69 @@
+.naptec__our-brands {
+  display: flex;
+  padding: 10rem 8rem;
+  align-items: center;
+}
+.naptec__our-brands .glide {
+  overflow: hidden;
+  width: 65%;
+}
+.naptec__our-brands .glide__slides {
+  margin: 0;
+  align-items: center;
+  max-width: 100%;
+  overflow: visible;
+}
+.naptec__our-brands .glide__slide {
+  width: 25%;
+  text-align: center;
+}
+.naptec__our-brands .glide__slide a img {
+  width: 180px;
+  height: auto;
+  max-width: 100%;
+}
+.naptec__our-brands .glide__slide a::after {
+}
+.naptec__our-brands-title {
+  width: 30%;
+}
+.naptec__our-brands-title h2 {
+  font-size: 52px;
+  font-weight: 500;
+  line-height: 96.15384%;
+  text-align: left;
+  margin: 0;
+  text-transform: capitalize;
+}
+@media screen and (max-width: 1250px) {
+  .naptec__our-brands {
+    padding: 10rem 4rem;
+  }
+  .naptec__our-brands-title {
+    width: 35%;
+  }
+}
+@media screen and (max-width: 992px) {
+  .naptec__our-brands {
+    flex-wrap: wrap;
+    padding: 6rem 4rem;
+  }
+  .naptec__our-brands-title {
+    width: 100%;
+    margin-bottom: 5rem;
+  }
+  .naptec__our-brands .glide {
+    width: 100%;
+  }
+}
+@media screen and (max-width: 600px) {
+  .naptec__our-brands {
+    padding: 6rem 1.6rem;
+  }
+  .naptec__our-brands-title h2 {
+    font-size: 36px;
+  }
+  .naptec__our-brands .glide__slide {
+    width: 33.3333333333%;
+  }
+}

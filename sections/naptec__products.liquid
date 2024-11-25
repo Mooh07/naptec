@@ -1,0 +1,82 @@
+{{ "naptec__product-card.css" | asset_url | stylesheet_tag }}
+{{ "naptec__products.css" | asset_url | stylesheet_tag }}
+<section class="page-width naptec__products color-scheme-1">
+  <div class="naptec__products-top">
+    <div>
+      <h2>PRODUCTS</h2>
+      {{ section.settings.text_content }}
+    </div>
+    {% if section.settings.view-all-url %}
+      <div class="naptec__products-top-view-all">
+        <a href="{{ section.settings.view-all-url }}">{{ section.settings.view-all-label }}</a>
+      </div>
+    {% endif %}
+  </div>
+  <div class="naptec__products-wrapper">
+    <ul class="naptec__products-container">
+      {% for block in section.blocks %}
+        {% case block.type %}
+          {% when 'products_product' %}
+            <li class="naptec__products-list-item">
+              {% render 'naptec__product-card' collection: block.settings.collection
+                , title: block.settings.title
+                , url: block.settings.url
+                , image: block.settings.image %}
+            </li>
+        {% endcase %}
+      {% endfor %}
+    </ul>
+  </div>
+</section>
+{% schema %}
+  {
+    "name": "Naptec categories",
+    "settings": [
+      {
+        "type": "richtext",
+        "id": "text_content",
+        "label": "Text"
+      }, {
+        "type": "text",
+        "label": "View all categories label",
+        "id": "view-all-label",
+        "default": "ALL CATEGORIES",
+        "info": "The button will be visible only when there's a URL"
+      }, {
+        "type": "url",
+        "label": "View all categories url",
+        "id": "view-all-url"
+      }
+    ],
+    "blocks": [
+      {
+        "type": "products_product",
+        "name": "Category",
+        "settings": [
+          {
+            "type": "collection",
+            "id": "collection",
+            "label": "Category"
+          }, {
+            "type": "html",
+            "id": "title",
+            "label": "Title of category",
+            "info": "Will overwrite category title",
+            "default": "WHITE <br> NAPKINS"
+          }, {
+            "type": "image_picker",
+            "id": "image",
+            "info": "Will overwrite category image",
+            "label": "Image of card"
+          }
+        ],
+        "limit": 4
+      }
+    ],
+    "presets": [
+      {
+        "name": "Naptec products"
+      }
+    ]
+  }
+{% endschema %}

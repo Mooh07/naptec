@@ -1,0 +1,195 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "layout": "theme.servietto",
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "padding_top": 28,
+        "padding_bottom": 28
+      }
+    },
+    "servietto_main_hero_Jem8Vq": {
+      "type": "servietto__main-hero",
+      "settings": {
+        "image": "shopify://shop_images/background_8e998a40-5aa3-4de8-aad1-3ac986c64496.png",
+        "heading": "Elegance in every fold",
+        "subheading": "Elevate your hosting expirience.",
+        "cta_url": "",
+        "cta_label": "Get a Quote",
+        "background_color": "#eae7e2",
+        "text_color": "#1c363d",
+        "button_color": "#000000"
+      }
+    },
+    "servietto_values_VqCBLL": {
+      "type": "servietto__values",
+      "settings": {
+        "section_color": "#1c363d",
+        "background_color": "#f9f9f9",
+        "heading": "At Servietto we <i>believe</i> in creating beautiful things for <i>thoughtful</i> people.",
+        "paragraph": "Our disposable hand towels and napkins were designed to look and feel just like luxurious linen so that ghosts everywhere can pamper their quests without the hassle.",
+        "script_text": "Add a Timeless Touch.",
+        "top_image": "shopify://shop_images/background_1f66d227-155e-4416-9ec9-7e82bc52ab69.png",
+        "bottom_image": "shopify://shop_images/background_1f66d227-155e-4416-9ec9-7e82bc52ab69.png",
+        "right_image": "shopify://shop_images/2_d2bfad4a-979f-4a64-b638-7d6b77e1678e.png"
+      }
+    },
+    "servietto_our_values_CEwLNJ": {
+      "type": "servietto__our-values",
+      "disabled": true,
+      "settings": {
+        "main_text": "At Servietto we <i>believe</i> in creating beautiful things for <i>thoughtful</i> people.",
+        "left_image": "shopify://shop_images/left_image.png",
+        "right_image": "shopify://shop_images/right_image.png",
+        "image_text": "Our disposable hand towels and napkins were designed to look and feel just like luxurious linen so that ghosts everywhere can pamper their quests without the hassle.",
+        "bottom_text": "Add a Timeless Touch.",
+        "background_color": "#ffffff",
+        "text_color": "#1c363d"
+      }
+    },
+    "servietto_product_categories_gKwLFW": {
+      "type": "servietto__product-categories",
+      "settings": {
+        "heading": "Product Categories",
+        "left_image": "shopify://shop_images/left_image_new.png",
+        "first_category_url": "shopify://collections/servietto-cocktail-napkin",
+        "first_category": "Cocktail Napkins",
+        "middle_image": "shopify://shop_images/centger_img_new.png",
+        "second_category_url": "shopify://collections/servietto-dinner-napkins",
+        "second_category": "Dinner Napkins",
+        "right_image": "shopify://shop_images/right_image_new.png",
+        "third_category_url": "shopify://collections/servietto-guest-towels",
+        "third_category": "Guest Towels",
+        "background_color": "#ffffff",
+        "text_color": "#1c363d"
+      }
+    },
+    "servietto_bestsellers_GmHVp8": {
+      "type": "servietto_bestsellers",
+      "blocks": {
+        "product_TgPhwM": {
+          "type": "product",
+          "settings": {
+            "product": "disposable-table-runner-for-dining-table-16-x-48-20-pack-linen-like-black-paper-table-runners-for-party-wedding-or-event"
+          }
+        },
+        "product_G8QRBy": {
+          "type": "product",
+          "settings": {
+            "product": "disposable-linen-feel-dinner-napkins-with-built-in-flatware-pocket-50-pack-black-prefolded-cloth-like-paper-napkins-for-wedding-dinner-or-party"
+          }
+        },
+        "product_UcHHQV": {
+          "type": "product",
+          "settings": {
+            "product": "disposable-black-paper-placemats-for-dining-table-100-pack-18-x-12-cloth-like-rectangle-paper-placemats-for-baby-kids-party-or-weddings"
+          }
+        },
+        "product_gTBQFr": {
+          "type": "product",
+          "settings": {
+            "product": "disposable-linen-feel-amethyst-napkins-12-x-17-cloth-like-paper-dinner-napkins-for-wedding-bathroom-party-or-event-50-pack"
+          }
+        }
+      },
+      "block_order": [
+        "product_TgPhwM",
+        "product_G8QRBy",
+        "product_UcHHQV",
+        "product_gTBQFr"
+      ],
+      "settings": {
+        "header": "Discover Your Style",
+        "collection": "",
+        "subheader": "Bestsellers",
+        "background_color": "#ffffff",
+        "text_color": "#1c363d"
+      }
+    },
+    "servietto_why_choose_servietto_tk7LEc": {
+      "type": "servietto__why-choose-servietto",
+      "blocks": {
+        "feature_9hW3hy": {
+          "type": "feature",
+          "settings": {
+            "text": "Exquisite Craftsmanship",
+            "image": "shopify://shop_images/servietto_h2.png",
+            "icon": "shopify://shop_images/icon_552978cf-f4e4-4ab6-9062-34709d4628d6.png"
+          }
+        },
+        "feature_PD9ikn": {
+          "type": "feature",
+          "settings": {
+            "text": "Extra Absorbent",
+            "image": "shopify://shop_images/servietto_h2.png",
+            "icon": "shopify://shop_images/icon_552978cf-f4e4-4ab6-9062-34709d4628d6.png"
+          }
+        },
+        "feature_imdhme": {
+          "type": "feature",
+          "settings": {
+            "text": "Premium Quality",
+            "image": "shopify://shop_images/servietto_h2.png",
+            "icon": "shopify://shop_images/icon_552978cf-f4e4-4ab6-9062-34709d4628d6.png"
+          }
+        },
+        "feature_ywkwTp": {
+          "type": "feature",
+          "settings": {
+            "text": "Superior, classy design",
+            "image": "shopify://shop_images/servietto_h2.png",
+            "icon": "shopify://shop_images/icon_552978cf-f4e4-4ab6-9062-34709d4628d6.png"
+          }
+        }
+      },
+      "block_order": [
+        "feature_9hW3hy",
+        "feature_PD9ikn",
+        "feature_imdhme",
+        "feature_ywkwTp"
+      ],
+      "settings": {
+        "background": "shopify://shop_images/background_a7ca46dd-6b51-4a8c-85b1-f895909667bb_1.png",
+        "heading": "Why choose Servietto?",
+        "header_color": "#1c363d",
+        "card_text_color": "#ffffff"
+      }
+    },
+    "servietto_collaborate_MtpVV8": {
+      "type": "servietto__collaborate",
+      "settings": {
+        "upper_title": "Interested in collaborating",
+        "lower_title": "with Servietto?",
+        "first_image": "shopify://shop_images/2_46acb73b-1ef8-4513-b10f-512622b10186.png",
+        "second_image": "shopify://shop_images/1_6ca9379a-c386-4aaa-9fb7-3260948542cb.png",
+        "text": "Joining as a Servietto wholesale partner is hassle-free. Just fill out our wholesale account registration form, and our team will promptly contact you to delve into your specific needs and swiftly set up your wholesale account.",
+        "cta_url": "",
+        "cta_text": "Join us",
+        "background_color": "#eae7e2",
+        "text_color": "#1c363d",
+        "button_label_color": "#292d32",
+        "button_border_color": "#000000"
+      }
+    }
+  },
+  "order": [
+    "main",
+    "servietto_main_hero_Jem8Vq",
+    "servietto_values_VqCBLL",
+    "servietto_our_values_CEwLNJ",
+    "servietto_product_categories_gKwLFW",
+    "servietto_bestsellers_GmHVp8",
+    "servietto_why_choose_servietto_tk7LEc",
+    "servietto_collaborate_MtpVV8"
+  ]
+}

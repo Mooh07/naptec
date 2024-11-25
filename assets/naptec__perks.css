@@ -1,0 +1,82 @@
+.naptec__perks {
+  padding: 64px;
+  padding-bottom: 92px;
+  display: flex;
+  justify-content: space-between;
+  gap: 3rem;
+}
+
+.naptec__perks-item {
+  display: flex;
+  width: 25%;
+  /* max-width: 268px; */
+  gap: 1.6rem;
+  align-items: center;
+  justify-content: center;
+}
+
+.naptec__perks-item p,
+.naptec__perks-item h3 {
+  margin: 0;
+}
+.naptec__perks-item h3 {
+  font-size: 22px;
+  font-weight: 500;
+  line-height: 32px;
+  text-align: left;
+}
+.naptec__perks-item p {
+  font-size: 18px;
+  font-weight: 200;
+  line-height: 24px;
+  text-align: left;
+}
+@media screen and (max-width: 1250px) {
+  .naptec__perks {
+    padding: 8rem 4rem;
+  }
+}
+@media screen and (max-width: 992px) {
+  .naptec__perks-item {
+    width: calc(50% - 3rem);
+    max-width: 100%;
+  }
+  .naptec__perks {
+    flex-wrap: wrap;
+  }
+  .naptec__perks {
+    padding: 60px 40px;
+  }
+  .naptec__perks-item {
+    justify-content: flex-start;
+    align-items: start;
+  }
+  .naptec__perks-item h3 {
+    font-size: 18px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .naptec__perks-item h3 {
+    font-size: 22px;
+  }
+  .naptec__perks-item p {
+    font-size: 16px;
+  }
+  .naptec__perks {
+    gap: 0;
+    column-gap: 1rem;
+    row-gap: 3rem;
+    padding: 4.8rem 1.6rem;
+  }
+  .naptec__perks-item {
+    width: calc(50% - 1rem);
+  }
+  .naptec__perks-item h3 {
+    font-size: 16px;
+  }
+  .naptec__perks-item img {
+    /* width: 22px; */
+    object-fit: contain;
+  }
+}

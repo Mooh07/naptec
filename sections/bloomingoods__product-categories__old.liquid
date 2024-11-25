@@ -1,0 +1,164 @@
+<style>
+  .bloomingoods__product-categories {
+    --background-color: {{ section.settings.background_color }};
+    --title-color: {{ section.settings.title_color }};
+    --text-color: {{ section.settings.text_color }};
+    --category-text-color: {{ section.settings.category_text_color }};
+  }
+</style>
+<script src="{{ "glide.js" | asset_url }}" defer="defer"></script>
+{{ 'bloomingoods__product-categories.css' | asset_url | stylesheet_tag }}
+<section class="bloomingoods__product-categories page-width">
+  <div class="bloomingoods__product-categories-text-container">
+    <h2>
+      {% assign split_header = section.settings.header | split: ' ' %}
+      {% for word in split_header %}
+        {% assign word_size = word | size %}
+
+        {% assign word_first_letter = word | slice: 0 %}
+        {% assign word_rest = word | slice: 1, word_size %}
+        {% if word_size < 3 %}
+          <span class="bloomingoods__section-title-rest">{{ word | upcase }}</span>
+          {% break %}
+        {% endif %}
+        <span class="bloomingoods__section-title-first-letter">{{ word_first_letter | upcase }}</span>
+        <span class="bloomingoods__section-title-rest">{{ word_rest | upcase }}</span>
+      {% endfor %}
+    </h2>
+    <p>
+      {{ section.settings.content }}
+    </p>
+  </div>
+  <div class="bloomingoods__product-categories-qualities-container">
+          <span class="bloomingoods__product-categories-slide-number-displays">
+        <span id="CurrentSlideNumber">0</span>
+        <span>/</span>
+        <span id="numberOfSlides">0</span>
+      </span>
+    <div class="glide">
+
+      <div class="glide__track" data-glide-el="track">
+        <ul class="glide__slides bloomingoods__product-categories-ul">
+          {% for block in section.blocks %}
+            {% case block.type %}
+              {% when 'category' %}
+                <li class="bloomingoods__product-categories-slider-item">
+                  <a href="{{ block.settings.url }}"></a>
+                  <h6>{{ block.settings.category_name }}</h6>
+                  <div>
+                    <img
+                      src="{{ block.settings.category_image | image_url: width: block.settings.category_image.width }}"
+                      alt="{{ block.settings.category_image.alt }}"
+                      width="{{ block.settings.category_image.width }}px"
+                      height="{{ block.settings.category_image.height }}px"
+                      loading="lazy"
+                    >
+                  </div>
+                </li>
+            {% endcase %}
+          {% endfor %}
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+<script defer="defer">
+  document.addEventListener("DOMContentLoaded", (event) => {
+
+    const slideNumberDisplay = document.querySelector('#CurrentSlideNumber');
+    const numberOfSlidesDisplay = document.querySelector('#numberOfSlides');
+    const numberOfSlides = document.querySelectorAll('.bloomingoods__product-categories-slider-item').length;
+    const glide = new Glide('.glide',{
+      type: 'carousel',
+      startAt: 0,
+      perView: 3.865,
+      breakpoints: {
+        992: {
+          perView: 2
+        },
+        600: {
+          perView: 1
+        }
+      }
+    });
+    glide.on(['mount.after', 'run'], () => {
+      const currentIndex = glide.index;
+      slideNumberDisplay.textContent = currentIndex + 1;
+      numberOfSlidesDisplay.textContent = numberOfSlides;
+    });
+  
+    glide.mount();
+  })
+</script>
+
+{% schema %}
+{
+  "name": "Product categories",
+  "settings": [
+    {
+      "type": "text",
+      "id": "header",
+      "label": "Section header",
+      "default": "Product categories"
+    },
+    {
+      "type": "text",
+      "id": "content",
+      "label": "Section text",
+      "default": "At BloomingGoods, we believe that beauty lies in the details. Each item in our collection is thoughtfully chosen to bring joy and elegance into your home, reflecting our commitment to quality and uniqueness."
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Background color",
+      "default": "#fff"
+    },
+    {
+      "type": "color",
+      "id": "title_color",
+      "label": "Title color",
+      "default": "#022D33"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Text color",
+      "default": "#000"
+    },
+    {
+      "type": "color",
+      "id": "category_text_color",
+      "label": "Category text color",
+      "default": "#fff"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "category",
+      "name": "Category",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "category_image",
+          "label": "Category image"
+        },
+        {
+          "type": "text",
+          "id": "category_name",
+          "label": "Category"
+        },
+         {
+          "type": "url",
+          "id": "url",
+          "label": "Category url"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Product categories"
+    }
+  ]
+}
+{% endschema %}

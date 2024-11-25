@@ -1,0 +1,78 @@
+.naperee__bestsellers {
+  padding: 11.2rem 8rem;
+  background: var(--background-color);
+  color: var(--text-color);
+}
+.naperee__bestsellers * {
+  margin: 0;
+}
+.naperee__bestsellers-subheader {
+  font-family: "eye catching pro";
+  font-size: 88px;
+  font-weight: 400;
+  line-height: 64px;
+  text-align: left;
+  padding-bottom: 16px;
+  color: inherit;
+}
+.naperee__bestsellers-header {
+  font-family: "etna";
+  font-size: 60px;
+  font-weight: 400;
+  line-height: 72px;
+  text-align: left;
+  padding-bottom: 60px;
+  color: inherit;
+}
+.naperee__bestsellers_products {
+  padding: 0;
+  margin: 0;
+  display: flex;
+  gap: 48px;
+}
+.naperee__bestsellers_products li {
+  width: 25%;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.naperee__bestsellers_products li a {
+  color: var(--text-color);
+  text-decoration: none;
+}
+.naperee__bestsellers_products li a:hover {
+  cursor: pointer;
+}
+.naperee__bestsellers_products li a * {
+  color: var(--text-color);
+}
+@media screen and (max-width: 1250px) {
+  .naperee__bestsellers_products {
+    flex-wrap: wrap;
+  }
+  .naperee__bestsellers_products li {
+    width: calc(50% - 48px);
+  }
+}
+@media screen and (max-width: 992px) {
+  .naperee__bestsellers-subheader {
+    font-size: 66px;
+    padding-bottom: 16px;
+  }
+  .naperee__bestsellers-header {
+    font-size: 40px;
+    padding-bottom: 30px;
+  }
+  .naperee__bestsellers {
+    padding: 8.2rem 4rem;
+  }
+}
+@media screen and (max-width: 768px) {
+  .naperee__bestsellers_products li {
+    width: 100%;
+  }
+  .naperee__bestsellers {
+    padding: 4.2rem 1.6rem;
+  }
+}

@@ -1,0 +1,24 @@
+.naptec__separation-image {
+  padding: 0;
+  padding-bottom: 120px;
+}
+.naptec__separation-image-top {
+  /* background-color: #143338; */
+  display: flex;
+}
+.naptec__separation-image-top img {
+  max-width: 100%;
+  object-fit: cover;
+}
+.naptec__separation-image-bottom {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding: 1rem 8rem;
+  background-color: #143338;
+}
+@media screen and (max-width: 992px) {
+  .naptec__separation-image-bottom {
+    justify-content: center;
+  }
+}

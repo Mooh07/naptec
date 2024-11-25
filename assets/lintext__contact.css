@@ -1,0 +1,197 @@
+.lintext__contact {
+  padding: 192px 80px;
+  background-color: #f4f4f4;
+  position: relative;
+  color: var(--text-color);
+  background-color: var(--background-color);
+}
+.lintext__contact-content {
+  max-width: 547px;
+  position: relative;
+  z-index: 2;
+  padding-bottom: 180px;
+}
+.lintext__contact-content h1,
+.lintext__contact-content p {
+  margin: 0;
+  padding: 0;
+  color: inherit;
+}
+.lintext__contact-content h1 {
+  font-family: "pp agrandir";
+  font-size: 64px;
+  font-weight: 800;
+  line-height: 112.5%;
+  text-align: left;
+  padding-bottom: 40px;
+}
+.lintext__contact-content p {
+  font-family: "pp agrandir";
+  font-size: 32px;
+  font-weight: 400;
+  line-height: 100%;
+  text-align: left;
+}
+.lintext__contact-images {
+  position: absolute;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  margin-bottom: 17px;
+}
+.lintext__contact-images img {
+  position: absolute;
+  right: 0;
+  z-index: 1;
+  height: 65%;
+  width: auto;
+}
+.lintext__contact-information {
+  display: flex;
+  max-width: 100%;
+  position: relative;
+  z-index: 2;
+  gap: 112px;
+  padding-bottom: 132px;
+}
+.lintext__contact-information > div {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.lintext__contact-information p {
+  font-family: "faktum";
+  font-size: 22px;
+  font-weight: 300;
+  line-height: 28px;
+  text-align: left;
+  margin: 0;
+}
+.lintext__contact-form {
+  position: relative;
+  max-width: 617px;
+  background-color: rgba(255, 255, 255, 1);
+  border-radius: 40px;
+  padding: 40px;
+  z-index: 2;
+}
+.lintext__contact-form .field:after,
+.lintext__contact-form .field:hover,
+.field__input:focus,
+.field:hover.field:after {
+  box-shadow: none;
+  border: none;
+  border-radius: 12px;
+}
+.lintext__contact-form textarea {
+  min-height: 72px;
+}
+.lintext__contact-form .contact__button {
+  display: flex;
+}
+.lintext__contact-form .button:after {
+  box-shadow: none;
+}
+.lintext__contact-form .contact__button > button {
+  width: 100%;
+  background: #d86752;
+  color: white;
+  font-family: "pp agrandir";
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 24px;
+  text-align: center;
+  border-radius: 100px;
+}
+.lintext__contact-form .field label {
+  color: inherit;
+  font-family: "pp agrandir";
+  font-size: 16px;
+  font-weight: 300;
+  line-height: 150%;
+  text-align: left;
+}
+.lintext__contact-form .field {
+  padding-bottom: 40px;
+}
+.lintext__contact-form .field__input:focus {
+  border: 1px solid rgba(26, 55, 72, 0.5);
+  box-shadow: 1px solid rgba(26, 55, 72, 0.5);
+  outline: none;
+  border-radius: 12px;
+}
+.lintext__contact-form h3 {
+  padding: 0;
+  margin: 0;
+  color: inherit;
+  padding-bottom: 40px;
+  font-family: "pp agrandir";
+  font-size: 40px;
+  font-weight: 400;
+  line-height: 120%;
+  text-align: left;
+}
+.lintext__contact-form input,
+.lintext__contact-form textarea {
+  background-color: transparent;
+  border: 1px solid rgba(26, 55, 72, 0.5);
+  border-radius: 12px;
+  color: var(--text-color);
+}
+@media screen and (max-width: 1250px) {
+  .lintext__contact {
+    padding: 19.2rem 40px;
+  }
+  .lintext__contact-information {
+    gap: 56px;
+  }
+}
+@media screen and (max-width: 992px) {
+  .lintext__contact {
+    padding: 12.2rem 4rem;
+  }
+  .lintext__contact-content h1 {
+    font-size: 48px;
+    padding-bottom: 16px;
+  }
+  .lintext__contact-content p {
+    font-size: 14px;
+  }
+  .lintext__contact-content {
+    max-width: 95%;
+    padding-bottom: 9rem;
+  }
+  .lintext__contact-information {
+    flex-wrap: wrap;
+    gap: 3rem;
+    padding-bottom: 9rem;
+  }
+}
+@media screen and (max-width: 600px) {
+  .lintext__contact-information svg {
+    width: 20px;
+  }
+  .lintext__contact-information p {
+    font-size: 16px;
+  }
+  .lintext__contact {
+    padding: 8rem 1.6rem;
+  }
+  .lintext__contact-content h1 {
+    font-size: 32px;
+    padding-bottom: 12px;
+  }
+  .lintext__contact-content p {
+    font-size: 12px;
+  }
+  .lintext__contact-content,
+  .lintext__contact-information {
+    padding-bottom: 5rem;
+  }
+  .lintext__contact-form {
+    padding: 4rem 2rem;
+  }
+  .lintext__contact-form h3 {
+    font-size: 26px;
+  }
+}

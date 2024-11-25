@@ -1,0 +1,146 @@
+{{ 'lintext__footer.css' | asset_url | stylesheet_tag }}
+<section class="lintext__footer page-width color-scheme-31edc585-881b-437e-b4ee-a3072746c89f">
+  <div class="lintext__footer-left">
+    <div class="lintext__footer-subscription-wrapper">
+      <h3>{{ section.settings['text-above-subscription'] }}</h3>
+      {%- form 'customer', id: 'ContactFooter' -%}
+        <input type="hidden" name="contact[tags]" value="newsletter,lintext">
+        <div class="lintext__footer-subscription-input-container">
+          <input
+            id="NewsletterForm--{{ section.id }}"
+            type="email"
+            name="contact[email]"
+            class=""
+            value="{{ form.email }}"
+            aria-required="true"
+            autocorrect="off"
+            autocapitalize="off"
+            autocomplete="email"
+            {% if form.errors %}
+              autofocus
+              aria-invalid="true"
+              aria-describedby="ContactFooter-error"
+            {% elsif form.posted_successfully? %}
+              aria-describedby="ContactFooter-success"
+            {% endif %}
+            placeholder="{{ 'newsletter.label' | t }}"
+            required
+          >
+          <button class="newsletter-submit-btn" type="submit">{{ 'Subscribe' | upcase }}</button>
+        </div>
+        {%- if form.posted_successfully? -%}
+          <h3
+            class="newsletter-form__message newsletter-form__message--success form__message"
+            id="ContactFooter-success"
+            tabindex="-1"
+            autofocus
+          >
+            {% render 'icon-success' -%}
+            {{- 'newsletter.success' | t }}
+          </h3>
+        {%- endif -%}
+           {%- if form.errors -%}
+            <small class="newsletter-form__message form__message" id="ContactFooter-error">
+              {%- render 'icon-error' -%}
+              {{- form.errors.translated_fields.email | capitalize }}
+              {{ form.errors.messages.email -}}
+            </small>
+          {%- endif -%}
+      {%- endform -%}
+    </div>
+    <img
+      class="lintext__footer-logo"
+      src="{{ section.settings.logo_image | image_url: width: section.settings.logo_image.width }}"
+      href="{{ section.settings.logo_image.alt }}"
+      width="{{ section.settings.logo_image.width }}px"
+      height="{{ section.settings.logo_image.height }}px"
+      loading="lazy"
+    >
+  </div>
+  <div class="lintext__footer-right">
+    <div class="lintext__footer-right-top">
+      <div class="lintext__footer-contact">
+        <h5>Contact</h5>
+        <a href="tel:{{ section.settings.contact_number }}">{{ section.settings.contact_number }}</a>
+        <a href="mailto:{{ section.settings.contact_email }}">{{ section.settings.contact_email }}</a>
+      </div>
+      <div class="lintext__footer-links">
+        <h5>Menu</h5>
+        <ul class="">
+          {% for link in section.settings.link_list.links %}
+            <li class="lintext__footer-list-item">
+              <a href="{{ link.url }}">
+                {{ link.title }}
+              </a>
+            </li>
+          {% endfor %}
+        </ul>
+      </div>
+    </div>
+    <div class="lintext__footer-right-bottom">
+      <p>{{ section.settings['all-rights-reserved'] }}</p>
+      <p>{{ section.settings.copyright }}</p>
+    </div>
+  </div>
+</section>
+<style>
+  .lintext__footer {
+    background-color: {{ section.settings.background_color }};
+  }
+</style>
+{% schema %}
+{
+  "name": "Lintext footer",
+  "settings": [
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Background color",
+      "default": "rgb(26, 55, 72)"
+    },
+    {
+      "type": "text",
+      "id": "contact_number",
+      "label": "Contact number"
+    },
+    {
+      "type": "text",
+      "id": "contact_email",
+      "label": "Contact email"
+    },
+    {
+      "type": "link_list",
+      "id": "link_list",
+      "label": "Link list"
+    },
+    {
+      "type": "image_picker",
+      "id": "logo_image",
+      "label": "Logo"
+    },
+    {
+      "type": "text",
+      "id": "text-above-subscription",
+      "label": "Text above subscription input",
+      "default": "Get our news straight to your inbox"
+    },
+    {
+      "type": "text",
+      "id": "all-rights-reserved",
+      "label": "All rights reserved",
+      "default": "Copyright © 2024 All right reserved."
+    },
+    {
+      "type": "text",
+      "id": "copyright",
+      "label": "Copy rights by",
+      "default": "Copyright by NaptecPaper.com"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Lintext footer"
+    }
+  ]
+}
+{% endschema %}

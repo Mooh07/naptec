@@ -1,0 +1,158 @@
+{% if product.selling_plan_groups.size > 0 %}
+  <subscription-plans class="product__selling-plan">
+    <input type="hidden" name="selling_plan" value="" form="{{ product_form_id }}" hidden>
+    
+    <h4>Delivery options</h4>
+    <div class="product__selling-plan-container">
+      <div>
+        <input id="no-plan" type="radio" name="selling_plan_controller" value="" form="{{ product_form_id }}" hidden checked >
+        <span class="product__selling-plan-radio-span"></span>
+        <label for="no-plan"
+          ><span>{{ default_plan_message }}</span>
+          <span>{{ product.selected_or_first_available_variant.price | money }}</span></label
+        >
+      </div>
+    </div>
+    {% for plan in product.selling_plan_groups limit:1 %}
+      {% assign plan_label = plan.selling_plans.first.description %}
+      {% assign perentage = plan.selling_plans.first.price_adjustments.first.value %}
+      {% assign amount_to_substract = perentage
+        | times: product.selected_or_first_available_variant.price
+        | divided_by: 100.0
+      %}
+      {% assign new_price = product.selected_or_first_available_variant.price | minus: amount_to_substract %}
+      <div class="product__selling-plan-container">
+        <div>
+          <input
+            id="subscribed"
+            type="radio"
+            name="selling_plan_controller"
+            value="{{ plan.selling_plans.first.id }}"
+            form="{{ product_form_id }}"
+            hidden
+            
+          >
+          <span class="product__selling-plan-radio-span"></span>
+          <label for="subscribed"
+            ><span>{{ plan_label }}</span> <span>{{ new_price | money }}</span>
+          </label>
+        </div>
+        <select class="product__selling-plan-select">
+          {% for discount in plan.selling_plans %}
+            <option
+              data-price_adjustments="{{ discount.price_adjustments.first.value }}"
+              {% if forloop.first %}
+                selected
+              {% endif %}
+              value="{{ discount.id }}"
+            >
+              {{ discount.name }}
+            </option>
+          {% endfor %}
+        </select>
+      </div>
+    {% endfor %}
+  </subscription-plans>
+{% endif %}
+<!-- {{ product.selected_or_first_available_variant.price | minus: plan.price_adjustments[forloop.index0].value }} -->
+<style>
+  .product__selling-plan {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+  .product__selling-plan > h4 {
+    padding: 0;
+    margin: 0;
+    font-family: "faktum";
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 133.5%;
+    text-align: left;
+    color: rgba(17, 17, 17, 1);
+    padding-bottom: 16px;
+  }
+  .product__selling-plan > .product__selling-plan-container {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    border: 1px solid rgba(161, 173, 175, 1);
+    display: flex;
+    padding: 18px 20px;
+    flex-direction: column;
+    align-items: start;
+    gap: 1rem;
+    transition-delay: 0;
+    transition-duration: 200ms;
+    transition-property: height;
+    transition-timing-function: ease-in;
+    position: relative;
+  }
+  .product__selling-plan-container > div {
+    display: flex;
+    align-items: center;
+  }
+  .product__selling-plan-container > * {
+    width: 100%;
+  }
+  .product__selling-plan > div > div > span {
+    width: 20px;
+    height: 20px;
+    border: 1px solid rgba(156, 177, 180, 1);
+    border-radius: 5px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 16px;
+    position: relative;
+  }
+  .product__selling-plan input:checked+span:after {
+    background-color: rgba(7, 59, 67, 1);
+  }
+  .product__selling-plan select:focus-visible {
+    box-shadow: none;
+    outline: none;
+    border-radius: 8px;
+    border: 1px solid rgba(161, 173, 175, 1);
+  }
+  .product__selling-plan select {
+    display: none;
+    padding: 0 2rem;
+    box-shadow: none;
+    outline: none;
+    border-radius: 8px;
+    border: 1px solid rgba(161, 173, 175, 1);
+    margin-top:2rem;
+        max-width: 270px;
+    padding: 1.5rem 2rem;
+    position: relative;
+    z-index: 3;
+  }
+  .visible_select {
+    display: block;
+  }
+  .product__selling-plan > div > div > span:after {
+    content: "";
+    position: absolute;
+    left: 1px;
+    right: 1px;
+    bottom: 1px;
+    top: 1px;
+    border-radius: calc(5px - 1px);
+  }
+  .product__selling-plan-container label{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+  }
+  .product__selling-plan-container label:after{
+    position: absolute;
+    top:0;
+    left:0;
+    width: 100%;
+    height: 100%;
+    content: "";
+    display: block;
+    z-index:2;
+  }
+</style>

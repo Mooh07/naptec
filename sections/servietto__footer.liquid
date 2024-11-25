@@ -1,0 +1,146 @@
+{{ 'servietto__footer.css' | asset_url | stylesheet_tag }}
+<section class="servietto__footer page-width color-scheme-20f7516e-911c-4b6d-89a8-099f934c8a36">
+  <div class="servietto__footer-left">
+    <div class="servietto__footer-subscription-wrapper">
+      <h3>{{ section.settings['text-above-subscription'] }}</h3>
+      {%- form 'customer', id: 'ContactFooter' -%}
+        <input type="hidden" name="contact[tags]" value="newsletter,sesrvietto">
+        <div class="servietto__footer-subscription-input-container">
+          <input
+            id="NewsletterForm--{{ section.id }}"
+            type="email"
+            name="contact[email]"
+            class=""
+            value="{{ form.email }}"
+            aria-required="true"
+            autocorrect="off"
+            autocapitalize="off"
+            autocomplete="email"
+            {% if form.errors %}
+              autofocus
+              aria-invalid="true"
+              aria-describedby="ContactFooter-error"
+            {% elsif form.posted_successfully? %}
+              aria-describedby="ContactFooter-success"
+            {% endif %}
+            placeholder="{{ 'newsletter.label' | t }}"
+            required
+          >
+          {% render 'servietto_arrow', color: '#FFFFFF' %}
+          {%- if form.errors -%}
+            <small class="newsletter-form__message form__message" id="ContactFooter-error">
+              {%- render 'icon-error' -%}
+              {{- form.errors.translated_fields.email | capitalize }}
+              {{ form.errors.messages.email -}}
+            </small>
+          {%- endif -%}
+        </div>
+        {%- if form.posted_successfully? -%}
+          <h3
+            class="newsletter-form__message newsletter-form__message--success form__message"
+            id="ContactFooter-success"
+            tabindex="-1"
+            autofocus
+          >
+            {% render 'icon-success' -%}
+            {{- 'newsletter.success' | t }}
+          </h3>
+        {%- endif -%}
+      {%- endform -%}
+    </div>
+    <img
+      class="servietto__footer-logo"
+      src="{{ section.settings.logo_image | image_url: width: section.settings.logo_image.width }}"
+      href="{{ section.settings.logo_image.alt }}"
+      width="{{ section.settings.logo_image.width }}"
+      height="{{ section.settings.logo_image.height }}"
+      loading="lazy"
+    >
+  </div>
+  <div class="servietto__footer-right">
+    <div class="servietto__footer-right-top">
+      <div class="servietto__footer-contact">
+        <h5>Contact</h5>
+        <a href="tel:{{ section.settings.contact_number }}">{{ section.settings.contact_number }}</a>
+        <a href="mailto:{{ section.settings.contact_email }}">{{ section.settings.contact_email }}</a>
+      </div>
+      <div class="servietto__footer-links">
+        <h5>Menu</h5>
+        <ul class="">
+          {% for link in section.settings.link_list.links %}
+            <li class="servietto__footer-list-item">
+              <a href="{{ link.url }}">
+                {{ link.title }}
+              </a>
+            </li>
+          {% endfor %}
+        </ul>
+      </div>
+    </div>
+    <div class="servietto__footer-right-bottom">
+      <p>{{ section.settings['all-rights-reserved'] }}</p>
+      <p>{{ section.settings.copyright }}</p>
+    </div>
+  </div>
+</section>
+<style>
+  .servietto__footer {
+    background-color: {{ section.settings.background_color }};
+  }
+</style>
+{% schema %}
+{
+  "name": "Servietto footer",
+  "settings": [
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Background color",
+      "default": "rgb(28, 54, 61)"
+    },
+    {
+      "type": "text",
+      "id": "contact_number",
+      "label": "Contact number"
+    },
+    {
+      "type": "text",
+      "id": "contact_email",
+      "label": "Contact email"
+    },
+    {
+      "type": "link_list",
+      "id": "link_list",
+      "label": "Link list"
+    },
+    {
+      "type": "image_picker",
+      "id": "logo_image",
+      "label": "Logo"
+    },
+    {
+      "type": "text",
+      "id": "text-above-subscription",
+      "label": "Text above subscription input",
+      "default": "Get our news straight to your inbox"
+    },
+    {
+      "type": "text",
+      "id": "all-rights-reserved",
+      "label": "All rights reserved",
+      "default": "Copyright © 2024 All right reserved."
+    },
+    {
+      "type": "text",
+      "id": "copyright",
+      "label": "Copy rights by",
+      "default": "Copyright by NaptecPaper.com"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Servietto footer"
+    }
+  ]
+}
+{% endschema %}

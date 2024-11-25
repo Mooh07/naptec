@@ -1,0 +1,122 @@
+.bloomingoods__bestsellers {
+  --background-color: {{ section.settings.background_color }};
+  --title-color: {{ section.settings.title_color }};
+  --card-text-color: {{ section.settings.card_text_color }};
+}
+.bloomingoods__bestsellers {
+  padding: 112px 80px 92px 80px;
+  background-color: var(--background-color);
+}
+.bloomingoods__bestsellers-text-container {
+  padding-top: 21px;
+  display: flex;
+  flex-direction: column;
+}
+.bloomingoods__bestsellers-text-container h2 {
+  margin: 0;
+  padding-bottom: 60px;
+  color: #022D33;
+  position: relative;
+  color: var(--title-color);
+}
+.bloomingoods__bestsellers-text-container h2:after {
+  width: 68%;
+  height: 1px;
+  background-color: black;
+  content: '';
+  position: absolute;
+  right: 0;
+  bottom: 73%;
+}
+.bloomingoods__section-title-first-letter {
+  font-family: 'luxurious script';
+  font-size: 80px;
+  font-weight: 400;
+  line-height: 44px;
+  text-align: left;
+}
+.bloomingoods__section-title-rest {
+  font-family: 'milanesa serif';
+  font-size: 32px;
+  font-weight: 400;
+  line-height: 44px;
+  text-align: left;
+}
+.bloomingoods__bestsellers-text-container p {
+  margin-left: auto;
+  max-width: 596px;
+  font-family: 'latienne pro';
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 28px;
+  text-align: left;
+  margin-bottom: 196px;
+}
+
+.bloomingoods__bestsellers-products-container ul {
+  display: flex;
+  gap: 48px;
+  padding: 0;
+  margin: 0;
+}
+
+.bloomingoods__bestsellers-products-container ul li {
+  width: 25%;
+  list-style: none;
+  color: var(--card-text-color);
+}
+.bloomingoods__bestsellers-products-container ul li a {
+  text-decoration: none;
+  color: rgba(56, 55, 53, 1);
+}
+.bloomingoods__bestsellers-products-container p,
+.bloomingoods__bestsellers-products-container span,
+.bloomingoods__bestsellers-products-container div {
+  color: var(--card-text-color);
+}
+@media screen and (max-width: 1440px) {
+  .bloomingoods__bestsellers-text-container h2:after {
+    width: 62%;
+  }
+}
+@media screen and (max-width: 1250px) {
+  .bloomingoods__bestsellers-text-container h2:after {
+    width: 55%;
+  }
+}
+@media screen and (max-width: 1100px) {
+  .bloomingoods__bestsellers-text-container h2:after {
+    width: 50%;
+  }
+}
+@media screen and (max-width: 992px) {
+  .bloomingoods__bestsellers {
+    padding: 8rem 4rem;
+  }
+  .bloomingoods__bestsellers-text-container h2 {
+    padding-bottom: 31px;
+  }
+  .bloomingoods__bestsellers-text-container h2:after {
+    width: 25%;
+    bottom: 63%;
+  }
+  .bloomingoods__bestsellers-products-container ul {
+    flex-wrap: wrap;
+  }
+  .bloomingoods__bestsellers-products-container ul li {
+    width: calc(50% - 48px);
+  }
+}
+@media screen and (max-width: 700px) {
+  .bloomingoods__bestsellers-text-container h2:after {
+    display: none;
+  }
+}
+@media screen and (max-width: 600px) {
+  .bloomingoods__bestsellers {
+    padding: 8rem 4rem;
+  }
+  .bloomingoods__bestsellers-products-container ul li {
+    width: 100%;
+  }
+}
