@@ -1,6 +1,8 @@
 .lintext__main-hero {
   height: min(100vh, 760px);
-  padding: 296px 80px;
+  padding: 0 80px;
+  display: flex;
+  align-items:center;
   background-color: #f4f4f4;
   position: relative;
   color: var(--text-color);
