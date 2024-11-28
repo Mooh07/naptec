@@ -2,10 +2,13 @@
   padding: 0;
   display: flex;
 }
-.naptec__half-image-half-text > div {
-  width: 50%;
+.naptec__half-image-half-text > div:first-child {
+  max-width: 44%;
 }
-.naptec__half-image-half-text .naptec__half-image-wrapper{
+.naptec__half-image-half-text > div {
+  width: 100%;
+}
+.naptec__half-image-half-text .naptec__half-image-wrapper {
   display: flex;
 }
 .naptec__half-image-half-text .naptec__half-image-wrapper img {
@@ -15,8 +18,15 @@
   object-fit: cover;
 }
 .naptec__half-image-half-text .naptec__half-text-wrapper {
-  padding: 118px 8rem;
+  width: 100%;
+  max-width: 675px;
 }
+.naptec__half-text-container {
+  padding: 15rem var(--padding-sides);
+  display: flex;
+  justify-content: end;
+}
+
 .naptec__half-image-half-text .naptec__half-text-wrapper h2 {
   font-size: 60px;
   font-weight: 500;
@@ -26,7 +36,7 @@
   margin-bottom: 32px;
 }
 .naptec__half-image-half-text .naptec__half-text-wrapper > div {
-  font-size: 24px;
+  font-size: 21px;
   font-weight: 300;
   line-height: 150%;
   text-align: left;
@@ -40,30 +50,31 @@
   margin-left: auto;
   display: block;
 }
-@media screen and (max-width: 1200px) {
-  .naptec__half-image-half-text .naptec__half-text-wrapper {
-    padding: 118px 4rem;
+@media screen and (max-width: 1150px) {
+  .naptec__half-text-container {
+    padding: 15rem 4rem;
   }
 }
 @media screen and (max-width: 992px) {
+  .naptec__half-text-container {
+    padding: 6rem var(--padding-sides);
+  }
   .naptec__half-image-half-text {
     flex-direction: column-reverse;
   }
   .naptec__half-image-half-text > div {
     width: 100%;
   }
-  .naptec__half-image-half-text .naptec__half-text-wrapper {
-    padding: 4rem;
+  .naptec__half-image-half-text .naptec__half-text-wrapper,
+  .naptec__half-image-half-text > div:first-child {
+    max-width: 100%;
   }
 }
 @media screen and (max-width: 600px) {
-  .naptec__half-image-half-text .naptec__half-text-wrapper {
-    padding: 4rem 1.6rem;
-  }
-  .naptec__half-image-half-text .naptec__half-text-wrapper h2{
+  .naptec__half-image-half-text .naptec__half-text-wrapper h2 {
     font-size: 42px;
   }
-  .naptec__half-image-half-text .naptec__half-text-wrapper > div{
+  .naptec__half-image-half-text .naptec__half-text-wrapper > div {
     font-size: 16px;
   }
 }

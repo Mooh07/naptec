@@ -63,7 +63,7 @@
 }
 .naptec__main-hero-cta {
   max-width: fit-content;
-  padding: 1.6rem 7.4rem;
+  padding: 1.6rem 7rem;
   color: white;
   border: 1px solid white;
   text-decoration: none;
@@ -71,6 +71,7 @@
   font-size: 20px;
   margin-top: 16px;
   transition: var(--duration-default) ease;
+  font-weight: 500;
 }
 
 .naptec__main-hero-cta:hover {

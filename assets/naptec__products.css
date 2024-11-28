@@ -1,10 +1,11 @@
 .naptec__products {
-  padding: 14rem 8rem;
+  padding: 12rem var(--padding-sides);
 }
 .naptec__products-top {
-  margin-bottom: 8rem;
+  margin-bottom: 6rem;
   display: flex;
   justify-content: space-between;
+  flex-direction: column;
 }
 .naptec__products-top-view-all {
   display: flex;
@@ -19,11 +20,18 @@
   text-align: center;
   border: 1px solid rgba(255, 255, 255, 1);
   border-radius: 100px;
+  text-decoration: none;
+  transition: 0.3;
+}
+.naptec__products-top-view-all a:hover {
+  background-color: white;
+  color: color;
+  color: rgba(7, 59, 67, 1);
 }
 .naptec__products-top h2 {
   font-size: 60px;
   font-weight: 500;
-  line-height: 72px;
+  line-height: 1.2;
   text-align: left;
   margin: 0;
   margin-bottom: 1.2rem;
@@ -33,6 +41,7 @@
   font-weight: 200;
   line-height: 154%;
   text-align: left;
+  margin: 0;
 }
 
 .naptec__products-wrapper {
@@ -57,13 +66,19 @@
 }
 @media screen and (max-width: 1250px) {
   .naptec__products {
-    padding: 10rem 4rem;
+    padding: 10rem var(--padding-sides);
   }
   .naptec__products-list-item {
     width: calc(50% - 3rem);
   }
   .naptec__products-container {
     flex-wrap: wrap;
+  }
+  .naptec__products-top h2 {
+    font-size: 48px;
+  }
+  .naptec__products-top p {
+    font-size: 18px;
   }
 }
 
@@ -77,7 +92,15 @@
     width: calc(50% - 1rem);
   }
   .naptec__products {
-    padding: 8rem 4rem;
+    padding: 8rem var(--padding-sides);
+  }
+  .naptec__products-top-view-all a {
+    font-size: 14px;
+    padding: 1.2rem 2.2rem;
+    white-space: nowrap;
+  }
+  .naptec__products-top {
+    margin-bottom: 3rem;
   }
 }
 @media screen and (max-width: 768px) {
@@ -87,22 +110,38 @@
   .naptec__products-top p {
     font-size: 16px;
   }
+  .naptec__product-card-information-top h5 {
+    font-size: 16px;
+  }
 }
 
 @media screen and (max-width: 600px) {
   .naptec__products {
-    padding: 4.8rem 1.6rem;
+    padding: 4.8rem var(--padding-sides);
   }
-  .naptec__products-list-item {
-    width: 100%;
-  }
+
   .naptec__products-top {
     flex-direction: column;
   }
-  .naptec__products-top {
-    gap: 3rem;
-  }
   .naptec__products-top-view-all a {
     width: 100%;
+  }
+  .naptec__products-top h2 {
+    font-size: 32px;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .naptec__products-top h2 {
+    font-size: 28px;
+  }
+}
+@media screen and (max-width: 450px) {
+  .naptec__products-list-item {
+    width: 100%;
+  }
+  .naptec__products-top-view-all a {
+    font-size: 12px;
+    padding: 1rem 1.5rem;
   }
 }

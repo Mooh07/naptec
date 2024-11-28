@@ -1,6 +1,6 @@
 .naptec__footer {
   display: flex;
-  padding: 7.2rem 8rem 5rem 8rem;
+  padding: 7.2rem var(--padding-sides) 5rem var(--padding-sides);
   flex-direction: column;
 }
 .naptec__footer-wrapper {
@@ -16,13 +16,13 @@
   flex-direction: column;
   gap: 8rem;
 }
-.napte__logo {
+.naptec__footer-icons {
   display: flex;
   flex-direction: column;
   gap: 2.4rem;
   min-height: 127px;
 }
-.napte__logo svg {
+.naptec__footer-icons svg {
   width: 100%;
 }
 .naptec__contact {
@@ -66,7 +66,7 @@
 .naptec__footer-list-item {
   font-size: 18px;
   font-weight: 400;
-  line-height: 150%;
+  line-height: 140%;
   text-align: left;
 }
 .naptec__footer-list-item a {
@@ -92,7 +92,7 @@
   margin: 0;
   margin-bottom: 2.4rem;
 }
-.naptec__footer-subscription-wrapper > form{
+.naptec__footer-subscription-wrapper > form {
   display: flex;
   flex-direction: column;
   gap: 10px;
@@ -102,12 +102,15 @@
   gap: 1.2rem;
 }
 .naptec__footer-subscription-input-container input {
-  border: 1px solid rgba(255, 255, 255, 1);
+  border: 1px solid rgba(57, 98, 105, 1);
   padding: 1.6rem 2.4rem;
   border-radius: 100px;
   width: 100%;
   max-width: 352px;
   background: rgba(255, 255, 255, 0.08);
+  font-size: 20px;
+  line-height: 1.2;
+  min-width: 352px;
 }
 .naptec__footer-subscription-input-container input::placeholder {
   color: white;
@@ -131,7 +134,7 @@
 
 @media screen and (max-width: 1250px) {
   .naptec__footer {
-    padding: 7.2rem 4rem 5rem 4rem;
+    padding: 7.2rem var(--padding-sides) 5rem var(--padding-sides);
   }
 }
 @media screen and (max-width: 992px) {
@@ -152,16 +155,22 @@
   .naptec__footer-left,
   .naptec__footer-right {
     width: 100%;
-    max-width: 600px;
+    /* max-width: 600px; */
   }
   .naptec__footer-logo {
     width: 120px;
+  }
+  .naptec__footer-icons svg {
+    width: 150px;
+  }
+  .naptec__footer-icons {
+    gap: 1.2rem;
   }
 }
 
 @media screen and (max-width: 600px) {
   .naptec__footer {
-    padding: 7.2rem 1.6rem 5rem 1.6rem;
+    padding: 7.2rem var(--padding-sides) 5rem var(--padding-sides);
   }
   .naptec__footer-copy-right {
     flex-direction: column;

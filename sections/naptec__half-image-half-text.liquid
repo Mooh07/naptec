@@ -1,6 +1,6 @@
 <style>
   {% if section.settings.image-right %}
-    .naptec__half-image-half-text{
+    .naptec__half-image-half-text {
       flex-direction: row-reverse;
     }
   {% endif %}
@@ -13,60 +13,62 @@
       width="{{ section.settings.image.width }}"
       height="{{ section.settings.image.height }}"
       alt="{{ section.settings.image.alt }}"
-      loading="lazy"
-    >
+      loading="lazy">
   </div>
-  <div class="naptec__half-text-wrapper">
-    <h2>{{ section.settings.header }}</h2>
-    <div>
-      {{ section.settings.content }}
+  <div class="naptec__half-text-container">
+    <div class="naptec__half-text-wrapper">
+      <h2>{{ section.settings.header }}</h2>
+      <div>
+        {{ section.settings.content }}
+      </div>
+      {% if section.settings['image-bottom'] != blank %}
+        <img
+          src="{{ section.settings.image-bottom | image_url: width: section.settings.image-bottom.width }}"
+          width="{{ section.settings.image-bottom.width }}"
+          height="{{ section.settings.image-bottom.height }}"
+          alt="{{ section.settings.image-bottom.alt }}"
+          loading="lazy">
+      {% endif %}
     </div>
-    {% if section.settings['image-bottom'] != blank %}
-      <img
-        src="{{ section.settings.image-bottom | image_url: width: section.settings.image-bottom.width }}"
-        width="{{ section.settings.image-bottom.width }}"
-        height="{{ section.settings.image-bottom.height }}"
-        alt="{{ section.settings.image-bottom.alt }}"
-        loading="lazy"
-      >
-    {% endif %}
   </div>
 </section>
 
 {% schema %}
-{
-  "name": "Half image half text",
-  "settings": [{
-    "type": "image_picker",
-    "id": "image",
-    "label": "Image of section"
-  },
   {
-    "type":"text",
-    "id": "header",
-    "label": "Section header",
-    "default": "About Neptech"
-  },
-  {
-    "type":"richtext",
-    "id": "content",
-    "label": "Section content"
-  },
-  {
-    "type": "image_picker",
-    "id": "image-bottom",
-    "label": "Logo below content"
-  },
-    {
-    "type": "checkbox",
-    "id": "image-right",
-    "label": "Image in right position",
-    "default": false,
-      "info": "Visible change only in desktop"
+    "name": "Half image half text",
+    "settings": [
+      {
+        "type": "image_picker",
+        "id": "image",
+        "label": "Image of section"
+      },
+      {
+        "type": "text",
+        "id": "header",
+        "label": "Section header",
+        "default": "About Neptech"
+      },
+      {
+        "type": "richtext",
+        "id": "content",
+        "label": "Section content"
+      },
+      {
+        "type": "image_picker",
+        "id": "image-bottom",
+        "label": "Logo below content"
+      }, {
+        "type": "checkbox",
+        "id": "image-right",
+        "label": "Image in right position",
+        "default": false,
+        "info": "Visible change only in desktop"
+      }
+    ],
+    "presets": [
+      {
+        "name": "Half image half text"
+      }
+    ]
   }
-  ],
-  "presets": [{
-    "name": "Half image half text"
-  }]
-}
 {% endschema %}

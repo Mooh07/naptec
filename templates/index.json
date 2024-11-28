@@ -78,7 +78,7 @@
         "perk_ARfHTm": {
           "type": "perk",
           "settings": {
-            "header": "Trusted by hundreds  of thousands of customers",
+            "header": "Trusted by hundreds<br>  of thousands of customers",
             "description": "",
             "icon": "shopify://shop_images/verify.png"
           }
@@ -110,7 +110,9 @@
           "settings": {
             "logo": "shopify://shop_images/Group_27_f2b62b53-4a64-4647-b304-aff78043b938.png",
             "image": "shopify://shop_images/Frame_427319488_1.png",
-            "url": "shopify://pages/bloomingoods"
+            "url": "shopify://pages/bloomingoods",
+            "brand_description": "Bringing the unforgettable to the table",
+            "cta_label": "Visit the Website"
           }
         },
         "brand_faVbXc": {
@@ -118,7 +120,9 @@
           "settings": {
             "logo": "shopify://shop_images/servietto_logo.png",
             "image": "shopify://shop_images/Frame_427319489_1.png",
-            "url": "shopify://pages/servietto"
+            "url": "shopify://pages/servietto",
+            "brand_description": "Bringing the unforgettable to the table",
+            "cta_label": "Visit the Website"
           }
         },
         "brand_VTM33q": {
@@ -126,7 +130,9 @@
           "settings": {
             "logo": "shopify://shop_images/naperee_logo.png",
             "image": "shopify://shop_images/Frame_427319490.png",
-            "url": "shopify://pages/naperee"
+            "url": "shopify://pages/naperee",
+            "brand_description": "Bringing the unforgettable to the table",
+            "cta_label": "Visit the Website"
           }
         },
         "brand_8BWK7a": {
@@ -134,7 +140,9 @@
           "settings": {
             "logo": "shopify://shop_images/lintext_logo.png",
             "image": "shopify://shop_images/Frame_427319491.png",
-            "url": "shopify://pages/lintext"
+            "url": "shopify://pages/lintext",
+            "brand_description": "Bringing the unforgettable to the table",
+            "cta_label": "Visit the Website"
           }
         }
       },

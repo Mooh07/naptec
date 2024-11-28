@@ -33,7 +33,7 @@
 .naptec__product-card-information-top h5 {
   font-size: 20px;
   font-weight: 400;
-  line-height: 28px;
+  line-height: 1.4;
   text-align: left;
   margin: 0;
   display: flex;
@@ -43,6 +43,10 @@
 .naptec__product-card-arrow {
   display: flex;
   justify-content: center;
+  align-items: center;
+}
+.naptec__product-card-arrow a {
+  display: flex;
   align-items: center;
 }
 .naptec__product-card-arrow > a svg {

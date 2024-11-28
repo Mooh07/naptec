@@ -2,15 +2,18 @@
 {{ "naptec__products.css" | asset_url | stylesheet_tag }}
 <section class="page-width naptec__products color-scheme-1">
   <div class="naptec__products-top">
+    <div style="display: flex;justify-content:space-between;align-items:center;gap: 3rem">
+      <h2>{{ section.settings.title }}</h2>
+      {% if section.settings.view-all-url %}
+        <div class="naptec__products-top-view-all">
+          <a href="{{ section.settings.view-all-url }}">{{ section.settings.view-all-label }}</a>
+        </div>
+      {% endif %}
+    </div>
     <div>
-      <h2>PRODUCTS</h2>
       {{ section.settings.text_content }}
     </div>
-    {% if section.settings.view-all-url %}
-      <div class="naptec__products-top-view-all">
-        <a href="{{ section.settings.view-all-url }}">{{ section.settings.view-all-label }}</a>
-      </div>
-    {% endif %}
+
   </div>
   <div class="naptec__products-wrapper">
     <ul class="naptec__products-container">
@@ -33,6 +36,11 @@
     "name": "Naptec categories",
     "settings": [
       {
+        "type": "text",
+        "id": "title",
+        "default": "Product Categories",
+        "label": "Section's title"
+      }, {
         "type": "richtext",
         "id": "text_content",
         "label": "Text"

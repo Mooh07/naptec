@@ -19,10 +19,10 @@
   display: flex;
   justify-content: start;
   align-items: flex-end;
-  padding: 6.6rem 8rem;
+  padding: 6.6rem var(--padding-sides);
 }
 .naptec__make-custom-design-content {
-  padding: 8rem 6rem;
+  padding: 8rem 15rem 6rem 6rem;
   max-width: 699px;
   border-radius: 0px 620px 0px 0px;
   position: relative;
@@ -61,12 +61,15 @@
 .naptec__make-custom-design-content a {
   font-size: 18px;
   font-weight: 500;
-  line-height: 24px;
+  line-height: 1.4;
   text-align: center;
   padding: 1.6rem 4rem;
   border: 1px solid rgba(255, 255, 255, 1);
   border-radius: 100px;
   text-transform: uppercase;
+  display: inline-block;
+  text-decoration: none;
+  color: white;
 }
 .naptec__make-custom-design-content a:hover {
   background-color: rgb(var(--color-foreground));
@@ -75,22 +78,40 @@
 }
 @media screen and (max-width: 1250px) {
   .naptec__make-custom-design-content-wrapper {
-    padding: 6.6rem 4rem;
+    padding: 6.6rem var(--padding-sides);
+  }
+}
+@media screen and (max-width: 992px) {
+  .naptec__make-custom-design-content {
+    max-width: 60rem;
+    padding: 6rem 15rem 4rem 4rem;
+  }
+  .naptec__make-custom-design-content h2 {
+    font-size: 48px;
+  }
+  .naptec__make-custom-design-content p {
+    font-size: 18px;
+  }
+  .naptec__make-custom-design-content a {
+    font-size: 16px;
   }
 }
 @media screen and (max-width: 768px) {
   .naptec__make-custom-design-content-wrapper {
     padding: 6.6rem 2rem;
   }
+  .naptec__make-custom-design-content p {
+  }
 }
 @media screen and (max-width: 600px) {
-  .naptec__make-custom-design-content {
-    padding: 8rem 4rem;
-  }
   .naptec__make-custom-design-content-wrapper {
-    padding: 4rem 1.6rem;
+    padding: 4rem var(--padding-sides);
     align-items: center;
-    justify-content: center;
+    justify-content: start;
+  }
+
+  .naptec__make-custom-design-content {
+    padding: 6rem 15rem 4rem 4rem;
   }
   .naptec__make-custom-design-content h2 {
     font-size: 32px;
@@ -104,5 +125,23 @@
   .naptec__make-custom-design-content-container:after {
     top: -15px;
     left: 10px;
+  }
+  .naptec__make-custom-design-content {
+    max-width: 48rem;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .naptec__make-custom-design-content h2 {
+    font-size: 28px;
+  }
+  .naptec__make-custom-design-content p {
+    font-size: 14px;
+  }
+  .naptec__make-custom-design-content a {
+    font-size: 12px;
+  }
+  .naptec__make-custom-design-content {
+    padding: 6rem 8rem 4rem 4rem;
   }
 }

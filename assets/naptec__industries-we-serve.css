@@ -1,7 +1,16 @@
 .naptec__industries-we-serve {
-  padding: 6.6rem 8rem;
+  padding: var(--padding-sides);
+  padding-top: 12rem;
+  padding-bottom: 6rem;
 }
-.naptec__industries-wrapper {
+.naptec__industries-wrapper h2 {
+  font-family: "faktum";
+  font-size: 60px;
+  font-weight: 500;
+  line-height: 1.2;
+  text-align: left;
+  margin: 0;
+  margin-bottom: 6rem;
 }
 .naptec__industries-items {
   padding: 0;
@@ -10,8 +19,17 @@
   /* grid-auto-rows: repeat(3, 1fr); */
   grid-template-columns: repeat(4, 1fr);
   list-style-type: none;
-  column-gap: 202px;
+  column-gap: 200px;
   row-gap: 24px;
+}
+.naptec__industries-items li p {
+  font-family: "faktum";
+  font-size: 24px;
+  font-weight: 300;
+  line-height: 1.5;
+  text-align: left;
+  white-space: nowrap;
+  margin: 0;
 }
 .naptec__industries-items li {
   display: flex;
@@ -53,15 +71,32 @@
     /* grid-auto-rows: repeat(6, 1fr); */
     grid-template-columns: repeat(2, 1fr);
   }
+  .naptec__industries-wrapper h2 {
+    font-size: 48px;
+  }
+}
+@media screen and (max-width: 768px) {
+  .naptec__industries-items li p {
+    font-size: 20px;
+  }
 }
 @media screen and (max-width: 600px) {
   .naptec__industries-we-serve {
     padding: 4.8rem 1.6rem;
   }
-}
-@media screen and (max-width: 468px) {
+  .naptec__industries-items li p {
+    font-size: 16px;
+  }
+  .naptec__industries-wrapper h2 {
+    font-size: 32px;
+  }
   .naptec__industries-items {
-    grid-auto-rows: 1fr;
-    grid-template-columns: 1fr;
+    column-gap: 2.5rem;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .naptec__industries-items li p {
+    font-size: 14px;
   }
 }

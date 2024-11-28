@@ -2,15 +2,14 @@
 <section class="naptec__footer page-width color-scheme-1">
   <div class="naptec__footer-wrapper">
     <div class="naptec__footer-left">
-      <div class="napte__logo">
+      <div class="naptec__footer-icons">
         <img
           class="naptec__footer-logo"
           src="{{ settings.logo | image_url: width: settings.logo.width }}"
           width="{{ settings.logo.width }}"
           height="{{ settings.logo.height }}"
           alt="{{ settings.logo.alt }}"
-          loading="lazy"
-        >
+          loading="lazy">
         {% render 'elegance-always' %}
       </div>
       <div class="naptec__contact">
@@ -22,8 +21,12 @@
     <div class="naptec__footer-right">
       <div class="naptec__footer-subscription-wrapper">
         <h3>{{ section.settings['text-above-subscription'] }}</h3>
-        {%- form 'customer', id: 'ContactFooter' -%}
-          <input type="hidden" name="contact[tags]" value="newsletter,naptec">
+        {%- form 'customer'
+          , id: 'ContactFooter' -%}
+          <input
+            type="hidden"
+            name="contact[tags]"
+            value="newsletter,naptec">
           <div class="naptec__footer-subscription-input-container">
             <input
               id="NewsletterForm--{{ section.id }}"
@@ -36,45 +39,42 @@
               autocapitalize="off"
               autocomplete="email"
               {% if form.errors %}
-                autofocus
-                aria-invalid="true"
-                aria-describedby="ContactFooter-error"
+              autofocus
+              aria-invalid="true"
+              aria-describedby="ContactFooter-error"
               {% elsif form.posted_successfully? %}
-                aria-describedby="ContactFooter-success"
+              aria-describedby="ContactFooter-success"
               {% endif %}
               placeholder="{{ 'newsletter.label' | t }}"
-              required
-            >
+              required>
 
             <button
               type="submit"
               class="color-scheme-2"
               name="commit"
               id="Subscribe"
-              aria-label="{{ 'newsletter.button_label' | t }}"
-            >
+              aria-label="{{ 'newsletter.button_label' | t }}">
               {{ 'newsletter.button_label' | t }}
             </button>
- 
+
           </div>
           {%- if form.posted_successfully? -%}
             <h3
               class="newsletter-form__message newsletter-form__message--success form__message"
               id="ContactFooter-success"
               tabindex="-1"
-              autofocus
-            >
+              autofocus>
               {% render 'icon-success' -%}
               {{- 'newsletter.success' | t }}
             </h3>
           {%- endif -%}
-                     {%- if form.errors -%}
-              <small class="newsletter-form__message form__message" id="ContactFooter-error">
-                {%- render 'icon-error' -%}
-                {{- form.errors.translated_fields.email | capitalize }}
-                {{ form.errors.messages.email -}}
-              </small>
-            {%- endif -%}
+          {%- if form.errors -%}
+            <small class="newsletter-form__message form__message" id="ContactFooter-error">
+              {%- render 'icon-error' -%}
+              {{- form.errors.translated_fields.email | capitalize }}
+              {{ form.errors.messages.email -}}
+            </small>
+          {%- endif -%}
         {%- endform -%}
       </div>
       <div class="naptec__footer-links-container">
@@ -110,56 +110,54 @@
   }
 </style>
 {% schema %}
-{
-  "name": "Naptec footer",
-  "settings": [
-    {
-      "type": "color",
-      "id": "background_color",
-      "label": "Background color",
-      "default": "rgb(7, 59, 67)"
-    },
-    {
-      "type": "text",
-      "id": "contact_number",
-      "label": "Contact number"
-    },
-    {
-      "type": "text",
-      "id": "contact_email",
-      "label": "Contact email"
-    },
-    {
-      "type": "link_list",
-      "id": "link_list_1",
-      "label": "Link list 1"
-    },
-    {
-      "type": "link_list",
-      "id": "link_list_2",
-      "label": "Link list 2"
-    },
-    {
-      "type": "text",
-      "id": "all-rights-reserved",
-      "label": "All rights reserved",
-      "default": "Copyright © 2024 All right reserved."
-    },
-    {
-      "type": "text",
-      "id": "copyright",
-      "label": "Copy rights by",
-      "default": "Copyright by NaptecPaper.com"
-    },
-    {
-      "type": "text",
-      "id": "text-above-subscription",
-      "label": "Text above subscription input",
-      "default": "Get our news straight to your inbox"
-    }
-  ],
-  "presets": [{
-    "name": "Naptec footer"
-  }]
-}
+  {
+    "name": "Naptec footer",
+    "settings": [
+      {
+        "type": "color",
+        "id": "background_color",
+        "label": "Background color",
+        "default": "rgb(7, 59, 67)"
+      },
+      {
+        "type": "text",
+        "id": "contact_number",
+        "label": "Contact number"
+      },
+      {
+        "type": "text",
+        "id": "contact_email",
+        "label": "Contact email"
+      },
+      {
+        "type": "link_list",
+        "id": "link_list_1",
+        "label": "Link list 1"
+      }, {
+        "type": "link_list",
+        "id": "link_list_2",
+        "label": "Link list 2"
+      }, {
+        "type": "text",
+        "id": "all-rights-reserved",
+        "label": "All rights reserved",
+        "default": "Copyright © 2024 All right reserved."
+      }, {
+        "type": "text",
+        "id": "copyright",
+        "label": "Copy rights by",
+        "default": "Copyright by NaptecPaper.com"
+      }, {
+        "type": "text",
+        "id": "text-above-subscription",
+        "label": "Text above subscription input",
+        "default": "Get our news straight to your inbox"
+      }
+    ],
+    "presets": [
+      {
+        "name": "Naptec footer"
+      }
+    ]
+  }
 {% endschema %}
