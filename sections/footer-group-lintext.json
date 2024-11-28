@@ -55,9 +55,5 @@
       }
     }
   },
-  "order": [
-    "lintext_footer_ay3FGg",
-    "naperee_footer_KzygjW",
-    "footer"
-  ]
+  "order": ["lintext_footer_ay3FGg", "naperee_footer_KzygjW", "footer"]
 }

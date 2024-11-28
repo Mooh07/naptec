@@ -3,6 +3,8 @@
     --text-color: {{ section.settings.text_color }};
     --background-color: {{ section.settings.background_color }};
     --button-label-color: {{ section.settings.button_label_color }};
+    --button-background: {{ section.settings.button_background }};
+    --button-background-hover: {{ section.settings.button_background_hover }};
   }
 </style>
 {{ 'lintext__experience-the-difference.css' | asset_url | stylesheet_tag }}
@@ -14,7 +16,7 @@
       width="{{ section.settings.background.width }}"
       height="{{ section.settings.background.height }}"
       loading="lazy"
-    />
+    >
   </div>
   <div class="lintext__experience-the-difference_text">
     {% liquid
@@ -31,60 +33,72 @@
   </div>
 </section>
 {% schema %}
-  {
-    "name": "experience the difference",
-    "settings": [
-      {
-        "type": "image_picker",
-        "id": "background",
-        "label": "background"
-      },
-      {
-        "type": "text",
-        "id": "heading",
-        "label": "Section heading",
-        "default": "Experience the Difference"
-      },
-      {
-        "type": "text",
-        "id": "content",
-        "label": "Section text",
-        "default": "Discover the luxury of Lintext and elevate your hosting experience to new heights. Whether you're hosting a lavish dinner party or an intimate gathering, our elegant disposables will add a touch of sophistication to any occasion. Indulge in the beauty of simplicity with Lintext—where elegance meets convenience."
-      },
-      {
-        "type": "url",
-        "id": "cta_url",
-        "label": "Call to action button url"
-      },
-      {
-        "type": "text",
-        "id": "cta_content",
-        "label": "Call to action button label",
-        "default": "Get a Quote"
-      },
-      {
-        "type": "color",
-        "id": "background_color",
-        "label": "Background color",
-        "default": "#F4F4F4"
-      },
-      {
-        "type": "color",
-        "id": "text_color",
-        "label": "Text color",
-        "default": "#1A3748"
-      },
-      {
-        "type": "color",
-        "id": "button_label_color",
-        "label": "Button label color",
-        "default": "#fff"
-      }
-    ],
-    "presets": [
-      {
-        "name": "experience the difference"
-      }
-    ]
-  }
+{
+  "name": "experience the difference",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "background",
+      "label": "background"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Section heading",
+      "default": "Experience the Difference"
+    },
+    {
+      "type": "text",
+      "id": "content",
+      "label": "Section text",
+      "default": "Discover the luxury of Lintext and elevate your hosting experience to new heights. Whether you're hosting a lavish dinner party or an intimate gathering, our elegant disposables will add a touch of sophistication to any occasion. Indulge in the beauty of simplicity with Lintext—where elegance meets convenience."
+    },
+    {
+      "type": "url",
+      "id": "cta_url",
+      "label": "Call to action button url"
+    },
+    {
+      "type": "text",
+      "id": "cta_content",
+      "label": "Call to action button label",
+      "default": "Get a Quote"
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Background color",
+      "default": "#F4F4F4"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Text color",
+      "default": "#1A3748"
+    },
+    {
+      "type": "color",
+      "id": "button_background",
+      "label": "Button background color",
+      "default": "#D86752"
+    },
+    {
+      "type": "color",
+      "id": "button_background_hover",
+      "label": "Button background color on hover",
+      "default": "#1A3748"
+    },
+    {
+      "type": "color",
+      "id": "button_label_color",
+      "label": "Button label color",
+      "default": "#fff"
+    }
+  ],
+  "presets": [
+    {
+      "name": "experience the difference"
+    }
+  ]
+}
 {% endschema %}
