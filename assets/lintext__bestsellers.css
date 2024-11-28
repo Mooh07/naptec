@@ -1,5 +1,5 @@
 .lintext__bestsellers {
-  padding: 112px 80px 160px 80px;
+  padding: 100px 80px 100px 80px;
   background-color: var(--background-color);
   color: var(--text-color);
 }
@@ -14,7 +14,7 @@
   color: inherit;
 }
 .lintext__bestsellers-text h2 {
-  padding-bottom: 28px;
+  padding-bottom: 24px;
   font-family: "pp agrandir";
   font-size: 52px;
   font-weight: 800;
@@ -42,6 +42,22 @@
 .lintext__bestsellers-products li {
   width: calc(25% - 48px);
 }
+.lintext__product-card-review span {
+  display: flex;
+  gap: 1px;
+}
+.lintext__product-card-review span svg path {
+  fill: #f2c94c;
+}
+.lintext__bestsellers-products .lintext__product-card-price {
+  color: #143338;
+}
+.lintext__product-card-information .card_icon {
+  max-width: 55px;
+}
+.lintext__product-card-information .card_icon img {
+  max-width: 100%;
+}
 @media screen and (max-width: 1440px) {
   .lintext__bestsellers-products {
     gap: 34px;
@@ -52,7 +68,7 @@
 }
 @media screen and (max-width: 1250px) {
   .lintext__bestsellers {
-    padding: 112px 40px 160px 40px;
+    padding: 100px 40px 100px 40px;
   }
 }
 @media screen and (max-width: 1100px) {
@@ -71,15 +87,43 @@
   .lintext__bestsellers-products li {
     width: calc(50% - 14px);
   }
+  .lintext__product-card-information .lintext__product-card-title,
+  .lintext__bestsellers-products .lintext__product-card-price {
+    font-size: 16px;
+    line-height: 1.55;
+  }
+  .lintext__product-card-information .lintext__product-card-review {
+    padding-bottom: 8px;
+  }
+  .lintext__bestsellers-text p {
+    font-size: 18px;
+    line-height: 1.55;
+  }
+  .lintext__bestsellers-text h2 {
+    font-size: 42px;
+    line-height: 1.4;
+  }
 }
 @media screen and (max-width: 600px) {
   .lintext__bestsellers {
-    padding: 112px 16px 160px 16px;
+    padding: 50px 16px 50px;
   }
   .lintext__bestsellers-products li {
     width: 100%;
   }
   .lintext__bestsellers-text h2 {
-    font-size: 42px;
+    font-size: 32px;
+    padding-bottom: 15px;
+    line-height: 1.4;
+  }
+  .lintext__bestsellers-text {
+    padding-bottom: 30px;
+  }
+  .lintext__product-card-information .lintext__product-card-title,
+  .lintext__bestsellers-products .lintext__product-card-price {
+    font-size: 14px;
+  }
+  .lintext__bestsellers-text p {
+    font-size: 16px;
   }
 }

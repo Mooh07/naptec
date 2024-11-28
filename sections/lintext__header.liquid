@@ -305,7 +305,9 @@
                     </option>
                   {%- endfor -%}
                 </select>
+                {% comment %}
                 {% render 'icon-caret' %}
+                 {% endcomment %}
               </div>
               <button class="button button--tertiary">{{ 'localization.update_country' | t }}</button>
             {%- endform -%}
@@ -351,6 +353,7 @@
       </div>
       {% render 'bloomingoods_header-search', input_id: 'Search-In-Modal', new_color: "#0D384A" %}
 
+      {% comment %}
       {%- if shop.customer_accounts_enabled -%}
         <a href="{%- if customer -%}{{ routes.account_url }}{%- else -%}{{ routes.account_login_url }}{%- endif -%}" class="header__icon header__icon--account link focus-inset{% if section.settings.menu != blank %} small-hide{% endif %}">
           {% render 'icon-account' %}
@@ -365,16 +368,16 @@
           </span>
         </a>
       {%- endif -%}
-
+      {% endcomment %}
       {%- for block in section.blocks -%}
         {%- case block.type -%}
           {%- when '@app' -%}
             {% render block %}
         {%- endcase -%}
       {%- endfor -%}
-
+ {% comment %}
       <a href="{{ routes.cart_url }}" class="header__icon header__icon--cart link focus-inset" id="cart-icon-bubble">
-        {% comment %}
+       
           {%- liquid
             if cart == empty
               render 'icon-cart-empty'
@@ -382,7 +385,7 @@
               render 'icon-cart'
             endif
           -%}
-        {% endcomment %}
+        
         {% render 'bloomingoods__cart-icon', new_color: "#0D384A" %}
         <span class="visually-hidden">{{ 'templates.cart.cart' | t }}</span>
         {%- if cart != empty -%}
@@ -394,6 +397,8 @@
           </div>
         {%- endif -%}
       </a>
+      {% endcomment %}
+      <a href="{{ section.settings.cta_url }}" class="header__call-to-action" style="">{{ section.settings.cta-content | upcase }}</a>
     </div>
   </header>
 </{% if section.settings.sticky_header_type != 'none' %}sticky-header{% else %}div{% endif %}>

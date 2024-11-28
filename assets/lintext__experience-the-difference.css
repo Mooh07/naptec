@@ -1,6 +1,6 @@
 .lintext__experience-the-difference {
   position: relative;
-  padding: 74px 0;
+  padding: 86px 0;
   display: flex;
   align-items: center;
   justify-content: start;
@@ -23,7 +23,7 @@
   z-index: 1;
   background-color: var(--background-color);
   max-width: 50%;
-  padding: 132px 124px 132px 80px;
+  padding: 120px 124px 120px 80px;
   border-top-right-radius: 400px;
   border-bottom-right-radius: 400px;
 }
@@ -55,15 +55,21 @@
 .lintext__experience-the-difference_text a {
   color: var(--button-label-color);
   text-decoration: none;
-  font-family: "pp agrandir";
-  font-size: 20px;
-  font-weight: 400;
+  font-family: pp agrandir;
+  font-size: 18px;
+  font-weight: 800;
   line-height: 120%;
   text-align: center;
-  background-color: var(--text-color);
-  padding: 16px 71.5px;
+  background-color: var(--button-background);
+  padding: 1.7rem 5.3rem;
   border-radius: 100px;
+  display: inline-block;
+  transition: all ease 0.4s;
 }
+.lintext__experience-the-difference_text a:hover {
+  background-color: var(--button-background-hover);
+}
+
 @media screen and (max-width: 1440px) {
   .lintext__experience-the-difference_text h2 {
     font-size: 42px;
@@ -80,21 +86,23 @@
 }
 @media screen and (max-width: 992px) {
   .lintext__experience-the-difference_text {
-    max-width: 70%;
+    max-width: 550px;
   }
 }
-@media screen and (max-width: 768px) {
-  .lintext__experience-the-difference_text {
-    max-width: 85%;
-  }
-}
+
 @media screen and (max-width: 600px) {
+  .lintext__experience-the-difference {
+    padding: 60px 0;
+  }
   .lintext__experience-the-difference_text {
     padding-left: 16px;
     max-width: 95%;
+    padding: 60px 60px 60px 16px;
+    border-top-right-radius: 200px;
+    border-bottom-right-radius: 200px;
   }
   .lintext__experience-the-difference_text h2 {
-    font-size: 32px;
+    font-size: 24px;
   }
   .lintext__experience-the-difference_text p {
     font-size: 14px;

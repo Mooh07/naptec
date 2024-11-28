@@ -1,5 +1,5 @@
 .lintext__footer {
-  padding: 80px;
+  padding: 80px 80px 70px;
   display: flex;
   justify-content: space-between;
 }
@@ -10,13 +10,13 @@
 .lintext__footer-left {
   display: flex;
   flex-direction: column;
-  gap: 132px;
+  gap: 142px;
 }
 .lintext__footer-subscription-wrapper {
-  max-width: 484px;
+  max-width: 450px;
   display: flex;
   flex-direction: column;
-  gap: 24px;
+  gap: 32px;
 }
 .lintext__footer-subscription-wrapper > h3 {
   font-family: "pp agrandir";
@@ -55,7 +55,8 @@
   font-weight: 300;
   line-height: 24px;
   text-align: left;
-  padding-left: 24px;
+  padding-left: 20px;
+  padding-right: 20px;
 }
 .lintext__footer-subscription-input-container input::placeholder {
   color: #073b43;
@@ -69,14 +70,14 @@
 .newsletter-submit-btn {
   border: none;
   background-color: #d86752;
-  padding: 12px 31px;
+  padding: 12px 30px;
   border-radius: 100px;
-  font-family: "pp agrandir";
-  font-size: 18px;
-  font-weight: 400;
+  font-family: pp agrandir;
+  font-size: 16px;
+  font-weight: 800;
   line-height: 24px;
   text-align: center;
-  color: #ffffff;
+  color: #fff;
 }
 
 .lintext__footer-logo {
@@ -89,7 +90,7 @@
 }
 .lintext__footer-contact h5 {
   font-family: "pp agrandir";
-  font-size: 18px;
+  font-size: 16px;
   font-weight: 800;
   line-height: 24px;
   text-align: left;
@@ -109,14 +110,14 @@
   display: flex;
 }
 .lintext__footer-links {
-  padding-left: 120px;
+  padding-left: 226px;
   display: flex;
   flex-direction: column;
   gap: 20px;
 }
 .lintext__footer-links h5 {
   font-family: "pp agrandir";
-  font-size: 18px;
+  font-size: 16px;
   font-weight: 800;
   line-height: 24px;
   text-align: left;
@@ -130,16 +131,17 @@
 }
 .lintext__footer-links ul li {
   padding-bottom: 16px;
+  line-height: 26px;
 }
 .lintext__footer-links ul a {
-  font-family: "pp agrandir";
+  font-family: pp agrandir;
   font-size: 16px;
   font-weight: 400;
-  line-height: 150%;
+  line-height: 20px;
   text-align: left;
+  color: #fff;
   text-decoration: none;
-  color: white;
-  text-decoration: none;
+  display: inline-block;
 }
 .lintext__footer-right {
   display: flex;
@@ -148,11 +150,17 @@
 }
 .lintext__footer-right-bottom {
   text-align: right;
-  font-family: "pp agrandir";
+  font-family: pp agrandir;
   font-size: 16px;
   font-weight: 400;
   line-height: 24px;
-  /* text-align: left; */
+  color: rgba(255, 255, 255, 0.6);
+}
+
+@media (max-width: 1199px) {
+  .lintext__footer-links {
+    padding-left: 90px;
+  }
 }
 
 @media screen and (max-width: 992px) {
@@ -181,7 +189,8 @@
   }
   .lintext__footer-left {
     align-items: center;
-    padding-bottom: 4rem;
+    padding-bottom: 5rem;
+    gap: 60px;
   }
 }
 @media screen and (max-width: 768px) {
@@ -198,11 +207,24 @@
   }
   .lintext__footer-subscription-wrapper h3 {
     font-size: 24px;
+    line-height: 1.4;
   }
-}
-@media screen and (max-width: 400px) {
+  .lintext__footer-subscription-input-container input {
+    flex: 1;
+    max-width: calc(100% - 150px);
+  }
   .newsletter-submit-btn {
-    padding: 1rem;
+    padding: 12px 18px;
     font-size: 14px;
+    width: 150px;
+  }
+  .lintext__footer-right-top {
+    padding-bottom: 2rem;
+  }
+  .lintext__footer-right-bottom,
+  .lintext__footer-links ul a,
+  .lintext__footer-contact a {
+    font-size: 14px;
+    line-height: 1.55;
   }
 }
