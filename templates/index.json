@@ -199,6 +199,7 @@
         "products_product_hVnUAN"
       ],
       "settings": {
+        "title": "Product Categories",
         "text_content": "<p>Bring something new to the table.</p>",
         "view-all-label": "ALL CATEGORIES",
         "view-all-url": "shopify://collections/all-products"
@@ -210,6 +211,7 @@
         "header": "Make your<br> custom design",
         "content": "Tailor napkins to fit your brand or establishment  by exploring our customization options, including branding and packaging solutions.",
         "cta-label": "Get a Quote",
+        "cta-url": "",
         "image": "shopify://shop_images/image_8.png"
       }
     },
@@ -296,7 +298,9 @@
         "industriy_qNDBXN",
         "industriy_haHDTX"
       ],
-      "settings": {}
+      "settings": {
+        "title": "Industries we serve"
+      }
     },
     "naptec_separation_image_TCe6z7": {
       "type": "naptec__separation-image",
@@ -308,10 +312,10 @@
       "type": "naptec__wholesale-partner",
       "settings": {
         "header": "How to become <br> a wholesale partner",
-        "content": "<p>Becoming a Naptech wholesale partner is easy. Simply fill out our wholesale account registration form, and one of our representatives <br/>will get in touch with you shortly to discuss your requirements <br/>and set up your wholesale account.</p>",
+        "content": "<p>Becoming a Naptech wholesale partner is easy. Simply fill out our wholesale account registration form, and one of our representatives will get in touch with you shortly to discuss your requirements and set up your wholesale account.</p>",
         "cta-label": "BECOME A PARTNER",
         "cta-url": "",
-        "image": "shopify://shop_images/image_7_73d33d0d-359e-43c1-8b8a-91aaa3ce5a91.png"
+        "image": "shopify://shop_images/46a463dbb2bbc24d47b9b0e1d11c44d9_1.png"
       }
     }
   },
