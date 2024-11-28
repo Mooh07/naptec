@@ -1,7 +1,6 @@
 <!doctype html>
 <html class="no-js" lang="{{ request.locale.iso_code }}">
   <head>
-
     <style>
       {% for font in shop.metaobjects["font"].values %}
         {% for font_url in font.font_file_name.value %}
@@ -155,7 +154,7 @@
         --font-body-family: {{ settings.type_body_font.family }}, {{ settings.type_body_font.fallback_families }};
       {% endcomment %}
         --font-body-family: "faktum", {{ settings.type_body_font.fallback_families }};
-        
+
         --font-body-style: {{ settings.type_body_font.style }};
         --font-body-weight: {{ settings.type_body_font.weight }};
         --font-body-weight-bold: {{ settings.type_body_font.weight | plus: 300 | at_most: 1000 }};
@@ -163,9 +162,9 @@
 
         --font-heading-family: {{ settings.type_header_font.family }}, {{ settings.type_header_font.fallback_families }};
         {% endcomment %}
-      
+
         --font-heading-family: "faktum", {{ settings.type_header_font.fallback_families }};
-        
+
         --font-heading-style: {{ settings.type_header_font.style }};
         --font-heading-weight: {{ settings.type_header_font.weight }};
 
@@ -314,9 +313,9 @@
         }
       }
     {% endstyle %}
-
+    {{ 'swiper.min.css' | asset_url | stylesheet_tag }}
     {{ 'base.css' | asset_url | stylesheet_tag }}
-
+    {{ 'lintext_topheader.css' | asset_url | stylesheet_tag }}
     {%- unless settings.type_body_font.system? -%}
       <link rel="preload" as="font" href="{{ settings.type_body_font | font_url }}" type="font/woff2" crossorigin>
     {%- endunless -%}
@@ -409,9 +408,43 @@
         countrySelectorSearchCount: `{{ 'localization.country_results_count' | t: count: '[count]' }}`,
       };
     </script>
-
     {%- if settings.predictive_search_enabled -%}
       <script src="{{ 'predictive-search.js' | asset_url }}" defer="defer"></script>
     {%- endif -%}
+    <script src="{{ 'jquery.js' | asset_url }}"></script>
+    <script src="{{ 'swiper.min.js' | asset_url }}"></script>
+    <script>
+      document.addEventListener('DOMContentLoaded', function () {
+        const swiper = new Swiper('.lintext__bestsellers-products', {
+          direction: 'horizontal',
+          loop: true,
+          spaceBetween: 30,
+          slidesPerView: 4.2,
+          autoplay: {
+            delay: 10000,
+            disableOnInteraction: false,
+          },
+          speed: 1000,
+          breakpoints: {
+            0: {
+              slidesPerView: 1.2,
+              spaceBetween: 40,
+            },
+            575: {
+              slidesPerView: 2.2,
+              spaceBetween: 40,
+            },
+            980: {
+              slidesPerView: 3.2,
+              spaceBetween: 40,
+            },
+            1280: {
+              slidesPerView: 4.2,
+              spaceBetween: 40,
+            },
+          },
+        });
+      });
+    </script>
   </body>
 </html>

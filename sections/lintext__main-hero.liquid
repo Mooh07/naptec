@@ -4,6 +4,7 @@
     --background-color: {{ section.settings.background_color }};
     --button-label-color: {{ section.settings.button_label_color }};
     --button-background-color: {{ section.settings.button_background_color }};
+    --button-background-hover-color: {{ section.settings.button_background_hover_color }};
   }
 </style>
 {{ 'lintext__main-hero.css' | asset_url | stylesheet_tag }}
@@ -17,13 +18,15 @@
     <a href="{{ section.settings.cta_button_url }}">{{ section.settings.cta_button_label | upcase }}</a>
   </div>
   <div class="lintext__main-hero-images">
-    {% comment %} <img
-      src="{{ section.settings.background-image |image_url: width: section.settings.background-image.width }}"
-      alt="{{ section.settings.background-image.alt }}"
-      width="{{ section.settings.background-image.width }}px"
-      height="{{ section.settings.background-image.height }}px"
-    > {% endcomment %}
-    {% render 'lintext__heading-pattern' %} 
+    {% comment %}
+      <img
+        src="{{ section.settings.background-image |image_url: width: section.settings.background-image.width }}"
+        alt="{{ section.settings.background-image.alt }}"
+        width="{{ section.settings.background-image.width }}px"
+        height="{{ section.settings.background-image.height }}px"
+      >
+    {% endcomment %}
+    {% render 'lintext__heading-pattern' %}
   </div>
 </section>
 
@@ -74,6 +77,12 @@
     {
       "type": "color",
       "id": "button_background_color",
+      "label": "Button background color",
+      "default": "#1A3748"
+    },
+    {
+      "type": "color",
+      "id": "button_background_hover_color",
       "label": "Button background color",
       "default": "#1A3748"
     },

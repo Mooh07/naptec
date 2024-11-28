@@ -1,6 +1,5 @@
-    <a href="{{ product.url }}">
-
-<div class="lintext__product-card-img-container">
+<a href="{{ product.url }}">
+  <div class="lintext__product-card-img-container">
     <div>
       <img
         class="lintext__product-card-img"
@@ -11,27 +10,31 @@
         loading="lazy"
       >
     </div>
-
-</div>
-<div class="lintext__product-card-information">
-  <p class="lintext__product-card-title">
+  </div>
+  <div class="lintext__product-card-information">
+    {% if lintext_logo != blank %}
+      <div class="card_icon">
+        <img src="{{ lintext_logo | img_url:'master' }}" width="" height="" alt="lintext">
+      </div>
+    {% endif %}
+    <p class="lintext__product-card-title">
       {{ product.title }}
-  </p>
-  <div class="lintext__product-card-review">
-    <span>
-      {% for i in (1..5) %}
-        {% render 'lintext__review-star' %}
-      {% endfor %}
-    </span>
-    <span>(20 reviews)</span>
+    </p>
+    <div class="lintext__product-card-review">
+      <span>
+        {% for i in (1..5) %}
+          {% render 'lintext__review-star' %}
+        {% endfor %}
+      </span>
+      <span>(20 reviews)</span>
+    </div>
+    <div class="lintext__product-card-price">
+      {{ product.price | money }}
+      {% comment %} {% render 'price', product: product, show_compare_at_price: false %} {% endcomment %}
+    </div>
   </div>
-  <div class="lintext__product-card-price">
-    {{ product.price | money }}
-    {% comment %} {% render 'price', product: product, show_compare_at_price: false %} {% endcomment %}
-  </div>
-</div>
-    </a>
-      
+</a>
+
 <style>
   .lintext__product-card-img-container {
     width: 100%;
@@ -79,7 +82,7 @@
     font-weight: 400;
     line-height: 24px;
     text-align: left;
-    color: #383735CC;
+    color: #383735cc;
   }
 
   .lintext__product-card-price {

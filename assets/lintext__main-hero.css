@@ -1,8 +1,9 @@
 .lintext__main-hero {
   height: min(100vh, 760px);
+  min-height: 500px;
   padding: 0 80px;
   display: flex;
-  align-items:center;
+  align-items: center;
   background-color: #f4f4f4;
   position: relative;
   color: var(--text-color);
@@ -36,16 +37,20 @@
   padding-bottom: 40px;
 }
 .lintext__main-hero-content a {
-  font-family: "pp agrandir";
-  font-size: 20px;
-  font-weight: 400;
+  font-family: pp agrandir;
+  font-size: 18px;
+  font-weight: 800;
   line-height: 24px;
   text-align: center;
   text-decoration: none;
   color: var(--button-label-color);
-  padding: 1.6rem 7.15rem;
   background-color: var(--button-background-color);
+  padding: 1.8rem 5.3rem;
   border-radius: 100px;
+  transition: all ease 0.4s;
+}
+.lintext__main-hero-content a:hover {
+  background-color: var(--button-background-hover-color);
 }
 .lintext__main-hero-images {
   position: absolute;
@@ -61,9 +66,21 @@
   height: 100%;
   width: auto;
 }
+
 @media screen and (max-width: 1250px) {
   .lintext__main-hero {
     padding: 296px 40px;
+  }
+  .lintext__main-hero-content h1 {
+    font-size: 72px;
+  }
+  .lintext__main-hero-images svg {
+    max-height: 100%;
+  }
+  .lintext__main-hero-images svg {
+    max-height: 100%;
+    max-width: 600px;
+    height: auto;
   }
 }
 @media screen and (max-width: 992px) {
@@ -77,6 +94,9 @@
   .lintext__main-hero-content {
     max-width: 95%;
   }
+  .lintext__main-hero-images svg {
+    max-width: 460px;
+  }
 }
 @media screen and (max-width: 600px) {
   .lintext__main-hero {
@@ -85,9 +105,20 @@
   .lintext__main-hero-content h1 {
     font-size: 48px;
     padding-bottom: 12px;
+    line-height: 1.25;
+  }
+  .lintext__main-hero-content a {
+    font-size: 14px;
+    line-height: 24px;
   }
   .lintext__main-hero-content p {
     font-size: 12px;
+  }
+  .lintext__main-hero {
+    height: min(100vh, 450px);
+  }
+  .lintext__main-hero-images svg {
+    max-width: 340px;
   }
 }
 @media screen and (max-width: 444px) {
