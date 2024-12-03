@@ -1,148 +1,176 @@
 .naperee__product-categories {
-  display: flex;
-  flex-direction: column;
-  background-color: var(--background-color);
-  color: var(--text-color);
-  padding: 112px 80px;
+    display: flex;
+    flex-direction: column;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    padding: 112px 0 112px 80px;
 }
 
 .naperee__product-categories-text {
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
-  margin-bottom: 72px;
-  position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    margin-bottom: 72px;
+    position: relative;
+    padding-right: 80px;
 }
+
 .naperee__product-categories-text h3 {
-  margin: 0;
-  font-family: "eye catching pro";
-  font-size: 88px;
-  font-weight: 400;
-  line-height: 64px;
-  text-align: left;
-  color: inherit;
+    margin: 0;
+    font-family: "eye catching pro";
+    font-size: 88px;
+    font-weight: 400;
+    line-height: 64px;
+    text-align: left;
+    color: inherit;
 }
+
+
 .naperee__product-categories-text h2 {
-  margin: 0;
-  font-family: "etna";
-  font-size: 60px;
-  font-weight: 400;
-  line-height: 72px;
-  text-align: left;
-  color: inherit;
+    margin: 0;
+    font-family: "etna";
+    font-size: 60px;
+    font-weight: 400;
+    line-height: 72px;
+    text-align: left;
+    color: inherit;
 }
 
 .naperee__product-categories-category-list ul {
-  margin: 0;
-  padding: 0;
-  list-style: none;
-  display: flex;
-  gap: 60px;
-  align-items: center;
-  justify-content: space-between;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    gap: 60px;
+    align-items: center;
+    justify-content: space-between;
 }
+
 .naperee__product-categories-category-list ul li {
-  position: relative;
-  width: calc(25% - 60px);
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
+    position: relative;
+    width: calc(25% - 60px);
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
 }
+
 .naperee__product-categories-category-list ul li div {
-  display: flex;
+    display: flex;
 }
+
 .naperee__product-categories-category-list ul li div img {
-  width: 100%;
-  height: auto;
-  aspect-ratio: 1/1;
-  object-fit: cover;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 1/1;
+    object-fit: cover;
 }
+
 .naperee__product-categories-category-list ul li a {
-  text-wrap: nowrap;
-  color: inherit;
-  text-decoration: none;
-  font-family: "etna";
-  font-size: 28px;
-  font-weight: 300;
-  line-height: 142%;
-  text-align: left;
+    text-wrap: nowrap;
+    color: inherit;
+    text-decoration: none;
+    font-family: "etna";
+    font-size: 28px;
+    font-weight: 300;
+    line-height: 142%;
+    text-align: left;
 }
+
 .naperee__product-categories-category-list ul li a::after {
-  content: " ";
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  width: 100%;
-  height: 100%;
+    content: " ";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
 }
 
 .default_mouse {
-  cursor: default;
+    cursor: default;
 }
+
 .naperee__product-categories-all-button {
-  place-self: end;
-  height: 100%;
-  position: absolute;
-  display: flex;
-  align-items: end;
+    place-self: end;
+    height: 100%;
+    position: absolute;
+    display: flex;
+    align-items: end;
 }
+
 .naperee__product-categories-all-button a {
-  text-decoration: none;
-  padding: 14px 40px;
-  color: #403c3c;
-  text-align: center;
-  font-family: Etna;
-  font-size: 18px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: 111.111%;
-  text-transform: uppercase;
-  border-radius: 100px;
-  border: 1px solid #403c3c;
-  transition: var(--duration-default);
+    text-decoration: none;
+    padding: 14px 40px;
+    color: #403c3c;
+    text-align: center;
+    font-family: Etna;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 111.111%;
+    text-transform: uppercase;
+    border-radius: 100px;
+    border: 1px solid #403c3c;
+    transition: var(--duration-default);
 }
+
 .naperee__product-categories-all-button a:hover {
-  background-color: #403c3c;
-  color: white;
-  transition: var(--duration-default);
+    background-color: #403c3c;
+    color: white;
+    transition: var(--duration-default);
 }
+
 @media screen and (max-width: 1250px) {
-  .naperee__product-categories-category-list ul {
-    flex-wrap: wrap;
-    gap: 30px;
-  }
-  .naperee__product-categories-text {
-    margin-bottom: 40px;
-  }
-  .naperee__product-categories-category-list ul li {
-    width: calc(50% - 30px);
-  }
+    .naperee__product-categories-category-list ul {
+        flex-wrap: wrap;
+        gap: 30px;
+    }
+
+    .naperee__product-categories-text {
+        margin-bottom: 40px;
+    }
+
+    .naperee__product-categories-category-list ul li {
+        width: calc(50% - 30px);
+    }
 }
+
 @media screen and (max-width: 992px) {
-  .naperee__product-categories-text h2 {
-    font-size: 40px;
-    padding-bottom: 30px;
-  }
-  .naperee__product-categories {
-    padding: 8.2rem 4rem;
-  }
-  .naperee__product-categories-category-list ul {
-    gap: 30px;
-  }
+    .naperee__product-categories-text h2 {
+        font-size: 40px;
+        padding-bottom: 30px;
+    }
+    .naperee__product-categories-text {
+        padding-right: 0;
+        align-items: center;
+    }
+    .naperee__product-categories-all-button {
+        position: static;
+        margin: 0 auto;
+    }
+    .naperee__product-categories {
+        padding: 8.2rem 4rem;
+    }
+    .naperee__product-categories-text h2 {
+        padding-bottom: 0;
+    }
+    .naperee__product-categories-category-list ul {
+        gap: 30px;
+    }
 }
 
 @media screen and (max-width: 768px) {
-  .naperee__product-categories {
-    padding: 4.2rem 1.6rem;
-  }
+    .naperee__product-categories {
+        padding: 4.2rem 1.6rem;
+    }
 }
 
 @media screen and (max-width: 600px) {
-  .naperee__product-categories {
-  }
-  .naperee__product-categories-category-list ul li {
-    width: calc(100% - 0px);
-  }
+    .naperee__product-categories {
+    }
+
+    .naperee__product-categories-category-list ul li {
+        width: calc(100% - 0px);
+    }
 }

@@ -5,6 +5,8 @@
   }
 </style>
 {{ "naperee__bestsellers.css" | asset_url | stylesheet_tag }}
+{{ "global__product-card.css" | asset_url | stylesheet_tag }}
+
 <section class="page-width naperee__bestsellers ">
   <h6 class="naperee__bestsellers-subheader">{{ section.settings.header }}</h6>
   <h2 class="naperee__bestsellers-header">{{ section.settings.subheader }}</h2>
@@ -18,7 +20,7 @@
       {% case block.type %}
         {% when 'product' %}
           <li>
-            {% render 'naperee__product-card', product: block.settings.product %}
+            {% render 'global__product-card', product: block.settings.product %}
           </li>
       {% endcase %}
     {% endfor %}

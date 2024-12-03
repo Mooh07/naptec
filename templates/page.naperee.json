@@ -183,7 +183,9 @@
         "text_color": "#403c3c",
         "background_color": "#ffffff",
         "script_text": "Leading the fold",
-        "heading": "Product Categories"
+        "heading": "Product Categories",
+        "all_categories": "All categories",
+        "all_categories_url": ""
       }
     },
     "naperee_two_images_n3tk9Y": {
@@ -214,7 +216,8 @@
             "text_position": "end",
             "second_line_left_margin": 65,
             "feature_description": "",
-            "url": ""
+            "url": "",
+            "show_logo": false
           }
         },
         "quality_xTe4UJ": {
@@ -226,7 +229,8 @@
             "text_position": "start",
             "second_line_left_margin": 25,
             "feature_description": "",
-            "url": ""
+            "url": "",
+            "show_logo": false
           }
         },
         "quality_3GY79B": {
@@ -238,7 +242,8 @@
             "text_position": "end",
             "second_line_left_margin": 60,
             "feature_description": "",
-            "url": ""
+            "url": "",
+            "show_logo": false
           }
         },
         "quality_gJHELH": {
@@ -250,7 +255,8 @@
             "text_position": "center",
             "second_line_left_margin": 93,
             "feature_description": "",
-            "url": ""
+            "url": "",
+            "show_logo": true
           }
         }
       },
@@ -320,10 +326,10 @@
         "cta_button_url": "",
         "right_image_top": "shopify://shop_images/top_right_img_1_1_1.png",
         "right_image_bottom": "shopify://shop_images/bottom_right_img_2c8fd5d2-e70b-43e1-8092-75b510d11dbd.png",
-        "background_color": "#ddd4c8",
-        "text_color": "#383735",
-        "button_background_color": "#383735",
-        "button_label_color": "#ffffff"
+        "background_color": "#e0d8d0",
+        "text_color": "#403c3c",
+        "button_background_color": "#403c3c",
+        "button_label_color": "#e0d8d0"
       }
     }
   },
