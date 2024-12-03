@@ -11,14 +11,6 @@
   "name": "t:sections.header.name",
   "type": "header",
   "sections": {
-    "lintext_top_header_V8EHPG": {
-      "type": "lintext-top-header",
-      "settings": {
-        "site_logo": "shopify://shop_images/Naptec_Logo_0af931a6-0dd0-4c3f-a746-8168b22f1417.png",
-        "login_btn": "Log in",
-        "account_btn": "Create Acccount"
-      }
-    },
     "announcement-bar": {
       "type": "announcement-bar",
       "blocks": {
@@ -30,7 +22,9 @@
           }
         }
       },
-      "block_order": ["announcement-bar-0"],
+      "block_order": [
+        "announcement-bar-0"
+      ],
       "disabled": true,
       "settings": {
         "color_scheme": "scheme-1",
@@ -66,6 +60,14 @@
         "padding_bottom": 20
       }
     },
+    "naptec_top_header_jXdKTe": {
+      "type": "naptec__top-header",
+      "settings": {
+        "site_logo": "shopify://shop_images/Naptec_Logo_0af931a6-0dd0-4c3f-a746-8168b22f1417.png",
+        "header_bg_color": "#143338",
+        "header_text_color": "#ffffff"
+      }
+    },
     "lintext_header_GxNVxg": {
       "type": "lintext__header",
       "settings": {
@@ -78,7 +80,7 @@
         "logo_position": "middle-left",
         "menu": "lintext-header-menu",
         "menu_type_desktop": "dropdown",
-        "sticky_header_type": "on-scroll-up",
+        "sticky_header_type": "always",
         "show_line_separator": true,
         "color_scheme": "scheme-3",
         "menu_color_scheme": "scheme-3",
@@ -92,9 +94,9 @@
     }
   },
   "order": [
-    "lintext_top_header_V8EHPG",
     "announcement-bar",
     "header",
+    "naptec_top_header_jXdKTe",
     "lintext_header_GxNVxg"
   ]
 }

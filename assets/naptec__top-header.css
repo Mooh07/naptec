@@ -64,6 +64,7 @@ section.top_bar_naptec ul li a:hover {
 }
 .top_bar_logo img {
   width: 100px;
+  object-fit: contain;
 }
 sticky-header.fixed-sticky-header {
   background: #ede6db;

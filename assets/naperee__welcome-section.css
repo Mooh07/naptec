@@ -44,8 +44,8 @@
 }
 .naperee__welcome-section_body > p {
   font-family: "dm sans";
-  padding-top: 16px;
-  max-width: 726px;
+  padding-top: 32px;
+  max-width: 625px;
   font-size: 18px;
   font-weight: 400;
   line-height: 24px;
@@ -80,6 +80,7 @@
   line-height: 72px;
   text-align: center;
   color: var(--text-color);
+  max-width: 730px;
 }
 /* Product features style */
 

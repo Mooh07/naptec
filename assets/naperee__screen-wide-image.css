@@ -1,55 +1,114 @@
 .naperee__the-talk-of-the-table {
-  display: flex;
-  position: relative;
-  padding: 0;
-  color: var(--section-color);
+    display: flex;
+    position: relative;
+    padding: 0;
+    color: var(--section-color);
+
 }
+
 .naperee__the-talk-of-the-table_image-wrapper {
-  width: 100%;
-  height: 100vh;
+    width: 100%;
+    aspect-ratio: 1600 / 720;
 }
+
 .naperee__the-talk-of-the-table_image-wrapper img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    object-position: 50% 46%;
 }
+
 .naperee__the-talk-of-the-table_text-container {
-  position: absolute;
-  max-width: 425px;
-  right: 80px;
-  top: 122px;
-  font-family: "dm sans";
-  padding: 0;
-  font-size: 18px;
-  line-height: 24px;
-  color: inherit;
+    position: absolute;
+    max-width: 425px;
+    right: 80px;
+    top: 122px;
+    font-family: "dm sans";
+    padding: 0;
+    font-size: 18px;
+    line-height: 24px;
+    color: inherit;
 }
+
 .naperee__the-talk-of-the-table_title-container {
-  width: 100%;
-  position: relative;
-  top: 160px;
+    width: 100%;
+    position: relative;
+    top: 80px;
 }
+
 .naperee__the-talk-of-the-table_title-container h6 {
-  font-family: "etna";
-  font-size: 92px;
-  font-weight: 400;
-  line-height: 108.7%;
-  text-align: center;
-  position: absolute;
-  margin: 0;
-  color: inherit;
-}
-@media screen and (max-width: 600px) {
-  .naperee__the-talk-of-the-table_text-container {
-    right: 0;
+    font-family: "etna";
+    font-size: 92px;
+    font-weight: 400;
+    line-height: 108.7%;
     text-align: center;
-    font-size: 16px;
-    padding: 0 1.6rem;
-    max-width: 100%;
-    top: 60px;
-  }
-  .naperee__the-talk-of-the-table_title-container {
-    transform: scale(0.8);
-    left: -28px;
-  }
+    position: absolute;
+    margin: 0;
+    color: inherit;
+}
+
+@media screen and (max-width: 1480px) {
+    .naperee__the-talk-of-the-table_title-container {
+        top: 0;
+    }
+}
+
+@media screen and (max-width: 1366px) {
+    .naperee__the-talk-of-the-table_image-wrapper {
+        aspect-ratio: auto;
+    }
+
+    .naperee__the-talk-of-the-table_image-wrapper img {
+        max-height: 100vh;
+    }
+}
+
+@media screen and (max-width: 905px) {
+    .naperee__the-talk-of-the-table_title-container {
+        top: -130px;
+    }
+}
+
+@media (max-width: 768px) {
+    .naperee__the-talk-of-the-table_text-container {
+        top: 32px;
+        left: 50%;
+        transform: translateX(-50%);
+        max-width: 100%;
+        width: 100%;
+        padding: 0 16px;
+    }
+
+    .naperee__the-talk-of-the-table_title-container {
+        left: 16px;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .naperee__the-talk-of-the-table_text-container {
+        right: 0;
+        text-align: center;
+        font-size: 16px;
+        padding: 0 1.6rem;
+        max-width: 100%;
+        top: 16px;
+        line-height: 100%;
+    }
+
+    .naperee__the-talk-of-the-table_title-container {
+        transform: scale(0.8);
+        left: -28px;
+    }
+
+    .naperee__the-talk-of-the-table_image-wrapper img {
+        filter: brightness(.8);
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .naperee__the-talk-of-the-table_title-container {
+        transform: scale(0.7);
+        top: -120px;
+    }
 }

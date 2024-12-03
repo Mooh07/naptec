@@ -11,6 +11,14 @@
   "name": "t:sections.header.name",
   "type": "header",
   "sections": {
+    "naptec_top_header_ymw6eh": {
+      "type": "naptec__top-header",
+      "settings": {
+        "site_logo": "shopify://shop_images/Naptec_Logo_0af931a6-0dd0-4c3f-a746-8168b22f1417.png",
+        "header_bg_color": "#143338",
+        "header_text_color": "#ffffff"
+      }
+    },
     "announcement-bar": {
       "type": "announcement-bar",
       "blocks": {
@@ -86,6 +94,7 @@
     }
   },
   "order": [
+    "naptec_top_header_ymw6eh",
     "announcement-bar",
     "header",
     "naperee_header_yz9dj4"

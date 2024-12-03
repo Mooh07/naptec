@@ -1,0 +1,98 @@
+{{ 'naptec__top-header.css' | asset_url | stylesheet_tag }}
+
+<style>
+  .top_bar_naptec {
+    --background-color: {{ section.settings.header_bg_color }};
+    --text-color: {{- section.settings.header_text_color -}};
+  }
+</style>
+
+<section class="top_bar_naptec">
+  <div class="top_bar_naptec_Wrapper">
+    <div class="page-width">
+      <div class="top_bar_row">
+        <div class="top_bar_logo">
+          {% if section.settings.site_logo != blank %}
+            <a href="{{ routes.root_url }}">
+              <img
+                loading="lazy"
+                width="{{section.settings.site_logo.width}}"
+                height="{{ section.settings.site_logo.height }}"
+                src="{{ section.settings.site_logo | image_url: width: section.settings.site_logo.width }}">
+            </a>
+          {% endif %}
+        </div>
+        <div class="top_bar_menu">
+          <ul>
+            {% if customer %}
+              <li>
+                <a href="{{ routes.account_url }}">
+                  {{ 'customer.account.title' | t }}</a>
+              </li>
+            {% else %}
+              <li>
+                <a href="{{ routes.account_url }}">
+                  {{ 'customer.log_in' | t }}</a>
+              </li>
+              <li>
+                <a href="{{ routes.account_url }}">{{ 'customer.login_page.create_account' | t }}</a>
+              </li>
+            {% endif %}
+            <li>
+              <a
+                href="{{ routes.cart_url }}"
+                class="menu_icon header__icon--cart"
+                id="cart-icon-bubble">
+                <span class="menu_icon">
+                  {% render 'naptec__cart-icon' %}
+                </span>
+                <span class="visually-hidden">{{ 'templates.cart.cart' | t }}</span>
+                {%- if cart != empty -%}
+                  <div class="cart-count-bubble">
+                    {%- if cart.item_count < 100 -%}
+                      <span aria-hidden="true">{{ cart.item_count }}</span>
+                    {%- endif -%}
+                    <span class="visually-hidden">{{ 'sections.header.cart_count' | t: count: cart.item_count }}</span>
+                  </div>
+                {%- endif -%}
+                <span>
+                  {{ 'templates.cart.cart' | t }} ({{ cart.item_count }})
+                </span>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+  {
+    "name": "Top Header",
+    "class": "top_header",
+    "settings": [
+      {
+        "type": "image_picker",
+        "id": "site_logo",
+        "label": "Add Logo Image"
+      }, {
+        "type": "color",
+        "id": "header_bg_color",
+        "label": "Add Backgound Color",
+        "default": "#143338"
+      }, {
+        "type": "color",
+        "id": "header_text_color",
+        "label": "Add Text Color",
+        "default": "#ffffff"
+      }
+    ],
+    "presets": [
+      {
+        "name": "Top Header Section",
+        "category": "Header"
+      }
+    ]
+  }
+{% endschema %}

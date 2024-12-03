@@ -1,0 +1,53 @@
+<div class="global__product-card" data-product-id="{{ product.id }}">
+    <a  href="{{ product.url }}" class="link link--absolute"></a>
+    <div class="global__product-card-img-container">
+        <div>
+            <img
+                    class="global__product-card-img"
+                    src="{{ product.featured_image | img_url: '600x600' }}"
+                    alt="{{ product.featured_image.alt | escape }}"
+                    width="600"
+                    height="600"
+                    loading="lazy"
+            >
+        </div>
+    </div>
+
+    {% if product.vendor %}
+        {% assign vendor_name = product.vendor | strip | downcase %}
+        {% if shop.metaobjects.brand[vendor_name].logo %}
+            {% assign url = shop.metaobjects.brand[vendor_name].logo %}
+            <img class="global__product-card-logo" src="{{ url | img_url: 'master' }}" alt="">
+        {% endif %}
+    {% endif %}
+
+    <div class="global__product-card-information">
+        <p class="global__product-card-title">
+            {{ product.title }}
+        </p>
+        <variant-selector
+                product-id="{{ product.id }}"
+                product-handle="{{ product.handle }}"
+                product-url="{{ product.url }}"
+                featured-image="{{ product.featured_image | img_url: '600x600' }}"
+                options="{{ product.options | join: ',' }}"
+                variants="{{ product.variants | json | escape }}"
+        ></variant-selector>
+        <div class="global__product-card-footer">
+            <div class="global__product-card-review">
+            <span>
+                {% for i in (1..5) %}
+                    {% render 'naperee__review-star' %}
+                {% endfor %}
+            </span>
+                <span>(20 reviews)</span>
+            </div>
+            <div class="global__product-card-price">
+                {% render 'price', product: product, show_compare_at_price: false, use_variant: true, price_class: "global__product-price-container" %}
+            </div>
+        </div>
+
+    </div>
+</div>
+
+
