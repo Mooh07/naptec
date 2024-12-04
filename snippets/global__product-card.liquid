@@ -13,15 +13,16 @@
         </div>
     </div>
 
-    {% if product.vendor %}
-        {% assign vendor_name = product.vendor | strip | downcase %}
-        {% if shop.metaobjects.brand[vendor_name].logo %}
-            {% assign url = shop.metaobjects.brand[vendor_name].logo %}
-            <img class="global__product-card-logo" src="{{ url | img_url: 'master' }}" alt="">
-        {% endif %}
-    {% endif %}
+
 
     <div class="global__product-card-information">
+        {% if product.vendor %}
+            {% assign vendor_name = product.vendor | strip | downcase %}
+            {% if shop.metaobjects.brand[vendor_name].logo %}
+                {% assign url = shop.metaobjects.brand[vendor_name].logo %}
+                <img class="global__product-card-logo" src="{{ url | img_url: 'master' }}" alt="">
+            {% endif %}
+        {% endif %}
         <p class="global__product-card-title">
             {{ product.title }}
         </p>

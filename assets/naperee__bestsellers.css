@@ -55,14 +55,35 @@
 .naperee__bestsellers_products li a * {
     color: var(--text-color);
 }
+.variant-icon {
+    width: 100%;
+    height: 100%;
+}
 
+@media (max-width: 1366px) {
+    .naperee__bestsellers_products li {
+        width: 100%;
+        max-width: 330px;
+    }
+    .naperee__bestsellers_products {
+        gap: 10px;
+    }
+    .naperee__bestsellers {
+        padding: 42px 16px;
+    }
+}
 @media screen and (max-width: 1250px) {
     .naperee__bestsellers_products {
         flex-wrap: wrap;
+        justify-content: center;
     }
 
     .naperee__bestsellers_products li {
-        width: calc(50% - 48px);
+        width: calc(50% - 10px);
+        max-width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
     }
 }
 
@@ -77,17 +98,10 @@
         padding-bottom: 30px;
     }
 
-    .naperee__bestsellers {
-        padding: 8.2rem 4rem;
-    }
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 600px) {
     .naperee__bestsellers_products li {
         width: 100%;
-    }
-
-    .naperee__bestsellers {
-        padding: 4.2rem 1.6rem;
     }
 }

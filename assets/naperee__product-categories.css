@@ -40,15 +40,11 @@
     margin: 0;
     padding: 0;
     list-style: none;
-    display: flex;
-    gap: 60px;
-    align-items: center;
-    justify-content: space-between;
+    cursor: grab;
 }
 
 .naperee__product-categories-category-list ul li {
     position: relative;
-    width: calc(25% - 60px);
     display: flex;
     flex-direction: column;
     gap: 16px;
@@ -122,18 +118,10 @@
 }
 
 @media screen and (max-width: 1250px) {
-    .naperee__product-categories-category-list ul {
-        flex-wrap: wrap;
-        gap: 30px;
-    }
-
     .naperee__product-categories-text {
         margin-bottom: 40px;
     }
 
-    .naperee__product-categories-category-list ul li {
-        width: calc(50% - 30px);
-    }
 }
 
 @media screen and (max-width: 992px) {
@@ -141,36 +129,23 @@
         font-size: 40px;
         padding-bottom: 30px;
     }
+
     .naperee__product-categories-text {
         padding-right: 0;
         align-items: center;
     }
+
     .naperee__product-categories-all-button {
         position: static;
         margin: 0 auto;
     }
+
     .naperee__product-categories {
-        padding: 8.2rem 4rem;
+        padding: 42px 0 42px 16px;
     }
+
     .naperee__product-categories-text h2 {
         padding-bottom: 0;
     }
-    .naperee__product-categories-category-list ul {
-        gap: 30px;
-    }
-}
 
-@media screen and (max-width: 768px) {
-    .naperee__product-categories {
-        padding: 4.2rem 1.6rem;
-    }
-}
-
-@media screen and (max-width: 600px) {
-    .naperee__product-categories {
-    }
-
-    .naperee__product-categories-category-list ul li {
-        width: calc(100% - 0px);
-    }
 }
