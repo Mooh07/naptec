@@ -1664,89 +1664,42 @@ customElements.define("faq-element", FaqElement);
 class VariantSelector extends HTMLElement {
   constructor() {
     super();
+  }
 
-    const productId = this.getAttribute('product-id');
-    const productHandle = this.getAttribute('product-handle');
-    const productUrl = this.getAttribute('product-url');
-    const featuredImage = this.getAttribute('featured-image');
-    const options = this.getAttribute('options').split(',');
-    const variants = JSON.parse(this.getAttribute('variants'));
+  connectedCallback() {
+    this.init();
+  }
 
-    const colorOptionIndex = options.indexOf('Color');
+  init() {
+    const variantItems = this.querySelectorAll('.variant-item');
+    const colorVariants = Array.from(variantItems);
 
-    if (colorOptionIndex !== -1) {
-      const colorVariants = [];
-      const displayedColors = [];
+    colorVariants.forEach(variantItem => {
+      const img = variantItem.querySelector('.variant-icon');
+      img.addEventListener('click', (event) => {
+        event.preventDefault();
+        const variantUrl = variantItem.dataset.variantUrl;
+        const variantImage = variantItem.dataset.variantImage;
 
-      variants.forEach(variant => {
-        const color = variant.options[colorOptionIndex];
-        if (variant.available && !displayedColors.includes(color)) {
-          displayedColors.push(color);
-          colorVariants.push({
-            id: variant.id,
-            color: color,
-            image: variant.featured_image ? variant.featured_image.src : featuredImage,
-            variantUrl: `${productUrl}?variant=${variant.id}`
-          });
-        }
-      });
+        const productCard = this.closest('.global__product-card');
+        const mainImage = productCard.querySelector('.global__product-card-img');
+        mainImage.src = variantImage;
+        productCard.querySelector('.link').href = variantUrl;
 
-      // Создаем контейнер слайдера
-      const glideWrapper = document.createElement('div');
-      glideWrapper.classList.add('glide');
-
-      const glideTrack = document.createElement('div');
-      glideTrack.classList.add('glide__track');
-      glideTrack.setAttribute('data-glide-el', 'track');
-
-      const glideSlides = document.createElement('ul');
-      glideSlides.classList.add('glide__slides');
-
-      colorVariants.forEach(variant => {
-        const glideSlide = document.createElement('li');
-        glideSlide.classList.add('glide__slide');
-
-        const img = document.createElement('img');
-        img.src = variant.image;
-        img.alt = variant.color;
-        img.classList.add('variant-icon');
-        img.setAttribute('data-variant-id', variant.id);
-        img.setAttribute('data-variant-url', variant.variantUrl);
-        img.setAttribute('data-variant-image', variant.image);
-
-        img.addEventListener('click', (event) => {
-          event.preventDefault();
-          const productCard = this.closest('.global__product-card');
-          const mainImage = productCard.querySelector('.global__product-card-img');
-          mainImage.src = variant.image;
-          productCard.querySelector('.link').href = variant.variantUrl;
-
-          glideSlides.querySelectorAll('.variant-icon').forEach(icon => {
-            icon.classList.remove('active');
-          });
-          img.classList.add('active');
+        colorVariants.forEach(item => {
+          item.querySelector('.variant-icon').classList.remove('active');
         });
-
-        glideSlide.appendChild(img);
-        glideSlides.appendChild(glideSlide);
+        img.classList.add('active');
       });
+    });
 
-      glideTrack.appendChild(glideSlides);
-      glideWrapper.appendChild(glideTrack);
-      this.appendChild(glideWrapper);
-
-      // Инициализация слайдера только если вариантов больше 7
-      if (colorVariants.length > 7) {
-        this.initGlide(glideWrapper);
-      } else {
-        glideSlides.classList.add('variant-icons');
-        glideSlides.classList.remove('glide__slides');
-      }
+    if (colorVariants.length > 7) {
+      this.initGlide();
     }
   }
 
-  initGlide(glideWrapper) {
-    new Glide(glideWrapper, {
+  initGlide() {
+    new Glide(this, {
       type: 'slider',
       perView: 7,
       focusAt: 0,
@@ -1757,9 +1710,8 @@ class VariantSelector extends HTMLElement {
   }
 }
 
-
-
 customElements.define('variant-selector', VariantSelector);
+
 
 document.addEventListener('DOMContentLoaded', () => {
   const glideElement = document.querySelector('.naperee__product-categories-category-list');
