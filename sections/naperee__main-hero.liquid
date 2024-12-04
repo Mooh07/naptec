@@ -1,33 +1,32 @@
 <style>
-  .naperee__main-hero {
-    --text-color: {{ section.settings.text_color }};
-    --button-background-color: {{ section.settings.button_background_color }};
-    --button-label-color: {{ section.settings.button_label_color }};
-  }
+    .naperee__main-hero {
+        --text-color: {{ section.settings.text_color }};
+        --button-background-color: {{ section.settings.button_background_color }};
+        --button-label-color: {{ section.settings.button_label_color }};
+    }
 </style>
 {{ "naperee__main-hero.css" | asset_url | stylesheet_tag }}
 <section class="naperee__main-hero page-width">
-  
-  <img
-    src="{{ section.settings.background_image | image_url: width: section.settings.background_image.width }}"
-    alt="{{ section.settings.background_image.alt }}"
-    width="{{ section.settings.background_image.width }}"
-    height="{{ section.settings.background_image.height }}"
-  >
-  <div class="naperee__main-hero-content">
-    <h1 class="naperee__main-hero-title">
-      {{ section.settings.title }}
-    </h1>
-    <h2 class="naperee__main-hero-subtitle">
-      {{ section.settings.subtitle }}
-    </h2>
-    <a
-      href="{{ section.settings.cta_button_url }}"
-      class="naperee__main-hero-call_to_action_button"
+    <img
+            src="{{ section.settings.background_image | image_url: width: section.settings.background_image.width }}"
+            alt="{{ section.settings.background_image.alt }}"
+            width="{{ section.settings.background_image.width }}"
+            height="{{ section.settings.background_image.height }}"
     >
-      {{ section.settings.cta_button_text }}
-    </a>
-  </div>
+    <div class="naperee__main-hero-content">
+        <h1 class="naperee__main-hero-title">
+            {{ section.settings.title }}
+        </h1>
+        <h2 class="naperee__main-hero-subtitle">
+            {{ section.settings.subtitle }}
+        </h2>
+        <a
+                href="{{ section.settings.cta_button_url }}"
+                class="naperee__main-hero-call_to_action_button"
+        >
+            {{ section.settings.cta_button_text }}
+        </a>
+    </div>
 </section>
 {% schema %}
 {

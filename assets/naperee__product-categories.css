@@ -6,6 +6,22 @@
     padding: 112px 0 112px 80px;
 }
 
+
+.naperee__product-categories .glide__slide > div > img, .naperee__product-categories-category-list ul li a {
+    transition: all .2s linear;
+}
+
+.naperee__product-categories .glide__slide > div {
+    overflow: hidden;
+}
+
+.naperee__product-categories .glide__slide:hover > div > img {
+    transform: scale(1.2);
+    transition: all .2s linear;
+}
+.naperee__product-categories-category-list ul .glide__slide:hover a {
+    text-decoration: underline;
+}
 .naperee__product-categories-text {
     display: flex;
     flex-direction: column;
