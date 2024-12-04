@@ -1750,7 +1750,9 @@ class VariantSelector extends HTMLElement {
       type: 'slider',
       perView: 7,
       focusAt: 0,
+      startAt: 0,
       gap: 12,
+      bound: true,
     }).mount();
   }
 }
@@ -1759,5 +1761,40 @@ class VariantSelector extends HTMLElement {
 
 customElements.define('variant-selector', VariantSelector);
 
+document.addEventListener('DOMContentLoaded', () => {
+  const glideElement = document.querySelector('.naperee__product-categories-category-list');
 
+  if (glideElement) {
+    const glide = new Glide(glideElement, {
+      type: 'slider',
+      perView: 3.74,
+      focusAt: 0,
+      startAt: 0,
+      gap: 60,
+      bound: true,
+      breakpoints: {
+        1250: {
+          perView: 3.2,
+          gap: 40,
+        },
+        992: {
+          perView: 2.5,
+          gap: 30,
+        },
+        576: {
+          perView: 1.7,
+          gap: 30,
+        },
+        400: {
+          perView: 1.1,
+          gap: 16,
+        }
+      }
+    });
+
+    glide.mount();
+  } else {
+    console.error('Glide element not found!');
+  }
+});
 
