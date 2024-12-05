@@ -26,6 +26,9 @@
                   {{ block.settings.quality_text_line_2 }}
                 </p>
               </div>
+              {% if block.settings.show_logo == true %}
+                {% render 'icon-logo' %}
+              {% endif %}
             </div>
           </li>
       {% endcase %}
@@ -121,6 +124,12 @@
             "type": "url",
             "id": "url",
             "label": "Item URL"
+          },
+          {
+            "type": "checkbox",
+            "id": "show_logo",
+            "label": "Show Logotype",
+            "default": false
           }
         ]
       }

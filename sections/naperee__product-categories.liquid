@@ -18,29 +18,32 @@
         <a href="{{ section.settings.all_categories_url }}">{{ section.settings.all_categories  }}</a>
       </div>
   </div>
-  <div class="naperee__product-categories-category-list">
-    <ul>
-      {% for block in section.blocks %}
-        {% case block.type %}
-          {% when "category" %}
-            <li>
-              <div>
-                <img
-                src="{{ block.settings.image | image_url: width: block.settings.image.width }}"
-                alt="{{ block.settings.image.alt }}"
-                width="{{ block.settings.image.width }}"
-                height="{{ block.settings.image.height }}"
-                loading="lazy"
-              >
-              </div>
-              <a href="{{ block.settings.category_url }}" class="{%- if block.settings.category_url == blank -%}default_mouse{%- endif -%}">
-                {{ block.settings.category_name | capitalize }}
-              </a>
-            </li>
-        {% endcase %}
-      {% endfor %}
-    </ul>
+  <div class="naperee__product-categories-category-list glide">
+    <div class="glide__track" data-glide-el="track">
+      <ul class="glide__slides">
+        {% for block in section.blocks %}
+          {% case block.type %}
+            {% when "category" %}
+              <li class="glide__slide">
+                <div>
+                  <img
+                          src="{{ block.settings.image | image_url: width: block.settings.image.width }}"
+                          alt="{{ block.settings.image.alt }}"
+                          width="{{ block.settings.image.width }}"
+                          height="{{ block.settings.image.height }}"
+                          loading="lazy"
+                  >
+                </div>
+                <a href="{{ block.settings.category_url }}" class="{%- if block.settings.category_url == blank -%}default_mouse{%- endif -%}">
+                  {{ block.settings.category_name | capitalize }}
+                </a>
+              </li>
+          {% endcase %}
+        {% endfor %}
+      </ul>
+    </div>
   </div>
+
 </section>
 
 {% schema %}
@@ -88,7 +91,7 @@
       {
         "name": "Category",
         "type": "category",
-        "limit": 4,
+        "limit": 8,
         "settings": [
           {
             "type": "image_picker",
@@ -98,13 +101,13 @@
           {
             "type": "text",
             "id": "category_name",
-            "label": "Category Name",
+            "label": "Category Name"
           },
           {
             "type": "url",
             "id": "category_url",
             "label": "Category URL"
-          },
+          }
         ]
       }
     ],

@@ -171,19 +171,57 @@
             "category_name": "3ply Napkins",
             "category_url": "shopify://collections/naperee-guest-towels"
           }
+        },
+        "category_L7aLgb": {
+          "type": "category",
+          "settings": {
+            "image": "shopify://shop_images/new_bg_f24628d6-3502-40b1-a9b5-6b0b75de0d92.png",
+            "category_name": "test",
+            "category_url": "shopify://collections/frontpage"
+          }
+        },
+        "category_n4zGUU": {
+          "type": "category",
+          "settings": {
+            "image": "shopify://shop_images/image_8_a5c955e7-22d1-4f55-88b5-7cb2fbc678b8.png",
+            "category_name": "terst 2",
+            "category_url": "shopify://collections/lintext"
+          }
+        },
+        "category_iR4pYQ": {
+          "type": "category",
+          "settings": {
+            "image": "shopify://shop_images/image_6.png",
+            "category_name": "test 3",
+            "category_url": "shopify://collections/lintext-beverage-napkins"
+          }
+        },
+        "category_fhaAgA": {
+          "type": "category",
+          "settings": {
+            "image": "shopify://shop_images/Frame_427319489_1.png",
+            "category_name": "test 4",
+            "category_url": "shopify://collections/tabletop-decor-runners"
+          }
         }
       },
       "block_order": [
         "category_mh99xB",
         "category_pkPW6F",
         "category_TwTyA6",
-        "category_eWPzCE"
+        "category_eWPzCE",
+        "category_L7aLgb",
+        "category_n4zGUU",
+        "category_iR4pYQ",
+        "category_fhaAgA"
       ],
       "settings": {
         "text_color": "#403c3c",
         "background_color": "#ffffff",
         "script_text": "Leading the fold",
-        "heading": "Product Categories"
+        "heading": "Product Categories",
+        "all_categories": "All categories",
+        "all_categories_url": ""
       }
     },
     "naperee_two_images_n3tk9Y": {
@@ -214,7 +252,8 @@
             "text_position": "end",
             "second_line_left_margin": 65,
             "feature_description": "",
-            "url": ""
+            "url": "",
+            "show_logo": false
           }
         },
         "quality_xTe4UJ": {
@@ -226,7 +265,8 @@
             "text_position": "start",
             "second_line_left_margin": 25,
             "feature_description": "",
-            "url": ""
+            "url": "",
+            "show_logo": false
           }
         },
         "quality_3GY79B": {
@@ -238,7 +278,8 @@
             "text_position": "end",
             "second_line_left_margin": 60,
             "feature_description": "",
-            "url": ""
+            "url": "",
+            "show_logo": false
           }
         },
         "quality_gJHELH": {
@@ -250,7 +291,8 @@
             "text_position": "center",
             "second_line_left_margin": 93,
             "feature_description": "",
-            "url": ""
+            "url": "",
+            "show_logo": true
           }
         }
       },
@@ -320,10 +362,10 @@
         "cta_button_url": "",
         "right_image_top": "shopify://shop_images/top_right_img_1_1_1.png",
         "right_image_bottom": "shopify://shop_images/bottom_right_img_2c8fd5d2-e70b-43e1-8092-75b510d11dbd.png",
-        "background_color": "#ddd4c8",
-        "text_color": "#383735",
-        "button_background_color": "#383735",
-        "button_label_color": "#ffffff"
+        "background_color": "#e0d8d0",
+        "text_color": "#403c3c",
+        "button_background_color": "#403c3c",
+        "button_label_color": "#e0d8d0"
       }
     }
   },
