@@ -37,7 +37,7 @@
         {% endfor %}
 
         {% if color_option_index != -1 %}
-        {% assign displayed_colors = '' | split: ',' %}
+        {% assign displayed_colors = '' %}
         <variant-selector
                 class="variant-selector {% if product.variants.size > 7 %}glide{% else %}variant-icons{% endif %}">
         {% if product.variants.size > 7 %}
@@ -50,7 +50,7 @@
                             {% assign color = variant.options[color_option_index] %}
                             {% if variant.available and color != blank %}
                                 {% unless displayed_colors contains color %}
-                                    {% assign displayed_colors = displayed_colors | push: color %}
+                                    {% assign displayed_colors = displayed_colors | append: color | append: "," %}
                                     {% assign variant_image = variant.featured_image | default: product.featured_image %}
                                     {% assign variant_image_url = variant_image | image_url: width: 150 %}
                                     {% assign variant_url = product.url | append: '?variant=' | append: variant.id %}
@@ -97,5 +97,4 @@
 
 </div>
 </div>
-
 
