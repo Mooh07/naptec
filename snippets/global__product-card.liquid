@@ -17,7 +17,7 @@
             {% assign vendor_name = product.vendor | strip | downcase %}
             {% if shop.metaobjects.brand[vendor_name].logo %}
                 {% assign image = shop.metaobjects.brand[vendor_name].logo %}
-                <img class="global__product-card-logo" loading="lazy"
+                <img class="global__product-card-logo" width="{{ image.width }}" height="{{ image.height }}" loading="lazy"
                      src="{{ image | image_url: width: image.width, height: image.height }}" alt="">
             {% endif %}
         {% endif %}
@@ -52,7 +52,7 @@
                                 {% unless displayed_colors contains color %}
                                     {% assign displayed_colors = displayed_colors | push: color %}
                                     {% assign variant_image = variant.featured_image | default: product.featured_image %}
-                                    {% assign variant_image_url = variant_image | image_url: width: '600' %}
+                                    {% assign variant_image_url = variant_image | image_url: width: 150 %}
                                     {% assign variant_url = product.url | append: '?variant=' | append: variant.id %}
                                     {% if product.variants.size > 7 %}
                                         <li class="glide__slide">
@@ -60,7 +60,7 @@
                                     <div class="variant-item" data-variant-id="{{ variant.id }}"
                                          data-variant-url="{{ variant_url }}"
                                          data-variant-image="{{ variant_image_url }}">
-                                        <img loading="lazy" src="{{ variant_image_url }}" alt="{{ color }}"
+                                        <img width="150" height="150" loading="lazy" src="{{ variant_image_url }}" alt="{{ color }}"
                                              class="variant-icon {% if variant.id == product.selected_or_first_available_variant.id %}
                                             active
                                         {% endif %}">
