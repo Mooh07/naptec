@@ -54,7 +54,7 @@
               type="search"
               name="q"
               value="{{ search.terms | escape }}"
-              placeholder="{{ 'general.search.search' | t }}"
+              placeholder="Enter here"
               {%- if settings.predictive_search_enabled -%}
                 role="combobox"
                 aria-expanded="false"
@@ -68,7 +68,7 @@
                 spellcheck="false"
               {%- endif -%}
             >
-            <label class="field__label" for="{{ input_id }}">{{ 'general.search.search' | t }}</label>
+            {% comment %}<label class="field__label" for="{{ input_id }}">{{ 'general.search.search' | t }}</label>{% endcomment %}
             <input type="hidden" name="options[prefix]" value="last">
             <button
               type="reset"
@@ -85,7 +85,6 @@
               </svg>
             </button>
           </div>
-
           {%- if settings.predictive_search_enabled -%}
             <div class="predictive-search predictive-search--header" tabindex="-1" data-predictive-search>
               {%- render 'loading-spinner', class: 'predictive-search__loading-state' -%}
