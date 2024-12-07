@@ -79,16 +79,20 @@
 .naperee__footer-subscription-input-container input:hover + button > svg {
     transform: rotate(-90deg);
 }
+
 .naperee__footer-subscription-input-container input:hover + button > svg path {
     fill: #fff;
 }
-.naperee__footer-subscription-input-container  {
+
+.naperee__footer-subscription-input-container {
     border-bottom: 1px solid rgba(221, 212, 200, 1);
     padding: 12px 0;
 }
+
 .naperee__footer-subscription-input-container::placeholder {
     color: #E0D8D0;
 }
+
 .naperee__footer-subscription-input-container:hover::placeholder {
     color: #fff;
     border-bottom: 1px solid #FFFFFF;
@@ -130,9 +134,11 @@
     color: rgba(221, 212, 200, 1);
     transition: all .2s linear;
 }
+
 .naperee__footer-contact a:hover {
     text-shadow: 0px 0px 1px rgba(221, 212, 200, 1);
 }
+
 .naperee__footer-right-top {
     display: flex;
 }
@@ -170,9 +176,11 @@
     text-align: left;
     transition: all .2s linear;
 }
+
 .naperee__footer-links ul a:hover {
     text-shadow: 0px 0px 1px rgba(221, 212, 200, 1);
 }
+
 .naperee__footer-right {
     display: flex;
     flex-direction: column;

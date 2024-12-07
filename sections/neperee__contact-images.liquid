@@ -1,95 +1,45 @@
+{{ 'naperee-contact-images.css' | asset_url | stylesheet_tag }}
 <section class="page-width naperee__contact-images">
-  <ul>
-    {% for block in section.blocks %}
-      {% case block.type %}
-        {% when "image" %}
-          <li>
-            <img
-            src="{{ block.settings.image | image_url: width: block.settings.image.width }}"
-            alt="{{ block.settings.image.alt }}"
-            width="318px"
-            height="318px"
-            loading="lazy"
-          >
-          </li>
-      {% endcase %}
-    {% endfor %}
-  </ul>
+    <ul>
+        {% for block in section.blocks %}
+            {% case block.type %}
+                {% when "image" %}
+                    <li>
+                        <img
+                                src="{{ block.settings.image | image_url: width: block.settings.image.width }}"
+                                alt="{{ block.settings.image.alt }}"
+                                width="318px"
+                                height="318px"
+                                loading="lazy"
+                        >
+                    </li>
+            {% endcase %}
+        {% endfor %}
+    </ul>
 </section>
-<style>
-  .naperee__contact-images {
-    display: flex;
-    justify-content: space-between;
-    padding: 60px 80px;
-    background-color: #E0D8D0;
-  }
-  .naperee__contact-images ul { 
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    gap: 56px;
-    justify-content: space-between;
-  }
-  .naperee__contact-images ul li {
-    width: calc(25% - 56px);
-  }
-  .naperee__contact-images img {
-    object-fit: cover;
-    width: 100%;
-    height: 100%;
-    aspect-ratio: 1/1;
-  }
-  @media screen and (max-width: 1250px) {
-    .naperee__contact-images {
-      padding: 60px 40px;
-    }
-    .naperee__contact-images ul {
-      flex-wrap: wrap;
-    }
-    .naperee__contact-images ul li {
-      width: calc(50% - 56px)
-    }
-  }
-  @media screen and (max-width: 992px) {
-    .naperee__contact-images ul li {
-      gap: 28px; 
-    }
-    .naperee__contact-images ul li {
-      width: calc(50% - 28px)
-    }
-  }
-  @media screen and (max-width: 600px) {
-    .naperee__contact-images {
-      padding: 60px 16px;
-    }
-    .naperee__contact-images ul li {
-      width: 100%;
-    }
-  }
-</style>
+
 {% schema %}
-  {
-    "name": "Naperee contact images",
-    "settings": [],
-    "blocks": [
-      {
-        "type": "image",
-        "name": "Image",
-        "limit": 4,
-        "settings": [
-          {
-            "type": "image_picker",
-            "id": "image",
-            "label": "Image"
-          }
-        ]
-      }
-    ],
-    "presets": [
-      {
-        "name": "Naperee contact images"
-      }
-    ]
-  }
+{
+  "name": "Naperee contact images",
+  "settings": [],
+  "blocks": [
+    {
+      "type": "image",
+      "name": "Image",
+      "limit": 4,
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Naperee contact images"
+    }
+  ]
+}
 {% endschema %}

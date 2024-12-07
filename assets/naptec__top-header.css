@@ -67,8 +67,8 @@ section.top_bar_naptec ul li a:hover {
   object-fit: contain;
 }
 sticky-header.fixed-sticky-header {
-  background: #ede6db;
-  border-bottom: 1px solid #0d384a;
+  background: #e0d8d0;
+  /*border-bottom: 1px solid #0d384a;*/
 }
 
 .header__active-menu-item,
