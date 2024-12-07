@@ -81,10 +81,10 @@
     display: flex;
     align-items: center;
     line-height: calc(1 + 0.3 / var(--font-body-scale));
-font-size: 18px;
-font-weight: 400;
-line-height: 20px;
-text-align: center;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 20px;
+    text-align: center;
     font-family: "etna"
 
   }
@@ -161,7 +161,7 @@ text-align: center;
   endfor
 -%}
 
-<{% if section.settings.sticky_header_type != 'none' %}sticky-header data-sticky-type="{{ section.settings.sticky_header_type }}"{% else %}div{% endif %} style="background-color: rgba(29, 59, 44, 1); color: #022D33;" class="bloomingoods-header page-width header-wrapper color-{{ section.settings.color_scheme }} gradient{% if section.settings.show_line_separator %} header-wrapper--border-bottom{% endif %}">
+<{% if section.settings.sticky_header_type != 'none' %}sticky-header data-sticky-type="{{ section.settings.sticky_header_type }}"{% else %}div{% endif %} style="background-color: rgba(245, 233, 219, 1); color: rgba(29, 59, 44, 1);" class="bloomingoods-header page-width header-wrapper color-{{ section.settings.color_scheme }} gradient{% if section.settings.show_line_separator %} header-wrapper--border-bottom{% endif %}">
   {%- liquid
     assign social_links = false
     assign localization_forms = false
@@ -190,7 +190,7 @@ text-align: center;
         <h1 class="header__heading">
       {%- endif -%}
           
-          <a href="{{ section.settings.root-page.url }}" class="header__heading-link header__heading-link-bloomingoods link link--text focus-inset">
+          <a href="{{ section.settings.root-page.url }}" class="bloomingood-header-heading header__heading-link header__heading-link-bloomingoods link link--text focus-inset">
             {%- if settings.logo != blank -%}
               
               <div class="header__heading-logo-wrapper">
@@ -267,7 +267,7 @@ text-align: center;
       {%- endif -%}
     {%- endif -%}
 
-    <div class="header__icons{% if section.settings.enable_country_selector or section.settings.enable_language_selector %} header__icons--localization header-localization{% endif %}">
+    <div class="bloomingoods__header__icons header__icons{% if section.settings.enable_country_selector or section.settings.enable_language_selector %} header__icons--localization header-localization{% endif %}">
       <div class="desktop-localization-wrapper">
         {%- if section.settings.enable_country_selector and localization.available_countries.size > 1 -%}
           <noscript class="small-hide medium-hide">
@@ -349,7 +349,7 @@ text-align: center;
         {%- endcase -%}
       {%- endfor -%}
 
-      <a href="{{ routes.cart_url }}" class="header__icon header__icon--cart link focus-inset" id="cart-icon-bubble">
+      {% comment %} <a href="{{ routes.cart_url }}" class="header__icon header__icon--cart link focus-inset" id="cart-icon-bubble"> {% endcomment %}
         {% comment %}
           {%- liquid
             if cart == empty
@@ -359,7 +359,7 @@ text-align: center;
             endif
           -%}
         {% endcomment %}
-        {% render 'bloomingoods__cart-icon' %}
+        {% comment %} {% render 'bloomingoods__cart-icon' %}
         <span class="visually-hidden">{{ 'templates.cart.cart' | t }}</span>
         {%- if cart != empty -%}
           <div class="cart-count-bubble">
@@ -369,7 +369,10 @@ text-align: center;
             <span class="visually-hidden">{{ 'sections.header.cart_count' | t: count: cart.item_count }}</span>
           </div>
         {%- endif -%}
-      </a>
+      </a> {% endcomment %}
+      <div class="bloomingoods__header-cta-container">
+        <a href="{{ section.settings.cta_url }}">{{ section.settings.cta_label }}</a>
+      </div>
     </div>
   </header>
 </{% if section.settings.sticky_header_type != 'none' %}sticky-header{% else %}div{% endif %}>
@@ -561,9 +564,9 @@ text-align: center;
     },
     {
       "type": "text",
-      "id": "cta-content",
+      "id": "cta_label",
       "label": "Button content",
-      "default": "get a quote"
+      "default": "GET A QUOTE"
     },
     {
       "type": "url",

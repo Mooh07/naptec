@@ -1,26 +1,5 @@
 {{ "bloomingoods__contact.css" | asset_url | stylesheet_tag }}
 <section class="page-width bloomingoods__contact">
-  <div class="bloomingood__contact-top">
-    <div class="bloomingoods__contact-top-text">
-      <h1>
-        {% assign split_heading = section.settings.heading | split: " " %}
-        {% for word in split_heading %}
-          {{ word }} {% if forloop.index == 3 %} <br>{% endif %}
-        {% endfor %}
-      </h1>
-      <p class="hehe">
-        {{ section.settings.subheading |  upcase }}
-      </p>
-    </div>
-    <div class="bloomingoods__contact-top-image">
-      <img
-        src="{{ section.settings.image |  image_url: width: section.settings.image.width }}"
-        alt="{{ section.settings.image.alt }}"
-        width="{{ section.settings.image.width }}"
-        height="{{ section.settings.image.height }}"
-      >
-    </div>
-  </div>
   <div class="bloomingoods__contact-form">
     <div class="bloomingoods__contact-form-top">
       <div class="bloomingoods__contact-information">
