@@ -2,7 +2,7 @@
   display: flex;
   align-items: center;
   flex-direction: column;
-  padding: 112px 146px;
+  padding: 112px var(--padding-sides);
 }
 
 .naptec__our-brands-title h2 {
@@ -13,6 +13,7 @@
   line-height: 96%;
   text-align: center;
   margin-bottom: 80px;
+  color: rgba(7, 59, 67, 1);
 }
 
 .naptec__our-brands-list ul {
@@ -22,13 +23,14 @@
   list-style: none;
   width: 100%;
   justify-content: space-between;
+  gap: 0;
 }
 
 .naptec__our-brands-list ul li {
-  width: calc(25% - 100px);
+  width: 25%;
   position: relative;
   border-radius: 50%;
-  overflow: hidden;
+  /* overflow: hidden; */
 }
 .naptec__our-brands-list ul li::after {
   position: absolute;
@@ -39,10 +41,11 @@
   content: "";
   display: block;
   background-color: rgba(0, 0, 0, 0.2);
+  background: transparent;
   pointer-events: none;
 }
 .naptec__our-brands-list ul li a {
-  position: absolute;
+  /* position: absolute; */
   top: 0;
   right: 0;
   bottom: 0;
@@ -50,6 +53,8 @@
   width: 100%;
   height: 100%;
   z-index: 1;
+  text-decoration: none;
+  color: rgba(16, 41, 45, 1);
 }
 .naptec__our-brands-list ul li a .hidden-span {
   visibility: hidden;
@@ -60,9 +65,10 @@
   height: 100%;
   object-fit: cover;
   aspect-ratio: 1/1;
+  display: none;
 }
 .naptec__our-brands-brand-logo-image {
-  position: absolute;
+  /* position: absolute; */
   left: 0;
   top: 0;
   right: 0;
@@ -71,10 +77,10 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 90%;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
+  width: 100%;
+  /* left: 50%; */
+  /* top: 50%; */
+  /* transform: translate(-50%, -50%); */
   z-index: 2;
   pointer-events: auto;
   transition: 500ms ease;
@@ -85,7 +91,7 @@
   transform: scale(0.6) translate(0, -20px);
   transition: 500ms ease;
 
-  bottom: 0;
+  bottom: 5px;
 }
 .naptec__our-brands-brand-logo-image:hover > div {
   opacity: 1;
@@ -100,11 +106,12 @@
   pointer-events: none;
   opacity: 0;
   transition: 500ms ease;
+  gap: 3.2rem;
 }
 .naptec__our-brands-brand-logo-image > div p {
   text-align: center;
   margin: 0;
-  color: #fff;
+  color: rgba(16, 41, 45, 1);
   text-align: center;
   font-family: "Faktum";
   font-size: 18px;
@@ -113,7 +120,12 @@
   line-height: 133.333%;
 }
 .naptec__our-brands-brand-logo-image > div span {
-  border-bottom: 1px solid white;
+  border-bottom: 1px solid rgba(16, 41, 45, 1);
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 20px;
+  text-align: center;
+  color: rgba(16, 41, 45, 1);
 }
 
 .naptec__our-brands-brand-logo-image img {
@@ -124,52 +136,46 @@
   transition: 500ms ease;
   position: relative;
   bottom: -30px;
+  max-width: 220px;
 }
 
-@media screen and (max-width: 1500px) {
-  .naptec__our-brands-list ul li {
-    width: calc(25% - 50px);
-  }
-}
 @media screen and (max-width: 1300px) {
-  .naptec__our-brands-list ul li {
-    width: calc(25% - 30px);
+  .naptec__our-brands-brand-logo-image img {
+    max-width: 180px;
   }
 }
 @media screen and (max-width: 1250px) {
   .naptec__our-brands {
-    padding: 10rem 4rem;
-  }
-  .naptec__our-brands-list ul {
-    flex-wrap: wrap;
-    row-gap: 100px;
-  }
-  /* .naptec__our-brands-list ul li {
-    width: calc(50% - 100px);
-  } */
-}
-@media screen and (max-width: 1250px) {
-  .naptec__our-brands-list ul {
-    flex-wrap: wrap;
-    row-gap: 30px;
+    padding: 10rem var(--padding-sides);
   }
 }
 
 @media screen and (max-width: 992px) {
   .naptec__our-brands {
-    padding: 8rem 4rem;
+    padding: 8rem var(--padding-sides);
   }
-}
-@media screen and (max-width: 768px) {
   .naptec__our-brands-list ul li {
-    width: calc(50% - 30px);
+    width: 50%;
+  }
+  .naptec__our-brands-list ul {
+    flex-wrap: wrap;
+    row-gap: 50px;
+  }
+  .naptec__our-brands-brand-logo-image img {
+    max-width: 220px;
   }
 }
+
 @media screen and (max-width: 600px) {
   .naptec__our-brands {
-    padding: 4.8rem 1.6rem;
+    padding: 4.8rem var(--padding-sides);
   }
-  .naptec__our-brands-list ul li {
-    width: calc(100% - 0px);
+  .naptec__our-brands-brand-logo-image img {
+    max-width: 180px;
+  }
+}
+@media screen and (max-width: 450px) {
+  .naptec__our-brands-brand-logo-image img {
+    max-width: 150px;
   }
 }

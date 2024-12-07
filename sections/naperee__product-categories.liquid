@@ -10,13 +10,13 @@
   <div class="naperee__product-categories-text">
     <h3>
       {{ section.settings.script_text }}
-      </h3>
-      <h2>
-        {{ section.settings.heading }}
-      </h2>
-      <div class="naperee__product-categories-all-button">
-        <a href="{{ section.settings.all_categories_url }}">{{ section.settings.all_categories  }}</a>
-      </div>
+    </h3>
+    <h2>
+      {{ section.settings.heading }}
+    </h2>
+    <div class="naperee__product-categories-all-button">
+      <a href="{{ section.settings.all_categories_url }}">{{ section.settings.all_categories }}</a>
+    </div>
   </div>
   <div class="naperee__product-categories-category-list glide">
     <div class="glide__track" data-glide-el="track">
@@ -27,12 +27,11 @@
               <li class="glide__slide">
                 <div>
                   <img
-                          src="{{ block.settings.image | image_url: width: block.settings.image.width }}"
-                          alt="{{ block.settings.image.alt }}"
-                          width="{{ block.settings.image.width }}"
-                          height="{{ block.settings.image.height }}"
-                          loading="lazy"
-                  >
+                    src="{{ block.settings.image | image_url: width: block.settings.image.width }}"
+                    alt="{{ block.settings.image.alt }}"
+                    width="{{ block.settings.image.width }}"
+                    height="{{ block.settings.image.height }}"
+                    loading="lazy">
                 </div>
                 <a href="{{ block.settings.category_url }}" class="{%- if block.settings.category_url == blank -%}default_mouse{%- endif -%}">
                   {{ block.settings.category_name | capitalize }}
@@ -45,47 +44,85 @@
   </div>
 
 </section>
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+  const glideElement = document.querySelector('.naperee__product-categories-category-list');
+
+  if (glideElement) {
+    const glide = new Glide(glideElement, {
+      type: 'slider',
+      focusAt: 0,
+      startAt: 0,
+      bound: true,
+      gap: 60,
+      bound: true,
+      breakpoints: {
+        1250: {
+          perView: 3.2,
+          gap: 40,
+        },
+        992: {
+          perView: 2.5,
+          gap: 30,
+        },
+        576: {
+          perView: 1.7,
+          gap: 30,
+        },
+        400: {
+          perView: 1.1,
+          gap: 16,
+        }
+      }
+    });
+
+    glide.mount();
+  } else {
+    console.error('Glide element not found!');
+  }
+  });
+
+</script>
+
 
 {% schema %}
-{
-  "name": "naperee categories",
-  "settings": [
-    {
-      "type": "color",
-      "id": "text_color",
-      "label": "Text Color",
-      "default": "#403C3C"
-    },
-    {
-      "type": "color",
-      "id": "background_color",
-      "label": "Background Color",
-      "default": "#FFFFFF"
-    },
-    {
-      "type": "text",
-      "id": "script_text",
-      "label": "Script Text",
-      "default": "Leading the fold",
-      "info": "Controlls the text above the heading"
-    },
-    {
-      "type": "text",
-      "id": "heading",
-      "label": "Heading",
-      "default": "Product Categories"
-    },
-    {
-      "type": "text",
-      "id": "all_categories",
-      "label": "All Categories",
-      "default": "All categories"
-    },
-    {
-      "type": "url",
-      "id": "all_categories_url",
-      "label": "All Categories Url"
-    }
+  {
+    "name": "naperee categories",
+    "settings": [
+      {
+        "type": "color",
+        "id": "text_color",
+        "label": "Text Color",
+        "default": "#403C3C"
+      },
+      {
+        "type": "color",
+        "id": "background_color",
+        "label": "Background Color",
+        "default": "#FFFFFF"
+      },
+      {
+        "type": "text",
+        "id": "script_text",
+        "label": "Script Text",
+        "default": "Leading the fold",
+        "info": "Controlls the text above the heading"
+      },
+      {
+        "type": "text",
+        "id": "heading",
+        "label": "Heading",
+        "default": "Product Categories"
+      }, {
+        "type": "text",
+        "id": "all_categories",
+        "label": "All Categories",
+        "default": "All categories"
+      }, {
+        "type": "url",
+        "id": "all_categories_url",
+        "label": "All Categories Url"
+      }
     ],
     "blocks": [
       {
@@ -97,13 +134,11 @@
             "type": "image_picker",
             "id": "image",
             "label": "Image"
-          },
-          {
+          }, {
             "type": "text",
             "id": "category_name",
             "label": "Category Name"
-          },
-          {
+          }, {
             "type": "url",
             "id": "category_url",
             "label": "Category URL"
@@ -116,5 +151,5 @@
         "name": "napree categories"
       }
     ]
-}
+  }
 {% endschema %}
