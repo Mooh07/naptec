@@ -4080,6 +4080,7 @@ details-disclosure > details {
   width: fit-content;
   display: flex;
   align-items: center;
+  position: static;
 }
 
 .shopify-section-group-header-group-naperee #predictive-search-results {
@@ -4111,7 +4112,7 @@ details-disclosure > details {
 }
 
 .shopify-section-group-header-group-naperee .search-modal__content {
-  background-color: #ede6db;
+  background-color: #e0d8d0;
   padding: 0;
   justify-content: flex-end;
   height: auto;
