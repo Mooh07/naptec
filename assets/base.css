@@ -38,6 +38,7 @@
   --text-alignment: var(--product-card-text-alignment);
 }
 
+
 .collection-card-wrapper .card,
 .contains-card--collection {
   --border-radius: var(--collection-card-corner-radius);
@@ -2959,6 +2960,7 @@ details[open] .modal-overlay::after {
 
 .shopify-section-group-header-group-naperee .search-modal__content {
   position: static;
+
 }
 
 .search-modal__content-bottom {
@@ -3722,6 +3724,7 @@ details-disclosure > details {
   @keyframes fadeIn {
     from {
       opacity: 0.01;
+
     }
     to {
       opacity: 1;
