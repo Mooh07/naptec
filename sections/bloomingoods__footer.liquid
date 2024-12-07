@@ -3,8 +3,12 @@
   <div class="bloomingoods__footer-left">
     <div class="bloomingoods__footer-subscription-wrapper">
       <h3>{{ section.settings['text-above-subscription'] }}</h3>
-      {%- form 'customer', id: 'ContactFooter' -%}
-        <input type="hidden" name="contact[tags]" value="newsletter,bloomingoods">
+      {%- form 'customer'
+        , id: 'ContactFooter' -%}
+        <input
+          type="hidden"
+          name="contact[tags]"
+          value="newsletter,bloomingoods">
         <div class="bloomingoods__footer-subscription-input-container">
           <input
             id="NewsletterForm--{{ section.id }}"
@@ -17,39 +21,37 @@
             autocapitalize="off"
             autocomplete="email"
             {% if form.errors %}
-              autofocus
-              aria-invalid="true"
-              aria-describedby="ContactFooter-error"
+            autofocus
+            aria-invalid="true"
+            aria-describedby="ContactFooter-error"
             {% elsif form.posted_successfully? %}
-              aria-describedby="ContactFooter-success"
+            aria-describedby="ContactFooter-success"
             {% endif %}
             placeholder="{{ 'newsletter.label' | t }}"
-            required
-          >
+            required>
           <button type="submit" style="all: unset; cursor: pointer;">
-            
-          {% render 'naperee__arrow' %}
+
+            {% render 'naperee__arrow' %}
           </button>
- 
+
         </div>
         {%- if form.posted_successfully? -%}
           <h3
             class="newsletter-form__message newsletter-form__message--success form__message"
             id="ContactFooter-success"
             tabindex="-1"
-            autofocus
-          >
+            autofocus>
             {% render 'icon-success' -%}
             {{- 'newsletter.success' | t }}
           </h3>
         {%- endif -%}
-                 {%- if form.errors -%}
-            <small class="newsletter-form__message form__message" id="ContactFooter-error">
-              {%- render 'icon-error' -%}
-              {{- form.errors.translated_fields.email | capitalize }}
-              {{ form.errors.messages.email -}}
-            </small>
-          {%- endif -%}
+        {%- if form.errors -%}
+          <small class="newsletter-form__message form__message" id="ContactFooter-error">
+            {%- render 'icon-error' -%}
+            {{- form.errors.translated_fields.email | capitalize }}
+            {{ form.errors.messages.email -}}
+          </small>
+        {%- endif -%}
       {%- endform -%}
     </div>
     <img
@@ -58,8 +60,7 @@
       href="{{ section.settings.logo_image.alt }}"
       width="{{ section.settings.logo_image.width }}px"
       height="{{ section.settings.logo_image.height }}px"
-      loading="lazy"
-    >
+      loading="lazy">
   </div>
   <div class="bloomingoods__footer-right">
     <div class="bloomingoods__footer-right-top">
@@ -69,16 +70,30 @@
         <a href="mailto:{{ section.settings.contact_email }}">{{ section.settings.contact_email }}</a>
       </div>
       <div class="bloomingoods__footer-links">
-        <h5>Menu</h5>
-        <ul class="">
-          {% for link in section.settings.link_list.links %}
-            <li class="bloomingoods__footer-list-item">
-              <a href="{{ link.url }}">
-                {{ link.title }}
-              </a>
-            </li>
-          {% endfor %}
-        </ul>
+        <div class="bloomingoods__footer-links-list">
+          <h5>Menu</h5>
+          <ul class="">
+            {% for link in section.settings.link_list.links %}
+              <li class="bloomingoods__footer-list-item">
+                <a href="{{ link.url }}">
+                  {{ link.title }}
+                </a>
+              </li>
+            {% endfor %}
+          </ul>
+        </div>
+        <div class="bloomingoods__footer-links-list">
+          <h5>Product Collection</h5>
+          <ul class="">
+            {% for link in section.settings.link_list.links %}
+              <li class="bloomingoods__footer-list-item">
+                <a href="{{ link.url }}">
+                  {{ link.title }}
+                </a>
+              </li>
+            {% endfor %}
+          </ul>
+        </div>
       </div>
     </div>
     <div class="bloomingoods__footer-right-bottom">
@@ -94,64 +109,59 @@
   }
 </style>
 {% schema %}
-{
-  "name": "Bloomingoods footer",
-  "settings": [
-    {
-      "type": "color",
-      "id": "background_color",
-      "label": "Background color",
-      "default": "rgb(0, 0, 0)"
-    },
-    {
-      "type": "color",
-      "id": "text_color",
-      "label": "Text Color",
-      "default": "#ddd4c8"
-    },
-    {
-      "type": "text",
-      "id": "contact_number",
-      "label": "Contact number"
-    },
-    {
-      "type": "text",
-      "id": "contact_email",
-      "label": "Contact email"
-    },
-    {
-      "type": "link_list",
-      "id": "link_list",
-      "label": "Link list"
-    },
-    {
-      "type": "image_picker",
-      "id": "logo_image",
-      "label": "Logo"
-    },
-    {
-      "type": "text",
-      "id": "text-above-subscription",
-      "label": "Text above subscription input",
-      "default": "Get our news straight to your inbox"
-    },
-    {
-      "type": "text",
-      "id": "all-rights-reserved",
-      "label": "All rights reserved",
-      "default": "Copyright © 2024 All right reserved."
-    },
-    {
-      "type": "text",
-      "id": "copyright",
-      "label": "Copy rights by",
-      "default": "Copyright by NaptecPaper.com"
-    }
-  ],
-  "presets": [
-    {
-      "name": "Bloomingoods footer"
-    }
-  ]
-}
+  {
+    "name": "Bloomingoods footer",
+    "settings": [
+      {
+        "type": "color",
+        "id": "background_color",
+        "label": "Background color",
+        "default": "rgb(0, 0, 0)"
+      },
+      {
+        "type": "color",
+        "id": "text_color",
+        "label": "Text Color",
+        "default": "#ddd4c8"
+      },
+      {
+        "type": "text",
+        "id": "contact_number",
+        "label": "Contact number"
+      },
+      {
+        "type": "text",
+        "id": "contact_email",
+        "label": "Contact email"
+      }, {
+        "type": "link_list",
+        "id": "link_list",
+        "label": "Link list"
+      }, {
+        "type": "image_picker",
+        "id": "logo_image",
+        "label": "Logo"
+      }, {
+        "type": "text",
+        "id": "text-above-subscription",
+        "label": "Text above subscription input",
+        "default": "Get our news straight to your inbox"
+      }, {
+        "type": "text",
+        "id": "all-rights-reserved",
+        "label": "All rights reserved",
+        "default": "Copyright © 2024 All right reserved."
+      }, {
+        "type": "text",
+        "id": "copyright",
+        "label": "Copy rights by",
+        "default": "Copyright by NaptecPaper.com"
+      }
+    ],
+    "presets": [
+      {
+        "name": "Bloomingoods footer"
+      }
+    ]
+  }
 {% endschema %}

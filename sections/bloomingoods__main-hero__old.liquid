@@ -1,10 +1,10 @@
-<style>
+.<style>
   .bloomingoods__main-hero {
     --section-color: {{ section.settings.section_color }};
     --button-label-color: {{ section.settings.button_label_color }};
   }
 </style>
-{{ 'bloomingoods__main-hero.css' | asset_url | stylesheet_tag }}
+{{ 'bloomingoods__main-hero-old.css' | asset_url | stylesheet_tag }}
 <section class="bloomingoods__main-hero page-width">
   <img 
     src="{{ section.settings.background_image | image_url: width: section.settings.background_image.width }}" 

@@ -1,0 +1,223 @@
+<section class="bloomingoods__contact-us page-width">
+  <div class="bloomingoods__contact-us-image-container">
+    <img
+      src="{{ section.settings.right_image |  image_url: width: section.settings.right_image.width }}"
+      alt="{{ section.settings.right_image.alt }}"
+      width="{{ section.settings.right_image.width }}"
+      height="{{ section.settings.right_image.height }}">
+  </div>
+  <div class="bloomingoods__contact-us-text-container">
+    <div class="bloomingoods__contact-us-text-background-wrapper">
+      <img
+        align-items:
+        center;
+        src="{{ section.settings.background_image |  image_url: width: section.settings.background_image.width }}"
+        alt="{{ section.settings.background_image.alt }}"
+        width="{{ section.settings.background_image.width }}"
+        height="{{ section.settings.background_image.height }}">
+
+    </div>
+    <div class="bloomingoods__contact-us-text-wrapper">
+      <h3>{{ section.settings.section_name | upcase }}</h3>
+      <h2>{{ section.settings.section_heading }}</h2>
+      <p>{{ section.settings.paragraph }}</p>
+    </div>
+  </div>
+</section>
+
+<style>
+  .bloomingoods__contact-us {
+    display: flex;
+    padding: var(--padding-sides);
+    gap: 140px;
+    justify-content: space-between;
+    background-color: rgba(245, 232, 213, 1);
+    color: rgba(29, 59, 44, 1);
+  }
+  .bloomingoods__contact-us-image-container {
+    flex: 1;
+  }
+  .bloomingoods__contact-us-image-container img {
+    width: 100%;
+    height: 560px;
+    max-width: 655px;
+    object-fit: cover;
+  }
+  .bloomingoods__contact-us-text-container {
+    flex: 1;
+    position: relative;
+    align-items: center;
+  }
+  .bloomingoods__contact-us-text-background-wrapper {
+    display: flex;
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+  }
+  .bloomingoods__contact-us-text-background-wrapper img {
+    width: 100%;
+    height: auto;
+    z-index: 1;
+    opacity: 0.04;
+    object-fit: contain;
+  }
+  .bloomingoods__contact-us-text-wrapper {
+    z-index: 2;
+    position: relative;
+    padding-top: 182px;
+  }
+  .bloomingoods__contact-us-text-wrapper h3 {
+    color: rgba(29, 59, 44, 1);
+    margin: 0 0 32px;
+    font-family: Latienne Pro;
+    font-size: 20px;
+    font-style: italic;
+    font-weight: 400;
+    line-height: 100%;
+    text-align: left;
+    text-underline-position: from-font;
+    text-decoration-skip-ink: none;
+  }
+  .bloomingoods__contact-us-text-wrapper h2 {
+    color: rgba(29, 59, 44, 1);
+    margin: 0 0 24px;
+    font-family: Latienne Pro;
+    font-size: 60px;
+    font-weight: 400;
+    line-height: 113%;
+    text-align: left;
+    text-underline-position: from-font;
+    text-decoration-skip-ink: none;
+    text-wrap: nowrap;
+  }
+  .bloomingoods__contact-us-text-wrapper p {
+    margin: 0;
+    font-family: "filson";
+    font-size: 20px;
+    font-weight: 300;
+    line-height: 28px;
+    text-align: left;
+    text-underline-position: from-font;
+    text-decoration-skip-ink: none;
+    padding-bottom: 40px;
+  }
+  .bloomingoods__contact-us-text-wrapper a {
+    display: inline-flex;
+    gap: 20px;
+    align-items: center;
+
+    font-family: Latienne Pro;
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 24px;
+    text-align: center;
+    text-underline-position: from-font;
+    text-decoration-skip-ink: none;
+    text-decoration: none;
+    color: rgba(29, 59, 44, 1);
+    padding-bottom: 8px;
+    border-bottom: 1px solid rgba(29, 59, 44, 1);
+  }
+  @media screen and (max-width: 1250px) {
+    .bloomingoods__contact-us-text-wrapper h3 {
+      margin-bottom: 28px;
+    }
+    .bloomingoods__contact-us-text-wrapper h2 {
+      font-size: 48px;
+    }
+
+  }
+  @media screen and (max-width: 1150px) {
+    .bloomingoods__contact-us {
+      gap: 100px;
+    }
+    .bloomingoods__contact-us-text-wrapper h3 {
+      margin-bottom: 24px;
+    }
+    .bloomingoods__contact-us-text-wrapper h2 {
+      font-size: 40px;
+    }
+
+  }
+  @media screen and (max-width: 992px) {
+    .bloomingoods__contact-us {
+      gap: 2rem;
+      flex-direction: column-reverse;
+    }
+    .bloomingoods__contact-us-image-container img {
+      width: 100%;
+      max-width: unset;
+      height: 560px;
+      object-fit: cover;
+    }
+    .bloomingoods__contact-us-text-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .bloomingoods__contact-us-text-wrapper {
+      z-index: 2;
+      position: relative;
+      padding-top: 2rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .bloomingoods__contact-us-text-wrapper h3 {
+      text-align: center;
+    }
+    .bloomingoods__contact-us-text-wrapper h2 {
+      text-align: center;
+    }
+    .bloomingoods__contact-us-text-wrapper p {
+      text-align: center;
+      max-width: 600px;
+    }
+    .bloomingoods__contact-us-text-wrapper a {}
+}
+@media screen and (max-width: 600px) {
+  .bloomingoods__contact-us-text-wrapper h3 {
+    font-size: 20px;
+  }
+  .bloomingoods__contact-us-text-wrapper h2 {
+    font-size: 32px;
+  }
+  .bloomingoods__contact-us-text-wrapper p {
+    text-align: center;
+    max-width: 600px;
+  }
+}
+</style>
+
+{% schema %}
+  {
+    "name": "Bloomingoods contact us",
+    "settings": [
+      {
+        "type": "text",
+        "id": "section_name",
+        "label": "Sections's name",
+        "default": "GET IN TOUCH"
+      }, {
+        "type": "html",
+        "label": "Section's heading",
+        "id": "section_heading"
+      }, {
+        "type": "image_picker",
+        "id": "background_image",
+        "label": "Background image"
+      }, {
+        "type": "image_picker",
+        "label": "Right image",
+        "id": "right_image"
+      }
+    ],
+    "presets": [
+      {
+        "name": "Bloomingoods contact us"
+      }
+    ]
+  }
+{% endschema %}

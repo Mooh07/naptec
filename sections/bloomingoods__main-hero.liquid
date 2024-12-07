@@ -1,97 +1,209 @@
-<style>
-  .bloomingoods__main-hero {
-    --section-color: {{ section.settings.section_color }};
-    --button-label-color: {{ section.settings.button_label_color }};
-  }
-</style>
-{{ 'bloomingoods__main-hero.css' | asset_url | stylesheet_tag }}
+{{ 'bloomingoods__main-hero-old.css' | asset_url | stylesheet_tag }}
 <section class="bloomingoods__main-hero page-width">
-  <div class="bloomingoods__main-hero-heading-container">
-    <h1>
-      {%- assign split_header = section.settings.header | split: ' ' -%}
-      {% for word in split_header %}
-        {% if forloop.index == 1 %}
-          {{ word | capitalize }}
-          {% else %}
-          {{ word }}
-        {% endif %}
-        {% if forloop.index == 2 %}<br>{% endif %}
-      {% endfor %}
-    </h1>
+  <div class="bloomingoods__main-hero-background-container">
+    <img
+      src="{{ section.settings.background_image |  image_url: width: section.settings.background_image.width }}"
+      alt="{{ section.settings.background_image.alt }}"
+      height="{{ section.settings.background_image.height }}"
+      width="{{ section.settings.background_image.width }}">
   </div>
-  <div class="bloomingoods__main-hero-content">
-    <div class="bloomingoods__main-hero-content-left">
+  <div class="bloomingoods__main-hero-text-container">
+    <div class="bloomingoods__main-hero-text-wrapper">
+      {% assign split_heading = section.settings.heading | split: " " %}
+      <h1>
+        {% for word in split_heading %}
+          {{ word }}
+          {% if forloop.index == 1 or forloop.index == 2 %}
+            <br>
+          {% endif %}
+        {% endfor %}
+      </h1>
       <a href="{{ section.settings.cta_url }}">
-        {{- section.settings.cta_text | upcase -}}
+        {{ section.settings.cta_label | upcase }}
         <img
-          src="https://cdn.shopify.com/s/files/1/0611/8129/6700/files/bloomingoods-icon.png?v=1723919059"
-          alt="bloomingoods icon"
-          width="24px"
-          height="24px"
-        >
+          src="https://cdn.shopify.com/s/files/1/0611/8129/6700/files/Group_19.png?v=1733501843"
+          alt="bloomingoods_logo"
+          width="23.3"
+          height="24">
       </a>
     </div>
-    <div class="bloomingoods__main-hero-content-middle">
-      <img
-        src="{{ section.settings.center_image | image_url: width: section.settings.center_image.width }}"
-        alt="{{ section.settings.center_image.alt }}"
-        width="{{ section.settings.center_image.width }}"
-        height="{{ section.settings.center_image.height }}"
-      >
-    </div>
-    <div class="bloomingoods__main-hero-content-right">
-        {{ section.settings.right_text | upcase }}
-    </div>
+    <img
+      src="{{ section.settings.text_container_image |  image_url: width: section.settings.text_container_image.width }}"
+      alt="{{ section.settings.text_container_image.alt }}"
+      height="{{ section.settings.text_container_image.height }}"
+      width="{{ section.settings.text_container_image.width }}">
   </div>
 </section>
+<style>
+  .bloomingoods__main-hero {
+    position: relative;
+    min-height: 720px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .bloomingoods__main-hero-background-container {
+    height: 720px;
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    z-index: 1;
+  }
+  .bloomingoods__main-hero-background-container img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+  }
+  .bloomingoods__main-hero-text-container {
+    position: relative;
+    z-index: 2;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+    align-items: center;
+    justify-items: center;
+    max-width: 80%;
+  }
+  .bloomingoods__main-hero-text-wrapper {
+    grid-area: 1 / 1 / 2 / 2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
+  .bloomingoods__main-hero-text-wrapper h1 {
+    position: relative;
+    font-family: Latienne Pro;
+    font-size: 68px;
+    font-weight: 400;
+    line-height: 105%;
+    text-align: center;
+    text-underline-position: from-font;
+    text-decoration-skip-ink: none;
+    color: rgba(29, 59, 44, 1);
+    margin: 0 0 40px;
+  }
+  .bloomingoods__main-hero-text-wrapper a {
+    position: relative;
+    text-decoration: none;
+    color: rgba(29, 59, 44, 1);
+    font-family: Latienne Pro;
+    font-size: 24px;
+    font-weight: 500;
+    line-height: 100%;
+    text-align: center;
+    text-underline-position: from-font;
+    text-decoration-skip-ink: none;
+    border-bottom: 1px solid rgba(29, 59, 44, 1);
+    padding-bottom: 1rem;
+    display: flex;
+    gap: 20px;
+  }
+  .bloomingoods__main-hero-text-wrapper > a img {
+    transition: 300ms;
+  }
+  .bloomingoods__main-hero-text-wrapper > a:hover img {
+    transform: rotate(90deg);
+    transition: 300ms;
+  }
+  
+  .bloomingoods__main-hero-text-container > img {
+    grid-area: 1 / 1 / 2 / 2;
+    width: 100%;
+    height: auto;
+  }
+  @media screen and (max-width: 992px) {
+    .bloomingoods__main-hero-text-wrapper h1 {
+      font-size: 60px;
+      margin-bottom: 30px;
+    }
+    .bloomingoods__main-hero-text-wrapper a {
+      font-size: 18px;
+      padding-bottom: 7px;
+      gap: 10px;
+    }
+    .bloomingoods__main-hero-text-wrapper a img {
+      height: 20px;
+      width: auto;
+    }
+  }
+  @media screen and (max-width: 700px) {
+    .bloomingoods__main-hero-text-wrapper h1 {
+      font-size: 50px;
+      margin-bottom: 20px;
+    }
+    .bloomingoods__main-hero-text-wrapper a {
+      font-size: 12px;
+      padding-bottom: 7px;
+      gap: 10px;
+    }
+    .bloomingoods__main-hero-text-wrapper a img {
+      height: 18px;
+      width: auto;
+    }
+  }
+  @media screen and (max-width: 600px) {
+    .bloomingoods__main-hero-text-wrapper h1 {
+      font-size: 38px;
+      margin-bottom: 10px;
+    }
+    .bloomingoods__main-hero-text-wrapper a img {
+      height: 15px;
+      width: auto;
+    }
+  }
+  @media screen and (max-width: 520px) {
+    .bloomingoods__main-hero {
+      align-items: start;
+      padding-top: 20rem;
+    }
+    .bloomingoods__main-hero-text-wrapper h1 {
+      font-size: 34px;
+    }
+  }
+  @media screen and (max-width: 450px) {
+    .bloomingoods__main-hero-text-wrapper h1 {
+      font-size: 34px;
+    }
+  }
+</style>
 {% schema %}
-{
-  "name": "Bloomingoods main hero",
-  "settings": [
-    {
-      "type": "text",
-      "id": "header",
-      "label": "header",
-      "default": "<h1>Bringing unforgettable to the table.</h1>"
-    },
-    {
-      "type": "image_picker",
-      "id": "center_image",
-      "label": "Center image"
-    },
-    {
-      "type": "richtext",
-      "id": "right_text",
-      "label": "Right side text"
-    },
-    {
-      "type": "url",
-      "id": "cta_url",
-      "label": "Call to action button URL"
-    },
-    {
-      "type": "text",
-      "id": "cta_text",
-      "label": "Call to action button text",
-      "default": "get a quote"
-    },
-    {
-      "type": "color",
-      "id": "section_color",
-      "label": "Section color",
-      "default": "#F5DBE9"
-    },
-    {
-      "type": "color",
-      "id": "button_label_color",
-      "label": "Call to action button label color",
-      "default": "#fff"
-    }
-  ],
-  "presets": [
-    {
-      "name": "Bloomingoods main hero"
-    }
-  ]
-}
+  {
+    "name": "Bloomingoods main hero",
+    "settings": [
+      {
+        "type": "image_picker",
+        "id": "text_container_image",
+        "label": "Text container"
+      },
+      {
+        "type": "text",
+        "id": "heading",
+        "label": "Heading",
+        "default": "Bringing unforgettable to the table."
+      },
+      {
+        "type": "image_picker",
+        "id": "background_image",
+        "label": "Background Image"
+      },
+      {
+        "type": "text",
+        "id": "cta_label",
+        "label": "Call to action button label",
+        "default": "get a quote"
+      }, {
+        "type": "url",
+        "label": "Call to action button link",
+        "id": "cta_url"
+      }
+    ],
+    "presets": [
+      {
+        "name": "Bloomingoods main hero"
+      }
+    ]
+  }
 {% endschema %}

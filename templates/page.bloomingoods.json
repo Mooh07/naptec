@@ -10,16 +10,159 @@
 {
   "layout": "theme.bloomingoods",
   "sections": {
-    "bloomingoods_main_hero_XYM6tD": {
+    "bloomingoods_main_hero_EKaGwm": {
       "type": "bloomingoods__main-hero",
       "settings": {
-        "header": "Bringing unforgettable to the table.",
-        "center_image": "shopify://shop_images/center-image.png",
-        "right_text": "<p>A fresh one, </p><p>every time.</p>",
+        "text_container_image": "shopify://shop_images/image_3bb75f76-9359-49d7-814e-12319dd64863.png",
+        "heading": "Bringing unforgettable to the table.",
+        "background_image": "shopify://shop_images/bloomingoods_main_hero_background_1.png",
+        "cta_label": "get a quote",
+        "cta_url": ""
+      }
+    },
+    "bloomingoods_features_bxA4PQ": {
+      "type": "bloomingoods__features",
+      "blocks": {
+        "feature_g3nCDe": {
+          "type": "feature",
+          "settings": {
+            "image": "shopify://shop_images/Group_25_d94a6587-1873-467e-8f28-051894913a5f.png",
+            "text": "Decorative linen-feel<br>\npaper napkins"
+          }
+        },
+        "feature_P3TTba": {
+          "type": "feature",
+          "settings": {
+            "image": "shopify://shop_images/Group_26_234bb0f4-a4a5-4243-977a-31ead8083425.png",
+            "text": "Variety <br>\nof colors"
+          }
+        },
+        "feature_7FKYQT": {
+          "type": "feature",
+          "settings": {
+            "image": "shopify://shop_images/Group_27_83daacc4-a1c1-42eb-80fd-0460acebe80b.png",
+            "text": "One towel, <br>\nmulti purpose"
+          }
+        },
+        "feature_NjM9yC": {
+          "type": "feature",
+          "settings": {
+            "image": "shopify://shop_images/Group_28_6cd621cf-e2e5-4304-8de3-03b2ff758d0d.png",
+            "text": "Soft and <br>\nabsorbant"
+          }
+        },
+        "feature_47a8pr": {
+          "type": "feature",
+          "settings": {
+            "image": "shopify://shop_images/Group_29_9bcc0642-eaa9-4051-9d8b-ddd415d214e3.png",
+            "text": "The right <br> \nsize"
+          }
+        }
+      },
+      "block_order": [
+        "feature_g3nCDe",
+        "feature_P3TTba",
+        "feature_7FKYQT",
+        "feature_NjM9yC",
+        "feature_47a8pr"
+      ],
+      "settings": {}
+    },
+    "bloomingoods_about_nqjLMY": {
+      "type": "bloomingoods__about",
+      "settings": {
+        "section_name": "ABOUT US",
+        "section_heading": "Our mission is to <br>\nmake hosting with <br>\nflair a total no-brainer.",
+        "paragraph": "Our goal is to design products that are both stylish, practical, and affordable-striking the balance between form and function, aesthetic and hygiene.",
+        "background_image": "shopify://shop_images/logo-big.png",
+        "right_image": "shopify://shop_images/2_2.png"
+      }
+    },
+    "bloomingoods_a_fresh_one_HbHj48": {
+      "type": "bloomingoods__a-fresh-one",
+      "settings": {
+        "background_image": "shopify://shop_images/image_3.png",
+        "left_image": "shopify://shop_images/2024-11-06_03.31.45_1.png",
+        "right_text": "<p>A fresh one </p>\n<p>every time</p>"
+      }
+    },
+    "bloomingoods_categories_MyjPTD": {
+      "type": "bloomingoods__categories",
+      "blocks": {
+        "category_6RiwWj": {
+          "type": "category",
+          "settings": {
+            "image": "shopify://shop_images/1_b1a70c9f-14be-49b6-901f-709ea43cf610.png",
+            "category_name": "Guest Towels",
+            "url": ""
+          }
+        },
+        "category_9FNC7D": {
+          "type": "category",
+          "settings": {
+            "image": "shopify://shop_images/2_d4f280cc-d8d5-418d-99fd-d957d38321db.png",
+            "category_name": "Napkins",
+            "url": ""
+          }
+        },
+        "category_UjPUAa": {
+          "type": "category",
+          "settings": {
+            "image": "shopify://shop_images/3_dc08309a-e3c4-48ac-bab0-d51048b4b83f.png",
+            "category_name": "Tablecloths & Runners",
+            "url": ""
+          }
+        },
+        "category_czAWDV": {
+          "type": "category",
+          "settings": {
+            "image": "shopify://shop_images/4_2.png",
+            "category_name": "Design & Monogrammed Napkins",
+            "url": ""
+          }
+        }
+      },
+      "block_order": [
+        "category_6RiwWj",
+        "category_9FNC7D",
+        "category_UjPUAa",
+        "category_czAWDV"
+      ],
+      "settings": {
+        "section_name": "PRODUCTS",
+        "heading": "Product Categories",
+        "paragraph": ""
+      }
+    },
+    "bloomingoods_make_your_custom_design_tQXEY4": {
+      "type": "bloomingoods__make-your-custom-design",
+      "settings": {
+        "background_image": "shopify://shop_images/make-your-design-bg_2.png",
+        "heading": "Make your custom design",
+        "paragraph": "<p>Tailor napkins to fit your brand or establishment</p> \n<p>by exploring our customization options,</p> \n<p>including branding and packaging solutions.</p>",
         "cta_url": "",
-        "cta_text": "get a quote",
-        "section_color": "#f5dbe9",
-        "button_label_color": "#ffffff"
+        "cta_label": "GET A QUOTE",
+        "text_background": "shopify://shop_images/image_3bb75f76-9359-49d7-814e-12319dd64863.png"
+      }
+    },
+    "bloomingoods_cooperate_7Q4pnC": {
+      "type": "bloomingoods__cooperate",
+      "settings": {
+        "section_heading": "Cooperation",
+        "paragraph": "Together, we can create beautiful spaces and inspire others to live beautifully. Contact us today to explore partnership opportunities and let's make magic happen together.",
+        "background_image": "shopify://shop_images/logo-big.png",
+        "right_image": "shopify://shop_images/coop_2.png",
+        "cta_url": "",
+        "cta_label": "get a quote"
+      }
+    },
+    "bloomingoods_main_hero_XYM6tD": {
+      "type": "bloomingoods__main-hero",
+      "disabled": true,
+      "settings": {
+        "heading": "Bringing unforgettable to the table.",
+        "cta_label": "get a quote",
+        "cta_url": ""
       }
     },
     "bloomingoods_mission_Nkwgtc": {
@@ -27,6 +170,7 @@
       "blocks": {
         "mission_YJKdNT": {
           "type": "mission",
+          "disabled": true,
           "settings": {
             "icon": "shopify://shop_images/Group_25.png",
             "text": "Decorative linen-feel paper napkins"
@@ -34,6 +178,7 @@
         },
         "mission_gAwyAT": {
           "type": "mission",
+          "disabled": true,
           "settings": {
             "icon": "shopify://shop_images/Group_26.png",
             "text": "Variety of colors"
@@ -41,6 +186,7 @@
         },
         "mission_egneip": {
           "type": "mission",
+          "disabled": true,
           "settings": {
             "icon": "shopify://shop_images/Group_27.png",
             "text": "One towel, multi purpose"
@@ -48,6 +194,7 @@
         },
         "mission_YwRNqJ": {
           "type": "mission",
+          "disabled": true,
           "settings": {
             "icon": "shopify://shop_images/Group_28.png",
             "text": "Soft and absorbant"
@@ -55,6 +202,7 @@
         },
         "mission_Lm9BWC": {
           "type": "mission",
+          "disabled": true,
           "settings": {
             "icon": "shopify://shop_images/Group_29.png",
             "text": "The right size"
@@ -68,6 +216,7 @@
         "mission_YwRNqJ",
         "mission_Lm9BWC"
       ],
+      "disabled": true,
       "settings": {
         "section_color": "#ffffff",
         "heading": "<h2>Our mission is to </h2><h2>make hosting with flair </h2><h2>a total no-brainer</h2>",
@@ -117,6 +266,7 @@
         "category_YMXDzi",
         "category_FPNeK7"
       ],
+      "disabled": true,
       "settings": {
         "section_color": "#383735",
         "background_color": "#f5e9db",
@@ -126,6 +276,7 @@
     },
     "bloomingoods_make_your_design_NGE34W": {
       "type": "bloomingoods__make-your-design",
+      "disabled": true,
       "settings": {
         "section_color": "#f5e9db",
         "background_color": "#1d3b2c",
@@ -139,6 +290,7 @@
     },
     "bloomingoods_cooperation_77rLhh": {
       "type": "bloomingoods__cooperation",
+      "disabled": true,
       "settings": {
         "section_color": "#ffffff",
         "background_color": "#1d3b2c",
@@ -289,6 +441,13 @@
     }
   },
   "order": [
+    "bloomingoods_main_hero_EKaGwm",
+    "bloomingoods_features_bxA4PQ",
+    "bloomingoods_about_nqjLMY",
+    "bloomingoods_a_fresh_one_HbHj48",
+    "bloomingoods_categories_MyjPTD",
+    "bloomingoods_make_your_custom_design_tQXEY4",
+    "bloomingoods_cooperate_7Q4pnC",
     "bloomingoods_main_hero_XYM6tD",
     "bloomingoods_mission_Nkwgtc",
     "bloomingoods_product_categories_LpPpLH",
