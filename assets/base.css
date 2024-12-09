@@ -38,7 +38,6 @@
   --text-alignment: var(--product-card-text-alignment);
 }
 
-
 .collection-card-wrapper .card,
 .contains-card--collection {
   --border-radius: var(--collection-card-corner-radius);
@@ -2173,6 +2172,9 @@ product-info .loading__spinner:not(.hidden) ~ *,
   justify-content: center;
   align-items: center;
 }
+.bloomingoods-header .modal__content {
+  position: static;
+}
 
 .media-modal {
   cursor: zoom-out;
@@ -2470,6 +2472,15 @@ product-info .loading__spinner:not(.hidden) ~ *,
   grid-template-columns: 1fr 2fr 1fr;
   align-items: center;
 }
+@media screen and (max-width: 992px) {
+  .bloomingoods-header .header {
+    grid-template-areas: "left-icons heading icons";
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+  .bloomingoods-header .search-modal__close-button {
+    position: static;
+  }
+}
 
 @media screen and (max-width: 749px) {
   .header--has-app {
@@ -2518,8 +2529,8 @@ product-info .loading__spinner:not(.hidden) ~ *,
   /* heading icons */
   .header--middle-left-bloomingoods {
     grid-template-areas: "heading navigation icons";
-    grid-template-columns: auto 1fr auto;
-    column-gap: 2rem;
+    grid-template-columns: auto 1fr 1fr;
+    column-gap: 0;
     color: rgb(2, 45, 51);
   }
 
@@ -2823,15 +2834,17 @@ details[open] > .search-modal {
   animation: animateMenuOpen var(--duration-default) ease;
 }
 
-.bloomingoods__header-searh-search-details {
-  position: relative;
-}
-
 .bloomingoods__header__icons {
   /* position: absolute; */
-  min-width: 535px;
+  /* min-width: 535px; */
   display: flex;
   justify-content: end;
+  height: 100%;
+  position: static;
+  width: 100%;
+}
+.bloomingoods__header__icons .header__search {
+  width: 100%;
 }
 
 #bloomingoodsSearchInput {
@@ -2840,26 +2853,41 @@ details[open] > .search-modal {
   box-shadow: none;
 }
 .bloomingoods__header-cta-container {
-  width: 125px;
+  /* width: 125px; */
   display: flex;
   justify-content: end;
   align-items: center;
   /* border: 1px solid rgba(29, 59, 44, 1); */
   /* padding: 12px 16px; */
-  position: absolute;
+  /* position: absolute; */
   bottom: 50%;
   top: 50%;
-}
-.bloomingoods__header-cta-container {
   transition: 300ms;
   opacity: 1;
+}
+@media screen and (max-width: 992px) {
+  .bloomingoods__header-cta-container {
+    display: none;
+  }
 }
 
 .header__inline-menu-bloomingoods li a {
   padding-left: 0;
   padding-right: 0;
 }
-
+.header__inline-menu-bloomingoods > ul {
+  gap: 6rem;
+}
+@media screen and (max-width: 1400px) {
+  .header__inline-menu-bloomingoods > ul {
+    gap: 5rem;
+  }
+}
+@media screen and (max-width: 1250px) {
+  .header__inline-menu-bloomingoods > ul {
+    gap: 3rem;
+  }
+}
 .bloomingoods__header__icons:has(details[open])
   .bloomingoods__header-cta-container {
   opacity: 0;
@@ -2877,7 +2905,7 @@ details[open] > .search-modal {
   text-decoration-skip-ink: none;
   color: rgba(29, 59, 44, 1);
   text-decoration: none;
-  position: absolute;
+  /* position: absolute; */
   border: 1px solid rgba(29, 59, 44, 1);
   padding: 12px 16px;
   text-wrap: nowrap;
@@ -2888,6 +2916,7 @@ details[open] > .search-modal {
   border: none;
   outline: none;
   box-shadow: none;
+  display: none;
 }
 #bloomingoodsSearchInput input:focus-visible {
   border: none;
@@ -2899,9 +2928,14 @@ details[open] > .search-modal {
   border-bottom: 1px solid rgba(29, 59, 44, 1);
   background-color: transparent;
   caret-color: rgba(29, 59, 44, 1);
+  color: rgba(29, 59, 44, 1);
+}
+.bloomingoods__header-searh-search-details {
+  position: static;
+  width: 100%;
 }
 .bloomingoods__header-searh-search-details summary {
-  position: absolute;
+  /* position: absolute; */
   display: flex;
   left: 0;
   top: 0;
@@ -2911,7 +2945,11 @@ details[open] > .search-modal {
   height: 100%;
   justify-content: end;
 }
-details[open] > summary {
+/* details[open] > summary {
+  opacity: 0;
+} */
+details[open].bloomingoods__header-searh-search-details > summary {
+  display: none;
   opacity: 0;
 }
 details[open] svg {
@@ -2957,10 +2995,33 @@ details[open] .modal-overlay::after {
   line-height: calc(1 + 0.8 / var(--font-body-scale));
   position: relative;
 }
-
+.shopify-section-group-header-group-bloomingoods .search-modal__content,
 .shopify-section-group-header-group-naperee .search-modal__content {
   position: static;
-
+}
+@media screen and (max-width: 992px) {
+  .shopify-section-group-header-group-bloomingoods .search-modal__content {
+    left: 0;
+    width: 100%;
+  }
+  .bloomingoods-header .modal__content {
+    position: absolute;
+  }
+  details[open].bloomingoods__header-searh-search-details > summary {
+    display: flex;
+  }
+  details[open].bloomingoods__header-searh-search-details .search-modal {
+    min-height: auto;
+  }
+  .bloomingoods-header #menu-drawer {
+    background: rgba(245, 233, 219, 1);
+  }
+  .bloomingoods-header .menu-drawer__menu-item {
+    color: #1d3b2c;
+  }
+}
+.shopify-section-group-header-group-bloomingoods .bloomingoods-header {
+  padding: 0 var(--padding-sides);
 }
 
 .search-modal__content-bottom {
@@ -3056,7 +3117,7 @@ details[open] > .header__submenu {
   margin-left: -1.2rem;
   grid-area: navigation;
   display: none;
-  padding-right: 10rem;
+  /* padding-right: 10rem; */
 }
 
 .header__inline-menu-servietto {
@@ -3082,7 +3143,8 @@ details[open] > .header__submenu {
   .header__inline-menu-bloomingoods {
     display: flex;
     align-items: center;
-    justify-content: end;
+    justify-content: start;
+    margin-left: 10.2rem;
   }
 
   .header__inline-menu-lintext {
@@ -3093,13 +3155,12 @@ details[open] > .header__submenu {
   }
 
   .header__inline-menu-bloomingoods ul li a span {
-    color: #022d33;
     font-family: "latienne pro";
     font-size: 16px;
     font-weight: 400;
     line-height: 18px;
     text-align: center;
-    color: #f5e9db;
+    color: #022d33;
   }
 
   .header__inline-menu-servietto {
@@ -3150,9 +3211,6 @@ details[open] > .header__submenu {
   }
 }
 @media screen and (max-width: 1150px) {
-  .header__inline-menu-bloomingoods ul {
-    gap: 48px;
-  }
   .header__inline-menu-bloomingoods {
     margin-left: 40px;
   }
@@ -3724,7 +3782,6 @@ details-disclosure > details {
   @keyframes fadeIn {
     from {
       opacity: 0.01;
-
     }
     to {
       opacity: 1;
@@ -4184,7 +4241,8 @@ details-disclosure > details {
 }
 
 .shopify-section-group-header-group-bloomingoods .search-modal__content {
-  background-color: #1d3b2c;
+  background-color: rgba(245, 233, 219, 1);
+  padding: 0;
 }
 
 .shopify-section-group-header-group-bloomingoods .field__label {
