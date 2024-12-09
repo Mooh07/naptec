@@ -2916,6 +2916,7 @@ details[open] > .search-modal {
   border: none;
   outline: none;
   box-shadow: none;
+  display: none;
 }
 #bloomingoodsSearchInput input:focus-visible {
   border: none;
