@@ -1,0 +1,143 @@
+<section class="bloomingoods__low-header page-width">
+  <div class="bloomingoods__low-header-links-wrapper">
+    <ul>
+      {% for link in section.settings.link_list.links %}
+        <li>
+          <a href="{{ link.url }}">
+            {{ link.title }}
+          </a>
+        </li>
+      {% endfor %}
+    </ul>
+  </div>
+  <div class="bloomingoods__low-header-drawer">
+    <details>
+      <summary>
+        {{ section.settings.drawer_title | upcase }}
+      </summary>
+      <ul>
+        {% for link in section.settings.link_list.links %}
+          <li>
+            <a href="{{ link.url }}">
+              {{ link.title }}
+            </a>
+          </li>
+        {% endfor %}
+      </ul>
+    </details>
+  </div>
+</section>
+<style>
+  .bloomingoods__low-header-container {
+    /* position: relative; */
+    position: sticky;
+    top: calc(50px + 74px);
+    z-index: 3;
+  }
+
+  .bloomingoods__low-header {
+    position: sticky;
+    padding: 0 var(--padding-sides);
+    background-color: rgba(55, 80, 65, 1);
+  }
+  .bloomingoods__low-header-links-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
+  .bloomingoods__low-header-drawer {
+    display: none;
+  }
+  .bloomingoods__low-header-links-wrapper ul {
+    padding: 16px 0;
+    margin: 0;
+    list-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+  }
+
+  .bloomingoods__low-header-links-wrapper ul li a {
+    color: rgba(245, 233, 219, 1);
+    text-decoration: none;
+    text-wrap: nowrap;
+    font-family: Latienne Pro;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 20px;
+    text-align: center;
+    text-underline-position: from-font;
+    text-decoration-skip-ink: none;
+  }
+  @media screen and (max-width: 992px) {
+    .bloomingoods__low-header-container {
+      top: calc(50px + 52px);
+    }
+    .bloomingoods__low-header-links-wrapper {
+      display: none;
+    }
+    .bloomingoods__low-header-drawer {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .bloomingoods__low-header-drawer details {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: center;
+      color: rgba(245, 233, 219, 1);
+      s
+    }
+    .bloomingoods__low-header-drawer details summary {
+      padding: 16px 0;
+      font-family: Latienne Pro;
+      font-size: 18px;
+      font-weight: 400;
+      line-height: 20px;
+      text-align: center;
+      text-underline-position: from-font;
+      text-decoration-skip-ink: none;
+    }
+    .bloomingoods__low-header-drawer details ul {
+      width: 100%;
+      padding: 6px 0;
+      margin: 0;
+      list-style: none;
+    }
+    .bloomingoods__low-header-drawer details ul li {
+      padding: 6px 0;
+    }
+    .bloomingoods__low-header-drawer details ul li a {
+      text-decoration: none;
+      color: rgba(245, 233, 219, 1);
+    }
+  }
+</style>
+{% schema %}
+  {
+    "name": "Bloomingoods low header",
+    "class": "bloomingoods__low-header-container",
+    "settings": [
+      {
+        "type": "link_list",
+        "id": "link_list",
+        "label": "Link list"
+      }, {
+        "type": "text",
+        "id": "drawer_title",
+        "label": "Drawer title",
+        "default": "Links"
+      }
+    ],
+    "presets": [
+      {
+        "name": "Bloomingoods low header"
+      }
+    ]
+  }
+{% endschema %}

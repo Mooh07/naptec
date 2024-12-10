@@ -129,6 +129,18 @@
   text-align: right;
 }
 
+@media screen and (max-width: 1100px) {
+  .bloomingoods__footer-links {
+    padding-left: 90px;
+    gap: 48px;
+  }
+}
+@media screen and (max-width: 1050px) {
+  .bloomingoods__footer-links {
+    padding-left: 45px;
+    gap: 28px;
+  }
+}
 @media screen and (max-width: 992px) {
   .bloomingoods__footer {
     padding: 4.2rem 4rem;
@@ -140,7 +152,7 @@
     padding: 8.2rem 4rem;
   }
   .bloomingoods__footer-links {
-    padding-left: 100px;
+    padding-left: 80px;
   }
   .bloomingoods__footer-right-bottom {
     text-align: center;

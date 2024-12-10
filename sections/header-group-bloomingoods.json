@@ -80,7 +80,7 @@
         "logo_position": "middle-left",
         "menu": "bloomingoods-header-menu",
         "menu_type_desktop": "dropdown",
-        "sticky_header_type": "on-scroll-up",
+        "sticky_header_type": "always",
         "show_line_separator": true,
         "color_scheme": "",
         "menu_color_scheme": "scheme-3",
@@ -91,12 +91,19 @@
         "padding_top": 13,
         "padding_bottom": 13
       }
+    },
+    "bloomingoods_low_header_KTTmLi": {
+      "type": "bloomingoods__low-header",
+      "settings": {
+        "link_list": "low-header-menu"
+      }
     }
   },
   "order": [
     "naptec_top_header_aRrK8c",
     "announcement-bar",
     "header",
-    "bloomingoods_header_pf6HiH"
+    "bloomingoods_header_pf6HiH",
+    "bloomingoods_low_header_KTTmLi"
   ]
 }
