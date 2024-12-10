@@ -4,14 +4,16 @@
       src="{{ section.settings.background_image |  image_url: width: section.settings.background_image.width }}"
       alt="{{ section.settings.background_image.alt }}"
       width="{{ section.settings.background_image.width }}"
-      height="{{ section.settings.background_image.height }}">
+      height="{{ section.settings.background_image.height }}"
+      loading="lazy">
   </div>
   <div class="bloomingoods__a-fresh-one-content-container">
     <img
       src="{{ section.settings.left_image |  image_url: width: section.settings.left_image.width }}"
       alt="{{ section.settings.left_image.alt }}"
       height="{{ section.settings.left_image.height }}"
-      width="{{ section.settings.left_image.width }}">
+      width="{{ section.settings.left_image.width }}"
+      loading="lazy">
     <div class="bloomingoods__a-fresh-one-right-text">
       {{ section.settings.right_text }}
     </div>

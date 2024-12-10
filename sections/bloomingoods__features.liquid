@@ -1,41 +1,65 @@
 <section class="bloomingoods__features page-width">
-  <ul>
-    {% for block in section.blocks %}
-      <li>
-        <div class="bloomingoods__feature-image-container">
-          <img
-            src="{{ block.settings.image |  image_url: width: block.settings.image.width }}"
-            alt="{{ block.settings.image.alt }}"
-            width="{{ block.settings.image.width }}"
-            height="{{ block.settings.image.height }}"
-            loading="lazy">
-        </div>
-        <div class="bloomingoods__feature-text-container">
-          <h5>
-            {{ block.settings.text }}
-          </h5>
-        </div>
-      </li>
-    {% endfor %}
-  </ul>
+
+  <div class="glide">
+    <div class="glide__track" data-glide-el="track">
+      <ul class="glide__slides">
+        {% for block in section.blocks %}
+          <li>
+            <div class="bloomingoods__feature-image-container">
+              <img
+                src="{{ block.settings.image |  image_url: width: block.settings.image.width }}"
+                alt="{{ block.settings.image.alt }}"
+                width="{{ block.settings.image.width }}"
+                height="{{ block.settings.image.height }}"
+                loading="lazy">
+            </div>
+            <div class="bloomingoods__feature-text-container">
+              <h5>
+                {{ block.settings.text }}
+              </h5>
+            </div>
+          </li>
+        {% endfor %}
+      </ul>
+    </div>
+  </div>
 </section>
+<script type="module">
+  const glide = new Glide(
+    ".bloomingoods__features > .glide",
+    {
+      type: "slider",
+      rewind: false,
+      bound: true,
+      perView: 5,
+      breakpoints: {
+        992: {
+          perView: 3,
+          gap: 50
+        },
+        720: {
+          perView: 2.5
+        },
+        600: {
+          focusAt: 0,
+          perView: 1.5
+        },
+      }
+    }
+  );
+
+  glide.mount();
+
+</script>
 <style>
   .bloomingoods__features {
     background-color: rgba(29, 59, 44, 1);
-    padding: var(--padding-sides);
-    padding-top: 32px;
-    padding-bottom: 32px;
+    padding: 32px var(--padding-sides);
   }
   .bloomingoods__features ul {
     margin: 0;
     padding: 0;
-    display: flex;
-    justify-content: space-between;
     list-style: none;
-    flex-wrap: wrap;
-
-    column-gap: 100px;
-    justify-content: center;
   }
   .bloomingoods__features ul li {
     display: flex;
@@ -57,44 +81,54 @@
     text-underline-position: from-font;
     text-decoration-skip-ink: none;
     margin: 0;
-    text-wrap: nowrap;
+    text-wrap: wrap;
   }
   @media screen and (max-width: 992px) {
     .bloomingoods__features ul {}
   .bloomingoods__features ul li {
-    min-width: calc(50% - 190px);
-  }
+  ;
+  /* min-width: calc(50% - 190px); */
+}
 }
 @media screen and (max-width: 820px) {
   .bloomingoods__features ul li {
-    min-width: calc(50% - 170px);
-  }
+  ;
+  /* min-width: calc(50% - 170px); */
+}
 }
 @media screen and (max-width: 720px) {
   .bloomingoods__features ul li {
-    min-width: calc(50% - 150px);
-  }
+  ;
+  /* min-width: calc(50% - 150px); */
+}
 }
 @media screen and (max-width: 660px) {
   .bloomingoods__features ul li {
-    min-width: calc(50% - 120px);
-  }
+  ;
+  /* min-width: calc(50% - 120px); */
+}
 }
 @media screen and (max-width: 600px) {
   .bloomingoods__features ul li {
-    min-width: calc(50% - 90px);
-  }
+  ;
+  /* min-width: calc(50% - 90px); */
+}
 }
 @media screen and (max-width: 530px) {
   .bloomingoods__features ul {
     padding-left: 5rem;
     gap: 2rem;
-    padding-top: 2rem;
-    padding-bottom: 2rem;
+
+
+    /*
+   padding-top: 2rem;
+   padding-bottom: 2rem;
+*/
   }
   .bloomingoods__features ul li {
-    min-width: 100%;
-  }
+  ;
+  /* min-width: 100%; */
+}
 }
 </style>
 {% schema %}

@@ -5,7 +5,7 @@
   object-fit: cover;
   background-color: rgba(29, 59, 44, 1);
   flex-direction: column;
-  padding: 124px 80px 152px 80px;
+  padding: 120px 80px 152px 80px;
 }
 .bloomingood__contact-top {
   margin-bottom: 152px;
@@ -86,6 +86,9 @@
 .bloomingoods__contact-form_heading {
   font-family: "latienne pro";
   font-size: 40px;
+  margin: 0;
+  margin-bottom: 28px;
+  color: rgba(245, 233, 219, 1);
   font-weight: 400;
   line-height: 48px;
   text-align: left;
@@ -132,6 +135,7 @@
   font-weight: 400;
   line-height: 175%;
   text-align: left;
+  color: rgba(245, 233, 219, 1);
 }
 .bloomingoods__contact-information p {
   font-family: "latienne pro";
@@ -139,6 +143,7 @@
   font-weight: 500;
   line-height: 28px;
   text-align: left;
+  color: rgba(245, 233, 219, 1);
 }
 
 .bloomingoods__contact-form #ContactForm > div.contact__button > button {
@@ -192,7 +197,9 @@
   .bloomingoods__contact {
     flex-direction: column;
     height: auto;
-    padding: 8.2rem 4rem;
+    /* padding: 8.2rem 4rem; */
+    /* padding: var(--padding-sides); */
+    padding: 8.2rem var(--padding-sides);
   }
   .bloomingoods__contact-image img {
     position: relative;
@@ -215,14 +222,15 @@
 }
 @media screen and (max-width: 600px) {
   .bloomingoods__contact {
-    padding: 4.2rem 1.6rem;
+    /* padding: 4.2rem 1.6rem; */
+    padding: var(--padding-sides);
   }
   .bloomingoods__contact-text-container {
     padding-left: 1.6rem;
   }
-  .bloomingoods__contact-form {
+  /* .bloomingoods__contact-form {
     padding: 30px 16px;
-  }
+  } */
   .bloomingood__contact-top {
     margin-bottom: 0;
   }

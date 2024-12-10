@@ -14,14 +14,15 @@
             src="{{ block.settings.image |  image_url: width: block.settings.image.width }}"
             alt="{{ block.settings.image.alt }}"
             height="{{ block.settings.image.height }}"
-            width="{{ block.settings.image.width }}">
+            width="{{ block.settings.image.width }}"
+            loading="lazy">
         </div>
         <a href="{{ block.settings.url }}">
           <div class="bloomingoods__categories-category-text-container">
             <h5>
               {{ block.settings.category_name }}
-              {% render "bloomingoods__arrow" %}
             </h5>
+            {% render "bloomingoods__arrow" %}
           </div>
         </a>
       </li>
@@ -34,9 +35,7 @@
     flex-direction: column;
     background-color: rgba(245, 232, 213, 1);
     color: rgba(29, 59, 44, 1);
-    padding: var(--padding-sides);
-    padding-top: 92px;
-    padding-bottom: 92px;
+    padding: 92px var(--padding-sides);
   }
   .bloomingoods__categories-text-container {
     display: flex;
@@ -98,6 +97,15 @@
     bottom: 0;
     left: 0;
   }
+  .bloomingoods__categories ul li a .bloomingoods__categories-category-text-container {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .bloomingoods__categories ul li a .bloomingoods__categories-category-text-container svg {
+    min-width: 24px;
+  }
+
   .bloomingoods__categories-category-image-container {
     width: 100%;
     aspect-ratio: 1 / 1;
@@ -142,10 +150,16 @@
     .bloomingoods__categories-category-text-container h5 {
       font-size: 14px;
     }
-    .bloomingoods__categories-category-text-container h5 svg {
-      /* width: px; */
+    .bloomingoods__categories ul li a .bloomingoods__categories-category-text-container {
+      gap: 8px;
     }
+    .bloomingoods__categories ul li a .bloomingoods__categories-category-text-container svg {
+      width: 18px;
+      object-fit: contain;
+    }
+
   }
+
   @media screen and (max-width: 600px) {
     .bloomingoods__categories-text-container div p {
       font-size: 12px;
