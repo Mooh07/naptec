@@ -47,7 +47,7 @@ console.log({{shop.metaobjects["color"].values | json}})
           endif
         endif
       -%}
-      {% assign picker_type = 'swatch' %}
+      {% comment %} {% assign picker_type = 'swatch' %} {% endcomment %}
       <script>console.log("{{ picker_type }}")</script>
       {%- if picker_type == 'swatch' -%}
         <fieldset  class="js product-form__input product-form__input--swatch">
