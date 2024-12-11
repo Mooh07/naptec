@@ -158,6 +158,11 @@ variant-selector .glide__slides {
     position: relative;
 }
 
+.variant-icon {
+    width: 100%;
+    height: 100%;
+}
+
 .variant-item:hover:after {
     position: absolute;
     content: '';

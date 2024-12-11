@@ -55,10 +55,7 @@
 .naperee__bestsellers_products li a * {
     color: var(--text-color);
 }
-.variant-icon {
-    width: 100%;
-    height: 100%;
-}
+
 
 @media (max-width: 1366px) {
     .naperee__bestsellers_products li {
