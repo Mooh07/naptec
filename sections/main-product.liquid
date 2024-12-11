@@ -162,7 +162,7 @@
                       </quantity-input>
                     </div>
                   </div>
-                  <div>
+                  <div class="buy__buttons_wrapper">
                     {%- render 'buy-buttons',
                       block: block,
                       product: product,
@@ -219,7 +219,39 @@
                     show_badges: true,
                     price_class: 'price--large'
                   -%}
-                  <div>Buy 4 or more for 10% off</div>
+                  {% for tag in product.tags %}
+                    {% if tag == "bulk_buy" %}
+                      <div class="bulk-buy-eligibility-badge">
+                        <span>Buy <span class="bulk-buy-number">4</span> or more for 10% off</span>
+                        <img src="https://cdn.shopify.com/s/files/1/0611/8129/6700/files/Group_10.png?v=1733836470" alt="bulk_price_badge" width="64" height="64">
+                        <style>
+                          .bulk-buy-eligibility-badge {
+                            display: flex;
+                            align-items: center;
+                            gap: 12px;
+                          }
+                          .bulk-buy-eligibility-badge span {
+                            font-family: "faktum";
+                            font-size: 18px;
+                            font-weight: 300;
+                            line-height: 24px;
+                            text-align: right;
+                            text-underline-position: from-font;
+                            text-decoration-skip-ink: none;
+                          }
+                          .bulk-buy-number {
+                            font-family: Gayathri;
+                            font-size: 18px;
+                            font-weight: 400;
+                            line-height: 24px;
+                            text-align: right;
+                            text-underline-position: from-font;
+                            text-decoration-skip-ink: none;
+                          }
+                        </style>
+                      </div>
+                    {% endif %}
+                  {% endfor %}
                 </div>
                 <div style="margin: 0;">
                   {% assign pack_quantity_option_exist = false %}
@@ -602,7 +634,7 @@
                 {% render 'share-button', block: block, share_link: share_url %}
 
               {%- when 'variant_picker' -%}
-                {% render 'product-variant-picker', product: product, block: block, product_form_id: product_form_id %}
+                {% render 'product-variant-picker', product: product, block: block, product_form_id: product_form_id, variant_images: variant_images %}
               {% when 'selling_plans' %}
                 {% render 'product-selling-plan',
                   product: product,

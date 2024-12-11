@@ -24,9 +24,6 @@
 
   assign product_form_id = 'product-form-' | append: section.id
 -%}
-{% comment %} {% for item in shop.metaobjects["color"].values %}
-  <script>console.log({{item.system.handle|json}})</script> 
-{% endfor %} {% endcomment %}
 {%- for value in option.values -%}
   {% assign option_name = option.name |  downcase %}
   {% assign is_color = false %}
@@ -34,11 +31,7 @@
   {% if option_name == "color" or option_name == "coulor" %}
     {% assign is_color = true %}
     {% assign trimmed_value = value | json |  replace: '"'," "  | strip |  strip_html | strip_newlines  %}
-
     {% assign color_metaobject = shop.metaobjects["color"].values | where: "label", trimmed_value | first  %}
-    {% unless color_metaobject %}
-      {% comment %} {% continue %} {% endcomment %}
-    {% endunless %}
   {% endif  %}
   {%- liquid
     assign option_disabled = true
@@ -59,7 +52,6 @@
           endif
       endcase
     endfor
-
     if value.swatch.image
       assign image_url = value.swatch.image | image_url: width: 50
       assign swatch_value = 'url(' | append: image_url | append: ')'
@@ -69,7 +61,6 @@
       assign swatch_value = nil
     endif
   -%}
-
   {%- capture input_id -%}
     {{ section.id }}-{{ option.position }}-{{ forloop.index0 -}}
   {%- endcapture -%}
@@ -96,7 +87,6 @@
       shape: block.settings.swatch_shape,
       help_text: label_unavailable
     %}
-    <script>console.log("{{ checked }}")</script>
   {%- elsif picker_type == 'button' -%}
     <input
 
@@ -112,18 +102,29 @@
         class="disabled"
       {% endif %}
     >
+    
     <label 
       {% if color_metaobject %}
         style="background: {{ color_metaobject.value}}; {% if color_metaobject.value_2 %} border: 4px solid {{color_metaobject.value_2}} {% endif %}"
         class="product-swatch-naptec"
       {% endif %}
     for="{{ input_id }}">
-
-      <span>{{ value -}}</span>
+    {% assign forloop_index = forloop.index0 %}
+    {% if variant_images and variant_images[forloop_index] %}
+      <img 
+        style="object-fit: contain;"
+        src="{{ variant_images[forloop_index] |  image_url: width: 2000 }}" 
+        alt="product thumbnail"
+        width="56"
+        height="56"
+      >
+    {% else %}  
+      <span>{{ value }}</span>
       {{ label_unavailable }}
       {% if color_metaobject %}
-      {% render "icon-arrow" %}
+        {% render "icon-arrow" %}
       {% endif %}
+    {% endif %}
     </label>
   {%- elsif picker_type == 'dropdown' or picker_type == 'swatch_dropdown' -%}
     <option

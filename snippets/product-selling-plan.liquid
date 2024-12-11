@@ -37,6 +37,23 @@
             ><span>{{ plan_label }}</span> <span>{{ new_price | money }}</span>
           </label>
         </div>
+        {% comment %} <div class="product__selling-plan-wrapper">
+          {% for discount in plan.selling_plans %}
+            <input 
+            data-price_adjustments="{{ discount.price_adjustments.first.value }}"
+            {% if forloop.first %}
+              checked
+            {% endif %}
+            name="sub_plan"
+            type="radio" 
+            id="plan_{{ forloop.index }}"
+            value="{{ discount.id }}"
+            >
+            <label for="plan_{{ forloop.index }}">
+              <span>{{ discount.name }}</span>
+            </label>
+          {% endfor %}
+        </div> {% endcomment %}
         <select class="product__selling-plan-select">
           {% for discount in plan.selling_plans %}
             <option
@@ -49,7 +66,8 @@
               {{ discount.name }}
             </option>
           {% endfor %}
-        </select>
+        </select> 
+        
       </div>
     {% endfor %}
   </subscription-plans>
@@ -151,8 +169,39 @@
     left:0;
     width: 100%;
     height: 100%;
-    content: "";
+    /* content: ""; */
     display: block;
     z-index:2;
   }
+  .product__selling-plan-wrapper {
+    gap: 1rem;
+  }
+  .product__selling-plan-wrapper input {
+    visibility: hidden;
+    width: 0;
+    display: none;
+  }
+  .product__selling-plan-wrapper label {
+    font-family: 'faktum';
+    max-width: 116px;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    text-align: center;
+    text-underline-position: from-font;
+    text-decoration-skip-ink: none;
+    
+    display: block;
+    padding: 12px 24px;
+    text-wrap: nowrap;
+    border-radius: 8px;
+    color: rgba(17, 17, 17, 1);
+    border: 1px solid rgba(161, 173, 175, 1);
+    cursor: pointer;
+  }
+  .product__selling-plan-wrapper input:checked + label {
+    background-color: rgba(7, 59, 67, 1);
+    color: white;
+  }
+  
 </style>
