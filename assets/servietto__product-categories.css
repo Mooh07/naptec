@@ -1,99 +1,133 @@
 .servietto__product-categories {
-  padding: 90px 80px;
-  display: flex;
-  gap: 44px;
-  background-color: var(--background-color);
-  color: var(--text-color);
+    padding: 144px 80px 90px 80px;
+    display: flex;
+    gap: 45px;
+    background-color: var(--background-color);
+    color: var(--text-color);
 }
+
 .servietto__product-categories-column {
-  flex: 1;
-  max-width: 33%;
-  display: flex;
-  flex-direction: column;
-  position: relative;
+    flex: 1;
+    max-width: 33%;
+    display: flex;
+    flex-direction: column;
+    position: relative;
 }
+
 .servietto__product-categories-column img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  padding-bottom: 20px;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    padding-bottom: 24px;
+    max-height: 570px;
+}
+
+.servietto__product-categories-column.servietto__product-categories-column-left > img {
+    max-height: 354px;
 }
 .servietto__product-categories-column a {
-  text-decoration: none;
-  color: inherit;
-  font-family: "pp hatton";
-  font-size: 36px;
-  font-weight: 200;
-  line-height: 122%;
-  text-align: left;
+    text-decoration: none;
+    color: inherit;
+    font-family: "pp hatton";
+    font-size: 32px;
+    font-weight: 200;
+    line-height: 40px;
+    text-align: left;
+    display: flex;
+    align-items: center;
+    column-gap: 18px;
 }
+
 .servietto__product-categories-column a svg {
-  transition: var(--duration-default);
+    transition: var(--duration-default);
 }
+
 .servietto__product-categories-column a:hover svg {
-  transform: rotate(-90deg);
-  transition: var(--duration-default);
+    transform: rotate(-90deg);
+    transition: var(--duration-default);
 }
+
 .servietto__product-categories-column a::after {
-  content: "";
-  position: absolute;
-  bottom: 0;
-  right: 0;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
+    content: "";
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
 }
+
 .servietto__product-categories-column-left h2 {
-  margin: 0;
-  font-family: "pp hatton";
-  font-size: 60px;
-  font-weight: 500;
-  line-height: 120%;
-  text-align: left;
-  padding-bottom: 72px;
-  color: inherit;
+    margin: 0;
+    font-family: "pp hatton";
+    font-size: 60px;
+    font-weight: 500;
+    line-height: 120%;
+    text-align: left;
+    padding-bottom: 72px;
+    color: inherit;
 }
+
 .servietto__product-categories-column-right {
 }
+
 @media screen and (max-width: 1440px) {
-  .servietto__product-categories-column-left h2 {
-    font-size: 48px;
-  }
+    .servietto__product-categories-column-left h2 {
+        font-size: 48px;
+    }
 }
+
 @media screen and (max-width: 1250px) {
-  .servietto__product-categories {
-    padding: 180px 40px;
-  }
+    .servietto__product-categories {
+        padding: 180px 40px;
+    }
 }
+
 @media screen and (max-width: 1100px) {
-  .servietto__product-categories-column-left h2 {
-    font-size: 40px;
-  }
-  .servietto__product-categories-column a {
-    font-size: 30px;
-  }
-  .servietto__product-categories-column-right {
-    height: 400px;
-  }
+    .servietto__product-categories-column-left h2 {
+        font-size: 40px;
+    }
+
+    .servietto__product-categories-column a {
+        font-size: 30px;
+    }
+
+    .servietto__product-categories-column-right {
+        height: 400px;
+    }
 }
+
 @media screen and (max-width: 992px) {
-  .servietto__product-categories-column-left h2 {
-    padding-bottom: 42px;
-  }
-  .servietto__product-categories {
-    flex-direction: column;
-    padding: 60px 40px;
-  }
-  .servietto__product-categories-column {
-    max-width: 100%;
-  }
-  .servietto__product-categories-column-right {
-    height: 100%;
-  }
+    .servietto__product-categories-column-left h2 {
+        padding-bottom: 42px;
+    }
+
+    .servietto__product-categories {
+        flex-direction: column;
+        padding: 60px 40px;
+    }
+
+    .servietto__product-categories-column {
+        max-width: 100%;
+    }
+
+    .servietto__product-categories-column-right {
+        height: 100%;
+    }
 }
+
 @media screen and (max-width: 600px) {
-  .servietto__product-categories {
-    padding: 60px 16px;
-  }
+    .servietto__product-categories {
+        padding: 42px 16px;
+    }
+
+    .servietto__product-categories {
+        row-gap: 20px;
+    }
+
+    .servietto__product-categories-column-left h2 {
+        font-size: 32px;
+        padding-bottom: 20px;
+    }
 }

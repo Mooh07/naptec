@@ -6,12 +6,13 @@
 
 </style>
 {{ "servietto_bestsellers.css" | asset_url | stylesheet_tag }}
+{{ "global__product-card.css" | asset_url | stylesheet_tag }}
 <section class="page-width servietto__bestsellers">
   <h2 class="servietto__bestsellers-header">{{ section.settings.subheader }}</h2>
   <ul class="servietto__bestsellers_products">
     {% if section.settings.collection != blank %}
       {% for product in section.settings.collection.products %}
-        {% render 'servietto__product-card'
+        {% render 'global__product-card'
           , product: product %}
       {% endfor %}
     {% else %}
@@ -19,8 +20,7 @@
         {% case block.type %}
           {% when 'product' %}
             <li>
-              {% render 'servietto__product-card'
-                , product: block.settings.product %}
+              {% render 'global__product-card', product: block.settings.product %}
             </li>
         {% endcase %}
       {% endfor %}
