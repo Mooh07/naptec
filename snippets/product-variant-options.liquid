@@ -110,10 +110,10 @@
       {% endif %}
     for="{{ input_id }}">
     {% assign forloop_index = forloop.index0 %}
-    {% if variant_images and variant_images[forloop_index] %}
+    {% if is_color and variant_images and variant_images[forloop_index] %}
       <img 
         style="object-fit: contain;"
-        src="{{ variant_images[forloop_index] |  image_url: width: 2000 }}" 
+        src="{{ variant_images[forloop_index] |  image_url: width: 150 }}" 
         alt="product thumbnail"
         width="56"
         height="56"

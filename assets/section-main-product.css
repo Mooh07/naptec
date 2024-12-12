@@ -184,7 +184,7 @@
 .product-form__input {
   flex: 0 0 100%;
   display: flex;
-  justify-content: space-between;
+  justify-content: start;
   flex-wrap: wrap;
   gap: 18px;
   padding: 0;
