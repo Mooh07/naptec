@@ -3,21 +3,26 @@
     <div class="global__product-card-top">
         <div class="global__product-card-img-container">
             <div>
-                <img
-                        class="global__product-card-img"
-                        src="{{ product.featured_image | image_url: width: '600', height: '600' }}"
-                        alt="{{ product.featured_image.alt | escape }}"
-                        width="600"
-                        height="600"
-                        loading="lazy"
-                >
+                {% if product.featured_image != blank %}
+                    <img
+                            class="global__product-card-img"
+                            src="{{ product.featured_image | image_url: width: '600', height: '600' }}"
+                            alt="{{ product.featured_image.alt | escape }}"
+                            width="600"
+                            height="600"
+                            loading="lazy"
+                    >
+                {% else %}
+                    {{ 'product-1' | placeholder_svg_tag }}
+                {% endif %}
             </div>
         </div>
         {% if product.vendor %}
             {% assign vendor_name = product.vendor | strip | downcase %}
             {% if shop.metaobjects.brand[vendor_name].logo %}
                 {% assign image = shop.metaobjects.brand[vendor_name].logo %}
-                <img class="global__product-card-logo" width="{{ image.width }}" height="{{ image.height }}" loading="lazy"
+                <img class="global__product-card-logo" width="{{ image.width }}" height="{{ image.height }}"
+                     loading="lazy"
                      src="{{ image | image_url: width: image.width, height: image.height }}" alt="">
             {% endif %}
         {% endif %}
@@ -57,14 +62,17 @@
                                     {% if product.variants.size > 7 %}
                                         <li class="glide__slide">
                                     {% endif %}
+                                    {% if variant_image_url != blank %}
                                     <div class="variant-item" data-variant-id="{{ variant.id }}"
                                          data-variant-url="{{ variant_url }}"
                                          data-variant-image="{{ variant_image_url }}">
-                                        <img width="150" height="150" loading="lazy" src="{{ variant_image_url }}" alt="{{ color }}"
+                                        <img width="150" height="150" loading="lazy" src="{{ variant_image_url }}"
+                                             alt="{{ color }}"
                                              class="variant-icon {% if variant.id == product.selected_or_first_available_variant.id %}
                                             active
                                         {% endif %}">
                                     </div>
+                                    {% endif %}
                                     {% if product.variants.size > 7 %}
                                         </li>
                                     {% endif %}
