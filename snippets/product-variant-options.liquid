@@ -24,9 +24,9 @@
 
   assign product_form_id = 'product-form-' | append: section.id
 -%}
-{% for item in shop.metaobjects["color"].values %}
-  {% comment %} <script>console.log({{item.system.handle|json}})</script> {% endcomment %}
-  {% endfor %}
+{% comment %} {% for item in shop.metaobjects["color"].values %}
+  <script>console.log({{item.system.handle|json}})</script> 
+{% endfor %} {% endcomment %}
 {%- for value in option.values -%}
   {% assign option_name = option.name |  downcase %}
   {% assign is_color = false %}
@@ -36,9 +36,9 @@
     {% assign trimmed_value = value | json |  replace: '"'," "  | strip |  strip_html | strip_newlines  %}
 
     {% assign color_metaobject = shop.metaobjects["color"].values | where: "label", trimmed_value | first  %}
-{% unless color_metaobject %}
-  {% comment %} {% continue %} {% endcomment %}
-{% endunless %}
+    {% unless color_metaobject %}
+      {% comment %} {% continue %} {% endcomment %}
+    {% endunless %}
   {% endif  %}
   {%- liquid
     assign option_disabled = true
@@ -96,6 +96,7 @@
       shape: block.settings.swatch_shape,
       help_text: label_unavailable
     %}
+    <script>console.log("{{ checked }}")</script>
   {%- elsif picker_type == 'button' -%}
     <input
 
@@ -112,10 +113,10 @@
       {% endif %}
     >
     <label 
-    {% if color_metaobject %}
-      style="background: {{ color_metaobject.value}}; {% if color_metaobject.value_2 %} border: 4px solid {{color_metaobject.value_2}} {% endif %}"
-      class="product-swatch-naptec"
-    {% endif %}
+      {% if color_metaobject %}
+        style="background: {{ color_metaobject.value}}; {% if color_metaobject.value_2 %} border: 4px solid {{color_metaobject.value_2}} {% endif %}"
+        class="product-swatch-naptec"
+      {% endif %}
     for="{{ input_id }}">
 
       <span>{{ value -}}</span>

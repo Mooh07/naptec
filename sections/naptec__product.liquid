@@ -1,0 +1,244 @@
+{% assign product = section.settings.products | first %}
+
+
+<section class="naptec__product page-width">
+  <div class="naptec__product-media">
+    media
+  </div>
+  <div class="naptec__product-information">
+    {% for block in section.blocks %}
+      {% case block.type %}
+        {% when "title" %}
+          <div class="naptec__product-information-title">
+            <h1>
+              {{ product.title }}
+            </h1>
+          </div>
+          {% when "vendor" %}
+          <div class="naptec__product-information-vendor-and-reviews">
+            <div class="naptec__product-information-vendor">
+
+              {% assign product_vendor = product.vendor %}
+              {% assign vendor_logo = shop.metaobjects.brand[product_vendor].logo %}
+              <img
+                src="{{ vendor_logo |  image_url: width: vendor_logo.width }}"
+                alt="{{ vendor_logo.alt }}"
+                width="{{ vendor_logo.width }}"
+                height="{{ vendor_logo.height }}">
+            </div>
+            <div class="naptec__product-information-reviews">
+              <div>
+                {% for i in (1..5) %}
+                  {% render "yellow-star" %}
+                {% endfor %}
+              </div>
+              <span>
+                (120 reviews)
+              </span>
+            </div>
+          </div>
+          {% when "price" %}
+            <div class="naptec__product-information-price-and-discount_availability">
+              <div class="naptec__product-information-price">
+                {% render "price"
+                  , product: product %}
+                <span class="naptec__product-information-price-per-unit">
+                  Per unit:
+        
+                  <span class="price">
+                    <span class="dollarsign">$</span>
+                    0.74
+                  </span>
+                </span>
+              </div>
+              <div class="naptec__product-information-discount_availability">
+                {% for tag in product.tags %}
+                  {% if tag == "bulk_buy" %}
+                    <div class="naptec__product-information-discount_availability-wrapper">
+                      <span>
+                        Buy 4 or more for 10% off
+                      </span>
+        
+                      <img
+                        src="https://cdn.shopify.com/s/files/1/0611/8129/6700/files/Group_10.png?v=1733836470"
+                        alt="https://cdn.shopify.com/s/files/1/0611/8129/6700/files/Group_10.png?v=1733836470"
+                        width="64"
+                        height="64">
+                    </div>
+                  {% endif %}
+                {% endfor %}
+              </div>
+            </div>
+          {% when "variant_picker" %}
+            <div class="naptec__product-information-variant_picker">
+              {% assign product_form_id = "product-form-" | append: section.id %}
+              {% render 'product-variant-picker'
+                , product: product
+                , product_form_id: product_form_id %}
+            </div>
+      {% endcase %}
+    {% endfor %}
+    
+
+
+
+  </div>
+</section>
+<style>
+  .naptec__product {
+    background-color: white;
+    display: flex;
+    padding-bottom: 10rem;
+  }
+  .naptec__product-media {
+    flex: 1;
+    max-width: 680px;
+  }
+  .naptec__product-information {
+    flex: 1;
+    color: black;
+  }
+  .naptec__product-information-vendor-and-reviews {
+    display: flex;
+    justify-content: space-between;
+    height: 64px;
+    margin-bottom: 20px;
+  }
+  .naptec__product-information-vendor {
+    height: 100%;
+  }
+  .naptec__product-information-vendor img {
+    height: 100%;
+    width: auto;
+  }
+  .naptec__product-information-reviews {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .naptec__product-information-reviews div {
+    display: flex;
+    gap: 2px;
+  }
+  .naptec__product-information-title {
+    display: flex;
+    margin-bottom: 32px;
+  }
+  .naptec__product-information-title h1 {
+    margin: 0;
+    font-family: "faktum";
+    font-size: 44px;
+    font-weight: 500;
+    line-height: 60px;
+    text-align: left;
+    text-underline-position: from-font;
+    text-decoration-skip-ink: none;
+    color: rgba(20, 51, 56, 1);
+  }
+  .naptec__product-information-price-and-discount_availability {
+    display: flex;
+    height: 84px;
+    justify-content: space-between;
+  }
+  .naptec__product-information-price {
+    display: flex;
+    flex-direction: column;
+  }
+  .naptec__product-information-price .price span {
+    font-family: "faktum";
+    font-size: 44px;
+    font-weight: 400;
+    line-height: 60px;
+    text-align: left;
+    text-underline-position: from-font;
+    text-decoration-skip-ink: none;
+    color: rgba(20, 51, 56, 1);
+  }
+  .naptec__product-information-price-per-unit {
+    color: rgba(67, 92, 96, 1);
+    display: flex;
+    align-items: center;
+    font-family: "faktum";
+    font-size: 18px;
+    font-weight: 300;
+    line-height: 20px;
+    text-align: left;
+    text-underline-position: from-font;
+    text-decoration-skip-ink: none;
+  }
+  .naptec__product-information-price-per-unit .price {
+    display: flex;
+    align-items: center;
+    font-family: "faktum";
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 20px;
+    text-align: left;
+    text-underline-position: from-font;
+    text-decoration-skip-ink: none;
+    color: rgba(20, 51, 56, 1);
+    margin-left: 4px;
+  }
+  .naptec__product-information-price-per-unit .price .dollarsign {
+    font-family: "gotu";
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 20px;
+    text-align: left;
+    text-underline-position: from-font;
+    text-decoration-skip-ink: none;
+  }
+  .naptec__product-information-discount_availability-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .naptec__product-information-discount_availability-wrapper span {
+    font-family: "faktum";
+    font-size: 18px;
+    font-weight: 300;
+    line-height: 24px;
+    text-align: right;
+    text-underline-position: from-font;
+    text-decoration-skip-ink: none;
+  }
+</style>
+{% schema %}
+  {
+    "name": "Naptec product",
+    "settings": [
+      {
+        "type": "product_list",
+        "id": "products",
+        "label": "Product list"
+      }
+    ],
+    "blocks": [
+      {
+        "type": "title",
+        "name": "Title",
+        "settings": []
+      },
+      {
+        "type": "vendor",
+        "name": "Vendor",
+        "settings": []
+      },
+      {
+        "type": "price",
+        "name": "Price",
+        "settings": []
+      },
+      {
+        "type": "variant_picker",
+        "name": "Variant Picker",
+        "settings": []
+      },
+    ],
+    "presets": [
+      {
+        "name": "Naptec product"
+      }
+    ]
+  }
+{% endschema %}

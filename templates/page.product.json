@@ -10,12 +10,112 @@
 {
   "sections": {
     "main": {
-      "type": "main-page",
+      "type": "main-product",
+      "blocks": {
+        "vendor": {
+          "type": "text",
+          "disabled": true,
+          "settings": {
+            "text_style": "uppercase"
+          }
+        },
+        "title": {
+          "type": "title",
+          "settings": {}
+        },
+        "logo_review_MVtbpR": {
+          "type": "logo_review",
+          "settings": {
+            "naperee_logo": "shopify://shop_images/Frame_8401.png",
+            "bloomingoods_logo": "shopify://shop_images/Group_6.png",
+            "lintext_logo": "shopify://shop_images/Group_5.png",
+            "servietto_logo": "shopify://shop_images/Group_7.png"
+          }
+        },
+        "price": {
+          "type": "price",
+          "settings": {
+            "per-unit": "Per unit"
+          }
+        },
+        "variant_picker": {
+          "type": "variant_picker",
+          "settings": {
+            "picker_type": "button",
+            "swatch_shape": "circle"
+          }
+        },
+        "selling_plans_89D9ja": {
+          "type": "selling_plans",
+          "settings": {
+            "default_plan_message": "Deliver one-time only"
+          }
+        },
+        "buy_button_quantity_ALtrkN": {
+          "type": "buy-button-quantity",
+          "settings": {}
+        },
+        "icon_text_block_3pgxJB": {
+          "type": "icon_text_block",
+          "settings": {
+            "icon": "shopify://shop_images/truck-fast.svg",
+            "bold-text": "Get it as soon as today.",
+            "normal-text": "Schedule your delivery in checkout.",
+            "bold-text-color": "#143338",
+            "normal-text-color": "#435c60",
+            "block-background": "#f6f7f7"
+          }
+        },
+        "buy_buttons": {
+          "type": "buy_buttons",
+          "disabled": true,
+          "settings": {
+            "show_dynamic_checkout": true,
+            "show_gift_card_recipient": true
+          }
+        },
+        "quantity_selector": {
+          "type": "quantity_selector",
+          "disabled": true,
+          "settings": {}
+        },
+        "description": {
+          "type": "description",
+          "disabled": true,
+          "settings": {}
+        }
+      },
+      "block_order": [
+        "vendor",
+        "title",
+        "logo_review_MVtbpR",
+        "price",
+        "variant_picker",
+        "selling_plans_89D9ja",
+        "buy_button_quantity_ALtrkN",
+        "icon_text_block_3pgxJB",
+        "buy_buttons",
+        "quantity_selector",
+        "description"
+      ],
       "settings": {
-        "padding_top": 28,
-        "padding_bottom": 28
+        "enable_sticky_info": true,
+        "color_scheme": "scheme-1c68886a-64b7-463d-9cec-b03159cecc89",
+        "section-bg": "#ffffff",
+        "section-text-color": "rgba(20, 51, 56, 1)",
+        "media_size": "small",
+        "constrain_to_viewport": true,
+        "media_fit": "contain",
+        "gallery_layout": "thumbnail",
+        "media_position": "left",
+        "image_zoom": "lightbox",
+        "mobile_thumbnails": "show",
+        "hide_variants": true,
+        "enable_video_looping": false,
+        "padding_top": 36,
+        "padding_bottom": 12
       }
-    }
+    },
   },
   "order": [
     "main"

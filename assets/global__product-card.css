@@ -44,6 +44,9 @@
     padding-bottom: 100%;
 }
 
+.global__product-card-img-container > div:has(svg) {
+    padding-bottom: 0;
+}
 .global__product-card-img {
     object-fit: cover;
     width: 100%;
@@ -156,6 +159,8 @@ variant-selector .glide__slides {
 
 .variant-item {
     position: relative;
+    width: 36px;
+    height: 36px;
 }
 
 .variant-icon {
@@ -163,6 +168,9 @@ variant-selector .glide__slides {
     height: 100%;
 }
 
+.variant-items {
+    display: flex;
+}
 .variant-item:hover:after {
     position: absolute;
     content: '';

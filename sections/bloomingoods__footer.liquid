@@ -85,10 +85,28 @@
         <div class="bloomingoods__footer-links-list">
           <h5>Product Collection</h5>
           <ul class="">
-            {% for link in section.settings.link_list.links %}
+            {% for link in section.settings.link_list_2.links %}
               <li class="bloomingoods__footer-list-item">
                 <a href="{{ link.url }}">
-                  {{ link.title }}
+                  {% assign split_link_title = link.title | split: " " %}
+                  {% assign link_title_length = split_link_title | size %}
+                  {% if link_title_length > 3 %}
+                    <script>
+                      console.log("here")
+                    </script>
+                    {% for word in split_link_title %}
+                      {{ word }}
+                      {% if forloop.index == 3 %}
+                        <br>
+                      {% endif %}
+                    {% endfor %}
+                  {% else %}
+                    <script>
+                      console.log("here shorts")
+                    </script>
+                    {{ link.title }}
+                  {% endif %}
+                {% comment %} {{ link.title }} {% endcomment %}
                 </a>
               </li>
             {% endfor %}
@@ -136,6 +154,10 @@
       }, {
         "type": "link_list",
         "id": "link_list",
+        "label": "Link list"
+      }, {
+        "type": "link_list",
+        "id": "link_list_2",
         "label": "Link list"
       }, {
         "type": "image_picker",
