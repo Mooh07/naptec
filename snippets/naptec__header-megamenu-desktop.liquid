@@ -1,0 +1,39 @@
+{% comment %} 
+    USE: 
+    {% 
+        render "naptec__header-megamenu-desktop", parentClass: parentClass
+    %}
+{% endcomment %}
+
+<section class="naptec__header-megamenu-desktop page-width {{ parentClass }}-megamenu">
+  <script>console.log("{{ menu_1_title }}")</script>
+</section>
+
+<style>
+  .{{ parentClass }} {
+    /* position: relative; */
+  }
+  .{{ parentClass }}:hover .{{ parentClass }}-megamenu {
+    display: block;
+    opacity: 1;
+  }
+  .{{ parentClass }}-megamenu {
+    display: none;
+    position: absolute;
+    left: 0;
+    right: 0;
+    width: 100%;
+    min-height: 100px;
+    top: 94px;
+    background-color: rgba(7, 59, 67, 1);
+    opacity: 0;
+    border-top: .5px solid rgba(255, 255, 255, 1);
+  }
+  .{{ parentClass }} .space_filler {
+    display: block;
+    position: absolute;
+    width: 80px;
+    height: 100px;
+    cursor: pointer;
+  }
+</style>

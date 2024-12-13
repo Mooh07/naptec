@@ -23,7 +23,7 @@
   z-index: 1;
   background-color: var(--background-color);
   max-width: 50%;
-  padding: 120px 124px 120px 80px;
+  padding: 120px 124px 120px var(--padding-sides);
   border-top-right-radius: 400px;
   border-bottom-right-radius: 400px;
 }
@@ -81,7 +81,7 @@
 @media screen and (max-width: 1250px) {
   .lintext__experience-the-difference_text {
     max-width: 55%;
-    padding-left: 40px;
+    padding-left: var(--padding-sides);
   }
 }
 @media screen and (max-width: 992px) {
@@ -97,7 +97,7 @@
   .lintext__experience-the-difference_text {
     padding-left: 16px;
     max-width: 95%;
-    padding: 60px 60px 60px 16px;
+    padding: 60px 60px 60px var(--padding-sides);
     border-top-right-radius: 200px;
     border-bottom-right-radius: 200px;
   }

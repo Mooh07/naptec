@@ -1,7 +1,7 @@
 .naperee__become-partner {
   display: flex;
   gap: 84px;
-  padding: 100px 60px;
+  padding: 100px var(--padding-sides);
   background-color: var(--background-color);
   color: var(--text-color);
 }
@@ -9,7 +9,7 @@
   max-width: 472px;
   display: flex;
   flex-grow: 1;
-  flex-shrink:0;
+  flex-shrink: 0;
 }
 .naperee__become-partner_left-image-container img {
   width: 100%;
@@ -29,7 +29,6 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
-
 }
 .naperee__become-partner_right-image-container img:first-child {
   max-height: 400px;
@@ -84,22 +83,22 @@
   display: block;
   width: fit-content;
   text-transform: uppercase;
-  transition: all .2s linear;
+  transition: all 0.2s linear;
 }
 .naperee__become-partner_cta-button:hover {
-  text-shadow: 0px 0px 1px #E0D8D0;
+  text-shadow: 0px 0px 1px #e0d8d0;
 }
 @media (max-width: 1366px) {
   .naperee__become-partner {
     gap: 32px;
   }
   .naperee__become-partner {
-    padding: 100px 25px;
+    padding: 100px var(--padding-sides);
   }
 }
 @media screen and (max-width: 1250px) {
   .naperee__become-partner {
-    padding: 5rem 2.5rem;
+    padding: 5rem var(--padding-sides);
     gap: 4.2rem;
   }
   .naperee__naperee__become-partner_text-title {
@@ -122,6 +121,6 @@
     gap: 28px;
   }
   .naperee__become-partner {
-    padding: 42px 16px;
+    padding: 42px var(--padding-sides);
   }
 }

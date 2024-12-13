@@ -4,7 +4,6 @@
   Usage:
   {% render 'header-dropdown-menu' %}
 {% endcomment %}
-
 <nav class="header__inline-menu">
   <ul class="list-menu list-menu--inline" role="list">
     {%- for link in section.settings.menu.links -%}
@@ -80,22 +79,53 @@
             </details>
           </header-menu>
         {%- else -%}
-          <a
-            id="HeaderMenu-{{ link.handle }}"
-            href="{{ link.url }}"
-            class="header__menu-item list-menu__item link link--text focus-inset"
-            {% if link.current %}
-              aria-current="page"
-            {% endif %}
-          >
-            <span
-              {%- if link.current %}
-                class="header__active-menu-item"
+          {% if link.title == "Products" %}
+            <div 
+              id="HeaderMenu-{{ link.handle }}"
+              class="naptec__header-product header__menu-item list-menu__item link link--text focus-inset"
+              {% if link.current %}
+                aria-current="page"
               {% endif %}
             >
-              {{- link.title | escape -}}
-            </span>
-          </a>
+              <span
+                {%- if link.current %}
+                  class="header__active-menu-item"
+                {% endif %}
+              >
+                {{- link.title |  escape -}}
+              </span>
+              <div class="space_filler"></div>
+              {% 
+                render "naptec__header-megamenu-desktop", 
+                parentClass: "naptec__header-product",
+                menu_1: section.settings.product_menu_1,
+                menu_1_title: section.settings.product_menu_1_title,
+                menu_2: section.settings.product_menu_2,
+                menu_2_title: section.settings.product_menu_2_title,
+                menu_3: section.settings.product_menu_3,
+                menu_3_title: section.settings.product_menu_3_title,
+              %}
+            </div>
+          {% else %}
+            <a
+              id="HeaderMenu-{{ link.handle }}"
+              href="{{ link.url }}"
+              class="header__menu-item list-menu__item link link--text focus-inset"
+              {% if link.current %}
+                aria-current="page"
+              {% endif %}
+            >
+              <span
+                {%- if link.current %}
+                  class="header__active-menu-item"
+                {% endif %}
+              >
+                {{- link.title | escape -}}
+                <script>console.log("{{- link.title | escape -}}")</script>
+                <script>console.log("{{- link.title -}}")</script>
+              </span>
+            </a>
+          {% endif %}
         {%- endif -%}
       </li>
     {%- endfor -%}
