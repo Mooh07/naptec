@@ -25,14 +25,16 @@
 
 .price__regular .price-item--regular {
   margin-right: 0;
-  font-family: "faktum";
-  font-size: 20px;
-  font-weight: 500;
-  line-height: 160%;
+  font-family: "gotu";
+  font-size: 44px;
+  font-weight: 300;
+  line-height: 60px;
   text-align: left;
+  text-underline-position: from-font;
+  text-decoration-skip-ink: none;
 }
-@media screen and (max-width: 992px){
-  .price__regular .price-item--regular{
+@media screen and (max-width: 992px) {
+  .price__regular .price-item--regular {
     font-size: 16px;
   }
 }
