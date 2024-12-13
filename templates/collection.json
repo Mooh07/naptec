@@ -17,6 +17,11 @@
         "color_scheme": "scheme-1"
       }
     },
+    "collection-categories": {
+      "type": "collection-categories",
+      "settings": {
+      }
+    },
     "product-grid": {
       "type": "main-collection-product-grid",
       "settings": {
@@ -39,6 +44,7 @@
     }
   },
   "order": [
+    "collection-categories",
     "banner",
     "product-grid"
   ]

@@ -1,0 +1,49 @@
+{{ "collection-categories.css" | asset_url | stylesheet_tag }}
+{% if collection.metafields.custom.categories == blank %}
+    <style>
+        .collection-categories {
+            display: none;
+        }
+    </style>
+{% endif %}
+
+{% if collection.metafields.custom.categories != blank %}
+    <div class="page-width">
+        <div class="collection-categories__wrapper">
+            <h2 class="collection-categories__title">{{ section.settings.title }}</h2>
+            <div class="collection-categories__items">
+                {% for item in collection.metafields.custom.categories.value %}
+                    <div class="collection-categories__item">
+                        <a href="{{ item.url }}"
+                           class="collection-categories__item-link collection-categories__item-link--absolute"></a>
+                        <div class="collection-categories__item-image">
+                            <img src="{{ item.featured_image | image_url: width: '200' }}"
+                                 alt="{{ item.featured_image.alt }}">
+                        </div>
+                        <p class="collection-categories__item-title">{{ item.title }}</p>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+{% endif %}
+
+{% schema %}
+{
+  "name": "Collection Categories",
+  "class": "collection-categories",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Section's Title",
+      "default": "Categories"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Collection Categories"
+    }
+  ]
+}
+{% endschema %}

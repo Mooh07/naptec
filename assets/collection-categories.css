@@ -1,0 +1,107 @@
+.collection-categories {
+    background-color: #fff;
+    padding-bottom: 62px;
+}
+
+.collection-categories .page-width {
+    padding: 0 80px;
+}
+
+.collection-categories:empty {
+    display: none;
+}
+
+.collection-categories__title {
+    font-family: "faktum";
+    font-size: 40px;
+    font-weight: 500;
+    line-height: 48px;
+    text-align: left;
+    margin: 0 0 40px 0;
+    color: #073B43;
+}
+
+.collection-categories__items {
+    display: flex;
+    gap: 20px 60px;
+    flex-wrap: wrap;
+}
+
+.collection-categories__item {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    row-gap: 12px;
+    max-width: 200px;
+    width: 100%;
+}
+
+.collection-categories__item-image {
+    max-width: 200px;
+    height: auto;
+    width: 100%;
+}
+
+.collection-categories__item-link--absolute {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: block !important;
+    z-index: 1;
+}
+
+.collection-categories__item-image > img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+    border-radius: 8px;
+    max-height: 172px;
+}
+
+.collection-categories__item-title {
+    font-family: "faktum";
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 24px;
+    text-align: center;
+    color: #073B43;
+    margin: 0;
+}
+
+@media (max-width: 1600px) {
+    .collection-categories .page-width {
+        padding: 0 40px;
+    }
+
+}
+
+@media (max-width: 1366px) {
+    .collection-categories__items {
+        gap: 20px;
+    }
+}
+
+@media (max-width: 992px) {
+    .collection-categories .page-width {
+        padding: 0 16px;
+    }
+}
+
+@media (max-width: 500px) {
+    .collection-categories__item {
+        max-width: 100%;
+        width: 100%;
+    }
+
+    .collection-categories__item-image > img {
+        max-height: 100%;
+    }
+
+    .collection-categories__item-image {
+        max-width: 100%;
+    }
+}
