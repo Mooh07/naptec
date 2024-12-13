@@ -183,12 +183,40 @@
 /* Form Elements */
 .product-form__input {
   flex: 0 0 100%;
+  display: flex;
+  justify-content: start;
+  flex-wrap: wrap;
+  gap: 18px;
   padding: 0;
   margin: 0 0 1.2rem 0;
   /* max-width: 44rem; */
   max-width: 100%;
   min-width: fit-content;
   border: none;
+}
+.product-form__input label {
+  position: relative;
+  /* border: none !important; */
+  background: none;
+  width: 56px;
+  height: 56px;
+}
+.product-form__input label img {
+  width: 100%;
+  height: 100%;
+}
+.product-form__input label::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: 0;
+  border-radius: 4px;
+  transition: 300ms;
+}
+.product-form__input label:hover::after {
+  background-color: rgba(0, 0, 0, 0.3);
 }
 
 .product-form__input .form__label {
@@ -273,7 +301,6 @@ a.product__text {
 
 .product__title {
   word-break: break-word;
-  margin-bottom: 1.5rem;
 }
 
 .product__title > * {
@@ -325,6 +352,7 @@ a.product__text {
 
   .product__info-container > *:first-child {
     margin-top: 0;
+    margin-bottom: 20px;
   }
 }
 
@@ -1607,7 +1635,19 @@ a.product__text {
 .thumbnail[aria-current] {
   /* box-shadow: 0 0 0rem 0.1rem rgba(20, 51, 56, 1); */
   /* border-color: transparent; */
-  border: 1px solid rgba(20, 51, 56, 1);
+  border: 1px solid rgba(114, 156, 161, 1);
+  /* position: relative; */
+}
+
+.thumbnail[aria-current]::after {
+  content: " ";
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.4);
+  z-index: 3;
 }
 
 .product__title {
@@ -1616,12 +1656,18 @@ a.product__text {
   font-weight: 500;
   line-height: 136%;
   text-align: left;
+  margin: 0;
+  margin-bottom: 32px;
 }
 
 .product_logo-review {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  height: 64px;
+}
+.product_logo-review img {
+  height: 100%;
 }
 .new-product-price-container {
   display: flex;
@@ -1685,14 +1731,17 @@ a.product__text {
 .variant-selects {
   display: flex;
   justify-content: end;
-  flex-direction: column;
+  flex-direction: column-reverse;
   gap: 1rem;
 }
 .product__title > * {
+  font-family: "faktum";
   font-size: 44px;
   font-weight: 500;
-  line-height: 136.5%;
+  line-height: 136%;
   text-align: left;
+  text-underline-position: from-font;
+  text-decoration-skip-ink: none;
   color: rgba(20, 51, 56, 1);
 }
 .product_logo-review-stars {
@@ -1705,14 +1754,64 @@ a.product__text {
   display: flex;
   gap: 3.2rem;
   margin-top: 4.4rem;
-  
+}
+.product-form__buttons {
+  gap: 3.2rem;
+  display: flex;
+  justify-content: space-between;
+}
+.product-form__customize-button {
+  min-width: 205px;
+  text-transform: uppercase;
+  background: transparent;
+  border-radius: 100px;
+  border: 1px solid rgba(7, 59, 67, 1);
+}
+.product-form__submit {
+  background-color: rgba(7, 59, 67, 1);
+  color: white;
+  text-transform: uppercase;
+}
+.buy__buttons_wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  gap: 3.2rem;
+}
+@media screen and (max-width: 1440px) {
+  .buy-button-quantity-wrapper {
+    gap: 1.6rem;
+  }
+  .product-form__buttons {
+    gap: 1.6rem;
+  }
+  .product-form__submit {
+    /* min-width: 200px; */
+  }
+  .product-form__customize-button {
+    min-width: 175px;
+  }
+}
+@media screen and (max-width: 1200px) {
+  .buy-button-quantity-wrapper {
+    flex-direction: column;
+  }
+  .buy__buttons_wrapper {
+    min-height: 56px;
+  }
+  .product-form__buttons {
+    max-width: unset;
+  }
+  .product-form__submit.button {
+    min-height: 56px;
+  }
 }
 
-@media screen and (max-width: 600px){
-  .buy-button-quantity-wrapper{
+@media screen and (max-width: 600px) {
+  .buy-button-quantity-wrapper {
     flex-wrap: wrap;
   }
-  .buy-button-quantity-wrapper > div{
+  .buy-button-quantity-wrapper > div {
     width: 100%;
   }
 }
@@ -1722,7 +1821,8 @@ a.product__text {
 .buy-button-quantity-wrapper .product-form__submit {
   padding: 0;
   margin: 0;
-  min-width: 271px;
+  /* min-width: 251px; */
+  width: 100%;
   border-radius: 100px;
   overflow: hidden;
 }
@@ -1807,7 +1907,8 @@ a.product__text {
 }
 .product-form__input--pill
   input[type="radio"]
-  + label.product-swatch-naptec:hover span {
+  + label.product-swatch-naptec:hover
+  span {
   opacity: 1;
 }
 .product-form__input--pill
@@ -1833,4 +1934,8 @@ a.product__text {
   + label.product-swatch-naptec
   .icon-arrow {
   opacity: 1;
+}
+
+fieldset label.product-swatch-naptec {
+  border: none !important;
 }

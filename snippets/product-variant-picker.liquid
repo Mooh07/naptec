@@ -9,10 +9,6 @@
   Usage:
   {% render 'product-variant-picker', product: product, block: block, product_form_id: product_form_id %}
 {% endcomment %}
-{% comment %} <script>
-console.log({{shop.metaobjects["color"].values | json}})
-
-</script> {% endcomment %}
 
 {%- unless product.has_only_default_variant -%}
   <variant-selects
@@ -47,8 +43,6 @@ console.log({{shop.metaobjects["color"].values | json}})
           endif
         endif
       -%}
-      {% comment %} {% assign picker_type = 'swatch' %} {% endcomment %}
-      <script>console.log("{{ picker_type }}")</script>
       {%- if picker_type == 'swatch' -%}
         <fieldset  class="js product-form__input product-form__input--swatch">
           <legend class="form__label">
@@ -65,19 +59,99 @@ console.log({{shop.metaobjects["color"].values | json}})
           %}
         </fieldset>
       {%- elsif picker_type == 'button' -%}
-        <fieldset style="order:{{optionOrder}}" class="js product-form__input product-form__input--pill">
-          <legend class="form__label">{{ option.name }}: <span data-selected-swatch-value="{{ option.name }}">
-            
-            {{ option.selected_value }}
-          </span>
-          </legend>
-          {% render 'product-variant-options',
-            product: product,
-            option: option,
-            block: block,
-            picker_type: picker_type
-          %}
-        </fieldset>
+
+        {% assign option_name = option.name %}
+        {% if option_name == "Pack Quantity" %}
+          <div style="display: flex; justify-content: space-between; gap: 20px;">
+            <div style="display: flex; flex-direction: column; flex: 1;">
+              <div><span class="wholeSaleRetailLabel" style="color: rgba(8, 20, 22, 1);">Sell</span></div>
+              <div style="display: flex; height: 100%; align-items: center; gap: 16px;">
+                {% assign counterpart_product = product.metafields.custom.wholesale_d2c.value %}
+                {% assign justifyContent = "start" %}
+                {% for tag in product.tags %}
+                  {% if tag == 'WHOLESALE_PRODUCT' %}
+                    {% assign justifyContent = "end" %}
+                  {% endif %}
+                {% endfor %}
+                <script>console.log('{{ justifyContent }}')</script>
+                <span>Retail</span>
+                <a href="{{ counterpart_product.url }}" class="outerSwicth" data-pos="{{ justifyContent }}" style="display: flex; justify-content: {{ justifyContent }}; align-items: center; padding: 0 3px; width: 48px; height: 24px; border-radius: 100px; border: 1px solid rgba(161, 173, 175, 1); background: rgba(246, 247, 247, 1);">
+                  <div class="innerSwitch" style="display: flex; height: 18px; width: 18px; border-radius: 100%; background: rgba(20, 51, 56, 1);"></div>
+                </a>
+                <span class="wholesale-retail-label">Wholesale</span>
+                <style>
+                  .wholesale-retail-label {
+                    font-family: FONTSPRING DEMO - Faktum;
+                    font-size: 18px;
+                    font-weight: 400;
+                    line-height: 24px;
+                    text-align: left;
+                    text-underline-position: from-font;
+                    text-decoration-skip-ink: none;
+                  }
+                  .wholeSaleRetailLabel {
+                    font-family: FONTSPRING DEMO - Faktum Medium;
+                    font-size: 18px;
+                    font-weight: 500;
+                    line-height: 24px;
+                    text-align: justified;
+                    text-underline-position: from-font;
+                    text-decoration-skip-ink: none;
+                  }
+                  .quantity_pack_picker_wrapper {
+                    display: flex;
+                    flex-wrap: wrap;
+                  }
+                </style>
+              </div>
+            </div>
+            <style>
+              
+            </style>
+            <script>
+              const container = document.querySelector('.outerSwicth');
+              container.addEventListener("click", (event)=>{
+                if(container.dataset.pos == "start"){
+                  container.style.justifyContent = "end";
+                  container.dataset.pos = "end"
+                } else {
+                  container.style.justifyContent = "start";
+                  container.dataset.pos = "start"
+                }
+              })
+            </script>
+            <div class="quantity_pack_picker_wrapper">
+              <fieldset style="order:{{optionOrder}}; display: flex; justify-content: end;" class="js product-form__input product-form__input--pill">
+                <legend class="form__label">{{ option.name }}: <span data-selected-swatch-value="{{ option.name }}">
+                  
+                  {{ option.selected_value }}
+                </span>
+                </legend>
+                {% render 'product-variant-options',
+                  product: product,
+                  option: option,
+                  block: block,
+                  picker_type: picker_type
+                %}
+              </fieldset>
+            </div>
+          </div>
+        {% else %}
+          <fieldset style="order:{{optionOrder}}" class="js product-form__input product-form__input--pill">
+            <legend class="form__label">{{ option.name }}: <span data-selected-swatch-value="{{ option.name }}">
+              
+              {{ option.selected_value }}
+            </span>
+            </legend>
+            {% render 'product-variant-options',
+              product: product,
+              option: option,
+              block: block,
+              picker_type: picker_type,
+              variant_images: variant_images
+            %}
+          </fieldset>
+        {% endif %}
       {%- else -%}
         <div class="product-form__input product-form__input--dropdown">
           <label class="form__label" for="Option-{{ section.id }}-{{ forloop.index0 }}">

@@ -20,10 +20,6 @@
             "text_style": "uppercase"
           }
         },
-        "title": {
-          "type": "title",
-          "settings": {}
-        },
         "logo_review_MVtbpR": {
           "type": "logo_review",
           "settings": {
@@ -32,6 +28,10 @@
             "lintext_logo": "shopify://shop_images/Group_5.png",
             "servietto_logo": "shopify://shop_images/Group_7.png"
           }
+        },
+        "title": {
+          "type": "title",
+          "settings": {}
         },
         "price": {
           "type": "price",
@@ -88,8 +88,8 @@
       },
       "block_order": [
         "vendor",
-        "title",
         "logo_review_MVtbpR",
+        "title",
         "price",
         "variant_picker",
         "selling_plans_89D9ja",
@@ -103,7 +103,7 @@
         "enable_sticky_info": true,
         "color_scheme": "scheme-1c68886a-64b7-463d-9cec-b03159cecc89",
         "section-bg": "#ffffff",
-        "section-text-color": "rgba(20, 51, 56, 1)",
+        "section-text-color": "#143338",
         "media_size": "small",
         "constrain_to_viewport": true,
         "media_fit": "contain",

@@ -10,7 +10,7 @@
   Usage:
   {% render 'buy-buttons', block: block, product: product, product_form_id: product_form_id, section_id: section.id, show_pickup_availability: true %}
 {% endcomment %}
-<div {{ block.shopify_attributes }}>
+<div style="width: 100%; height: 100%;" {{ block.shopify_attributes }}>
   {%- if product != blank -%}
     {%- liquid
       assign gift_card_recipient_feature_active = false
@@ -65,7 +65,7 @@
           {%- render 'gift-card-recipient-form', product: product, form: form, section: section -%}
         {%- endif -%}
 
-        <div class="product-form__buttons">
+        <div class="product-form__buttons" >
           {%- liquid
             assign check_against_inventory = true
             if product.selected_or_first_available_variant.inventory_management != 'shopify' or product.selected_or_first_available_variant.inventory_policy == 'continue'
@@ -79,6 +79,7 @@
             id="ProductSubmitButton-{{ section_id }}"
             type="submit"
             name="add"
+            style=""
             class="product-form__submit button button--full-width {% if show_dynamic_checkout %}button--secondary{% else %}button--primary{% endif %}"
             {% if product.selected_or_first_available_variant.available == false or quantity_rule_soldout %}
               disabled
@@ -147,3 +148,6 @@
     <script src="{{ 'pickup-availability.js' | asset_url }}" defer="defer"></script>
   {%- endif -%}
 </div>
+<button class="product-form__customize-button">
+  {{ 'products.product.customize' | t }}
+</button>
