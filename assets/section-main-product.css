@@ -1635,7 +1635,19 @@ a.product__text {
 .thumbnail[aria-current] {
   /* box-shadow: 0 0 0rem 0.1rem rgba(20, 51, 56, 1); */
   /* border-color: transparent; */
-  border: 1px solid rgba(20, 51, 56, 1);
+  border: 1px solid rgba(114, 156, 161, 1);
+  /* position: relative; */
+}
+
+.thumbnail[aria-current]::after {
+  content: " ";
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.4);
+  z-index: 3;
 }
 
 .product__title {

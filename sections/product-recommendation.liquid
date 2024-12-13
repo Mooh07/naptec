@@ -53,7 +53,18 @@
             {
               type: "carousel",
               perView: 4,
-              gap: 38
+              gap: 38,
+              breakpoints: {
+                1200: {
+                  perView: 3
+                },
+                850: {
+                  perView: 2
+                },
+                500: {
+                  perView: 1
+                }
+              }
             }
           )
           productRecommendationsGlide.mount();
@@ -109,7 +120,7 @@
     font-family: FONTSPRING DEMO - Faktum Medium;
     font-size: 40px;
     font-weight: 500;
-    line-height: 60px;
+    line-height: 150%;
     text-align: left;
     text-underline-position: from-font;
     text-decoration-skip-ink: none;
@@ -182,14 +193,14 @@
   .global__product-card > a {
     display: block;
   }
-  .global__product-card > a::after {
+  /* .global__product-card > a::after {
     content: " ";
     position: absolute;
     left: 0;
     top: 0;
     right: 0;
     bottom: 0;
-  }
+  } */
   .naptec__product-recommendations-loading-spinner {
     position: absolute;
     left: 0;
@@ -242,6 +253,21 @@
     75%,
     100% {
       clip-path: polygon(50% 50%, 0 0, 100% 0, 100% 100%, 100% 100%, 100% 100%)
+    }
+  }
+  @media screen and (max-width: 992px) {
+    .naptec__product-recommendations h2 {
+      font-size: 34px;
+    }
+  }
+  @media screen and (max-width: 700px) {
+    .naptec__product-recommendations h2 {
+      font-size: 28px;
+    }
+  }
+  @media screen and (max-width: 520px) {
+    .naptec__product-recommendations h2 {
+      font-size: 20px;
     }
   }
 </style>
