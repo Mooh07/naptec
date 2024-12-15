@@ -26,28 +26,7 @@
 <noscript>{{ 'component-cart-items.css' | asset_url | stylesheet_tag }}</noscript>
 
 <style>
-    .transparent_background {
-      /* background-color: transparent; */
-    }
-  
-  {% if template == "product" or template == "collection" %}
-    .header{
-      --color-foreground: 20, 51, 56;
-    }
-    .fixed-sticky-header{
-      position: static;
-    }
-    .header__icon path{
-      stroke: rgba(20, 51, 56, 1);
-    }
-    .fixed-sticky-header .menu-drawer__menu > li > .link--text {
-      color: {{ section.settings.text_color }};
-    }
-    .header__call-to-action{
-      color: rgba(20, 51, 56, 1);
-      border-color: rgba(20, 51, 56, 1);
-    }
-  {% endif %}
+
 
   header-drawer {
     justify-self: start;
@@ -126,17 +105,8 @@
     padding-inline: var(--padding-sides);
   }
 
-    @media (max-width: 1600px) {
-      .naptec__header .header-wrapper {
-        padding: 0 40px;
-      }
-    }
 
-    @media (max-width: 992px) {
-      .naptec__header .header-wrapper {
-        padding: 0 16px;
-      }
-    }
+
   @media screen and (max-width: 1400px){
     .naptec__header .header__menu-item{
     font-size: 16px;

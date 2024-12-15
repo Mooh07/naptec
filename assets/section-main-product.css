@@ -1749,6 +1749,8 @@ a.product__text {
   font-weight: 300;
   line-height: 133.5%;
   text-align: left;
+  display: flex;
+  gap: 12px;
 }
 .buy-button-quantity-wrapper {
   display: flex;
@@ -1778,6 +1780,29 @@ a.product__text {
   justify-content: space-between;
   gap: 3.2rem;
 }
+.bulk-buy-eligibility-badge {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.bulk-buy-eligibility-badge span {
+  font-family: "faktum";
+  font-size: 18px;
+  font-weight: 300;
+  line-height: 24px;
+  text-align: right;
+  text-underline-position: from-font;
+  text-decoration-skip-ink: none;
+}
+.bulk-buy-number {
+  font-family: Gayathri;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 24px;
+  text-align: right;
+  text-underline-position: from-font;
+  text-decoration-skip-ink: none;
+}
 @media screen and (max-width: 1440px) {
   .buy-button-quantity-wrapper {
     gap: 1.6rem;
@@ -1790,6 +1815,17 @@ a.product__text {
   }
   .product-form__customize-button {
     min-width: 175px;
+  }
+}
+@media screen and (max-width: 1400px) {
+  .product__title > * {
+    font-size: 32px;
+  }
+  .product_logo-review-stars {
+    font-size: 16px;
+  }
+  .bulk-buy-eligibility-badge span {
+    font-size: 16px;
   }
 }
 @media screen and (max-width: 1200px) {
@@ -1877,9 +1913,6 @@ a.product__text {
   font-weight: 300;
   line-height: 133.5%;
   text-align: left;
-}
-.transparent_background {
-  background: white;
 }
 
 .product-form__input--pill input[type="radio"] + label.product-swatch-naptec {

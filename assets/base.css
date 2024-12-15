@@ -2517,7 +2517,8 @@ product-info .loading__spinner:not(.hidden) ~ *,
     grid-template-columns: auto 1fr auto;
   }
 
-  .header--middle-left .header__heading {
+  .header--middle-left .header__heading,
+  .header--middle-left .header__heading-link {
     grid-area: left-icons;
   }
 
