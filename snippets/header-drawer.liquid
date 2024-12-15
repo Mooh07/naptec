@@ -115,21 +115,44 @@
                       </div>
                     </details>
                   {%- else -%}
-                    <a
-                      id="HeaderDrawer-{{ link.handle }}"
-                      href="{{ link.url }}"
-                      class="menu-drawer__menu-item list-menu__item link link--text focus-inset
-                      {% comment %} {% if link.current %} menu-drawer__menu-item--active{% endif %} {% endcomment %}
-                      "
-                      {% if link.current %}
-                        aria-current="page"
-                      {% endif %}
-                    >
-                      <script>
-                        console.log({{ link.current }})
-                      </script>
-                      {{ link.title | escape }} 
-                    </a>
+                    {% if link.title == "Products" %}
+                      <div
+                        data-open="false"
+                        id="HeaderDrawer-{{ link.handle }}"
+                        class="naptec__header-product-mobile menu-drawer__menu-item list-menu__item link link--text focus-inset"
+                        {% if link.current %}
+                          aria-current="page"
+                        {% endif %}
+                      >
+                        {{ link.title | escape }} {% render "icon-arrow" %}
+                        {% 
+                          render "naptec__header-megamenu-mobile",
+                          parentClass: "naptec__header-product-mobile",
+                          menu_1: section.settings.product_menu_1,
+                          menu_1_title: section.settings.product_menu_1_title,
+                          menu_2: section.settings.product_menu_2,
+                          menu_2_title: section.settings.product_menu_2_title,
+                          menu_3: section.settings.product_menu_3,
+                          menu_3_title: section.settings.product_menu_3_title,
+                          right_image: section.settings.product_menu_right_image,
+                          right_label: section.settings.product_menu_right_label,
+                          right_url: section.settings.product_menu_right_url
+                        %}
+                      </div>
+                      {% else %}
+                      <a
+                        id="HeaderDrawer-{{ link.handle }}"
+                        href="{{ link.url }}"
+                        class="menu-drawer__menu-item list-menu__item link link--text focus-inset
+                        {% comment %} {% if link.current %} menu-drawer__menu-item--active{% endif %} {% endcomment %}
+                        "
+                        {% if link.current %}
+                          aria-current="page"
+                        {% endif %}
+                      >
+                        {{ link.title | escape }} 
+                      </a>
+                  {% endif %}
                   {%- endif -%}
                 </li>
               {%- endfor -%}

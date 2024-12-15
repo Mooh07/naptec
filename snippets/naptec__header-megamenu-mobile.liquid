@@ -1,0 +1,242 @@
+{% comment %} 
+  USE: 
+  {% 
+    render "naptec__header-megamenu-desktop", parentClass: parentClass
+  %}
+{% endcomment %}
+
+
+<section class="naptec__header-megamenu-mobile {{ parentClass }}-megamenu">
+  <span class="close-button">
+    {% render "button-close" %}
+  </span>
+  <div class="{{ parentClass }}-megamenu-top">
+    <div class="{{ parentClass }}-megamenu-list">
+      <h3>{{ menu_1_title | upcase }}</h3>
+      <ul>
+        {% for link in menu_1.links %}
+          <li>
+            <a href="{{ link.url }}">
+              {{ link.title }}
+            </a>
+          </li>
+        {% endfor %}
+      </ul>
+    </div>
+    <div class="{{ parentClass }}-megamenu-list">
+      <h3>{{ menu_2_title | upcase }}</h3>
+      <ul>
+        {% for link in menu_2.links %}
+          <li>
+            <a href="{{ link.url }}">
+              {{ link.title }}
+            </a>
+          </li>
+        {% endfor %}
+      </ul>
+    </div>
+    <div class="{{ parentClass }}-megamenu-list">
+      <h3>{{ menu_3_title | upcase }}</h3>
+      <ul>
+        {% for link in menu_3.links %}
+          <li>
+            <a href="{{ link.url }}">
+              {{ link.title }}
+            </a>
+          </li>
+        {% endfor %}
+      </ul>
+    </div>
+  </div>
+  <div class="{{ parentClass }}-megamenu-bottom">
+    <a href="{{ right_url }}">
+      <img 
+        src="{{ right_image |  image_url: width: right_image.width }}" 
+        alt="{{ right_image.alt }}"
+        width="{{ right_image.width }}"
+        height="{{ right_image.height }}"
+        loading="lazy"
+      >
+      <h3>{{ right_label | upcase }}</h3>
+    </a>
+  </div>
+</section>
+<style>
+  .{{ parentClass }}-megamenu {
+    text-wrap: nowrap;
+    position: absolute;
+    bottom: 0;
+    top: 0;
+    left: 100%;
+    right: 0;
+    background-color: rgba(7, 59, 67, 1);
+    opacity: 0;
+    transition: 300ms ease-in;
+  }
+  .{{ parentClass }} {
+    justify-content: space-between;
+  }
+  .{{ parentClass }} > svg {
+    position: relative !important;
+    right: 0 !important;
+    width: 20px !important;
+    color: white !important;
+    top: 10px !important;
+    left: 0px !important;
+  }
+  .{{ parentClass }}-megamenu .close-button {
+    position: absolute;
+    right: 20px;
+    top: 40px;
+    width: 40px;
+    height: 40px;
+    display: block;
+    opacity: 0;
+    z-index: 0;
+    transition: 300ms ease-in;
+  }
+
+  .{{ parentClass }}-megamenu.openedMegaMenu {
+    left: 0;
+    opacity: 1;
+    z-index: 5;
+  }
+
+  .{{ parentClass }}[data-open="true"] {
+    pointer-events: none;
+  }
+  .{{ parentClass }}-megamenu {
+    pointer-events: all;
+  }
+  
+  .{{ parentClass }}-megamenu .showCloseButton {
+    opacity: 1;
+    z-index: 4;
+  }
+  .{{ parentClass }}-megamenu svg {
+    transition: 300ms;
+  }
+  .{{ parentClass }}-megamenu .showCloseButton svg {
+    transform: rotate(45deg);
+    transition: 300ms;
+  }
+
+  
+  .{{ parentClass }}-megamenu {
+    padding: 6rem 0;
+  }
+
+  .{{ parentClass }}-megamenu-top {
+    display: flex;
+    flex-direction: column;
+    gap: 5rem;
+  }
+
+  .{{ parentClass }}-megamenu-list h3 {
+    font-family: "faktum";
+    margin: 0;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 20px;
+    text-align: left;
+    text-underline-position: from-font;
+    text-decoration-skip-ink: none;
+    margin-bottom: 15px;
+    padding-left: 3rem;
+  }
+  .{{ parentClass }}-megamenu-list ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    gap: 12px;
+  }
+  .{{ parentClass }}-megamenu-list ul li {
+    margin-bottom: 0;
+    width: 100%;
+    text-align: left;
+    padding: 5px;
+    padding-left: 3rem;
+  }
+  .{{ parentClass }}-megamenu-list ul li:hover {
+    background-color: hwb(188 3% 78%);
+  }
+  .{{ parentClass }}-megamenu-list ul li a {
+    color: white;
+    text-decoration: none;
+    font-family: "faktum";
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    text-align: left;
+    text-underline-position: from-font;
+    text-decoration-skip-ink: none;
+  }
+
+  .{{ parentClass }}-megamenu-bottom {
+    max-width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 50px;
+    margin-top: 50px;
+    border-top: 1px solid white;
+  }
+  .{{ parentClass }}-megamenu-bottom a {
+    padding: 0 3rem;
+    color: white;
+    text-decoration: none;
+  }
+  .{{ parentClass }}-megamenu-bottom a img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+  }
+  .{{ parentClass }}-megamenu-bottom a h3 {
+    text-align: left;
+    font-family: "faktum";
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 20px;
+    text-align: left;
+    text-underline-position: from-font;
+    text-decoration-skip-ink: none;
+  }
+</style>
+<script>
+  document.addEventListener("DOMContentLoaded", ()=>{
+    const megaMenu_parentElement = document.querySelector(".{{ parentClass }}");
+    const megaMenu_closeButton = document.querySelector(".{{ parentClass }}-megamenu > .close-button");
+    const header_megamenu = document.querySelector('.{{ parentClass }}-megamenu');
+    if (megaMenu_parentElement && megaMenu_closeButton && header_megamenu) {
+      megaMenu_parentElement.addEventListener("click", () => {
+        showMegaMenu();
+      });
+
+      megaMenu_closeButton.addEventListener("click", (event) => {
+        hideMegaMenu(event);
+      });
+
+      function showMegaMenu() {
+        let isOpen = megaMenu_parentElement.dataset.open;
+        if(isOpen == "true") return;
+        header_megamenu.classList.add("openedMegaMenu");
+        megaMenu_closeButton.classList.add("showCloseButton");
+        megaMenu_parentElement.dataset.open = "true";
+      }
+
+      function hideMegaMenu(event) {
+        event.stopPropagation();
+        let isOpen = megaMenu_parentElement.dataset.open;
+        if(isOpen == "false") return;
+        header_megamenu.classList.remove("openedMegaMenu");
+        megaMenu_closeButton.classList.remove("showCloseButton");
+        megaMenu_parentElement.dataset.open = "false";
+      }
+    } else {
+      console.error("One or more required elements are missing.");
+    }
+  })
+</script>
