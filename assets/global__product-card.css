@@ -141,8 +141,9 @@
 
 .price.global__product-price-container .price-item.price-item--regular {
   font-size: 20px;
-  line-height: 32px;
+  line-height: 1.6;
   color: #143338;
+  font-weight: 500;
   font-family: var(--card-price-font);
 }
 
