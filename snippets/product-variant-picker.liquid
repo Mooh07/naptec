@@ -53,6 +53,7 @@
     <script>
               const container = document.querySelector('.outerSwicth');
               container.addEventListener("click", (event)=>{
+                return;
                 if(container.dataset.pos == "start"){
                   container.style.justifyContent = "end";
                   container.dataset.pos = "end"
