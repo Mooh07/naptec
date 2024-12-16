@@ -9,6 +9,7 @@
 .naptec__separation-image-top img {
   max-width: 100%;
   object-fit: cover;
+  width: 100%;
 }
 .naptec__separation-image-bottom {
   display: flex;
