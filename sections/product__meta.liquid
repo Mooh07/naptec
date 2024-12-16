@@ -18,7 +18,15 @@
           </ul>
           <ul class="faq_reviews_tabs">
             <li id="reviews_tab" class="selected">
-              some reviews
+              <div
+                class="yotpo yotpo-main-widget"
+                data-product-id="{{ product.id }}"
+                data-name="{{ product.title | escape }}"
+                data-url="{{ shop.url }}{{ product.url }}"
+                data-image-url="{{ product.featured_image | product_img_url: 'large' |replace: '?', '%3F' | replace: '&','%26'}}"
+                data-price="{{ product.price | money_without_currency }}"
+                data-currency="{{ shop.currency }}"
+                data-description="{{ product.description | escape }}"></div>
             </li>
             <li id="faq_tab" class="">
               {% for question in shop.metaobjects.faq.values %}
@@ -48,7 +56,7 @@
           </ul>
           <ul class="product__meta-tabs-container product__meta-buttons-container-inner">
             {% comment %} {% assign shippingKey = product.vendor | downcase | append: "shipping" %}
-                                                {% assign returnsKey = product.vendor | downcase | append: "returns" %} {% endcomment %}
+                                                                                    {% assign returnsKey = product.vendor | downcase | append: "returns" %} {% endcomment %}
             {% assign shippingKey = "shipping" %}
             {% assign returnsKey = "returns" %}
             <li class="product__meta-tab selected-tab">{{ shop.metaobjects["shipping_and_returns"][shippingKey].value | metafield_tag }}</li>
