@@ -154,6 +154,7 @@
       "block_order": [
         "yotpo_product_reviews_reviews_QdDAWj"
       ],
+      "disabled": true,
       "settings": {
         "include_margins": true
       }
