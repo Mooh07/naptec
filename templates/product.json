@@ -139,10 +139,28 @@
     "product_meta_EUwwWU": {
       "type": "product__meta",
       "settings": {}
+    },
+    "de851d74c5e7082f3767": {
+      "type": "apps",
+      "blocks": {
+        "1f8ee9d0-94d5-4af5-a53a-92d46b816488": {
+          "type": "shopify://apps/yotpo-product-reviews/blocks/reviews/eb7dfd7d-db44-4334-bc49-c893b51b36cf",
+          "settings": {
+            "product": "{{product}}"
+          }
+        }
+      },
+      "block_order": [
+        "1f8ee9d0-94d5-4af5-a53a-92d46b816488"
+      ],
+      "settings": {
+        "include_margins": true
+      }
     }
   },
   "order": [
     "main",
+    "de851d74c5e7082f3767",
     "related-products",
     "product_meta_EUwwWU"
   ]
