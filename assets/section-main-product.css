@@ -1623,6 +1623,7 @@ a.product__text {
   display: flex;
   flex-direction: column;
   height: 100%;
+  max-height: 520px;
 }
 .thumbnail-slider > ul {
   flex-direction: column;
