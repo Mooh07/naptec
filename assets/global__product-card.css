@@ -65,7 +65,7 @@
 
 .global__product-card-title {
   margin: 0 0 12px 0;
-  font-family: "dm sans";
+  font-family: var(--card-title-font);
   font-size: 20px;
   font-weight: 500;
   line-height: 24px;
@@ -83,6 +83,7 @@
 }
 
 .global__product-card-review {
+  font-family: var(--card-reviews-font);
   display: flex;
   gap: 12px;
   margin-bottom: 12px;
@@ -143,6 +144,7 @@
   font-size: 20px;
   line-height: 32px;
   color: #143338;
+  font-family: var(--card-price-font);
 }
 
 variant-selector .glide__slide {
