@@ -3,7 +3,7 @@
     <ul class="product__meta-buttons-container">
       <li class="product__meta-tab-button selected-button">About</li>
       <li class="product__meta-tab-button">Reviews/FAQ</li>
-      <li class="product__meta-tab-button">Pallet</li>
+      <li class="product__meta-tab-button">Specs</li>
       <li class="product__meta-tab-button">Shipping/Returns</li>
     </ul>
     <ul class="product__meta-tabs-container">
@@ -39,7 +39,7 @@
           </ul>
         </faq-element>
       </li>
-      <li class="product__meta-tab">Pallet tab</li>
+      <li class="product__meta-tab">Specs tab</li>
       <li class="product__meta-tab">
         <product-meta-tabs class="product__meta-tabs product__meta-tabs-inner" data-isInner="true">
           <ul class="product__meta-buttons-container product__meta-buttons-container-inner">
@@ -47,9 +47,10 @@
             <li class="product__meta-tab-inner-button">Returns</li>
           </ul>
           <ul class="product__meta-tabs-container product__meta-buttons-container-inner">
-            {% assign shippingKey = product.vendor | downcase | append: "-shipping" %}
-            {% assign returnsKey = product.vendor | downcase | append: "-returns" %}
-
+            {% comment %} {% assign shippingKey = product.vendor | downcase | append: "shipping" %}
+                                                {% assign returnsKey = product.vendor | downcase | append: "returns" %} {% endcomment %}
+            {% assign shippingKey = "shipping" %}
+            {% assign returnsKey = "returns" %}
             <li class="product__meta-tab selected-tab">{{ shop.metaobjects["shipping_and_returns"][shippingKey].value | metafield_tag }}</li>
             <li class="product__meta-tab">{{ shop.metaobjects["shipping_and_returns"][returnsKey].value | metafield_tag }}</li>
           </ul>
@@ -378,7 +379,7 @@
 
   @media screen and (max-width: 1250px) {
     .product__meta {
-      padding: 44px 40px 160px;
+      padding: 44px var(--padding-sides) 160px;
       gap: 30px;
     }
     .product__meta-buttons-container {
@@ -395,7 +396,7 @@
   @media screen and (max-width: 992px) {
     .product__meta {
       flex-direction: column;
-      padding: 44px 40px 160px;
+      padding: 44px var(--padding-sides) 160px;
     }
     .product__meta-tabs-container {
       max-width: 100%;
@@ -406,7 +407,7 @@
   }
   @media screen and (max-width: 600px) {
     .product__meta {
-      padding: 44px 16px 160px;
+      padding: 44px var(--padding-sides) 160px;
     }
   }
 </style>

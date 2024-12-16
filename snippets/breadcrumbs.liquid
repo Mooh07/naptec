@@ -1,7 +1,7 @@
 <style>
   .breadcrumbs {
     background-color: #fff;
-    padding: 36px 0 24px;
+    padding: 36px var(--padding-sides) 24px;
   }
 
   .breadcrumbs__list {
@@ -69,10 +69,10 @@
 {%- unless template == 'index' or template == 'cart' or template == 'list-collections' or template == '404' -%}
   {%- assign t = template | split: '.' | first -%}
   <nav
-    class="breadcrumbs"
+    class="breadcrumbs page-width"
     role="navigation"
     aria-label="breadcrumbs">
-    <div class="page-width">
+    <div class="">
       <ol class="breadcrumbs__list">
         <li class="breadcrumbs__item">
           <a class="breadcrumbs__link" href="/">Home</a>

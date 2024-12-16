@@ -1,4 +1,3 @@
-
 <section
   id="MainProduct-{{ section.id }}"
   class="section-{{ section.id }}-padding product__main gradient page-width color-{{ section.settings.color_scheme }}"
@@ -188,7 +187,7 @@
                         {% render 'yellow-star' %}
                       {% endfor %}
                     </span>
-                    <span>(120 reviews)</span>
+                    <span>({{product.metafields.yotpo.reviews_count |  default: 0}} reviews)</span>
                   </div>
                 </div>
               {%- when 'text' -%}
