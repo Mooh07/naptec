@@ -3,6 +3,11 @@
   <head>
 
     <style>
+         :root{
+        --card-title-font: "pp agrandir";
+        --card-reviews-font: "pp agrandir";
+        --card-price-font: "pp agrandir";
+      }
       {% for font in shop.metaobjects["font"].values %}
         {% for font_url in font.font_file_name.value %}
           @font-face {
