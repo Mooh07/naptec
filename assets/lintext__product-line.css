@@ -1,5 +1,5 @@
 .lintext__product-line {
-  padding: 100px 80px;
+  padding: 100px var(--padding-sides);
   position: relative;
   background-color: var(--background-color);
   color: var(--text-color);
@@ -121,7 +121,7 @@
 
 @media screen and (max-width: 1250px) {
   .lintext__product-line {
-    padding: 112px 40px;
+    padding: 50px var(--padding-sides);
   }
   .lintext__product-line-cards {
     gap: 24px;
@@ -136,14 +136,14 @@
     flex-wrap: wrap;
   }
   .lintext__product-line-cards li {
-    width: calc(50% - 24px);
+    width: calc(50% - 12px);
   }
   .lintext__product-line-card-text h4,
   .lintext__product-line-card-text p {
     font-size: 14px;
   }
   .lintext__product-line {
-    padding: 70px 40px;
+    padding: 70px var(--padding-sides);
   }
   .lintext__product-line-text {
     padding-bottom: 60px;
@@ -162,7 +162,7 @@
     width: 100%;
   }
   .lintext__product-line {
-    padding: 100px 16px;
+    padding: 50px var(--padding-sides);
   }
   .lintext__product-line-text h2 {
     font-size: 32px;

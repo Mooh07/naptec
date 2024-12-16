@@ -27,6 +27,9 @@
 <noscript>{{ 'component-cart-items.css' | asset_url | stylesheet_tag }}</noscript>
 
 <style>
+  .cart-count-bubble{
+    display: none;
+  }
     .transparent_background {
         /* background-color: transparent; */
     }
@@ -37,7 +40,7 @@
 
     .shopify-section-group-header-group-lintext sticky-header.fixed-sticky-header {
         background-color: #ede6db;
-        padding: 0 80px;
+        padding: 0 var(--padding-sides);
     }
 
     .shopify-section-group-header-group-lintext .search-modal__content {
@@ -127,7 +130,7 @@
 
     @media (max-width: 1250px) {
         .shopify-section-group-header-group-lintext sticky-header.fixed-sticky-header {
-            padding: 0 40px;
+            padding: 0 var(--padding-sides);
         }
     }
 
@@ -144,7 +147,7 @@
 
     @media (max-width: 576px) {
         .shopify-section-group-header-group-lintext sticky-header.fixed-sticky-header {
-            padding: 0 16px;
+            padding: 0 var(--padding-sides);
         }
 
         .search__button {

@@ -1,5 +1,5 @@
 .bloomingoods__footer {
-  padding: 80px;
+  padding: 80px var(--padding-sides);
   display: flex;
   justify-content: space-between;
 }
@@ -143,13 +143,13 @@
 }
 @media screen and (max-width: 992px) {
   .bloomingoods__footer {
-    padding: 4.2rem 4rem;
+    padding: 4.2rem var(--padding-sides);
   }
 }
 @media screen and (max-width: 992px) {
   .bloomingoods__footer {
     flex-direction: column;
-    padding: 8.2rem 4rem;
+    padding: 8.2rem var(--padding-sides);
   }
   .bloomingoods__footer-links {
     padding-left: 80px;
@@ -193,7 +193,7 @@
 }
 @media screen and (max-width: 600px) {
   .bloomingoods__footer {
-    padding: 4.2rem 1.6rem;
+    padding: 4.2rem var(--padding-sides);
   }
   .bloomingoods__footer-links {
     /* padding-left: 30px; */

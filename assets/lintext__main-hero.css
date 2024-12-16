@@ -1,7 +1,7 @@
 .lintext__main-hero {
   height: min(100vh, 760px);
   min-height: 500px;
-  padding: 0 80px;
+  padding: 0 var(--padding-sides);
   display: flex;
   align-items: center;
   background-color: #f4f4f4;
@@ -69,7 +69,7 @@
 
 @media screen and (max-width: 1250px) {
   .lintext__main-hero {
-    padding: 296px 40px;
+    padding: 296px var(--padding-sides);
   }
   .lintext__main-hero-content h1 {
     font-size: 72px;
@@ -100,7 +100,7 @@
 }
 @media screen and (max-width: 600px) {
   .lintext__main-hero {
-    padding: 296px 16px;
+    padding: 296px var(--padding-sides);
   }
   .lintext__main-hero-content h1 {
     font-size: 48px;

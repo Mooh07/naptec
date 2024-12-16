@@ -1,5 +1,5 @@
 .lintext__mission {
-  padding: 100px 80px;
+  padding: 100px var(--padding-sides);
   display: flex;
   background-color: var(--background-color);
   color: var(--text-color);
@@ -50,7 +50,7 @@
 }
 @media screen and (max-width: 1250px) {
   .lintext__mission {
-    padding: 100px 40px;
+    padding: 100px var(--padding-sides);
   }
   .lintext__mission-text {
     padding-left: 80px;
@@ -73,7 +73,7 @@
     padding-top: 3rem;
   }
   .lintext__mission {
-    padding: 70px 40px;
+    padding: 70px var(--padding-sides);
   }
   .lintext__mission-text h2 {
     font-size: 42px;
@@ -86,7 +86,7 @@
 }
 @media screen and (max-width: 600px) {
   .lintext__mission {
-    padding: 60px 16px;
+    padding: 60px var(--padding-sides);
   }
   .lintext__mission-text h2 {
     font-size: 32px;

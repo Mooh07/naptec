@@ -26,28 +26,7 @@
 <noscript>{{ 'component-cart-items.css' | asset_url | stylesheet_tag }}</noscript>
 
 <style>
-    .transparent_background {
-      /* background-color: transparent; */
-    }
-  
-  {% if template == "product" or template == "collection" %}
-    .header{
-      --color-foreground: 20, 51, 56;
-    }
-    .fixed-sticky-header{
-      position: static;
-    }
-    .header__icon path{
-      stroke: rgba(20, 51, 56, 1);
-    }
-    .fixed-sticky-header .menu-drawer__menu > li > .link--text {
-      color: {{ section.settings.text_color }};
-    }
-    .header__call-to-action{
-      color: rgba(20, 51, 56, 1);
-      border-color: rgba(20, 51, 56, 1);
-    }
-  {% endif %}
+
 
   header-drawer {
     justify-self: start;
@@ -126,17 +105,8 @@
     padding-inline: var(--padding-sides);
   }
 
-    @media (max-width: 1600px) {
-      .naptec__header .header-wrapper {
-        padding: 0 40px;
-      }
-    }
 
-    @media (max-width: 992px) {
-      .naptec__header .header-wrapper {
-        padding: 0 16px;
-      }
-    }
+
   @media screen and (max-width: 1400px){
     .naptec__header .header__menu-item{
     font-size: 16px;
@@ -611,6 +581,58 @@
   "max_blocks": 3,
   "settings": [
     {
+      "type": "text",
+      "id": "megamenu-label",
+      "label": "Megamenu item label",
+      "default": "Products"
+    },
+    {
+      "type": "text",
+      "id": "product_menu_1_title",
+      "label": "Mega menu column 1 title"
+    },
+    {
+      "type": "link_list",
+      "id": "product_menu_1",
+      "label": "Mega menu column 1"
+    },
+    {
+      "type": "text",
+      "id": "product_menu_2_title",
+      "label": "Mega menu column 2 title"
+    },
+    {
+      "type": "link_list",
+      "id": "product_menu_2",
+      "label": "Mega menu column 2"
+    },
+    {
+      "type": "text",
+      "id": "product_menu_3_title",
+      "label": "Mega menu column 2 title"
+    },
+    {
+      "type": "link_list",
+      "id": "product_menu_3",
+      "label": "Mega menu column 3"
+    },
+    {
+      "type": "image_picker",
+      "id": "product_menu_right_image",
+      "label": "Mega menu right image"
+    },
+    {
+      "type": "text",
+      "id": "product_menu_right_label",
+      "label": "Mega menu right text",
+      "default": "Custom Design"
+    },
+    {
+      "type": "text",
+      "id": "product_menu_right_url",
+      "label": "Mega menu right url"
+    },
+    {
       "type": "image_picker",
       "id": "logo_image",
       "label": "Logo"
@@ -818,9 +840,9 @@
     }
   ],
   "blocks": [
-    {
-      "type": "@app"
-    }
+    // {
+    //   "type": "@app"
+    // }
   ]
 }
 {% endschema %}

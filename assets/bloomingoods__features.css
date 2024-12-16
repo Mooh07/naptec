@@ -1,0 +1,48 @@
+.bloomingoods__features {
+  background-color: rgba(29, 59, 44, 1);
+  padding: 32px var(--padding-sides);
+}
+.bloomingoods__features ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.bloomingoods__features ul li {
+  display: flex;
+  max-width: 20%;
+  gap: 16px;
+}
+.bloomingoods__features ul li .bloomingoods__feature-text-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.bloomingoods__features ul li .bloomingoods__feature-text-container h5 {
+  color: rgba(245, 232, 213, 1);
+  font-family: Gentium Basic;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 24px;
+  text-align: left;
+  text-underline-position: from-font;
+  text-decoration-skip-ink: none;
+  margin: 0;
+  text-wrap: wrap;
+}
+@media screen and (max-width: 992px) {
+  .bloomingoods__features ul {
+    flex-wrap: nowrap;
+  }
+  .bloomingoods__features ul li {
+    max-width: 100%;
+    flex-grow: 1;
+    flex-shrink: 0;
+  }
+}
+
+@media screen and (max-width: 530px) {
+  .bloomingoods__features ul {
+    padding-left: 5rem;
+    gap: 2rem;
+  }
+}

@@ -48,6 +48,15 @@
       "type": "header",
       "disabled": true,
       "settings": {
+        "megamenu-label": "Products",
+        "product_menu_1_title": "",
+        "product_menu_1": "",
+        "product_menu_2_title": "",
+        "product_menu_2": "",
+        "product_menu_3_title": "",
+        "product_menu_3": "",
+        "product_menu_right_label": "Custom Design",
+        "product_menu_right_url": "",
         "logo_image": "shopify://shop_images/Naperee_logo_png.png",
         "cta-content": "get a quote",
         "cta_url": "",
@@ -95,7 +104,8 @@
     "bloomingoods_low_header_KTTmLi": {
       "type": "bloomingoods__low-header",
       "settings": {
-        "link_list": "low-header-menu"
+        "link_list": "low-header-menu",
+        "drawer_title": "Categories"
       }
     }
   },

@@ -1615,15 +1615,20 @@ class SubscriptionPlans extends HTMLElement {
     });
   }
   handlePlanSelect(e) {
+    console.log("hi");
     this.sellingPlanInput.value =
       e.currentTarget.options[e.currentTarget.selectedIndex].value;
   }
   handleSubscriptionSwitch(e) {
-    if (e.currentTarget.id == this.noPlanInputId) {
+    const selectedNonSubscription = e.currentTarget.id == this.noPlanInputId;
+    if (selectedNonSubscription) {
       this.plansSelect.style.display = "none";
       this.sellingPlanInput.disabled = true;
     } else {
       this.plansSelect.style.display = "block";
+      this.sellingPlanInput.disabled = false;
+      const event = new Event("change");
+      this.plansSelect.dispatchEvent(event);
     }
   }
 }

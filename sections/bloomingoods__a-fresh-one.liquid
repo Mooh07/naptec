@@ -47,7 +47,7 @@
     display: flex;
     align-items: end;
     justify-content: space-between;
-    padding: var(--padding-sides);
+    padding: 172px var(--padding-sides);
   }
   .bloomingoods__a-fresh-one-right-text p {
     margin: 0;
@@ -61,6 +61,11 @@
   }
   .bloomingoods__a-fresh-one-right-text p:last-child {
     margin-left: 8rem;
+  }
+  @media screen and (max-width: 992px) {
+    .bloomingoods__a-fresh-one-content-container {
+      padding: 100px var(--padding-sides);
+    }
   }
   @media screen and (max-width: 772px) {
     .bloomingoods__a-fresh-one-right-text p:last-child {

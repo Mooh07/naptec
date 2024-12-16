@@ -1,11 +1,3 @@
-.search__input.field__input {
-    padding-right: 9.8rem;
-    color: white;
-}
-
-.search__input::placeholder {
-    color: white !important;
-}
 
 .search-modal__form.field__input:after {
     box-shadow: 0 0 0 var(--inputs-border-width) rgba(255, 255, 255)
@@ -34,6 +26,7 @@
 .naptec__header .reset__button svg {
     color: #403c3c;
 }
+
 .reset__button:not(:focus-visible)::after {
     border-right: 0.1rem solid rgba(var(--color-foreground), 0.08);
     display: block;
@@ -93,4 +86,153 @@ input::-webkit-search-decoration {
 
 .template-search__results {
     position: relative;
+}
+
+.template-search .global__product-card-title,
+.template-search .product-count__text span,
+.template-search .facet-filters__field .select__select,
+.template-search .mobile-facets__sort .select__select,
+.template-search .facet-filters__label,
+.template-search .facets-layout-list .facets__label:hover .facet-checkbox__text,
+.template-search .facets-layout-list input:focus ~ .facet-checkbox__text,
+.template-search .facet-checkbox,
+.template-search .facets__selected,
+.template-search .mobile-facets__summary,
+.template-search .facets__label.mobile-facets__label {
+    color: #143338;
+}
+
+.template-search .facets__label.mobile-facets__label {
+    align-items: center;
+}
+
+.template-search .mobile-facets__label .icon-checkmark {
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.template-search .facets-vertical {
+    padding-top: 24px !important;
+}
+
+@media (max-width: 749px) {
+    .template-search .facets-vertical .facets-wrapper {
+        max-width: 100%;
+    }
+}
+
+
+.template-search .facets-vertical .active-facets {
+    margin: 10px 0 0 0;
+}
+
+.template-search .pagination__list {
+    margin-bottom: 24px;
+}
+
+.template-search .mobile-facets__sort .select {
+    align-items: center;
+}
+
+.template-search .product-count-vertical {
+    margin-left: 0px;
+}
+
+.template-search .facets-vertical-form {
+    padding-bottom: 20px;
+    margin-bottom: 0;
+}
+
+.pagination__item svg {
+    transform: rotate(-90deg);
+}
+
+.pagination__item.pagination__item--prev svg {
+    transform: rotate(90deg);
+}
+
+.template-search__search input::placeholder {
+    opacity: 1;
+    color: #143338;
+}
+
+.template-search__search input {
+    padding: 15px 15px 15px 72px;
+    border: 1px solid #0D384A;
+    border-radius: 100px;
+    background-color: #fff;
+    color: #143338;
+}
+
+.template-search .search__button {
+    padding: 10px 28px;
+    border: 1px solid #143338;
+    border-radius: 100px;
+    margin-left: 16px;
+    color: #143338;
+    text-decoration: none;
+    font-weight: 400;
+    text-wrap: nowrap;
+    transition: var(--duration-default) ease;
+    font-size: 15px;
+    position: static;
+    width: auto;
+    height: 45px;
+}
+
+.template-search .reset__button.field__button {
+    right: 130px;
+}
+
+.template-search .reset__button.field__button .icon.icon-close {
+    color: #143338;
+}
+
+.template-search .icon-search {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 16px;
+    z-index: 1;
+    pointer-events: none;
+}
+
+.template-search .template-search__header {
+    margin-bottom: 0;
+}
+
+.template-search .field:after,
+.template-search .field:before {
+    display: none;
+}
+
+.field__input:focus,
+.field__input:not(:placeholder-shown),
+.field__input:-webkit-autofill,
+.customer .field input:focus, .customer .field input:not(:placeholder-shown),
+.customer .field input:-webkit-autofill {
+    padding: 15px 15px 15px 72px;
+    border-radius: 100px;
+}
+
+.template-search__search label {
+    display: none;
+}
+
+.template-search__results {
+    padding-bottom: 24px;
+}
+
+@media (max-width: 576px) {
+    .field__input:focus,
+    .field__input:not(:placeholder-shown),
+    .field__input:-webkit-autofill,
+    .customer .field input:focus, .customer .field input:not(:placeholder-shown),
+    .customer .field input:-webkit-autofill {
+        padding: 15px 15px 15px 55px;
+    }
+
+    .template-search .reset__button.field__button {
+        right: 115px;
+    }
 }

@@ -15,6 +15,7 @@ section.top_bar_naptec {
 }
 .top_bar_naptec_Wrapper .page-width {
   background: var(--background-color);
+  padding: 0 var(--padding-sides);
 }
 section.top_bar_naptec ul {
   display: flex;
@@ -152,5 +153,10 @@ header.header {
   }
   section.top_bar_naptec ul {
     padding: 0 12px 0 0;
+  }
+}
+@media screen and (max-width: 450px) {
+  section.top_bar_naptec ul li a {
+    font-size: 12px;
   }
 }

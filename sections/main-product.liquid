@@ -1,4 +1,3 @@
-
 <section
   id="MainProduct-{{ section.id }}"
   class="section-{{ section.id }}-padding product__main gradient page-width color-{{ section.settings.color_scheme }}"
@@ -21,6 +20,7 @@
 
   {%- style -%}
     .section-{{ section.id }}-padding {
+      padding: var(--padding-sides);
       padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
       padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
       color: {{ section.settings.section-text-color }};
@@ -187,7 +187,7 @@
                         {% render 'yellow-star' %}
                       {% endfor %}
                     </span>
-                    <span>(120 reviews)</span>
+                    <span>({{product.metafields.yotpo.reviews_count |  default: 0}} reviews)</span>
                   </div>
                 </div>
               {%- when 'text' -%}
@@ -223,32 +223,7 @@
                     {% if tag == "bulk_buy" %}
                       <div class="bulk-buy-eligibility-badge">
                         <span>Buy <span class="bulk-buy-number">4</span> or more for 10% off</span>
-                        <img src="https://cdn.shopify.com/s/files/1/0611/8129/6700/files/Group_10.png?v=1733836470" alt="bulk_price_badge" width="64" height="64">
-                        <style>
-                          .bulk-buy-eligibility-badge {
-                            display: flex;
-                            align-items: center;
-                            gap: 12px;
-                          }
-                          .bulk-buy-eligibility-badge span {
-                            font-family: "faktum";
-                            font-size: 18px;
-                            font-weight: 300;
-                            line-height: 24px;
-                            text-align: right;
-                            text-underline-position: from-font;
-                            text-decoration-skip-ink: none;
-                          }
-                          .bulk-buy-number {
-                            font-family: Gayathri;
-                            font-size: 18px;
-                            font-weight: 400;
-                            line-height: 24px;
-                            text-align: right;
-                            text-underline-position: from-font;
-                            text-decoration-skip-ink: none;
-                          }
-                        </style>
+                        <img src="https://cdn.shopify.com/s/files/1/0611/8129/6700/files/Group_10_2.png?v=1734225784" alt="bulk_price_badge" width="64" height="64">
                       </div>
                     {% endif %}
                   {% endfor %}
