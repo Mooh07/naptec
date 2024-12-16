@@ -70,13 +70,15 @@
   .product--small:not(.product--no-media) .product__info-wrapper {
     max-width: 55%;
     width: calc(55% - var(--grid-desktop-horizontal-spacing) / 2);
-     max-width: 700px;
-  }
+    width: calc(55% - 143px);
+      }
 
   .product--medium:not(.product--no-media) .product__info-wrapper,
   .product--small:not(.product--no-media) .product__media-wrapper {
     max-width: 45%;
     width: calc(45% - var(--grid-desktop-horizontal-spacing) / 2);
+    width: calc(45%);
+    
     // max-width: 620px;
   }
 }
