@@ -7,6 +7,9 @@
   flex-wrap: nowrap;
   gap: 14.3rem;
 }
+.product.grid.product--no-media {
+  flex-wrap: wrap;
+}
 
 .product--no-media {
   max-width: 57rem;
