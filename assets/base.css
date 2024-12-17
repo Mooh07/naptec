@@ -551,7 +551,7 @@ h6:empty {
 }
 
 .shopify-section-group-header-group-naperee > sticky-header {
-  position: fixed;
+  /* position: fixed; */
   padding: 0 var(--padding-sides);
 }
 
