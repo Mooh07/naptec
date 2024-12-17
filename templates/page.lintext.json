@@ -24,12 +24,12 @@
         "background-image": "shopify://shop_images/header-image.png",
         "heading": "<h1>A touch <br/>of class.</h1>",
         "paragraph": "We design elegant disposables that feel like heaven at the fingertips – and achieve the delicate balance between form and function, aesthetic and hygiene.",
-        "cta_button_label": "Get a Quote",
+        "cta_button_label": "Shop now",
         "cta_button_url": "",
         "text_color": "#1a3748",
         "background_color": "#ede6db",
         "button_background_color": "#f76752",
-        "button_background_hover_color": "#1A3748",
+        "button_background_hover_color": "#1a3748",
         "button_label_color": "#ffffff"
       }
     },
@@ -203,8 +203,8 @@
         "cta_content": "Get a Quote",
         "background_color": "#f4f4f4",
         "text_color": "#1a3748",
-        "button_background": "#D86752",
-        "button_background_hover": "#1A3748",
+        "button_background": "#d86752",
+        "button_background_hover": "#1a3748",
         "button_label_color": "#ffffff"
       }
     }
