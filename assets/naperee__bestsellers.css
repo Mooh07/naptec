@@ -70,8 +70,8 @@
 }
 @media screen and (max-width: 1250px) {
   .naperee__bestsellers_products {
-    /* flex-wrap: wrap; */
     justify-content: center;
+    flex-wrap: wrap;
   }
 
   .naperee__bestsellers_products li {
