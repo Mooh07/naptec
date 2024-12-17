@@ -160,29 +160,29 @@
             "product": "750-linen-feel-dessert-and-beverage-napkins-disposable-cloth-like-cocktail-paper-napkins-soft-and-absorbent-for-bar-restaurant-caf-wedding-parties-750-pack"
           }
         },
-        "product_J8Vh9c": {
-          "type": "product",
-          "settings": {
-            "product": "disposable-guest-towel-paper-napkin-disposable-cloth-like-guest-towels-soft-and-absorbent-tissue-paper-for-bathroom-kitchen-or-event-pack-of-100-12-x-17"
-          }
-        },
         "product_R3gziR": {
           "type": "product",
           "settings": {
             "product": "750-linen-feel-lunch-napkins-disposable-cloth-like-luncheon-paper-napkins-soft-and-absorbent-cloth-like-napkins-for-kitchen-parties-weddings-dinners-or-events-pack-of-750"
           }
         },
+        "product_J8Vh9c": {
+          "type": "product",
+          "settings": {
+            "product": "disposable-guest-towel-paper-napkin-disposable-cloth-like-guest-towels-soft-and-absorbent-tissue-paper-for-bathroom-kitchen-or-event-pack-of-100-12-x-17"
+          }
+        },
         "product_9Uwxyc": {
           "type": "product",
           "settings": {
-            "product": "750-linen-feel-dessert-and-beverage-napkins-disposable-cloth-like-cocktail-paper-napkins-soft-and-absorbent-for-bar-restaurant-cafe-wedding-parties-750-pack"
+            "product": "lintext-disposable-linen-feel-guest-towels-medium-size-pack-of-150-disposable-cloth-like-hand-towels-soft-and-absorbent-paper-napkin-for-kitchen-bathroom-party-wedding-or-event"
           }
         }
       },
       "block_order": [
         "product_nhJVbY",
-        "product_J8Vh9c",
         "product_R3gziR",
+        "product_J8Vh9c",
         "product_9Uwxyc"
       ],
       "settings": {
