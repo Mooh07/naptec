@@ -4,6 +4,7 @@
   padding: 100px var(--padding-sides);
   background-color: var(--background-color);
   color: var(--text-color);
+  justify-content: center;
 }
 .naperee__become-partner_left-image-container {
   max-width: 472px;
