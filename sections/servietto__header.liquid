@@ -404,7 +404,7 @@ summary.list-menu__item {
 -%}
 
 <{% if section.settings.sticky_header_type != 'none' %}sticky-header data-sticky-type="{{ section.settings.sticky_header_type }}" {% else %}div{% endif %}
-          style="position: fixed;color: #1C363D; background: {{ section.settings.header_background }}"
+          style="color: #1C363D; background: {{ section.settings.header_background }}"
           class="transparent_background fixed-sticky-header page-width header-wrapper color-{{ section.settings.color_scheme }} gradient{% if section.settings.show_line_separator %} header-wrapper--border-bottom{% endif %}">
   {%- liquid
     assign social_links = false
