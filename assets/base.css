@@ -922,6 +922,9 @@ summary::-webkit-details-marker {
   margin-top: 0;
   flex-shrink: 0;
 }
+.title-wrapper-with-link.cart a {
+  color: white;
+}
 
 .title-wrapper--no-top-margin {
   margin-top: 0;
