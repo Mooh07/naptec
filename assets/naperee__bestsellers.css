@@ -80,6 +80,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    width: calc(50% - 28.5px);
   }
 }
 
