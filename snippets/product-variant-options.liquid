@@ -44,17 +44,21 @@
             if variants_option1_arr[forloop.index0] == value and variants_available_arr[forloop.index0]
               assign variant_index = forloop.index0
               assign current_option_variant = product.variants[forloop.index0]
+              assign option_disabled = false
+
             endif
           when 2
             if option1_name == product.selected_or_first_available_variant.option1 and variants_option2_arr[forloop.index0] == value and variants_available_arr[forloop.index0]
               assign variant_index = forloop.index0
               assign current_option_variant = product.variants[forloop.index0]
+              assign option_disabled = false
 
             endif
           when 3
             if option1_name == product.selected_or_first_available_variant.option1 and variants_option2_arr[forloop.index0] == product.selected_or_first_available_variant.option2 and variants_option3_arr[forloop.index0] == value and variants_available_arr[forloop.index0]
               assign variant_index = forloop.index0
               assign current_option_variant = product.variants[forloop.index0]
+              assign option_disabled = false
             endif
         endcase
       endfor
@@ -98,12 +102,11 @@
         {% endif %}>
 
       <label
-        {% if color_metaobject %}
+        {% if is_color %}
         style="background: {{ color_metaobject.value}}; {% if color_metaobject.value_2 %} border: 4px solid {{color_metaobject.value_2}} {% endif %}"
         class="product-swatch-naptec"
         {% endif %}
         for="{{ input_id }}">
-        {% assign forloop_index = forloop.index0 %}
         {% if is_color and current_option_variant and current_option_variant.featured_image %}
           <img
             style="object-fit: contain;"
