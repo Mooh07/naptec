@@ -5,7 +5,9 @@
   --alpha-badge-border: 0.1;
   --padding-sides: 8rem;
 }
-
+body.gradient {
+  background-color: white;
+}
 @media screen and (max-width: 1400px) {
   :root {
     --padding-sides: 4rem;
