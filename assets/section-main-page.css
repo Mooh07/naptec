@@ -21,3 +21,37 @@
   width: 52.5rem;
   height: 52.5rem;
 }
+
+.about .page-width {
+  background-color: #fff;
+  color: #143338;
+  padding: 0 var(--padding-sides);
+}
+
+.about .main-page-title {
+  color: #143338;
+  font-size: 92px;
+  font-weight: 500;
+  line-height: 96px;
+  text-align: left;
+  font-family: "faktum";
+}
+
+.about .rte {
+  padding-bottom: 40px;
+}
+
+@media (max-width: 768px) {
+  .about .main-page-title {
+    font-size: 56px;
+    margin-bottom: 32px;
+    line-height: 120%;
+  }
+}
+
+@media (max-width: 576px) {
+  .about .main-page-title {
+    font-size: 32px;
+    margin-bottom: 24px;
+  }
+}
