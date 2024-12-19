@@ -9,6 +9,12 @@
  */
 {
   "sections": {
+    "collection-categories": {
+      "type": "collection-categories",
+      "settings": {
+        "title": "Categories"
+      }
+    },
     "banner": {
       "type": "main-collection-banner",
       "settings": {
@@ -17,15 +23,10 @@
         "color_scheme": "scheme-1"
       }
     },
-    "collection-categories": {
-      "type": "collection-categories",
-      "settings": {
-      }
-    },
     "product-grid": {
       "type": "main-collection-product-grid",
       "settings": {
-        "products_per_page": 9,
+        "products_per_page": 24,
         "columns_desktop": 3,
         "color_scheme": "scheme-1",
         "image_ratio": "square",

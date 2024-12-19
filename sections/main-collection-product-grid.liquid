@@ -82,11 +82,32 @@
     }
 
 </style>
+{%- capture contentForQuerystring -%}{{- content_for_header -}}{%- endcapture -%}
 
+{%- liquid
+    assign pageUrl = contentForQuerystring | split: '"pageurl":"' | last | split: '"' | first | split: '.com' | last | replace: '\/', '/' | replace: '%20', ' ' | replace: '\u0026', '&' | strip
+
+    assign pageQuerystring = pageUrl | split: '?' | last
+    assign partsOfQuery = pageQuerystring | split: '&'
+
+    assign limit_value = ''
+    for param in partsOfQuery
+        if param contains 'limit='
+            assign limit_value = param | split: '=' | last
+        endif
+    endfor
+-%}
 <div class="section-{{ section.id }}-padding section-{{ section.id }} gradient color-{{ section.settings.color_scheme }}">
-    {%- paginate collection.products by section.settings.products_per_page -%}
-        {% comment %} Sort is the first tabbable element when filter type is vertical {% endcomment %}
+
+    {% assign products_per_page = limit_value | default: section.settings.products_per_page %}
+
+
+
+    {%- paginate collection.products by products_per_page -%}
         {%- if section.settings.enable_sorting and section.settings.filter_type == 'vertical' -%}
+
+
+
             <facet-filters-form
                     class="facets facets-page-width facets-vertical-sort page-width small-hide no-js-hidden">
                 <form class="facets-vertical-form" id="FacetSortForm">
@@ -96,6 +117,16 @@
                             <h2 class="facet-filters__label caption-large text-body">
                                 <label for="SortBy">{{ 'products.facets.sort_by_label' | t }}</label>
                             </h2>
+
+                            <div class=" select products-per-page__wrapper">
+                                <label for="products-per-page">Products per page</label>
+                                <select id="products-per-page" name="products_per_page">
+                                    <option value="12">12</option>
+                                    <option value="24">24</option>
+                                    <option value="36">36</option>
+                                    <option value="48">48</option>
+                                </select>
+                            </div>
                             <div class="select">
                                 {%- assign sort_by = collection.sort_by | default: collection.default_sort_by -%}
                                 <select
@@ -276,6 +307,7 @@
         {% render 'mask-arch' %}
     {%- endif -%}
 </div>
+
 
 {% schema %}
 {
