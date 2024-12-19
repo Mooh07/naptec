@@ -426,6 +426,36 @@
 		countrySelectorSearchCount: `{{ 'localization.country_results_count' | t: count: '[count]' }}`,
 	};
 </script>
+<script>
+	document.addEventListener('DOMContentLoaded', () => {
+		const linkSelector = '#HeaderMenu-our-brands';
+		const targetClass = '.naptec__our-brands-title';
+		const triggerLink = document.querySelector(`${linkSelector}`);
+		const targetElement = document.querySelector(targetClass);
+
+		if (!triggerLink) {
+			return;
+		}
+
+		if (!targetElement) {
+			return;
+		}
+
+		triggerLink.addEventListener('click', (event) => {
+			event.preventDefault();
+			console.log('clicked')
+			if (typeof targetElement.scrollIntoView === 'function') {
+				targetElement.scrollIntoView({behavior: 'smooth'});
+			} else {
+				window.scrollTo({
+					top: targetElement.getBoundingClientRect().top + window.pageYOffset,
+					behavior: 'smooth'
+				});
+			}
+		});
+	});
+</script>
+
 
 {%- if settings.predictive_search_enabled -%}
     <script src="{{ 'predictive-search.js' | asset_url }}" defer="defer"></script>

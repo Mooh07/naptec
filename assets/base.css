@@ -1768,6 +1768,7 @@ details[open] > .share-button__fallback {
   display: flex;
   position: relative;
   width: 100%;
+  align-items: center;
 }
 
 /* Select */

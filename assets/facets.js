@@ -435,3 +435,46 @@ class FacetRemove extends HTMLElement {
 }
 
 customElements.define("facet-remove", FacetRemove);
+document.addEventListener('DOMContentLoaded', () => {
+  const selectElement = document.getElementById('products-per-page');
+
+  // Check if the select element exists on the page
+  if (!selectElement) {
+    console.warn('The element with ID "products-per-page" was not found on the page.');
+    return;
+  }
+
+  // Attempt to retrieve a saved value from localStorage
+  let savedValue = null;
+  try {
+    savedValue = localStorage.getItem('productsPerPage');
+  } catch (e) {
+    console.error('Error accessing localStorage:', e);
+  }
+
+  // If a saved value exists and corresponds to an existing option, apply it
+  if (savedValue && selectElement.querySelector(`option[value="${savedValue}"]`)) {
+    selectElement.value = savedValue;
+  }
+
+  // Listen for changes in the select element
+  selectElement.addEventListener('change', () => {
+    const selectedValue = selectElement.value;
+
+    // Attempt to save the selected value to localStorage
+    try {
+      localStorage.setItem('productsPerPage', selectedValue);
+    } catch (e) {
+      console.error('Failed to save value in localStorage:', e);
+    }
+
+    // Update the URL with the new "limit" parameter
+    try {
+      const url = new URL(window.location.href);
+      url.searchParams.set('limit', selectedValue);
+      window.location.href = url.toString();
+    } catch (e) {
+      console.error('Error updating the URL:', e);
+    }
+  });
+});
