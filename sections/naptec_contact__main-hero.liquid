@@ -4,8 +4,7 @@
       src="{{ section.settings.background | image_url: width: section.settings.background.width }}"
       alt="{{ section.settings.background.alt }}"
       width="{{ section.settings.background.width }}px"
-      height="{{ section.settings.background.height }}px"
-    >
+      height="{{ section.settings.background.height }}px">
     <div class="naptec_contact__main-hero-content">
       <h1>
         {{ section.settings.heading }}
@@ -20,8 +19,7 @@
       src="{{ section.settings.logo | image_url: width: section.settings.logo.width }}"
       alt="{{ section.settings.logo.alt }}"
       width="{{ section.settings.logo.width }}px"
-      height="{{ section.settings.logo.height }}px"
-    >
+      height="{{ section.settings.logo.height }}px">
   </div>
 </section>
 <style>
@@ -39,7 +37,7 @@
     width: 100%;
     height: 100%;
     object-fit: cover;
-    object-position: 0 -100rem;
+    /* object-position: 0 -100rem; */
   }
   .naptec_contact__main-hero-content {
     padding-left: 8rem;
@@ -115,134 +113,131 @@
 </style>
 {% comment %}
   <section class="page-width naptec_contact__main-hero">
-    <img
-      src="{{ section.settings.background | image_url: width: section.settings.background.width }}"
-      alt="{{ section.settings.background.alt }}"
-      width="{{ section.settings.background.width }}px"
-      height="{{ section.settings.background.height }}px"
-      >
-    <div class="naptec_contact__main-hero-content">
-      <h1>
-        {{ section.settings.heading }}
-      </h1>
-      <p>
-        {{ section.settings.text }}
-      </p>
-    </div>
+  <img
+  src="{{ section.settings.background | image_url: width: section.settings.background.width }}"
+  alt="{{ section.settings.background.alt }}"
+  width="{{ section.settings.background.width }}px"
+  height="{{ section.settings.background.height }}px"
+  >
+  <div class="naptec_contact__main-hero-content">
+  <h1>
+  {{ section.settings.heading }}
+  </h1>
+  <p>
+  {{ section.settings.text }}
+  </p>
+  </div>
 
   </section>
   <style>
-    .naptec_contact__main-hero {
-      padding: 100px 80px;
-      position: relative;
-      display: flex;
-      justify-content: start;
-      align-items: end;
-      min-height: 668px;
-    }
-    .naptec_contact__main-hero > img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      object-position: 0 -100rem;
-      position: absolute;
-      left: 0;
-      bottom: 0;
-      top: 0;
-      right: 0;
-    }
-    .naptec_contact__main-hero-content {
-      position: relative;
-      z-index: 1;
-      bottom: 0;
-    }
-    .naptec_contact__main-hero-content h1 {
-      font-family: "faktum";
-      font-size: 92px;
-      font-weight: 500;
-      line-height: 104.3%;
-      text-align: left;
-      margin: 0;
-      padding-bottom: 16px;
-    }
-    .naptec_contact__main-hero-content p {
-      font-family: "faktum";
-      font-size: 28px;
-      font-weight: 300;
-      line-height: 114.2%;
-      text-align: left;
-      margin: 0;
-    }
-    .naptec_contact__main-hero-bottom-logo {
-      z-index: 1;
-      position: absolute;
-      right: 8rem;
-      bottom: -83.83px;
-      display: flex;
-    }
-    @media screen and (max-width: 1250px) {
-      .naptec_contact__main-hero {
-        padding: 100px 4rem;
-      }
-      .naptec_contact__main-hero > img {
-        object-position: unset;
-      }
-    }
-    @media screen and (max-width: 992px) {
-      .naptec_contact__main-hero {
-        align-items: center;
-      }
-      .naptec_contact__main-hero-content h1 {
-        font-size: 72px;
-      }
-      .naptec_contact__main-hero-content p {
-        font-size: 22px;
-      }
-    }
-    @media screen and (max-width: 600px) {
-      .naptec_contact__main-hero {
-        padding: 100px 1.6rem;
-      }
-      .naptec_contact__main-hero-content h1 {
-        font-size: 52px;
-      }
-      .naptec_contact__main-hero-content p {
-        font-size: 16px;
-      }
-    }
+  .naptec_contact__main-hero {
+  padding: 100px 80px;
+  position: relative;
+  display: flex;
+  justify-content: start;
+  align-items: end;
+  min-height: 668px;
+  }
+  .naptec_contact__main-hero > img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 0 -100rem;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  top: 0;
+  right: 0;
+  }
+  .naptec_contact__main-hero-content {
+  position: relative;
+  z-index: 1;
+  bottom: 0;
+  }
+  .naptec_contact__main-hero-content h1 {
+  font-family: "faktum";
+  font-size: 92px;
+  font-weight: 500;
+  line-height: 104.3%;
+  text-align: left;
+  margin: 0;
+  padding-bottom: 16px;
+  }
+  .naptec_contact__main-hero-content p {
+  font-family: "faktum";
+  font-size: 28px;
+  font-weight: 300;
+  line-height: 114.2%;
+  text-align: left;
+  margin: 0;
+  }
+  .naptec_contact__main-hero-bottom-logo {
+  z-index: 1;
+  position: absolute;
+  right: 8rem;
+  bottom: -83.83px;
+  display: flex;
+  }
+  @media screen and (max-width: 1250px) {
+  .naptec_contact__main-hero {
+  padding: 100px 4rem;
+  }
+  .naptec_contact__main-hero > img {
+  object-position: unset;
+  }
+  }
+  @media screen and (max-width: 992px) {
+  .naptec_contact__main-hero {
+  align-items: center;
+  }
+  .naptec_contact__main-hero-content h1 {
+  font-size: 72px;
+  }
+  .naptec_contact__main-hero-content p {
+  font-size: 22px;
+  }
+  }
+  @media screen and (max-width: 600px) {
+  .naptec_contact__main-hero {
+  padding: 100px 1.6rem;
+  }
+  .naptec_contact__main-hero-content h1 {
+  font-size: 52px;
+  }
+  .naptec_contact__main-hero-content p {
+  font-size: 16px;
+  }
+  }
   </style>
 {% endcomment %}
 {% schema %}
-{
-  "name": "Naptec contact main hero",
-  "settings": [
-    {
-      "type": "image_picker",
-      "id": "background",
-      "label": "Background"
-    },
-    {
-      "type": "text",
-      "id": "heading",
-      "label": "Section's heading",
-      "default": "Contact Us"
-    },
-    {
-      "type": "text",
-      "id": "text",
-      "label": "Section's text",
-      "default": "We would love to hear from you!"
-    },
-    {
-      "type": "image_picker",
-      "id": "logo",
-      "label": "Section's small image"
-    }
-  ],
-  "presets": [
-    {
-      "name": "Naptec contact main hero"
-    }
-  ]
-}
+  {
+    "name": "Naptec contact main hero",
+    "settings": [
+      {
+        "type": "image_picker",
+        "id": "background",
+        "label": "Background"
+      }, {
+        "type": "text",
+        "id": "heading",
+        "label": "Section's heading",
+        "default": "Contact Us"
+      }, {
+        "type": "text",
+        "id": "text",
+        "label": "Section's text",
+        "default": "We would love to hear from you!"
+      }, {
+        "type": "image_picker",
+        "id": "logo",
+        "label": "Section's small image"
+      }
+    ],
+    "presets": [
+      {
+        "name": "Naptec contact main hero"
+      }
+    ]
+  }
 {% endschema %}

@@ -24,11 +24,12 @@
         "background-image": "shopify://shop_images/header-image.png",
         "heading": "<h1>A touch <br/>of class.</h1>",
         "paragraph": "We design elegant disposables that feel like heaven at the fingertips – and achieve the delicate balance between form and function, aesthetic and hygiene.",
-        "cta_button_label": "Get a Quote",
+        "cta_button_label": "Shop now",
         "cta_button_url": "",
         "text_color": "#1a3748",
         "background_color": "#ede6db",
-        "button_background_color": "#d86752",
+        "button_background_color": "#f76752",
+        "button_background_hover_color": "#1a3748",
         "button_label_color": "#ffffff"
       }
     },
@@ -40,6 +41,20 @@
           "settings": {
             "feature_icon": "shopify://shop_images/Pillow_soft.png",
             "feature_description": "Pillow soft"
+          }
+        },
+        "feature_E37HMW": {
+          "type": "feature",
+          "settings": {
+            "feature_icon": "shopify://shop_images/Air-laid_Technology.png",
+            "feature_description": "Air-laid Technology"
+          }
+        },
+        "feature_WH8VVr": {
+          "type": "feature",
+          "settings": {
+            "feature_icon": "shopify://shop_images/Elegant_Design.png",
+            "feature_description": "Elegant Design"
           }
         },
         "feature_MmtzK7": {
@@ -55,28 +70,14 @@
             "feature_icon": "shopify://shop_images/premium_thickness.png",
             "feature_description": "premium thickness"
           }
-        },
-        "feature_WH8VVr": {
-          "type": "feature",
-          "settings": {
-            "feature_icon": "shopify://shop_images/Elegant_Design.png",
-            "feature_description": "Elegant Design"
-          }
-        },
-        "feature_E37HMW": {
-          "type": "feature",
-          "settings": {
-            "feature_icon": "shopify://shop_images/Air-laid_Technology.png",
-            "feature_description": "Air-laid Technology"
-          }
         }
       },
       "block_order": [
         "feature_FPJW8x",
-        "feature_MmtzK7",
-        "feature_Qed69R",
+        "feature_E37HMW",
         "feature_WH8VVr",
-        "feature_E37HMW"
+        "feature_MmtzK7",
+        "feature_Qed69R"
       ],
       "settings": {
         "background": "shopify://shop_images/background_e97b609d-bf8a-4c37-a295-886bc7b55d23_1.png",
@@ -144,7 +145,7 @@
       "settings": {
         "heading": "Products",
         "subheading": "Elevating Every Detail of Your Table Setting",
-        "background": "shopify://shop_images/mission-bg2.png",
+        "background": "shopify://shop_images/background-2_66519a48-d7bc-4f54-9ce6-de1f5359785d.png",
         "background_color": "#dad4c7",
         "text_color": "#1a3748",
         "card_color": "#ffffff"
@@ -156,58 +157,37 @@
         "product_nhJVbY": {
           "type": "product",
           "settings": {
-            "product": "lintext-disposable-linen-feel-guest-towels-medium-size-pack-of-150-disposable-cloth-like-hand-towels-soft-and-absorbent-paper-napkin-for-kitchen-bathroom-party-wedding-or-event",
-            "lintext_logo": "shopify://shop_images/2024-04-26_19.39_1_1.png"
-          }
-        },
-        "product_J8Vh9c": {
-          "type": "product",
-          "settings": {
-            "product": "disposable-guest-towel-paper-napkin-disposable-cloth-like-guest-towels-soft-and-absorbent-tissue-paper-for-bathroom-kitchen-or-event-pack-of-100-12-x-17",
-            "lintext_logo": "shopify://shop_images/2024-04-26_19.39_1_1.png"
+            "product": "750-linen-feel-dessert-and-beverage-napkins-disposable-cloth-like-cocktail-paper-napkins-soft-and-absorbent-for-bar-restaurant-caf-wedding-parties-750-pack"
           }
         },
         "product_R3gziR": {
           "type": "product",
           "settings": {
-            "product": "750-linen-feel-lunch-napkins-disposable-cloth-like-luncheon-paper-napkins-soft-and-absorbent-cloth-like-napkins-for-kitchen-parties-weddings-dinners-or-events-pack-of-750",
-            "lintext_logo": "shopify://shop_images/2024-04-26_19.39_1_1.png"
+            "product": "750-linen-feel-lunch-napkins-disposable-cloth-like-luncheon-paper-napkins-soft-and-absorbent-cloth-like-napkins-for-kitchen-parties-weddings-dinners-or-events-pack-of-750"
+          }
+        },
+        "product_J8Vh9c": {
+          "type": "product",
+          "settings": {
+            "product": "disposable-guest-towel-paper-napkin-disposable-cloth-like-guest-towels-soft-and-absorbent-tissue-paper-for-bathroom-kitchen-or-event-pack-of-100-12-x-17"
           }
         },
         "product_9Uwxyc": {
           "type": "product",
           "settings": {
-            "product": "750-linen-feel-dessert-and-beverage-napkins-disposable-cloth-like-cocktail-paper-napkins-soft-and-absorbent-for-bar-restaurant-cafe-wedding-parties-750-pack",
-            "lintext_logo": "shopify://shop_images/2024-04-26_19.39_1_1.png"
-          }
-        },
-        "product_ETRAry": {
-          "type": "product",
-          "settings": {
-            "product": "100-gold-rimmed-disposable-plastic-wine-glasses-large-10-oz-premium-clear-hard-plastic-fancy-wine-cups-for-weddings-events-100-pack-by-bloomingoods",
-            "lintext_logo": "shopify://shop_images/2024-04-26_19.39_1_1.png"
-          }
-        },
-        "product_txBpzi": {
-          "type": "product",
-          "settings": {
-            "product": "100-pcs-disposable-plastic-black-plates-combo-50-7-5-in-gold-rim-appetizer-dessert-plastic-plates-and-50-10-in-gold-rim-plastic-dinner-plates-heavy-duty-plates-for-wedding-parties-or-catering",
-            "lintext_logo": "shopify://shop_images/2024-04-26_19.39_1_1.png"
+            "product": "lintext-disposable-linen-feel-guest-towels-medium-size-pack-of-150-disposable-cloth-like-hand-towels-soft-and-absorbent-paper-napkin-for-kitchen-bathroom-party-wedding-or-event"
           }
         }
       },
       "block_order": [
         "product_nhJVbY",
-        "product_J8Vh9c",
         "product_R3gziR",
-        "product_9Uwxyc",
-        "product_ETRAry",
-        "product_txBpzi"
+        "product_J8Vh9c",
+        "product_9Uwxyc"
       ],
       "settings": {
         "heading": "Bestsellers",
         "text": "Explore our curated collection of premium-quality tableware and discover the perfect pieces to elevate every detail of your table setting with sophistication and style.",
-        "lintext_logo": "shopify://shop_images/2024-04-26_19.39_1_1.png",
         "collection": "",
         "background_color": "#ffffff",
         "text_color": "#1a3748"

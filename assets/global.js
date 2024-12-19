@@ -1200,7 +1200,7 @@ class VariantSelects extends HTMLElement {
   updateMedia() {
     if (!this.currentVariant) return;
     if (!this.currentVariant.featured_media) return;
-
+    return;
     const mediaGalleries = document.querySelectorAll(
       `[id^="MediaGallery-${this.dataset.section}"]`
     );
@@ -1340,6 +1340,9 @@ class VariantSelects extends HTMLElement {
         const destination = document.getElementById(
           `price-${this.dataset.section}`
         );
+        console.log(html.querySelector("media-gallery"));
+        document.querySelector("media-gallery").innerHTML =
+          html.querySelector("media-gallery").innerHTML;
         const source = html.getElementById(
           `price-${
             this.dataset.originalSection
@@ -1615,7 +1618,6 @@ class SubscriptionPlans extends HTMLElement {
     });
   }
   handlePlanSelect(e) {
-    console.log("hi");
     this.sellingPlanInput.value =
       e.currentTarget.options[e.currentTarget.selectedIndex].value;
   }

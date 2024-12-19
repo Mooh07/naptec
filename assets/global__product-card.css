@@ -1,5 +1,5 @@
 .global__product-card {
-  max-width: 330px;
+  max-width: 100%;
   position: relative;
   width: 100%;
   display: flex;
@@ -65,7 +65,7 @@
 
 .global__product-card-title {
   margin: 0 0 12px 0;
-  font-family: "dm sans";
+  font-family: var(--card-title-font);
   font-size: 20px;
   font-weight: 500;
   line-height: 24px;
@@ -83,11 +83,11 @@
 }
 
 .global__product-card-review {
+  font-family: var(--card-reviews-font);
   display: flex;
   gap: 12px;
   margin-bottom: 12px;
   align-items: center;
-  font-family: "dm sans";
   font-size: 18px;
   font-weight: 400;
   line-height: 24px;
@@ -119,6 +119,7 @@
   height: 21px;
   display: block;
   margin-bottom: 6.5px;
+  object-fit: contain;
 }
 
 .global__product-card-title a::after {
@@ -141,8 +142,10 @@
 
 .price.global__product-price-container .price-item.price-item--regular {
   font-size: 20px;
-  line-height: 32px;
+  line-height: 1.6;
   color: #143338;
+  font-weight: 500;
+  font-family: var(--card-price-font);
 }
 
 variant-selector .glide__slide {

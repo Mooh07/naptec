@@ -34,6 +34,9 @@ variant-selects {
     height: 1px;
     width: 1px;
 }
+.product-form__input input[type="radio"]:checked + label:after {
+  background-color: #0000004d;
+}
 
 .product-form__input
 input[type="radio"]:not(.disabled)
@@ -146,9 +149,12 @@ input[type="radio"]:not(.disabled)
 
 .product-form__input--pill input[type="radio"]:disabled + label,
 .product-form__input--pill input[type="radio"].disabled + label {
-    border-color: rgba(var(--color-foreground), 0.1);
-    color: rgba(var(--color-foreground), 0.6);
-    text-decoration: line-through;
+
+  border-color: rgba(var(--color-foreground), 0.1);
+  color: rgba(var(--color-foreground), 0.6);
+  text-decoration: line-through;
+  filter: grayscale(1);
+
 }
 
 .product-form__input--pill input[type="radio"].disabled:checked + label,

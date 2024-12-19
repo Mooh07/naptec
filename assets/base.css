@@ -5,7 +5,9 @@
   --alpha-badge-border: 0.1;
   --padding-sides: 8rem;
 }
-
+body.gradient {
+  background-color: white;
+}
 @media screen and (max-width: 1400px) {
   :root {
     --padding-sides: 4rem;
@@ -114,6 +116,7 @@ html.no-js .no-js-hidden {
 
 .page-width {
   max-width: var(--page-width);
+  /* max-width: 100%; */
   margin: 0 auto;
   padding: 0 1.5rem;
 }
@@ -550,7 +553,7 @@ h6:empty {
 }
 
 .shopify-section-group-header-group-naperee > sticky-header {
-  position: fixed;
+  /* position: fixed; */
   padding: 0 var(--padding-sides);
 }
 
@@ -3060,7 +3063,9 @@ details[open] .modal-overlay::after {
 .search-modal__content-top {
   top: calc((var(--inputs-margin-offset) / 2));
 }
-
+.search-modal__form input {
+  color: white;
+}
 .search-modal__form {
   width: 100%;
 }

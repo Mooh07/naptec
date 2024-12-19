@@ -221,6 +221,7 @@
 }
 .card__heading a {
   text-decoration: none;
+  color: white;
 }
 .card__heading .card__heading-vendor {
   font-family: "faktum";
