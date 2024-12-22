@@ -1608,7 +1608,12 @@ class SubscriptionPlans extends HTMLElement {
       'input[name="selling_plan_controller"]'
     );
     this.noPlanInputId = "no-plan";
-    this.plansSelect = this.querySelector(".product__selling-plan-select");
+    this.plansSelect = this.querySelector(
+      "select.product__selling-plan-select"
+    );
+    this.planButtonsContainer = this.querySelector(
+      "div.product__selling-plan-select"
+    );
     this.plansSelect.addEventListener(
       "change",
       this.handlePlanSelect.bind(this)
@@ -1624,10 +1629,12 @@ class SubscriptionPlans extends HTMLElement {
   handleSubscriptionSwitch(e) {
     const selectedNonSubscription = e.currentTarget.id == this.noPlanInputId;
     if (selectedNonSubscription) {
-      this.plansSelect.style.display = "none";
+      // this.plansSelect.style.display = "none";
+      this.planButtonsContainer.style.display = "none";
       this.sellingPlanInput.disabled = true;
     } else {
-      this.plansSelect.style.display = "block";
+      // this.plansSelect.style.display = "block";
+      this.planButtonsContainer.style.display = "flex";
       this.sellingPlanInput.disabled = false;
       const event = new Event("change");
       this.plansSelect.dispatchEvent(event);
