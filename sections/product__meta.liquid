@@ -1,484 +1,626 @@
 <section class="page-width product__meta">
-    <product-meta-tabs class="product__meta-tabs">
-        <ul class="product__meta-buttons-container">
-            <li class="product__meta-tab-button selected-button">About</li>
-            <li class="product__meta-tab-button">Reviews/FAQ</li>
-            <li class="product__meta-tab-button">Specs</li>
-            <li class="product__meta-tab-button">Shipping/Returns</li>
+  <product-meta-tabs class="product__meta-tabs">
+    <ul class="product__meta-buttons-container">
+      <li class="product__meta-tab-button selected-button">About</li>
+      <li class="product__meta-tab-button">Reviews/FAQ</li>
+      <li class="product__meta-tab-button">Specs</li>
+      <li class="product__meta-tab-button">Shipping/Returns</li>
+    </ul>
+    <ul class="product__meta-tabs-container">
+      <li class="product__meta-tab selected-tab">
+        {% comment %} <div style="margin-bottom: 28px;">{{ product.description }}</div> {% endcomment %}
+        <ul style="display: flex;flex-direction:column;gap:28px;list-style:none;list-style-type: disc; ">
+          {% for item in product.selected_or_first_available_variant.metafields.custom.bullets.value %}
+            <li>{{ item }}</li>
+          {% endfor %}
         </ul>
-        <ul class="product__meta-tabs-container">
-            <li class="product__meta-tab selected-tab">
-                {{ product.description }}
+
+      </li>
+      <li class="product__meta-tab">
+        <faq-element class="faq-custom-element">
+          <ul class="product__reviews-faq-tab">
+            <li id="reviews_button" class="selected">Reviews</li>
+            <li id="faq_button" class="">FAQ</li>
+          </ul>
+          <ul class="faq_reviews_tabs">
+            <li id="reviews_tab" class="selected">
+              <div
+                class="yotpo-widget-instance"
+                data-yotpo-instance-id="986740"
+                data-yotpo-product-id="{{ product.id }}"
+                data-yotpo-name="{{ product.title | escape }}"
+                data-yotpo-url="{{ shop.url }}{{ product.url }}"
+                data-yotpo-image-url="{{ product.featured_image | product_img_url: "large" | prepend: "https:" | replace: '?', '%3F' | replace: '&', '%26' }}"
+                data-yotpo-price="{{ product.price | divided_by: 100.00 }}"
+                data-yotpo-currency="{{ shop.currency }}"
+                data-yotpo-description="{{ product.description | escape }}"></div>
             </li>
-            <li class="product__meta-tab">
-                <faq-element class="faq-custom-element">
-                    <ul class="product__reviews-faq-tab">
-                        <li id="reviews_button" class="selected">Reviews</li>
-                        <li id="faq_button" class="">FAQ</li>
-                    </ul>
-                    <ul class="faq_reviews_tabs">
-                        <li id="reviews_tab" class="selected">
-                            <div
-                                    class="yotpo-widget-instance"
-                                    data-yotpo-instance-id="986740"
-                                    data-yotpo-product-id="{{ product.id }}"
-                                    data-yotpo-name="{{ product.title | escape }}"
-                                    data-yotpo-url="{{ shop.url }}{{ product.url }}"
-                                    data-yotpo-image-url="{{ product.featured_image | product_img_url: "large" | prepend: "https:" | replace: '?', '%3F' | replace: '&', '%26' }}"
-                                    data-yotpo-price="{{ product.price | divided_by: 100.00 }}"
-                                    data-yotpo-currency="{{ shop.currency }}"
-                                    data-yotpo-description="{{ product.description | escape }}"></div>
-                        </li>
-                        <li id="faq_tab" class="">
-                            {% for question in shop.metaobjects.faq.values %}
-                                {% assign question_heading = question.question_heading.value %}
-                                {% assign question_answer = question.question_answer.value %}
-                                <details class="faq_tab-question">
-                                    <summary>
-                                        <p class="summary-text">
-                                            {{ question_heading }}
-                                        </p>
-                                        <span class="open_button">{% render "button-open" %}</span>
-                                        <span class="close_button">{% render "button-close" %}</span>
-                                    </summary>
-                                    <p>{{ question_answer }}</p>
-                                </details>
-                            {% endfor %}
-                        </li>
-                    </ul>
-                </faq-element>
+            <li id="faq_tab" class="">
+              {% for question in shop.metaobjects.faq.values %}
+                {% assign question_heading = question.question_heading.value %}
+                {% assign question_answer = question.question_answer.value %}
+                <details class="faq_tab-question">
+                  <summary>
+                    <p class="summary-text">
+                      {{ question_heading }}
+                    </p>
+                    <span class="open_button">{% render "button-open" %}</span>
+                    <span class="close_button">{% render "button-close" %}</span>
+                  </summary>
+                  <p>{{ question_answer }}</p>
+                </details>
+              {% endfor %}
             </li>
-            <li class="product__meta-tab">
-                {% if product.metafields.custom.specs.value != blank %}
-                {{ product.metafields.custom.specs | metafield_tag }}</li>
-            {% else %}
-                <p>No Specs</p>
-            {% endif %}
+          </ul>
+        </faq-element>
+      </li>
 
-            <li class="product__meta-tab">
-                <product-meta-tabs class="product__meta-tabs product__meta-tabs-inner" data-isInner="true">
-                    <ul class="product__meta-buttons-container product__meta-buttons-container-inner">
-                        <li class="product__meta-tab-inner-button selected-button">Shipping</li>
-                        <li class="product__meta-tab-inner-button">Returns</li>
-                    </ul>
-                    <ul class="product__meta-tabs-container product__meta-buttons-container-inner">
-                        {% comment %} {% assign shippingKey = product.vendor | downcase | append: "shipping" %}
-                                                                                                            {% assign returnsKey = product.vendor | downcase | append: "returns" %} {% endcomment %}
-                        {% assign shippingKey = "shipping" %}
-                        {% assign returnsKey = "returns" %}
-                        <li class="product__meta-tab selected-tab">{{ shop.metaobjects["shipping_and_returns"][shippingKey].value | metafield_tag }}</li>
-                        <li class="product__meta-tab">{{ shop.metaobjects["shipping_and_returns"][returnsKey].value | metafield_tag }}</li>
-                    </ul>
-                </product-meta-tabs>
-            </li>
-        </ul>
-    </product-meta-tabs>
-    <div class="product__meta-details">
-        <h2>Product Details</h2>
-        <ul class="product__meta-details-items">
-            {% assign variant_tags = product.selected_or_first_available_variant.metafields.custom.variant_tags | split: "," %}
-            {% render "product__meta-item"
-                    , value: product.vendor
-                    , label: "Brand" %}
+      <li class="product__meta-tab product__meta-tab-specs">
+        <style>
+          .product__meta-tab-specs-item {
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+          }
+          .product__meta-tab-specs-item h3 {
+            font-size: 20px;
+            font-weight: 500;
+            line-height: 32px;
+            letter-spacing: -0.01em;
+            text-align: left;
+            text-underline-position: from-font;
+            text-decoration-skip-ink: none;
+            color: rgba(20, 51, 56, 1);
+            margin-bottom: 16px;
+          }
+          .product__meta-tab-specs-item p {
+            color: rgba(20, 51, 56, 1);
+            font-size: 18px;
+            font-weight: 300;
+            line-height: 32px;
+            letter-spacing: -0.01em;
+            text-align: left;
+            text-underline-position: from-font;
+            text-decoration-skip-ink: none;
+          }
+          .product__meta-tab-specs-item p strong {
+            font-weight: 500;
+          }
 
-            {% render "product__meta-item"
-                    , namespace: "custom"
-                    , key: "main_category"
-                    , label: "Main Category" %}
-            {% render "product__meta-item"
-                    , namespace: "custom"
-                    , key: "category"
-                    , label: "Category" %}
-            {% render "product__meta-item"
-                    , namespace: "custom"
-                    , key: "sub_category"
-                    , label: "Sub Category" %}
-            {% render "product__meta-item"
-                    , namespace: "custom"
-                    , key: "type"
-                    , label: "Type" %}
-            {% render "product__meta-item"
-                    , namespace: "custom"
-                    , key: "material"
-                    , label: "Material" %}
-            {% render "product__meta-item"
-                    , namespace: "custom"
-                    , key: "design"
-                    , label: "Design" %}
+        </style>
+        {% if product.tags contains "WHOLESALE_PRODUCT" or true %}
+          {% if product.metafields.custom.case_length or product.metafields.custom.case_width or product.metafields.custom.case_height %}
+            <div class="product__meta-tab-specs-item">
+              <h3>Specs dimensions</h3>
+              {% if product.metafields.custom.case_length %}
+                <p>Length:
+                  <strong>{{ product.metafields.custom.case_length }} inches</strong>
+                </p>
+              {% endif %}
+              {% if product.metafields.custom.case_width %}
+                <p>Width:
+                  <strong>{{ product.metafields.custom.case_width }} inches</strong>
+                </p>
+              {% endif %}
+              {% if product.metafields.custom.case_height %}
+                <p>Height:
+                  <strong>{{ product.metafields.custom.case_height }} inches</strong>
+                </p>
+              {% endif %}
+            </div>
+          {% endif %}
+          {% if product.selected_or_first_available_variant.weight %}
+            <div class="product__meta-tab-specs-item">
+              <h3>Specs Weight</h3>
+              <p>Weight:
+                <strong>{{ product.selected_or_first_available_variant.weight_in_unit }} lbs</strong>
+              </p>
+            </div>
+          {% endif %}
+          {% if product.metafields.custom.pack_per_case or product.selected_or_first_available_variant.metafields.custom.pack_quantity or product.metafields.custom.unit_per_cas %}
+            <div class="product__meta-tab-specs-item">
+              <h3>Specs configuration</h3>
+              {% if product.metafields.custom.pack_per_case %}
+                <p>Number of packs per case:
+                  <strong>{{ product.metafields.custom.pack_per_case }}</strong>
+                </p>
+              {% endif %}
+              {% if product.selected_or_first_available_variant.metafields.custom.pack_quantity %}
+                <p>Number of units per pack:
+                  <strong>{{ product.selected_or_first_available_variant.metafields.custom.pack_quantity }}</strong>
+                </p>
+              {% endif %}
+
+              {% if product.metafields.custom.unit_per_case %}
+                <p>Total number of units per case:
+                  <strong>{{ product.metafields.custom.unit_per_case }}</strong>
+                </p>
+              {% endif %}
+
+            </div>
+          {% endif %}
+          <div class="product__meta-tab-specs-item">
+            <h3>Specs Information Note</h3>
+            <p>Please note that the pallet dimensions and weight are approximate and may vary                  
+                            slightly due to manufacturing processes. 
+                            For specific inquiries regarding palletization and shipping,
+                             please contact our customer service team.</p>
+          </div>
+        {% else %}
+          {% if product.metafields.custom.pack_length or product.metafields.custom.pack_width or product.metafields.custom.pack_height %}
+            <div class="product__meta-tab-specs-item">
+              <h3>Specs dimensions</h3>
+              {% if product.metafields.custom.pack_length %}
+                <p>Length:
+                  <strong>{{ product.metafields.custom.pack_length }} inches</strong>
+                </p>
+              {% endif %}
+
+              {% if product.metafields.custom.pack_width %}
+                <p>Width:
+                  <strong>{{ product.metafields.custom.pack_width }} inches</strong>
+                </p>
+              {% endif %}
+              {% if product.metafields.custom.pack_height %}
+                <p>Height:
+                  <strong>{{ product.metafields.custom.pack_height }} inches</strong>
+                </p>
+              {% endif %}
+            </div>
+          {% endif %}
+
+          {% if product.selected_or_first_available_variant.weight %}
+            <div class="product__meta-tab-specs-item">
+              <h3>Specs Weight</h3>
+              <p>Weight:
+                <strong>{{ product.selected_or_first_available_variant.weight_in_unit }} lbs</strong>
+              </p>
+            </div>
+          {% endif %}
+          <div class="product__meta-tab-specs-item">
+            <h3>Specs Information Note</h3>
+            <p>Please note that the pallet dimensions and weight are approximate and may vary                  
+                        slightly due to manufacturing processes. 
+                        For specific inquiries regarding palletization and shipping,
+                         please contact our customer service team.</p>
+          </div>
+        {% endif %}
+      </li>
+
+      <li class="product__meta-tab">
+        <product-meta-tabs class="product__meta-tabs product__meta-tabs-inner" data-isInner="true">
+          <ul class="product__meta-buttons-container product__meta-buttons-container-inner">
+            <li class="product__meta-tab-inner-button selected-button">Shipping</li>
+            <li class="product__meta-tab-inner-button">Returns</li>
+          </ul>
+          <ul class="product__meta-tabs-container product__meta-buttons-container-inner">
+            {% comment %} {% assign shippingKey = product.vendor | downcase | append: "shipping" %}
+                                                                                                                                                                                                                                                                                                                        {% assign returnsKey = product.vendor | downcase | append: "returns" %} {% endcomment %}
+            {% assign shippingKey = "shipping" %}
+            {% assign returnsKey = "returns" %}
+            <li class="product__meta-tab selected-tab">{{ shop.metaobjects["shipping_and_returns"][shippingKey].value | metafield_tag }}</li>
+            <li class="product__meta-tab">{{ shop.metaobjects["shipping_and_returns"][returnsKey].value | metafield_tag }}</li>
+          </ul>
+        </product-meta-tabs>
+      </li>
+    </ul>
+  </product-meta-tabs>
+  <div class="product__meta-details">
+    <h2>Product Details</h2>
+    <ul class="product__meta-details-items">
+      {% assign variant_tags = product.selected_or_first_available_variant.metafields.custom.variant_tags | split: "," %}
+      {% render "product__meta-item"
+        , value: product.vendor
+        , label: "Brand" %}
+
+      {% render "product__meta-item"
+        , namespace: "custom"
+        , key: "main_category"
+        , label: "Main Category" %}
+      {% render "product__meta-item"
+        , namespace: "custom"
+        , key: "category"
+        , label: "Category" %}
+      {% render "product__meta-item"
+        , namespace: "custom"
+        , key: "sub_category"
+        , label: "Sub Category" %}
+      {% render "product__meta-item"
+        , namespace: "custom"
+        , key: "type"
+        , label: "Type" %}
+      {% render "product__meta-item"
+        , namespace: "custom"
+        , key: "material"
+        , label: "Material" %}
+      {% render "product__meta-item"
+        , namespace: "custom"
+        , key: "design"
+        , label: "Design" %}
 
 
-            {% render "product__meta-item"
-                    , namespace: "custom"
-                    , key: "fold_shape"
-                    , label: "Fold Shape" %}
-            {% render "product__meta-item"
-                    , namespace: "custom"
-                    , key: "pack_quantity"
-                    , label: "Pack Quantity" %}
-            {% render "product__meta-item"
-                    , namespace: "custom"
-                    , key: "design_color"
-                    , label: "Design Color" %}
-            {% render "product__meta-item"
-                    , namespace: "custom"
-                    , key: "color"
-                    , label: "Color" %}
-            {% render "product__meta-item"
-                    , namespace: "custom"
-                    , key: "size"
-                    , label: "Size" %}
+      {% render "product__meta-item"
+        , namespace: "custom"
+        , key: "fold_shape"
+        , label: "Fold Shape" %}
+      {% render "product__meta-item"
+        , namespace: "custom"
+        , key: "pack_quantity"
+        , label: "Pack Quantity" %}
+      {% render "product__meta-item"
+        , namespace: "custom"
+        , key: "design_color"
+        , label: "Design Color" %}
+      {% render "product__meta-item"
+        , namespace: "custom"
+        , key: "color"
+        , label: "Color" %}
+      {% render "product__meta-item"
+        , namespace: "custom"
+        , key: "size"
+        , label: "Size" %}
 
 
-            {% for tag in variant_tags %}
-                {% if tag contains ':' %}
-                    {% assign split_tag = tag | split: ':' %}
-                    <li>
-                        <span class="product__meta-details-title">{{ split_tag[0] }}</span>
-                        <span class="product__meta-details-value">{{ split_tag[1] }}</span>
-                    </li>
-                {% endif %}
-            {% endfor %}
-        </ul>
-    </div>
+      {% for tag in variant_tags %}
+        {% if tag contains ':' %}
+          {% assign split_tag = tag | split: ':' %}
+          <li>
+            <span class="product__meta-details-title">{{ split_tag[0] }}</span>
+            <span class="product__meta-details-value">{{ split_tag[1] }}</span>
+          </li>
+        {% endif %}
+      {% endfor %}
+    </ul>
+  </div>
 </section>
 <style>
+  .product__meta {
+    position: relative;
+    display: flex;
+    background-color: white;
+    color: rgba(20, 51, 56, 1);
+    padding: 44px var(--padding-sides) 160px;
+    gap: 14rem;
+    justify-content: space-between;
+  }
+  @media screen and (max-width: 1440px) {
     .product__meta {
-        position: relative;
-        display: flex;
-        background-color: white;
-        color: rgba(20, 51, 56, 1);
-        padding: 44px var(--padding-sides) 160px;
-        gap: 4rem;
+      gap: 7rem
     }
+  }
+  .product__meta-tabs {
+    flex: 0.5;
+    display: flex;
+    flex-direction: column;
+    width: calc(45% - var(--grid-desktop-horizontal-spacing) / 2);
+    width: 45%;
+    flex-grow: 1;
+  }
 
-    .product__meta-tabs {
-        flex: 0.5;
-        display: flex;
-        flex-direction: column;
-        width: calc(45% - var(--grid-desktop-horizontal-spacing) / 2);
+  .product__meta-buttons-container {
+    display: flex;
+    gap: 8px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    max-height: 48px;
+  }
+
+  .product__meta-tab-button {
+    font-family: "faktum";
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 160%;
+    letter-spacing: -0.01em;
+    text-align: center;
+    padding: 8px 20px;
+    border: 1px solid transparent;
+    border-radius: 100px;
+  }
+
+  .product__meta-tab-button:hover {
+    cursor: pointer;
+  }
+
+  .selected-button {
+    border-color: rgba(7, 59, 67, 1);
+  }
+
+  .product__meta-tabs-container {
+    margin: 32px 0 0;
+    list-style: none;
+    font-family: "faktum";
+    font-size: 18px;
+    font-weight: 300;
+    line-height: 32px;
+    letter-spacing: -0.01em;
+    text-align: left;
+    padding: 0;
+    height: 100%;
+  }
+
+  .product__meta-tab {
+    width: 100%;
+    height: 100%;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    visibility: hidden;
+    display: none;
+  }
+
+  .product__meta-tab p {
+    margin-top: 0;
+  }
+
+  .selected-tab {
+    visibility: visible;
+    display: block;
+  }
+
+  .product__meta-tab-inner-button {
+    font-family: "faktum";
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 160%;
+    letter-spacing: -0.01em;
+    text-align: center;
+    padding: 4px;
+  }
+
+  .product__meta-tab-inner-button.selected-button {
+    border-bottom: 1px solid rgba(7, 59, 67, 0.8);
+  }
+
+  .product__meta-tab-inner-button:hover {
+    cursor: pointer;
+  }
+
+  .product__meta-tabs-inner {
+    margin-top: 8px;
+    color: rgba(7, 59, 67, 1);
+    width: 100%;
+  }
+
+  .product__meta-buttons-container-inner {
+    gap: 28px;
+  }
+
+  .product__meta-details {
+    color: rgba(20, 51, 56, 1);
+    flex: 0.5;
+    /* width: calc(55% - var(--grid-desktop-horizontal-spacing) / 2); */
+    /* max-width: calc(55% - 143px); */
+    flex-grow: 1;
+  }
+
+  .product__meta-details h2 {
+    color: inherit;
+    font-family: "faktum";
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 32px;
+    letter-spacing: -0.01em;
+    text-align: left;
+    padding: 8px 0;
+    margin: 0;
+  }
+
+  .product__meta-details-items {
+    list-style: none;
+    margin: 0;
+    padding: 32px 0 0;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .product__meta-details-items li {
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 32px;
+  }
+
+  .product__meta-details-title {
+    font-family: "faktum";
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 24px;
+    text-align: left;
+  }
+
+  .product__meta-details-value {
+    font-family: "faktum";
+    font-size: 18px;
+    font-weight: 300;
+    line-height: 24px;
+    text-align: right;
+  }
+
+  .faq-custom-element {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+  }
+
+  .product__reviews-faq-tab {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    list-style-type: none;
+    gap: 28px;
+    border-bottom: 1px solid rgba(7, 59, 67, 0.08);
+  }
+
+  .product__reviews-faq-tab > li {
+    text-align: center;
+    font-family: "faktum";
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 160%;
+    letter-spacing: -0.2px;
+    cursor: pointer;
+  }
+
+  .product__reviews-faq-tab > li.selected {
+    border-bottom: 1px solid #073B43;
+  }
+
+  .faq_reviews_tabs > li.selected {
+    visibility: visible;
+    opacity: 1;
+  }
+
+  .faq_reviews_tabs {
+    height: 100%;
+    position: relative;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .faq_reviews_tabs > li {
+    visibility: hidden;
+    opacity: 0;
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    padding: 32px 0;
+  }
+
+  .faq_tab-question {
+    background-color: #F6F7F8;
+    padding: 24px;
+    border-radius: 8px;
+  }
+
+  .faq_tab-question > summary {
+    position: relative;
+    padding-right: 30px;
+  }
+
+  .summary-text {
+    padding: 0;
+    font-family: "Faktum";
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 140%
+  }
+
+  .faq_tab-question > summary > span {
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+
+  .faq_tab-question[open] > summary > .open_button {
+    display: none;
+  }
+
+  .faq_tab-question:not([open]) > summary > .close_button {
+    display: none;
+  }
+
+  .faq_tab-question > p {
+    margin: 15px 0;
+    font-family: "Faktum";
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: 133.333%;
+  }
+
+
+  /*
+   .faq_tab-question::not([open]) > p {
+   max-height: 0;
+   transition: 300ms;
+   }
+*/
+  .faq_tab-question[open] {
+    animation: open 300ms ease-in-out;
+
+  }
+
+  .faq_tab-question[open] summary ~ * {
+    animation: sweep 300ms ease-in-out;
+  }
+
+  @keyframes sweep {
+    0% {
+      opacity: 0;
+      max-height: 0;
+    }
+    100% {
+      opacity: 1;
+      max-height: 500px;
+    }
+  }
+
+  @keyframes open {
+    0% {
+      height: auto;
+    }
+    100% {
+      height: auto;
+    }
+  }
+
+  @media screen and (max-width: 1250px) {
+    .product__meta {
+      padding: 44px var(--padding-sides) 160px;
+      gap: 30px;
     }
 
     .product__meta-buttons-container {
-        display: flex;
-        gap: 8px;
-        margin: 0;
-        padding: 0;
-        list-style: none;
-        max-height: 48px;
+      flex-wrap: wrap;
+      max-height: 100%;
     }
 
-    .product__meta-tab-button {
-        font-family: "faktum";
-        font-size: 20px;
-        font-weight: 500;
-        line-height: 160%;
-        letter-spacing: -0.01em;
-        text-align: center;
-        padding: 8px 20px;
-        border: 1px solid transparent;
-        border-radius: 100px;
-    }
 
-    .product__meta-tab-button:hover {
-        cursor: pointer;
-    }
+  }
 
-    .selected-button {
-        border-color: rgba(7, 59, 67, 1);
-    }
-
-    .product__meta-tabs-container {
-        margin: 32px 0 0;
-        list-style: none;
-        font-family: "faktum";
-        font-size: 18px;
-        font-weight: 300;
-        line-height: 32px;
-        letter-spacing: -0.01em;
-        text-align: left;
-        padding: 0;
-        height: 100%;
-    }
-
-    .product__meta-tab {
-        width: 100%;
-        height: 100%;
-        top: 0;
-        right: 0;
-        bottom: 0;
-        left: 0;
-        visibility: hidden;
-        display: none;
-    }
-
-    .product__meta-tab p {
-        margin-top: 0;
-    }
-
-    .selected-tab {
-        visibility: visible;
-        display: block;
-    }
-
-    .product__meta-tab-inner-button {
-        font-family: "faktum";
-        font-size: 20px;
-        font-weight: 500;
-        line-height: 160%;
-        letter-spacing: -0.01em;
-        text-align: center;
-        padding: 4px;
-    }
-
-    .product__meta-tab-inner-button.selected-button {
-        border-bottom: 1px solid rgba(7, 59, 67, 0.8);
-    }
-
-    .product__meta-tab-inner-button:hover {
-        cursor: pointer;
-    }
-
-    .product__meta-tabs-inner {
-        margin-top: 8px;
-        color: rgba(7, 59, 67, 1);
-        width: 100%;
-    }
-
-    .product__meta-buttons-container-inner {
-        gap: 28px;
+  @media screen and (max-width: 992px) {
+    .product__meta-tabs {
+      width: 100%;
     }
 
     .product__meta-details {
-        color: rgba(20, 51, 56, 1);
-        flex: 0.5;
-        width: calc(55% - var(--grid-desktop-horizontal-spacing) / 2);
+      width: 100%;
+    }
+    .product__meta {
+      flex-direction: column;
+      padding: 44px var(--padding-sides) 160px;
     }
 
-    .product__meta-details h2 {
-        color: inherit;
-        font-family: "faktum";
-        font-size: 20px;
-        font-weight: 500;
-        line-height: 32px;
-        letter-spacing: -0.01em;
-        text-align: left;
-        padding: 8px 0;
-        margin: 0;
+    .product__meta-tabs-container {
+      max-width: 100%;
     }
 
-    .product__meta-details-items {
-        list-style: none;
-        margin: 0;
-        padding: 32px 0 0;
-        display: flex;
-        flex-direction: column;
+    .product__meta-buttons-container {
+      flex-wrap: wrap;
     }
+  }
 
-    .product__meta-details-items li {
-        display: flex;
-        justify-content: space-between;
-        padding-bottom: 32px;
+  @media screen and (max-width: 600px) {
+    .product__meta {
+      padding: 44px var(--padding-sides) 160px;
     }
-
-    .product__meta-details-title {
-        font-family: "faktum";
-        font-size: 18px;
-        font-weight: 400;
-        line-height: 24px;
-        text-align: left;
-    }
-
-    .product__meta-details-value {
-        font-family: "faktum";
-        font-size: 18px;
-        font-weight: 300;
-        line-height: 24px;
-        text-align: right;
-    }
-
-    .faq-custom-element {
-        display: flex;
-        flex-direction: column;
-        height: 100%;
-    }
-
-    .product__reviews-faq-tab {
-        margin: 0;
-        padding: 0;
-        display: flex;
-        list-style-type: none;
-        gap: 28px;
-        border-bottom: 1px solid rgba(7, 59, 67, 0.08);
-    }
-
-    .product__reviews-faq-tab > li {
-        text-align: center;
-        font-family: "faktum";
-        font-size: 20px;
-        font-style: normal;
-        font-weight: 500;
-        line-height: 160%;
-        letter-spacing: -0.2px;
-        cursor: pointer;
-    }
-
-    .product__reviews-faq-tab > li.selected {
-        border-bottom: 1px solid #073B43;
-    }
-
-    .faq_reviews_tabs > li.selected {
-        visibility: visible;
-        opacity: 1;
-    }
-
-    .faq_reviews_tabs {
-        height: 100%;
-        position: relative;
-        list-style: none;
-        padding: 0;
-        margin: 0;
-    }
-
-    .faq_reviews_tabs > li {
-        visibility: hidden;
-        opacity: 0;
-        position: absolute;
-        left: 0;
-        top: 0;
-        right: 0;
-        bottom: 0;
-        padding: 32px 0;
-    }
-
-    .faq_tab-question {
-        background-color: #F6F7F8;
-        padding: 24px;
-        border-radius: 8px;
-    }
-
-    .faq_tab-question > summary {
-        position: relative;
-        padding-right: 30px;
-    }
-
-    .summary-text {
-        padding: 0;
-        font-family: "Faktum";
-        font-size: 20px;
-        font-style: normal;
-        font-weight: 500;
-        line-height: 140%
-    }
-
-    .faq_tab-question > summary > span {
-        position: absolute;
-        right: 0;
-        top: 0;
-    }
-
-    .faq_tab-question[open] > summary > .open_button {
-        display: none;
-    }
-
-    .faq_tab-question:not([open]) > summary > .close_button {
-        display: none;
-    }
-
-    .faq_tab-question > p {
-        margin: 15px 0;
-        font-family: "Faktum";
-        font-size: 18px;
-        font-style: normal;
-        font-weight: 300;
-        line-height: 133.333%;
-    }
-
-
-    /*
-     .faq_tab-question::not([open]) > p {
-     max-height: 0;
-     transition: 300ms;
-     }
-  */
-    .faq_tab-question[open] {
-        animation: open 300ms ease-in-out;
-
-    }
-
-    .faq_tab-question[open] summary ~ * {
-        animation: sweep 300ms ease-in-out;
-    }
-
-    @keyframes sweep {
-        0% {
-            opacity: 0;
-            max-height: 0;
-        }
-        100% {
-            opacity: 1;
-            max-height: 500px;
-        }
-    }
-
-    @keyframes open {
-        0% {
-            height: auto;
-        }
-        100% {
-            height: auto;
-        }
-    }
-
-    @media screen and (max-width: 1250px) {
-        .product__meta {
-            padding: 44px var(--padding-sides) 160px;
-            gap: 30px;
-        }
-
-        .product__meta-buttons-container {
-            flex-wrap: wrap;
-            max-height: 100%;
-        }
-
-        .product__meta-tabs {
-            width: 100%;
-        }
-
-        .product__meta-details {
-            width: 100%;
-        }
-    }
-
-    @media screen and (max-width: 992px) {
-        .product__meta {
-            flex-direction: column;
-            padding: 44px var(--padding-sides) 160px;
-        }
-
-        .product__meta-tabs-container {
-            max-width: 100%;
-        }
-
-        .product__meta-buttons-container {
-            flex-wrap: wrap;
-        }
-    }
-
-    @media screen and (max-width: 600px) {
-        .product__meta {
-            padding: 44px var(--padding-sides) 160px;
-        }
-    }
+  }
 </style>
 <script src="{{ 'product__meta.js' | asset_url }}" defer="defer"></script>
 {% schema %}
-{
-  "name": "Product meta",
-  "settings": [],
-  "presets": [
-    {
-      "name": "Product meta"
-    }
-  ]
-}
+  {
+    "name": "Product meta",
+    "settings": [],
+    "presets": [
+      {
+        "name": "Product meta"
+      }
+    ]
+  }
 {% endschema %}

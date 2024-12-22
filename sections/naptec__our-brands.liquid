@@ -1,5 +1,5 @@
 {{ "naptec__our-brands.css" | asset_url | stylesheet_tag }}
-<section class="page-width color-scheme-2 naptec__our-brands">
+<section class="page-width color-scheme-2 naptec__our-brands" id="brands">
   <div class="naptec__our-brands-title">
     <h2>{{ section.settings.text }}</h2>
   </div>
@@ -39,6 +39,34 @@
     </ul>
   </div>
 </section>
+<script>
+	document.addEventListener('DOMContentLoaded', () => {
+		const linkSelector = '#HeaderMenu-our-brands';
+		const targetClass = '.naptec__our-brands-title';
+		const triggerLink = document.querySelector(`${linkSelector}`);
+		const targetElement = document.querySelector(targetClass);
+
+		if (!triggerLink) {
+			return;
+		}
+
+		if (!targetElement) {
+			return;
+		}
+
+		triggerLink.addEventListener('click', (event) => {
+			event.preventDefault();
+			if (typeof targetElement.scrollIntoView === 'function') {
+				targetElement.scrollIntoView({behavior: 'smooth'});
+			} else {
+				window.scrollTo({
+					top: targetElement.getBoundingClientRect().top + window.pageYOffset,
+					behavior: 'smooth'
+				});
+			}
+		});
+	});
+</script>
 {% schema %}
   {
     "name": "Naptec brands",

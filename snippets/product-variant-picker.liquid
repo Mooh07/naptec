@@ -11,9 +11,6 @@
 {% endcomment %}
 {%- capture whole_sale_toggle -%}
     <div style="display: flex; flex-direction: column; flex: 1;">
-      <div>
-          {% comment %}<span class="wholesale-retail-label" style="color: rgba(8, 20, 22, 1);">Sell</span>{% endcomment %}
-      </div>
       <div class="wholesale-retail-label" >
         {% assign counterpart_product = product.metafields.custom.wholesale_d2c.value %}
         {% assign justifyContent = "start" %}
@@ -117,7 +114,7 @@
         {% assign option_name = option.name %}
 
         {% if product.options.size == option.position %}
-            <div class="variant-wrapper" style="display: flex; justify-content: space-between; gap: 20px;">
+          <div class="variant-wrapper" style="display: flex; justify-content: space-between; gap: 20px;">
             {{ whole_sale_toggle }}
             <style>
               @media screen and (max-width: 1250px) {
@@ -145,54 +142,53 @@
             </fieldset>
           </div>
         {% else %}
-            <div style="order: 3" class=" product-form__input--size product-form__input--dropdown">
-                <label class="form__label" for="Option-{{ section.id }}-{{ forloop.index0 }}">
-                    {{ option.name }}
-                </label>
-                <div class="select">
-                    {%- if picker_type == 'swatch_dropdown' -%}
-                        <span data-selected-dropdown-swatch="options[{{ option.name | escape }}]"
-                              class="dropdown-swatch">
-                {% render 'swatch'
-                        , swatch: option.selected_value.swatch
-                        , shape: block.settings.swatch_shape %}
-              </span>
-                    {%- endif -%}
-                    <select
-                            id="Option-{{ section.id }}-{{ forloop.index0 }}"
-                            class="select__select"
-                            name="options[{{ option.name | escape }}]"
-                            form="{{ product_form_id }}">
-                        {% render 'product-variant-options'
-                                , product: product
-                                , option: option
-                                , block: block
-                                , picker_type: "dropdown"
-                        %}
-                    </select>
-                    {% render 'icon-caret' %}
-                </div>
+          <div style="order: 3" class=" product-form__input--size product-form__input--dropdown">
+            <label class="form__label" for="Option-{{ section.id }}-{{ forloop.index0 }}">
+              {{ option.name }}
+            </label>
+            <div class="select">
+              {%- if picker_type == 'swatch_dropdown' -%}
+                <span data-selected-dropdown-swatch="options[{{ option.name | escape }}]" class="dropdown-swatch">
+                  {% render 'swatch'
+                    , swatch: option.selected_value.swatch
+                    , shape: block.settings.swatch_shape %}
+                </span>
+              {%- endif -%}
+              <select
+                id="Option-{{ section.id }}-{{ forloop.index0 }}"
+                class="select__select"
+                name="options[{{ option.name | escape }}]"
+                form="{{ product_form_id }}">
+                {% render 'product-variant-options'
+                  , product: product
+                  , option: option
+                  , block: block
+                  , picker_type: "dropdown"
+                %}
+              </select>
+              {% render 'icon-caret' %}
             </div>
-            {% unless option_name == "Size" %}
-          <fieldset style="order:{{optionOrder}}" class="js product-form__input product-form__input--pill">
-            <legend class="form__label">{{ option.name }}:
-              <span data-selected-swatch-value="{{ option.name }}">
+          </div>
+          {% unless option_name == "Size" %}
+            <fieldset style="order:{{optionOrder}}" class="js product-form__input product-form__input--pill">
+              <legend class="form__label">{{ option.name }}:
+                <span data-selected-swatch-value="{{ option.name }}">
 
-                {{ option.selected_value }}
-              </span>
-            </legend>
-            {% render 'product-variant-options'
-              , product: product
-              , option: option
-              , block: block
-              , picker_type: picker_type
-              , variant_images: variant_images
-            %}
-          </fieldset>
-            {% endunless %}
+                  {{ option.selected_value }}
+                </span>
+              </legend>
+              {% render 'product-variant-options'
+                , product: product
+                , option: option
+                , block: block
+                , picker_type: picker_type
+                , variant_images: variant_images
+              %}
+            </fieldset>
+          {% endunless %}
         {% endif %}
       {%- else -%}
-          <div class="product-form__input--dropdown">
+        <div class="product-form__input--dropdown">
           <label class="form__label" for="Option-{{ section.id }}-{{ forloop.index0 }}">
             {{ option.name }}
           </label>

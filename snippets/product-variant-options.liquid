@@ -23,8 +23,20 @@
 
   assign product_form_id = 'product-form-' | append: section.id
 -%}
+{%- assign default_per_row_size = option.values.size -%}
+{% if option.values.size >= 4 %}
+  {%- assign default_per_row_size = 4 -%}
 
-<div style="display: flex;gap: 15px;flex-wrap:wrap">
+{% endif %}
+
+<div style="
+{% if product.options.size == option.position %}
+display: grid;gap: 15px;
+grid-template-columns: repeat({{default_per_row_size}},1fr);
+{% else %}
+display: flex; gap: 15px;flex-wrap: wrap;
+{% endif %}
+">
 
   {%- for value in option.values -%}
     {% assign option_name = option.name | downcase %}

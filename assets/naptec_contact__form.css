@@ -1,8 +1,9 @@
 .naptec_contact__form {
-  padding: 112px 80px;
+  padding: 112px var(--padding-sides);
   display: flex;
   justify-content: space-between;
   border-bottom: 0.5px solid rgba(255, 255, 255, 1);
+  background-color: #073b43;
 }
 .naptec_contact__form-information {
   display: flex;
@@ -107,7 +108,7 @@
   .naptec_contact__form {
     flex-direction: column;
     gap: 40px;
-    padding: 0 40px 112px 40px;
+    padding: 0 var(--padding-sides) 112px var(--padding-sides);
   }
   .naptec_contact__form-information {
     gap: 40px;
@@ -118,6 +119,6 @@
 }
 @media screen and (max-width: 600px) {
   .naptec_contact__form {
-    padding: 0 16px 112px 16px;
+    padding: 0 var(--padding-sides) 112px var(--padding-sides);
   }
 }
