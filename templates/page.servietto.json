@@ -80,19 +80,19 @@
         "product_TgPhwM": {
           "type": "product",
           "settings": {
-            "product": "disposable-table-runner-for-dining-table-16-x-48-20-pack-linen-like-black-paper-table-runners-for-party-wedding-or-event"
+            "product": "servietto-disposable-linen-feel-guest-towels-airlaid-paper-12-x17-100-pack"
           }
         },
         "product_G8QRBy": {
           "type": "product",
           "settings": {
-            "product": "disposable-linen-feel-dinner-napkins-with-built-in-flatware-pocket-50-pack-black-prefolded-cloth-like-paper-napkins-for-wedding-dinner-or-party"
+            "product": "servietto-disposable-linen-feel-placematss-airlaid-paper-12-x18-100-pack"
           }
         },
         "product_UcHHQV": {
           "type": "product",
           "settings": {
-            "product": "disposable-black-paper-placemats-for-dining-table-100-pack-18-x-12-cloth-like-rectangle-paper-placemats-for-baby-kids-party-or-weddings"
+            "product": "servietto-disposable-linen-like-table-cloth-roll-airlaid-paper-paper-55-wide-x-80-long"
           }
         },
         "product_gTBQFr": {
@@ -108,6 +108,7 @@
         "product_UcHHQV",
         "product_gTBQFr"
       ],
+      "custom_css": [],
       "settings": {
         "header": "Discover Your Style",
         "collection": "",
