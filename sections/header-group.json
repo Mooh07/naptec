@@ -14,6 +14,7 @@
     "header": {
       "type": "header",
       "settings": {
+        "megamenu-label": "Products",
         "product_menu_1_title": "shop by categories",
         "product_menu_1": "categories",
         "product_menu_2_title": "Shop by colors",
@@ -22,8 +23,9 @@
         "product_menu_3": "sizes",
         "product_menu_right_image": "shopify://shop_images/product_menu_image_1.png",
         "product_menu_right_label": "Custom Design",
+        "product_menu_right_url": "",
         "cta-content": "get a quote",
-        "cta_url": "",
+        "cta_url": "shopify://pages/contact",
         "logo_position": "middle-left",
         "menu": "naptec-header-menu",
         "menu_type_desktop": "dropdown",
