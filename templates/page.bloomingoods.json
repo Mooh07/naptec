@@ -94,7 +94,7 @@
           "settings": {
             "image": "shopify://shop_images/1_b1a70c9f-14be-49b6-901f-709ea43cf610.png",
             "category_name": "Guest Towels",
-            "url": ""
+            "url": "shopify://collections/bloomingoods-guest-towels"
           }
         },
         "category_9FNC7D": {
@@ -102,7 +102,7 @@
           "settings": {
             "image": "shopify://shop_images/2_d4f280cc-d8d5-418d-99fd-d957d38321db.png",
             "category_name": "Napkins",
-            "url": ""
+            "url": "shopify://collections/bloomingoods-napkins"
           }
         },
         "category_UjPUAa": {
@@ -110,7 +110,7 @@
           "settings": {
             "image": "shopify://shop_images/3_dc08309a-e3c4-48ac-bab0-d51048b4b83f.png",
             "category_name": "Tablecloths & Runners",
-            "url": ""
+            "url": "shopify://collections/bloomingoods-tablecloths"
           }
         },
         "category_czAWDV": {

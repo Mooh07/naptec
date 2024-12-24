@@ -65,8 +65,7 @@
     }
   }
 </style>
-
-{%- unless template == 'index' or template == 'cart' or template == 'list-collections' or template == '404' -%}
+{%- unless template == 'index' or template == 'cart' or template == 'list-collections' or template == '404' or template.name == 'page' -%}
   {%- assign t = template | split: '.' | first -%}
   <nav
     class="breadcrumbs page-width"
@@ -160,3 +159,4 @@
   </nav>
 
 {%- endunless -%}
+
