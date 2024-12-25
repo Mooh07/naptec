@@ -1,7 +1,7 @@
 {% assign category_title = collection.title %}
 {% assign category_image = collection.featured_image %}
 {% if title %}
-  {% assign category_title = collection.title %}
+  {% assign category_title = title %}
 {% endif %}
 {% if image %}
   {% assign category_image = image %}
@@ -10,7 +10,12 @@
 
 <div class="naptec__product-card">
   <div class="naptec__product-card-image-container">
-    <img loading="lazy" src="{{ category_image | image_url: width: category_image.width }}" alt="{{ category_image.images.first.alt }}" width="{{ category_image.width }}" height="{{ category_image.height }}"/>
+    <img
+      loading="lazy"
+      src="{{ category_image | image_url: width: category_image.width }}"
+      alt="{{ category_image.images.first.alt }}"
+      width="{{ category_image.width }}"
+      height="{{ category_image.height }}" />
   </div>
   <div class="naptec__product-card-information-container">
     <div class='naptec__product-card-information-top'>
@@ -26,10 +31,10 @@
         </a>
       </div>
     </div>
-    {% comment %} <div class='naptec__product-card-information-bottom'>
-      <span>
-        10“x10” 1/4 Fold
-      </span>
-    </div> {% endcomment %}
+  {% comment %} <div class='naptec__product-card-information-bottom'>
+          <span>
+            10“x10” 1/4 Fold
+          </span>
+      </div> {% endcomment %}
   </div>
 </div>
