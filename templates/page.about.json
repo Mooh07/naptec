@@ -10,7 +10,11 @@
 {
   "sections": {
     "main": {
+<<<<<<< HEAD
       "type": "main-page-about",
+=======
+      "type": "main-page",
+>>>>>>> a18463d (Update from Shopify for theme naptec/main)
       "settings": {
         "padding_top": 28,
         "padding_bottom": 28
