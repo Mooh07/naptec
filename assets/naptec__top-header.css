@@ -10,7 +10,7 @@ section.top_bar_naptec {
 .top_bar_naptec_Wrapper {
   position: fixed;
   width: 100%;
-  z-index: 9;
+  z-index: 11;
   height: 52px;
 }
 .top_bar_naptec_Wrapper .page-width {

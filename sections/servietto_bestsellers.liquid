@@ -8,7 +8,7 @@
 {{ "servietto_bestsellers.css" | asset_url | stylesheet_tag }}
 {{ "global__product-card.css" | asset_url | stylesheet_tag }}
 <section class="page-width servietto__bestsellers">
-  <h2 class="servietto__bestsellers-header">{{ section.settings.subheader }}</h2>
+  <h2 class="servietto__bestsellers-header">{{ section.settings.title }}</h2>
   <ul class="servietto__bestsellers_products">
     {% if section.settings.collection != blank %}
       {% for product in section.settings.collection.products %}
@@ -20,7 +20,8 @@
         {% case block.type %}
           {% when 'product' %}
             <li>
-              {% render 'global__product-card', product: block.settings.product %}
+              {% render 'global__product-card'
+                , product: block.settings.product %}
             </li>
         {% endcase %}
       {% endfor %}
@@ -35,9 +36,9 @@
     "settings": [
       {
         "type": "text",
-        "id": "header",
+        "id": "title",
         "label": "header",
-        "default": "Discover Your Style"
+        "default": "Bestsellers"
       },
       {
         "type": "collection",

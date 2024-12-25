@@ -11,6 +11,18 @@
 .servietto__bestsellers * {
   margin: 0;
 }
+.servietto__bestsellers h2 {
+  font-family: "pp hatton";
+  font-size: 60px;
+  font-weight: 500;
+  line-height: 1.2;
+  text-align: left;
+  text-underline-position: from-font;
+  text-decoration-skip-ink: none;
+  color: rgba(28, 54, 61, 1);
+  margin: 0;
+  margin-bottom: 7.2rem;
+}
 .servietto__bestsellers * .servietto__bestsellers-header {
   font-family: "pp hatton";
   font-size: 60px;
@@ -54,6 +66,9 @@
   .servietto__bestsellers_products li {
     width: calc(50% - 48px);
   }
+  .servietto__bestsellers h2 {
+    font-size: 46px;
+  }
 }
 
 @media screen and (max-width: 992px) {
@@ -69,6 +84,9 @@
 
   .servietto__bestsellers {
     padding: 8.2rem var(--padding-sides);
+  }
+  .servietto__bestsellers h2 {
+    font-size: 32px;
   }
 }
 
