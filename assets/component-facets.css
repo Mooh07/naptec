@@ -1373,6 +1373,31 @@ input.mobile-facets__checkbox {
   padding-right: 5px;
 }
 
+.products-per-page__wrapper {
+    margin-right: 12px;
+    display: flex;
+    align-items: center;
+}
+
+.products-per-page__wrapper select {
+    border: 0;
+    border-radius: 0;
+    color: var(--color-background);
+    font-size: 16px;
+    height: auto;
+    line-height: 20px;
+}
+
+.products-per-page__wrapper label {
+    background-color: transparent;
+    font-size: 16px;
+    height: auto;
+    line-height: 20px;
+    margin: 0;
+    padding-left: 0;
+    padding-right: 5px;
+}
+
 @media screen and (max-width: 749px) {
   .facets_current_filter {
     display: none;
