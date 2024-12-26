@@ -110,7 +110,7 @@
       ],
       "custom_css": [],
       "settings": {
-        "header": "Discover Your Style",
+        "title": "Bestsellers",
         "collection": "",
         "subheader": "Bestsellers",
         "background_color": "#ffffff",
