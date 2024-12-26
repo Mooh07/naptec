@@ -1255,7 +1255,11 @@ class VariantSelects extends HTMLElement {
     const selectedOptionOneVariants = this.variantData.filter(
       (variant) => this.querySelector(":checked").value === variant.option1
     );
-    const inputWrappers = [...this.querySelectorAll(".product-form__input")];
+    const inputWrappers = [
+      ...this.querySelectorAll(
+        ".product-form__input, .product-form__input--dropdown"
+      ),
+    ];
     inputWrappers.forEach((option, index) => {
       if (index === 0) return;
       const optionInputs = [
