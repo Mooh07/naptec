@@ -89,7 +89,7 @@
         "logo_position": "middle-center",
         "menu": "naperee-header-menu",
         "menu_type_desktop": "dropdown",
-        "sticky_header_type": "always",
+        "sticky_header_type": "reduce-logo-size",
         "show_line_separator": true,
         "color_scheme": "",
         "menu_color_scheme": "scheme-84d320ab-9064-42eb-85cb-d9f9785ef717",
