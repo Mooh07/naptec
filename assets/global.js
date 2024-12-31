@@ -1189,6 +1189,10 @@ class VariantSelects extends HTMLElement {
         );
         selectedDropdownSwatchValue.classList.add("swatch--unavailable");
       }
+       const selectedSwatchValue = this.querySelector(
+        `[data-selected-swatch-value="${name}"]`
+      );
+      if (selectedSwatchValue) selectedSwatchValue.innerHTML = value;
     } else if (tagName === "INPUT" && target.type === "radio") {
       const selectedSwatchValue = this.querySelector(
         `[data-selected-swatch-value="${name}"]`
