@@ -114,6 +114,30 @@
         {% assign option_name = option.name %}
         {% if product.options.size == option.position %}
           {% if option_name == 'Letter' %}
+            <div style="order:{{optionOrder}}" class=" product-form__input--size product-form__input--dropdown">
+              <label class="form__label" for="Option-{{ section.id }}-{{ forloop.index0 }}">
+                {{ option.name }}
+                <span data-selected-swatch-value="{{ option.name }}">
+                  {{ option.selected_value }}
+                </span>
+              </label>
+              <div class="select">
+                <select
+                  id="Option-{{ section.id }}-{{ forloop.index0 }}"
+                  class="select__select"
+                  name="options[{{ option.name | escape }}]"
+                  form="{{ product_form_id }}"
+                >
+                  {% render 'product-variant-options',
+                    product: product,
+                    option: option,
+                    block: block,
+                    picker_type: 'dropdown'
+                  %}
+                </select>
+                {% render 'icon-caret' %}
+              </div>
+            </div>
           {% else %}
             <div class="variant-wrapper" style="display: flex; justify-content: space-between; gap: 20px;">
               {{ whole_sale_toggle }}
