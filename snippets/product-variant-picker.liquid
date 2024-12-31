@@ -70,9 +70,10 @@
     data-section="{{ section.id }}"
     data-url="{{ product.url }}"
     {% if update_url == false %}
-    data-update-url="false"
+      data-update-url="false"
     {% endif %}
-    {{ block.shopify_attributes }}>
+    {{ block.shopify_attributes }}
+  >
     {% assign maxNumbOfOptions = 0 %}
     {% assign optionOrder = 2 %}
     {%- for option in product.options_with_values -%}
@@ -81,7 +82,6 @@
         {% assign maxNumbOfOptions = option.values.size %}
       {% else %}
         {% assign optionOrder = optionOrder | minus: 1 %}
-
       {% endif %}
       {%- liquid
         assign swatch_count = option.values | map: 'swatch' | compact | size
@@ -103,51 +103,55 @@
               {{- option.selected_value -}}
             </span>
           </legend>
-          {% render 'product-variant-options'
-            , product: product
-            , option: option
-            , block: block
-            , picker_type: picker_type
+          {% render 'product-variant-options',
+            product: product,
+            option: option,
+            block: block,
+            picker_type: picker_type
           %}
         </fieldset>
       {%- elsif picker_type == 'button' -%}
         {% assign option_name = option.name %}
         {% if product.options.size == option.position %}
-          <div class="variant-wrapper" style="display: flex; justify-content: space-between; gap: 20px;">
-            {{ whole_sale_toggle }}
-            <style>
-              @media screen and (max-width: 1250px) {
+          {% if option_name == 'Letter' %}
+          {% else %}
+            <div class="variant-wrapper" style="display: flex; justify-content: space-between; gap: 20px;">
+              {{ whole_sale_toggle }}
+              <style>
+                @media screen and (max-width: 1250px) {
 
-                .labels-change-gap > div {
-                  gap: 0 !important;
+                  .labels-change-gap > div {
+                    gap: 0 !important;
+                  }
                 }
-              }
-            </style>
+              </style>
 
-            <fieldset style="text-align:right;order:{{optionOrder}}; display:flex;justify-content:end;" class="labels-change-gap js product-form__input product-form__input--pill">
-              <legend class="form__label">{{ option.name }}:
-                <span data-selected-swatch-value="{{ option.name }}">
-
-                  {{ option.selected_value }}
-                </span>
-              </legend>
-              {% render 'product-variant-options'
-                , product: product
-                , option: option
-                , block: block
-                , picker_type: picker_type
-                , variant_images: variant_images
-              %}
-            </fieldset>
-          </div>
+              <fieldset
+                style="text-align:right;order:{{optionOrder}}; display:flex;justify-content:end;"
+                class="labels-change-gap js product-form__input product-form__input--pill"
+              >
+                <legend class="form__label">
+                  {{ option.name }}:
+                  <span data-selected-swatch-value="{{ option.name }}">
+                    {{ option.selected_value }}
+                  </span>
+                </legend>
+                {% render 'product-variant-options',
+                  product: product,
+                  option: option,
+                  block: block,
+                  picker_type: picker_type,
+                  variant_images: variant_images
+                %}
+              </fieldset>
+            </div>
+          {% endif %}
         {% else %}
-          <script>
-          {% if option_name == "Letter" %}
+          {% if option_name == 'Letter' %}
             <div style="order:{{optionOrder}}" class=" product-form__input--size product-form__input--dropdown">
               <label class="form__label" for="Option-{{ section.id }}-{{ forloop.index0 }}">
                 {{ option.name }}
                 <span data-selected-swatch-value="{{ option.name }}">
-
                   {{ option.selected_value }}
                 </span>
               </label>
@@ -156,31 +160,32 @@
                   id="Option-{{ section.id }}-{{ forloop.index0 }}"
                   class="select__select"
                   name="options[{{ option.name | escape }}]"
-                  form="{{ product_form_id }}">
-                  {% render 'product-variant-options'
-                    , product: product
-                    , option: option
-                    , block: block
-                    , picker_type: "dropdown"
+                  form="{{ product_form_id }}"
+                >
+                  {% render 'product-variant-options',
+                    product: product,
+                    option: option,
+                    block: block,
+                    picker_type: 'dropdown'
                   %}
                 </select>
                 {% render 'icon-caret' %}
               </div>
             </div>
           {% else %}
-
             <fieldset style="order:{{optionOrder}}" class="js product-form__input product-form__input--pill">
-              <legend class="form__label">{{ option.name }}:
+              <legend class="form__label">
+                {{ option.name }}:
                 <span data-selected-swatch-value="{{ option.name }}">
                   {{ option.selected_value }}
                 </span>
               </legend>
-              {% render 'product-variant-options'
-                , product: product
-                , option: option
-                , block: block
-                , picker_type: picker_type
-                , variant_images: variant_images
+              {% render 'product-variant-options',
+                product: product,
+                option: option,
+                block: block,
+                picker_type: picker_type,
+                variant_images: variant_images
               %}
             </fieldset>
           {% endif %}
@@ -193,21 +198,20 @@
           <div class="select">
             {%- if picker_type == 'swatch_dropdown' -%}
               <span data-selected-dropdown-swatch="options[{{ option.name | escape }}]" class="dropdown-swatch">
-                {% render 'swatch'
-                  , swatch: option.selected_value.swatch
-                  , shape: block.settings.swatch_shape %}
+                {% render 'swatch', swatch: option.selected_value.swatch, shape: block.settings.swatch_shape %}
               </span>
             {%- endif -%}
             <select
               id="Option-{{ section.id }}-{{ forloop.index0 }}"
               class="select__select"
               name="options[{{ option.name | escape }}]"
-              form="{{ product_form_id }}">
-              {% render 'product-variant-options'
-                , product: product
-                , option: option
-                , block: block
-                , picker_type: picker_type
+              form="{{ product_form_id }}"
+            >
+              {% render 'product-variant-options',
+                product: product,
+                option: option,
+                block: block,
+                picker_type: picker_type
               %}
             </select>
             {% render 'icon-caret' %}
@@ -232,16 +236,18 @@
         data-productid="{{ product.id }}"
         id="Variants-{{ section.id }}"
         class="select__select"
-        form="{{ product_form_id }}">
+        form="{{ product_form_id }}"
+      >
         {%- for variant in product.variants -%}
           <option
             {% if variant == product.selected_or_first_available_variant %}
-            selected="selected"
+              selected="selected"
             {% endif %}
             {% if variant.available == false %}
-            disabled
+              disabled
             {% endif %}
-            value="{{ variant.id }}">
+            value="{{ variant.id }}"
+          >
             {%- liquid
               echo variant.title
               echo variant.price | money | strip_html | prepend: ' - '
