@@ -252,7 +252,7 @@
                     {% endif %}
                   {% endfor %}
                   {% if pack_quantity_size > 0 %}
-                  <span class="new-product-unit-price"> {{ block.settings.per-unit }} {{ product.price | divided_by: pack_quantity_size | money }} </span>
+                  <span class="new-product-unit-price"> {{ block.settings.per-unit }} {{ product.selected_or_first_available_variant.price | divided_by: pack_quantity_size | money }} </span>
                   {% endif %}
                   </div>
                 {%- if product.quantity_price_breaks_configured? -%}
