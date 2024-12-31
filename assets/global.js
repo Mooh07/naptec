@@ -1172,6 +1172,7 @@ class VariantSelects extends HTMLElement {
 
     if (tagName === "SELECT" && target.selectedOptions.length) {
       const swatchValue = target.selectedOptions[0].dataset.optionSwatchValue;
+      console.log(swatchValue)
       const selectedDropdownSwatchValue = this.querySelector(
         `[data-selected-dropdown-swatch="${name}"] > .swatch`
       );
