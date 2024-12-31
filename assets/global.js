@@ -1177,7 +1177,7 @@ class VariantSelects extends HTMLElement {
       console.log(target)
       const swatchValue = target.selectedOptions[0].dataset.optionSwatchValue;
       target.selectedOptions[0].value;
-      console.log(target.parentNode)
+      console.log(target.closest(".product-form__input--dropdown"))
       const selectedDropdownSwatchValue = this.querySelector(
         `[data-selected-dropdown-swatch="${name}"] > .swatch`
       );
