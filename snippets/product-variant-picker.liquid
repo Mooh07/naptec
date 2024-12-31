@@ -117,7 +117,7 @@
             <div style="order:{{optionOrder}}" class=" product-form__input--size product-form__input--dropdown">
               <label class="form__label" for="Option-{{ section.id }}-{{ forloop.index0 }}">
                 {{ option.name }}
-                <span data-selected-swatch-value="{{ option.name }}">
+                <span data-optionvalue id="update-for-{{ option_name }}" data-selected-swatch-value="{{ option.name }}">
                   {{ option.selected_value }}
                 </span>
               </label>
