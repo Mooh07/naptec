@@ -1191,7 +1191,6 @@ class VariantSelects extends HTMLElement {
       }
       
     } else if (tagName === "INPUT" && target.type === "radio") {
-      return
       const selectedSwatchValue = this.querySelector(
         `[data-selected-swatch-value="${name}"]`
       );
