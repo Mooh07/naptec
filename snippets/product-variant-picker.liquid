@@ -142,8 +142,7 @@
           </div>
         {% else %}
           <script>
-          console.log({{ product.options | json}})</script>
-          {% if option_name == "Size" or option_name == "size" %}
+          {% if option_name == "Letter" %}
             <div style="order:{{optionOrder}}" class=" product-form__input--size product-form__input--dropdown">
               <label class="form__label" for="Option-{{ section.id }}-{{ forloop.index0 }}">
                 {{ option.name }}
