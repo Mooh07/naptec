@@ -1128,7 +1128,7 @@ class VariantSelects extends HTMLElement {
     this.updatePickupAvailability();
     this.removeErrorMessage();
     this.updateVariantStatuses();
-
+  console.log(this.options)
     if (!this.currentVariant) {
       this.toggleAddButton(true, "", true);
       this.setUnavailable();
@@ -1172,7 +1172,6 @@ class VariantSelects extends HTMLElement {
 
     if (tagName === "SELECT" && target.selectedOptions.length) {
       const swatchValue = target.selectedOptions[0].dataset.optionSwatchValue;
-      console.log(swatchValue)
       const selectedDropdownSwatchValue = this.querySelector(
         `[data-selected-dropdown-swatch="${name}"] > .swatch`
       );
