@@ -141,6 +141,8 @@
             </fieldset>
           </div>
         {% else %}
+          <script>
+          console.log({{ option_name | json}})</script>
           {% if option_name == "Size" or option_name == "size" %}
             <div style="order:{{optionOrder}}" class=" product-form__input--size product-form__input--dropdown">
               <label class="form__label" for="Option-{{ section.id }}-{{ forloop.index0 }}">
