@@ -436,15 +436,19 @@
 
     onScroll() {
       const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-
+      const lowHeaderContainer = document.querySelector(".bloomingoods__low-header-container");
+      const lowHeader = document.querySelector(".bloomingoods__low-header");
+      const isStickyLowHeader = lowHeader.dataset.sticky;
       if (this.predictiveSearch && this.predictiveSearch.isOpen) return;
-
+      
       if (scrollTop > this.currentScrollTop && scrollTop > this.headerBounds.bottom) {
         this.header.classList.add('scrolled-past-header');
+        if(isStickyLowHeader == "true") lowHeaderContainer.classList.add("scrolled-past-lowheader", "scrolled-past-lowheader-mobile");
         if (this.preventHide) return;
         requestAnimationFrame(this.hide.bind(this));
       } else if (scrollTop < this.currentScrollTop && scrollTop > this.headerBounds.bottom) {
         this.header.classList.add('scrolled-past-header');
+        if(isStickyLowHeader == "true") lowHeaderContainer.classList.remove("scrolled-past-lowheader", "scrolled-past-lowheader-mobile");
         if (!this.preventReveal) {
           requestAnimationFrame(this.reveal.bind(this));
         } else {

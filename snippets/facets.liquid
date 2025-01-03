@@ -126,8 +126,21 @@
                 endcase
               %}
 
+              {%- liquid
+                assign sorted_values = filter.values
+                # Keep the selected values grouped together when operator is AND
+                if filter.operator == 'AND'
+                  assign active_filter_values = filter.values | where: 'active', true
+                  assign inactive_filter_values = filter.values | where: 'active', false
+                  assign sorted_values = active_filter_values | concat: inactive_filter_values
+                endif
+              -%}
               {% case filter.type %}
                 {% when 'boolean', 'list' %}
+                  {% assign sorted_values_size = sorted_values | size %}
+                  {% if sorted_values_size == 1 %}
+                    {% continue %}
+                  {% endif %}
                   <details
                     id="Details-{{ filter.param_name | escape }}-{{ section.id }}"
                     class="{% if filter_type == 'horizontal' %}disclosure-has-popup facets__disclosure{% else %} facets__disclosure-vertical{% endif %} js-filter"
@@ -186,15 +199,7 @@
                           class="{{ visual_layout_class }}{% if filter_type == 'vertical' %} facets__list--vertical{% else %} facets__list{% endif %} list-unstyled no-js-hidden"
                           role="list"
                         >
-                          {%- liquid
-                            assign sorted_values = filter.values
-                            # Keep the selected values grouped together when operator is AND
-                            if filter.operator == 'AND'
-                              assign active_filter_values = filter.values | where: 'active', true
-                              assign inactive_filter_values = filter.values | where: 'active', false
-                              assign sorted_values = active_filter_values | concat: inactive_filter_values
-                            endif
-                          -%}
+
                           {%- for value in sorted_values -%}
                             {% liquid
                               assign is_disabled = false

@@ -617,7 +617,18 @@ summary.list-menu__item {
           </span>
         </a>
       {%- endif -%}
-
+      {% comment %} <span style="
+        display: flex;
+        align-items: center;
+        font-family: 'pp hatton';
+        font-size: 18px;
+        font-weight: 200;
+        line-height: 24px;
+        text-align: left;
+        "
+      >
+        Cart({{ cart.item_count }})
+      </span> {% endcomment %}
       {%- for block in section.blocks -%}
         {%- case block.type -%}
           {%- when '@app' -%}

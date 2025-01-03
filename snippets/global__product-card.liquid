@@ -4,14 +4,26 @@
         <div class="global__product-card-img-container">
             <div>
                 {% if product.featured_image != blank %}
-                    <img
-                            class="global__product-card-img"
-                            src="{{ product.featured_image | image_url: width: '600', height: '600' }}"
-                            alt="{{ product.featured_image.alt | escape }}"
-                            width="600"
-                            height="600"
-                            loading="lazy"
-                    >
+									{% if product.selected_or_first_available_variant.featured_image != blank %}
+										<img
+										class="global__product-card-img"
+										src="{{ product.selected_or_first_available_variant.featured_image | image_url: width: '600', height: '600' }}"
+										alt="{{ product.selected_or_first_available_variant.featured_image.alt | escape }}"
+										width="600"
+										height="600"
+										loading="lazy"
+									>
+									{% else %}
+										<img
+										class="global__product-card-img"
+										src="{{ product.featured_image | image_url: width: '600', height: '600' }}"
+										alt="{{ product.featured_image.alt | escape }}"
+										width="600"
+										height="600"
+										loading="lazy"
+						>
+									{% endif %}
+                    <script>console.log({{ product.featured_image | json }})</script>
                 {% else %}
                     {{ 'product-1' | placeholder_svg_tag }}
                 {% endif %}

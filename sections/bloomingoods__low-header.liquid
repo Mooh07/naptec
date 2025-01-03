@@ -1,4 +1,4 @@
-<section class="bloomingoods__low-header page-width">
+<section data-sticky="{{ section.settings.sticky_lowheader }}" class="bloomingoods__low-header page-width">
   <div class="bloomingoods__low-header-links-wrapper">
     <ul>
       {% for link in section.settings.link_list.links %}
@@ -28,12 +28,27 @@
   </div>
 </section>
 <style>
+
+
   .bloomingoods__low-header-container {
-    /* position: relative; */
+  /* {% if section.settings.sticky_lowheader %}
     position: sticky;
     top: calc(50px + 74px);
+    {% else %}
+    position: relative;
+    {% endif %} */
+    position: fixed;
+    top: calc(50px + 74px);
+    transition: top .5s ease-out;
+    left: 0;
+    right: 0;
     z-index: 3;
   }
+  
+  .scrolled-past-lowheader {
+    top: calc(50px + 74px * -1);
+  }
+
 
   .bloomingoods__low-header {
     position: sticky;
@@ -74,6 +89,10 @@
   @media screen and (max-width: 992px) {
     .bloomingoods__low-header-container {
       top: calc(50px + 52px);
+    }
+    .scrolled-past-lowheader-mobile {
+      top: calc(50px + 52px * -1);
+      
     }
     .bloomingoods__low-header-links-wrapper {
       display: none;
@@ -132,6 +151,11 @@
         "id": "drawer_title",
         "label": "Drawer title",
         "default": "Links"
+      },
+      {
+        "type": "checkbox",
+        "id": "sticky_lowheader",
+        "label": "Sticky under header",
       }
     ],
     "presets": [

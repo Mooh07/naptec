@@ -144,13 +144,13 @@
   .section-header {
     position: sticky;
     /* This is for fixing a Safari z-index issue. PR #2147 */
-    margin-bottom: {{ section.settings.margin_bottom | times: 0.75 | round: 0 }}px;
+    /* margin-bottom: {{ section.settings.margin_bottom | times: 0.75 | round: 0 }}px; */
     z-index: 10;
   }
 
   @media screen and (min-width: 750px) {
     .section-header {
-      margin-bottom: {{ section.settings.margin_bottom }}px;
+      /* margin-bottom: {{ section.settings.margin_bottom }}px; */
     }
   }
 
