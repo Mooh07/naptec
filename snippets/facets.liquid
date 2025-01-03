@@ -138,7 +138,7 @@
               {% case filter.type %}
                 {% when 'boolean', 'list' %}
                   {% assign sorted_values_size = sorted_values | size %}
-                  {% if sorted_values_size == 1 %}
+                  {% if sorted_values_size == 1 and section.settings.hide-solo-values %}
                     {% continue %}
                   {% endif %}
                   <details
