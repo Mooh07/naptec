@@ -443,7 +443,7 @@
       const lowHeader = document.querySelector(".bloomingoods__low-header");
       const isStickyLowHeader = lowHeader.dataset.sticky;
       if (this.predictiveSearch && this.predictiveSearch.isOpen) return;
-      
+
       if (scrollTop > this.currentScrollTop && scrollTop > this.headerBounds.bottom) {
         this.header.classList.add('scrolled-past-header');
         if(isStickyLowHeader == "true") lowHeaderContainer.classList.add("scrolled-past-lowheader", "scrolled-past-lowheader-mobile");
@@ -459,7 +459,7 @@
 
           this.isScrolling = setTimeout(() => {
             this.preventReveal = false;
-          }, 66);
+  }, 1);
 
           requestAnimationFrame(this.hide.bind(this));
         }

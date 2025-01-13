@@ -64,6 +64,13 @@
       padding: 0 var(--padding-sides);
     }
   }
+
+  {% if template == 'collection.bloomingoods' %}
+  .breadcrumbs {
+      padding-top: 72px;
+  }
+
+  {% endif %}
 </style>
 
 {%- if template.name == 'product' or template.name == 'collection' -%}
