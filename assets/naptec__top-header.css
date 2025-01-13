@@ -8,7 +8,7 @@ section.top_bar_naptec {
   min-height: 51px;
 }
 .top_bar_naptec_Wrapper {
-  position: fixed;
+    position: static;
   width: 100%;
   z-index: 11;
   height: 52px;
