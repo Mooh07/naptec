@@ -107,7 +107,7 @@
       "settings": {
         "link_list": "low-header-menu",
         "drawer_title": "Categories",
-        "sticky_lowheader": false
+        "sticky_lowheader": true
       }
     }
   },
