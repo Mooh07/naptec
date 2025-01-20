@@ -281,7 +281,13 @@
         "industriy_haHDTX": {
           "type": "industriy",
           "settings": {
-            "industry_name": "Restaurants and Bars"
+            "industry_name": "Restaurants"
+          }
+        },
+        "industriy_mApJb7": {
+          "type": "industriy",
+          "settings": {
+            "industry_name": "Bars"
           }
         }
       },
@@ -296,7 +302,8 @@
         "industriy_Q94dkf",
         "industriy_Un4cFt",
         "industriy_qNDBXN",
-        "industriy_haHDTX"
+        "industriy_haHDTX",
+        "industriy_mApJb7"
       ],
       "settings": {
         "title": "Industries we serve"
