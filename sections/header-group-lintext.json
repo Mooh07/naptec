@@ -86,7 +86,7 @@
         "text_color": "#1a3748",
         "logo_image": "shopify://shop_images/Group_5.png",
         "cta-content": "get a quote",
-        "cta_url": "shopify://pages/naperee-contact",
+        "cta_url": "shopify://pages/lintext-contact",
         "logo_position": "middle-left",
         "menu": "lintext-header-menu",
         "menu_type_desktop": "dropdown",
