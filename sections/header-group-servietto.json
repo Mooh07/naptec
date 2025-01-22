@@ -15,6 +15,15 @@
       "type": "header",
       "disabled": true,
       "settings": {
+        "megamenu-label": "Products",
+        "product_menu_1_title": "",
+        "product_menu_1": "",
+        "product_menu_2_title": "",
+        "product_menu_2": "",
+        "product_menu_3_title": "",
+        "product_menu_3": "",
+        "product_menu_right_label": "Custom Design",
+        "product_menu_right_url": "",
         "logo_image": "shopify://shop_images/Naperee_logo_png.png",
         "cta-content": "get a quote",
         "cta_url": "",
@@ -40,7 +49,8 @@
       "settings": {
         "site_logo": "shopify://shop_images/Naptec_Logo_0af931a6-0dd0-4c3f-a746-8168b22f1417.png",
         "header_bg_color": "#143338",
-        "header_text_color": "#ffffff"
+        "header_text_color": "#ffffff",
+        "sticky_bar": true
       }
     },
     "servietto_header_G7bW6h": {
@@ -51,7 +61,7 @@
         "text_color": "#073b43",
         "logo_image": "shopify://shop_images/logo_2d9c8f68-45b4-4768-a2d1-ad5487f89ef5.png",
         "cta-content": "get a quote",
-        "cta_url": "",
+        "cta_url": "shopify://pages/servietto-contact",
         "logo_position": "middle-left",
         "menu": "servietto-header-menu",
         "menu_type_desktop": "dropdown",
