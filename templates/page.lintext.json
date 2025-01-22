@@ -177,20 +177,13 @@
           "settings": {
             "product": "lintext-disposable-linen-feel-guest-towels-airlaid-paper-8-x17-150-pack"
           }
-        },
-        "product_9Uwxyc": {
-          "type": "product",
-          "settings": {
-            "product": "lintext-disposable-linen-feel-guest-towels-medium-size-pack-of-150-disposable-cloth-like-hand-towels-soft-and-absorbent-paper-napkin-for-kitchen-bathroom-party-wedding-or-event"
-          }
         }
       },
       "block_order": [
         "product_nhJVbY",
         "product_R3gziR",
         "product_J8Vh9c",
-        "product_WGB3jg",
-        "product_9Uwxyc"
+        "product_WGB3jg"
       ],
       "settings": {
         "heading": "Bestsellers",
