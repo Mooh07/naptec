@@ -172,6 +172,12 @@
             "product": "lintext-disposable-linen-feel-beverage-napkins-airlaid-paper-10-x10-1000-pack"
           }
         },
+        "product_WGB3jg": {
+          "type": "product",
+          "settings": {
+            "product": "lintext-disposable-linen-feel-guest-towels-airlaid-paper-8-x17-150-pack"
+          }
+        },
         "product_9Uwxyc": {
           "type": "product",
           "settings": {
@@ -183,6 +189,7 @@
         "product_nhJVbY",
         "product_R3gziR",
         "product_J8Vh9c",
+        "product_WGB3jg",
         "product_9Uwxyc"
       ],
       "settings": {
