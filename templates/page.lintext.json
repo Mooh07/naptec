@@ -199,7 +199,7 @@
         "background": "shopify://shop_images/background_9ac56dc0-ce12-4a65-8438-0578deb0bbb6_2.png",
         "heading": "Experience the Difference",
         "content": "Discover the luxury of Lintext and elevate your hosting experience to new heights. Whether you're hosting a lavish dinner party or an intimate gathering, our elegant disposables will add a touch of sophistication to any occasion. Indulge in the beauty of simplicity with Lintext—where elegance meets convenience.",
-        "cta_url": "",
+        "cta_url": "shopify://pages/lintext-contact",
         "cta_content": "Get a Quote",
         "background_color": "#f4f4f4",
         "text_color": "#1a3748",
