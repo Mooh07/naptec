@@ -74,7 +74,8 @@
       "settings": {
         "site_logo": "shopify://shop_images/Naptec_Logo_0af931a6-0dd0-4c3f-a746-8168b22f1417.png",
         "header_bg_color": "#143338",
-        "header_text_color": "#ffffff"
+        "header_text_color": "#ffffff",
+        "sticky_bar": true
       }
     },
     "lintext_header_GxNVxg": {
@@ -85,7 +86,7 @@
         "text_color": "#1a3748",
         "logo_image": "shopify://shop_images/Group_5.png",
         "cta-content": "get a quote",
-        "cta_url": "",
+        "cta_url": "shopify://pages/naperee-contact",
         "logo_position": "middle-left",
         "menu": "lintext-header-menu",
         "menu_type_desktop": "dropdown",
