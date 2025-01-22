@@ -140,7 +140,7 @@
         "background_image": "shopify://shop_images/make-your-design-bg_2.png",
         "heading": "Make your custom design",
         "paragraph": "<p>Tailor napkins to fit your brand or establishment</p> \n<p>by exploring our customization options,</p> \n<p>including branding and packaging solutions.</p>",
-        "cta_url": "",
+        "cta_url": "shopify://pages/bloomingoods-contact",
         "cta_label": "GET A QUOTE",
         "text_background": "shopify://shop_images/image_3bb75f76-9359-49d7-814e-12319dd64863.png"
       }
