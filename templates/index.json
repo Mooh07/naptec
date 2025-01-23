@@ -78,7 +78,7 @@
         "perk_ARfHTm": {
           "type": "perk",
           "settings": {
-            "header": "Trusted by hundreds<br>  of thousands of customers",
+            "header": "Trusted by hundreds of thousands",
             "description": "",
             "icon": "shopify://shop_images/verify.png"
           }
