@@ -20,7 +20,9 @@
       {% case block.type %}
         {% when 'product' %}
           <li>
-            {% render 'global__product-card', product: block.settings.product %}
+            {% render 'global__product-card'
+            , product: block.settings.product
+            , section_id: section.id %}
           </li>
       {% endcase %}
     {% endfor %}

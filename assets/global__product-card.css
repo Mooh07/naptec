@@ -94,6 +94,10 @@
   text-align: left;
 }
 
+.global__product-card-review {
+  margin-bottom: 12px;
+}
+
 .global__product-card-review svg {
   width: 20px;
   height: 20px;

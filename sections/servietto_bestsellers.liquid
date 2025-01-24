@@ -13,7 +13,8 @@
     {% if section.settings.collection != blank %}
       {% for product in section.settings.collection.products %}
         {% render 'global__product-card'
-          , product: product %}
+          , product: product
+          , section_id: section.id  %}
       {% endfor %}
     {% else %}
       {% for block in section.blocks %}
@@ -21,7 +22,8 @@
           {% when 'product' %}
             <li>
               {% render 'global__product-card'
-                , product: block.settings.product %}
+                , product: block.settings.product
+                , section_id: section.id %}
             </li>
         {% endcase %}
       {% endfor %}

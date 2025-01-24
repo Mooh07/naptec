@@ -1122,9 +1122,9 @@ class VariantSelects extends HTMLElement {
 
   onVariantChange(event) {
     console.log(this);
-    document.querySelectorAll("data-optionvalue").forEach(item=>{
-      item
-    })
+    document.querySelectorAll("data-optionvalue").forEach((item) => {
+      item;
+    });
     this.updateOptions();
     this.updateMasterId();
     this.updateSelectedSwatchValue(event);
@@ -1174,9 +1174,12 @@ class VariantSelects extends HTMLElement {
     const { name, value, tagName } = target;
 
     if (tagName === "SELECT" && target.selectedOptions.length) {
-      console.log(target)
+      console.log(target);
       const swatchValue = target.selectedOptions[0].dataset.optionSwatchValue;
-      target.closest(".product-form__input--dropdown").querySelector("[data-optionvalue]").innerText = target.selectedOptions[0].value;
+      target
+        .closest(".product-form__input--dropdown")
+        .querySelector("[data-optionvalue]").innerText =
+        target.selectedOptions[0].value;
       const selectedDropdownSwatchValue = this.querySelector(
         `[data-selected-dropdown-swatch="${name}"] > .swatch`
       );
@@ -1194,7 +1197,6 @@ class VariantSelects extends HTMLElement {
         );
         selectedDropdownSwatchValue.classList.add("swatch--unavailable");
       }
-      
     } else if (tagName === "INPUT" && target.type === "radio") {
       const selectedSwatchValue = this.querySelector(
         `[data-selected-swatch-value="${name}"]`
@@ -1687,6 +1689,17 @@ customElements.define("faq-element", FaqElement);
 class VariantSelector extends HTMLElement {
   constructor() {
     super();
+    this.variants = this.querySelectorAll("[data-variant-id]");
+    this.buyButtonInput = this.parentElement.querySelector(
+      ".card__information-add-to-cart div .product-form form .product-variant-id"
+    );
+    this.variants.forEach((variant) => {
+      console.log(variant);
+      variant.addEventListener("click", (e) => {
+        const variantId = variant.dataset["variantId"];
+        this.buyButtonInput.value = variantId;
+      });
+    });
   }
 
   connectedCallback() {

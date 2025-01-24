@@ -299,7 +299,8 @@
                   style="--animation-order: {{ forloop.index }};"
                   {% endif %}>
                   {% render 'global__product-card'
-                    , product: product %}
+                    , product: product
+                    , section_id: section.id %}
                 </li>
               {%- endfor -%}
             </ul>
