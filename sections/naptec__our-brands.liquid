@@ -19,14 +19,15 @@
                 loading="lazy">
               <a href="{{ block.settings.url }}">
                 <div class="naptec__our-brands-brand-logo-image">
-                  <img
+                  
+                  <div>
+                    <img
                     class=""
                     src="{{ block.settings.logo | image_url: width: block.settings.logo.width }}"
                     alt="{{ block.settings.logo.alt }}"
                     width="{{ block.settings.logo.width }}"
                     height="{{ block.settings.logo.height }}"
                     loading="lazy">
-                  <div>
                     <p>{{ block.settings.brand_description }}</p>
                     <span>{{ block.settings.cta_label }}</span>
                   </div>
