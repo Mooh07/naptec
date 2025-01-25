@@ -1213,7 +1213,7 @@ input.mobile-facets__checkbox {
   }
 
   .product-count-vertical {
-    margin-left: 24rem;
+    /* margin-left: 20rem; */
     position: relative;
     flex-grow: 1;
   }
@@ -1374,28 +1374,28 @@ input.mobile-facets__checkbox {
 }
 
 .products-per-page__wrapper {
-    margin-right: 12px;
-    display: flex;
-    align-items: center;
+  margin-right: 12px;
+  display: flex;
+  align-items: center;
 }
 
 .products-per-page__wrapper select {
-    border: 0;
-    border-radius: 0;
-    color: var(--color-background);
-    font-size: 16px;
-    height: auto;
-    line-height: 20px;
+  border: 0;
+  border-radius: 0;
+  color: var(--color-background);
+  font-size: 16px;
+  height: auto;
+  line-height: 20px;
 }
 
 .products-per-page__wrapper label {
-    background-color: transparent;
-    font-size: 16px;
-    height: auto;
-    line-height: 20px;
-    margin: 0;
-    padding-left: 0;
-    padding-right: 5px;
+  background-color: transparent;
+  font-size: 16px;
+  height: auto;
+  line-height: 20px;
+  margin: 0;
+  padding-left: 0;
+  padding-right: 5px;
 }
 
 @media screen and (max-width: 749px) {

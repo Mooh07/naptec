@@ -115,7 +115,7 @@
                       </div>
                     </details>
                   {%- else -%}
-                    {% if link.title == "Products" %}
+                    {% if link.title == "Products" and section.settings.product_menu_1 %}
                       <div
                         data-open="false"
                         id="HeaderDrawer-{{ link.handle }}"
