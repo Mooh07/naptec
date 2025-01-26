@@ -86,8 +86,9 @@
                                        for="{{ input_id }}">{{ 'general.search.search' | t }}</label>
                                 <input type="hidden" name="options[prefix]" value="last">
                                 <button
+                                style="display: none;"
                                         type="reset"
-                                        class="reset__button field__button{% if search.terms == blank %} hidden{% endif %}"
+                                        class="hidden reset__button field__button{% if search.terms == blank %} hidden{% endif %}"
                                         aria-label="{{ 'general.search.reset' | t }}"
                                 >
                                     <svg class="icon icon-close" aria-hidden="true" focusable="false">

@@ -45,6 +45,7 @@
   > div
   > div.naperee__qualities-quality-text-container {
   justify-content: center;
+  font-size: 56px;
 }
 
 .naperee__qualities_images > li > div > svg {
@@ -108,18 +109,39 @@
   line-height: 112.5%;
   z-index: 2;
 }
-
+@media screen and (max-width: 1500px) {
+  .naperee__qualities_images
+    > li:nth-child(4)
+    > div
+    > div.naperee__qualities-quality-text-container {
+    font-size: 40px;
+  }
+  .naperee__qualities-quality-text-container {
+    font-size: 24px;
+  }
+}
+@media screen and (max-width: 1300px) {
+  .naperee__qualities-quality-text-container {
+    font-size: 28px;
+  }
+}
 @media screen and (max-width: 1250px) {
   .naperee__qualities_images {
     flex-wrap: wrap;
   }
 
   .naperee__qualities_images li {
-    width: calc(50% - 64px);
+    width: calc(50% - 28px);
   }
 
   .naperee__qualities-quality-text-container {
     font-size: 50px;
+  }
+  .naperee__qualities_images
+    > li:nth-child(4)
+    > div
+    > div.naperee__qualities-quality-text-container {
+    font-size: 90px;
   }
 }
 
@@ -143,20 +165,42 @@
   .naperee__qualities-quality-text-container {
     font-size: 32px;
   }
+  .naperee__qualities_images
+    > li:nth-child(4)
+    > div
+    > div.naperee__qualities-quality-text-container {
+    font-size: 56px;
+  }
 }
 
 @media screen and (max-width: 768px) {
-  .naperee__qualities_images li {
-    width: 100%;
-  }
-
   .naperee__qualities {
     padding: 4.2rem var(--padding-sides);
   }
+  .naperee__qualities-quality-text-container {
+    padding: 16px;
+  }
+  .naperee__qualities_images
+    > li:nth-child(4)
+    > div
+    > div.naperee__qualities-quality-text-container {
+    font-size: 48px;
+  }
+  .naperee__qualities-quality-text-container {
+    font-size: 28px;
+  }
 }
-
-@media screen and (max-width: 450px) {
+@media screen and (max-width: 600px) {
+  .naperee__qualities_images li {
+    width: 100%;
+  }
   .naperee__qualities-quality-text-container {
     font-size: 32px;
+  }
+  .naperee__qualities_images
+    > li:nth-child(4)
+    > div
+    > div.naperee__qualities-quality-text-container {
+    font-size: 56px;
   }
 }

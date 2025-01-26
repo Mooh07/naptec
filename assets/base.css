@@ -4145,7 +4145,33 @@ details-disclosure > details {
   padding: 13px 0 13px 52px;
   box-shadow: none;
   max-width: 276px;
+  min-width: 276px;
   margin-right: 24px;
+}
+@media screen and (max-width: 1100px) {
+  .shopify-section-group-header-group-naperee .search__input.field__input {
+    max-width: 240px;
+    min-width: 240px;
+  }
+  .shopify-section-group-header-group-naperee
+    .header__heading-logo-wrapper
+    svg {
+    width: 120px;
+  }
+}
+@media screen and (max-width: 992px) {
+  .shopify-section-group-header-group-naperee .search__input.field__input {
+    max-width: 100%;
+    min-width: 100%;
+  }
+}
+
+.shopify-section-group-header-group-naperee .search__input.field__input:focus {
+  border-radius: 0;
+}
+.shopify-section-group-header-group-servietto
+  .search__input.field__input:focus {
+  border-radius: 0;
 }
 
 .shopify-section-group-header-group-naperee .search__button.field__button {
@@ -4158,6 +4184,9 @@ details-disclosure > details {
   margin-right: 24px;
   border-radius: 100px;
   transition: all 0.2s linear;
+  text-transform: uppercase;
+  min-width: 112px;
+  margin: 0;
 }
 
 .shopify-section-group-header-group-naperee .modal__close-button .icon {
@@ -4167,6 +4196,8 @@ details-disclosure > details {
 
 .shopify-section-group-header-group-naperee .modal__close-button.link {
   margin-left: 0;
+  position: relative;
+  justify-content: end;
 }
 
 .shopify-section-group-header-group-naperee
@@ -4180,6 +4211,11 @@ details-disclosure > details {
   align-items: center;
   position: static;
 }
+@media screen and (max-width: 992px) {
+  .shopify-section-group-header-group-naperee .search-modal__form {
+    width: 100%;
+  }
+}
 
 .shopify-section-group-header-group-naperee #predictive-search-results {
   background-color: #e0d8d0;
@@ -4191,7 +4227,7 @@ details-disclosure > details {
 }
 
 .shopify-section-group-header-group-naperee .field:has(.search__input) {
-  width: fit-content;
+  width: 100%;
 }
 
 .shopify-section-group-header-group-naperee
@@ -4217,7 +4253,11 @@ details-disclosure > details {
   width: fit-content;
   margin-left: auto;
 }
-
+@media screen and (max-width: 992px) {
+  .shopify-section-group-header-group-naperee .search-modal__content {
+    width: 100%;
+  }
+}
 @media (max-width: 768px) {
   .shopify-section-group-header-group-naperee .search-modal__content {
     width: 100%;
@@ -4245,10 +4285,14 @@ details-disclosure > details {
   margin-right: 24px;
 }
 
-.shopify-section-group-header-group-lintext .search-modal__content {
-  background-color: #ede6db;
+.shopify-section-group-header-group-lintext .predictive-search__heading {
+  color: #1a3748;
 }
-
+.shopify-section-group-header-group-lintext
+  #predictive-search-option-search-keywords
+  path {
+  fill: #1a3748;
+}
 .shopify-section-group-header-group-lintext .field__label {
   color: #1a3748;
 }

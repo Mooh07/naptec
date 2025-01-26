@@ -5,6 +5,7 @@
 
   }
 </style>
+{{ 'global__product-card.css' | asset_url | stylesheet_tag }}
 {{ 'lintext__bestsellers.css' | asset_url | stylesheet_tag }}
 <section class="page-width lintext__bestsellers">
   <div class="lintext__bestsellers-text">
@@ -16,7 +17,9 @@
       {% if section.settings.collection != blank %}
         {% for product in section.settings.collection.products %}
           <div class="swiper-slide">
-            {% render 'lintext__product-card', product: product, lintext_logo: section.settings.lintext_logo %}
+            {% render 'lintext__product-card'
+              , product: product
+              , lintext_logo: section.settings.lintext_logo %}
           </div>
         {% endfor %}
       {% else %}
@@ -24,10 +27,13 @@
           {% case block.type %}
             {% when 'product' %}
               <div class="swiper-slide">
-                {% render 'lintext__product-card',
-                  product: block.settings.product,
-                  lintext_logo: block.settings.lintext_logo
-                %}
+                {% comment %} {% render 'lintext__product-card',
+                                                      product: block.settings.product,
+                                                      lintext_logo: block.settings.lintext_logo
+                                                %} {% endcomment %}
+                {% render 'global__product-card'
+                  , product: block.settings.product
+                  , section_id: section.id %}
               </div>
           {% endcase %}
         {% endfor %}
@@ -38,67 +44,64 @@
 </section>
 
 {% schema %}
-{
-  "name": "Lintext bestseller",
-  "settings": [
-    {
-      "type": "text",
-      "id": "heading",
-      "label": "Section heading",
-      "default": "Bestsellers"
-    },
-    {
-      "type": "text",
-      "id": "text",
-      "label": "Text",
-      "default": "Explore our curated collection of premium-quality tableware and discover the perfect pieces to elevate every detail of your table setting with sophistication and style."
-    },
-    {
-      "type": "image_picker",
-      "id": "lintext_logo",
-      "label": "Add Logo Image"
-    },
-    {
-      "type": "collection",
-      "id": "collection",
-      "label": "Collection"
-    },
-    {
-      "type": "color",
-      "id": "background_color",
-      "label": "Background color",
-      "default": "#fff"
-    },
-    {
-      "type": "color",
-      "id": "text_color",
-      "label": "Text color",
-      "default": "#1A3748"
-    }
-  ],
-  "blocks": [
-    {
-      "type": "product",
-      "name": "product",
-      "limit": 6,
-      "settings": [
-        {
-          "type": "product",
-          "id": "product",
-          "label": "product"
-        },
-        {
-          "type": "image_picker",
-          "id": "lintext_logo",
-          "label": "Add Logo Image"
-        }
-      ]
-    }
-  ],
-  "presets": [
-    {
-      "name": "Lintext bestseller"
-    }
-  ]
-}
+  {
+    "name": "Lintext bestseller",
+    "settings": [
+      {
+        "type": "text",
+        "id": "heading",
+        "label": "Section heading",
+        "default": "Bestsellers"
+      },
+      {
+        "type": "text",
+        "id": "text",
+        "label": "Text",
+        "default": "Explore our curated collection of premium-quality tableware and discover the perfect pieces to elevate every detail of your table setting with sophistication and style."
+      },
+      {
+        "type": "image_picker",
+        "id": "lintext_logo",
+        "label": "Add Logo Image"
+      },
+      {
+        "type": "collection",
+        "id": "collection",
+        "label": "Collection"
+      }, {
+        "type": "color",
+        "id": "background_color",
+        "label": "Background color",
+        "default": "#fff"
+      }, {
+        "type": "color",
+        "id": "text_color",
+        "label": "Text color",
+        "default": "#1A3748"
+      }
+    ],
+    "blocks": [
+      {
+        "type": "product",
+        "name": "product",
+        "limit": 6,
+        "settings": [
+          {
+            "type": "product",
+            "id": "product",
+            "label": "product"
+          }, {
+            "type": "image_picker",
+            "id": "lintext_logo",
+            "label": "Add Logo Image"
+          }
+        ]
+      }
+    ],
+    "presets": [
+      {
+        "name": "Lintext bestseller"
+      }
+    ]
+  }
 {% endschema %}

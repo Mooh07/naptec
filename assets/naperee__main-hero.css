@@ -83,9 +83,7 @@
 .naperee__main-hero-call_to_action_button:hover {
   border: 1px solid #403c3c;
 }
-#MainContent {
-  /* margin-top: 92px; */
-}
+
 @media screen and (max-width: 1250px) {
   .naperee__main-hero-title {
     font-size: 78px;
@@ -109,7 +107,11 @@
     font-size: 72px;
   }
 }
-
+@media screen and (max-width: 1150px) {
+  .naperee__main-hero {
+    aspect-ratio: auto;
+  }
+}
 @media screen and (max-width: 768px) {
   .naperee__main-hero-content {
     padding: 4.2rem 1.6rem;
@@ -124,5 +126,19 @@
 
   .naperee__main-hero-subtitle {
     font-size: 62px;
+  }
+  .naperee__main-hero {
+    min-height: 60rem;
+  }
+  .naperee__main-hero > img {
+    object-position: center;
+  }
+}
+@media screen and (max-width: 500px) {
+  .naperee__main-hero-title {
+    font-size: 33px;
+  }
+  .naperee__main-hero-subtitle {
+    font-size: 42px;
   }
 }

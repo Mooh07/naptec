@@ -417,8 +417,8 @@
     {%- if settings.predictive_search_enabled -%}
       <script src="{{ 'predictive-search.js' | asset_url }}" defer="defer"></script>
     {%- endif -%}
-    <script src="{{ 'jquery.js' | asset_url }}"></script>
-    <script src="{{ 'swiper.min.js' | asset_url }}"></script>
+    <script src="{{ 'jquery.js' | asset_url }}" defer></script>
+    <script src="{{ 'swiper.min.js' | asset_url }}" defer></script>
     <script>
       document.addEventListener('DOMContentLoaded', function () {
         const swiper = new Swiper('.lintext__bestsellers-products', {
@@ -426,11 +426,11 @@
           loop: true,
           spaceBetween: 30,
           slidesPerView: 4.2,
-          autoplay: {
-            delay: 10000,
-            disableOnInteraction: false,
-          },
-          speed: 1000,
+          // autoplay: {
+          //   delay: 10000,
+          //   disableOnInteraction: false,
+          // },
+          // speed: 1000,
           breakpoints: {
             0: {
               slidesPerView: 1.2,

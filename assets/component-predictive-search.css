@@ -249,6 +249,12 @@ predictive-search[loading]
   color: #403c3c;
 }
 
+.shopify-section-group-header-group-lintext .search-modal__content {
+  background-color: #ede6db;
+}
+.shopify-section-group-header-group-lintext .predictive-search {
+  background-color: #ede6db;
+}
 .predictive-search__item-query-result *:not(mark) {
   font-weight: bolder;
 }

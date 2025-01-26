@@ -182,6 +182,7 @@ variant-selector .glide__slides {
 
 .variant-items {
   display: flex;
+  gap: 12px;
 }
 .variant-item:hover:after {
   position: absolute;
@@ -208,6 +209,9 @@ variant-selector .glide__slides {
 .card__information-add-to-cart {
   margin-top: 1.5rem;
 }
+.card__information-add-to-cart .product-form__buttons {
+  overflow: hidden;
+}
 @media screen and (max-width: 1450px) {
   .global__product-card-review {
     font-size: 14px;
@@ -230,7 +234,6 @@ variant-selector .glide__slides {
 
   .global__product-card-review {
     display: flex;
-    gap: 6px;
     margin-bottom: 5px;
     font-size: 16px;
     font-weight: 400;

@@ -603,7 +603,7 @@ summary.list-menu__item {
       {% render 'servietto__header-search'
         , input_id: 'Search-In-Modal' %}
 
-      {%- if shop.customer_accounts_enabled -%}
+      {%- if shop.customer_accounts_enabled and false -%}
         <a href="{%- if customer -%}{{ routes.account_url }}{%- else -%}{{ routes.account_login_url }}{%- endif -%}" class="header__icon header__icon--account link focus-inset{% if section.settings.menu != blank %} small-hide{% endif %}">
           {% render 'icon-account' %}
           <span class="visually-hidden">
@@ -636,7 +636,7 @@ summary.list-menu__item {
         {%- endcase -%}
       {%- endfor -%}
 
-      <a href="" class="servietto__header-btn">Get a Quote</a>
+      <a href="" class="servietto__header-btn" href="{{ section.settings.cta_url }}">{{ section.settings.cta-content }}</a>
     </div>
   </header>
 </{% if section.settings.sticky_header_type != 'none' %}sticky-header{% else %}div{% endif %}>

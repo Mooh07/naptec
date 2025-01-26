@@ -1694,7 +1694,6 @@ class VariantSelector extends HTMLElement {
       ".card__information-add-to-cart div .product-form form .product-variant-id"
     );
     this.variants.forEach((variant) => {
-      console.log(variant);
       variant.addEventListener("click", (e) => {
         const variantId = variant.dataset["variantId"];
         this.buyButtonInput.value = variantId;

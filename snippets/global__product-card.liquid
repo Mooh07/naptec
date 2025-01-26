@@ -65,7 +65,14 @@
       <variant-selector
         class="variant-selector {% if product.variants.size > 7 %}glide{% else %}variant-icons{% endif %}"
       >
-        {% if product.variants.size > 7 %}
+      {% assign available_valid_variants_for_this_product = 0 %}
+      {% for variant in product.variants %}
+        {% assign color = variant.options[color_option_index] %}     
+          {% if variant.available and color != blank %}
+            {% assign available_valid_variants_for_this_product = available_valid_variants_for_this_product | plus: 1 %}
+          {% endif %}
+        {% endfor %}
+        {% if available_valid_variants_for_this_product > 7 %}
           <div class="glide__track" data-glide-el="track">
           <ul class="glide__slides">
         {% else %}
@@ -73,13 +80,17 @@
         {% endif %}
         {% for variant in product.variants %}
           {% assign color = variant.options[color_option_index] %}
+         
           {% if variant.available and color != blank %}
+
             {% unless displayed_colors contains color %}
               {% assign displayed_colors = displayed_colors | append: color | append: ',' %}
               {% assign variant_image = variant.featured_image | default: product.featured_image %}
               {% assign variant_image_url = variant_image | image_url: width: 150 %}
+              {% assign main_variant_image_url = variant_image | image_url: width: 600 %}
+
               {% assign variant_url = product.url | append: '?variant=' | append: variant.id %}
-              {% if product.variants.size > 7 %}
+              {% if available_valid_variants_for_this_product > 7 %}
                 <li class="glide__slide">
               {% endif %}
               {% if variant_image_url != blank %}
@@ -87,7 +98,7 @@
                   class="variant-item"
                   data-variant-id="{{ variant.id }}"
                   data-variant-url="{{ variant_url }}"
-                  data-variant-image="{{ variant_image_url }}"
+                  data-variant-image="{{ main_variant_image_url }}"
                 >
                   <img
                     width="150"
@@ -103,13 +114,13 @@
                   >
                 </div>
               {% endif %}
-              {% if product.variants.size > 7 %}
+              {% if available_valid_variants_for_this_product > 7 %}
                 </li>
               {% endif %}
             {% endunless %}
           {% endif %}
         {% endfor %}
-        {% if product.variants.size > 7 %}
+        {% if available_valid_variants_for_this_product > 7 %}
           </ul>
           </div>
         {% else %}

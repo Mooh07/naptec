@@ -18,7 +18,7 @@
         "title": "<p>Elevate your dining </p><p>experience with Napree.</p>",
         "subtitle": "Elegant, Durable, Premium napkins.",
         "text_color": "#ffffff",
-        "cta_button_url": "",
+        "cta_button_url": "shopify://pages/naperee-contact",
         "cta_button_text": "Get a Quote",
         "button_label_color": "#292d32",
         "button_background_color": "#ffffff"
@@ -323,7 +323,7 @@
         "text_body_title": "Trusted Partnerships",
         "text_body": "At Napree, we believe in the power of collaboration to achieve excellence. We are proud to partner with a select network of distributors, retailers, and event planners who share our commitment to quality and sophistication.",
         "cta_button_text": "Become a partner",
-        "cta_button_url": "",
+        "cta_button_url": "shopify://pages/naperee-contact",
         "right_image_top": "shopify://shop_images/top_right_img_1_1_1.png",
         "right_image_bottom": "shopify://shop_images/bottom_right_img_2c8fd5d2-e70b-43e1-8092-75b510d11dbd.png",
         "background_color": "#e0d8d0",
