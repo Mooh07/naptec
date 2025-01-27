@@ -158,12 +158,21 @@
       "settings": {
         "include_margins": true
       }
+    },
+    "product_recommendation_tY9Uz4": {
+      "type": "product-recommendation",
+      "settings": {
+        "heading": "Recommended Products",
+        "view_all_url": "",
+        "view_all_label": "View all"
+      }
     }
   },
   "order": [
     "main",
     "related-products",
     "product_meta_EUwwWU",
-    "1734314696fc504609"
+    "1734314696fc504609",
+    "product_recommendation_tY9Uz4"
   ]
 }

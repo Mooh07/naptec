@@ -50,11 +50,11 @@
           </label>
         </div>
         <style>
-          div.product__selling-plan-select{
+          div.product__selling-plan-select {
             display: flex;
             gap: 2.4rem;
           }
-          .product__selling-plan-select button{
+          .product__selling-plan-select button {
             font-size: 16px;
             font-weight: 400;
             line-height: 1.5;
@@ -68,10 +68,11 @@
             border: 1px solid rgba(176, 192, 195, 1);
             border-radius: 8px;
             transition: 300ms ease-in-out;
+            background-color: #fff;
           }
           .product__selling-plan-select button:hover,
-          .product__selling-plan-select button.active{
-            background:#143338;
+          .product__selling-plan-select button.active {
+            background: #143338;
             color: white;
           }
         </style>
@@ -81,8 +82,7 @@
               onclick="this.parentElement.querySelectorAll('button').forEach(item=>item.classList.remove('active'));this.classList.add('active');document.querySelector('select.product__selling-plan-select').value = {{ discount.id }};document.querySelector('select.product__selling-plan-select').dispatchEvent(new Event('change'));"
               {% if forloop.first %}
               class="active"
-              {% endif %}
-              >
+              {% endif %}>
               {{ discount.name }}
             </button>
           {% endfor %}

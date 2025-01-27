@@ -361,7 +361,12 @@ slider-component.slider-component-full-width {
   align-items: center;
   justify-content: center;
 }
-
+.main-product-container .slider-button.slider-button--prev {
+  transform: rotate(90deg);
+}
+.main-product-container .slider-button.slider-button--next {
+  transform: rotate(-90deg);
+}
 .slider-button:not([disabled]):hover {
   color: rgb(var(--color-foreground));
 }
