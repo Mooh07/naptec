@@ -25,6 +25,7 @@
       , class: contact_form_class -%}
       {%- if form.posted_successfully? -%}
         <h2
+          style="color: #073b43;"
           class="form-status form-status-list form__message"
           tabindex="-1"
           autofocus>
@@ -52,6 +53,10 @@
         </ul>
       {%- endif -%}
       <div class="contact__fields">
+        <input
+          type="hidden"
+          name="contact[Source]"
+          value="{{ section.settings.form_source | default: 'Naptec' }}">
         <div class="field">
           <input
             class="field__input"
@@ -117,7 +122,7 @@
           {{- form.body -}}
         </textarea>
         <label class="form__label field__label" for="ContactForm-body">
-          Enter your message
+          {{ section.settings.message_label }}
         </label>
       </div>
       <div class="contact__button">
@@ -131,7 +136,19 @@
 {% schema %}
   {
     "name": "Naptec contact form",
-    "settings": [],
+    "settings": [
+      {
+        "type": "text",
+        "id": "form_source",
+        "label": "Form Source",
+        "default": "Naptec"
+      }, {
+        "type": "text",
+        "id": "message_label",
+        "label": "Message Field Label",
+        "default": "Enter your message"
+      }
+    ],
     "blocks": [
       {
         "type": "information",

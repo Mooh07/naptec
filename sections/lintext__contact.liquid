@@ -30,25 +30,26 @@
   <div class="lintext__contact-wrapper">
     <div class="lintext__contact-form">
       <h3>
-        Send a Message
+        {{ section.settings.form_heading }}
       </h3>
       {%- form 'contact'
-              , id: 'ContactForm' -%}
+        , id: 'ContactForm' -%}
         {%- if form.posted_successfully? -%}
           <h2
-                  class="form-status form-status-list form__message"
-                  tabindex="-1"
-                  autofocus>
+            style="color: black;"
+            class="form-status form-status-list form__message"
+            tabindex="-1"
+            autofocus>
             {% render 'icon-success' %}
             {{ 'templates.contact.form.post_success' | t }}
           </h2>
         {%- elsif form.errors -%}
           <div class="form__message">
             <h2
-                    class="form-status caption-large text-body"
-                    role="alert"
-                    tabindex="-1"
-                    autofocus>
+              class="form-status caption-large text-body"
+              role="alert"
+              tabindex="-1"
+              autofocus>
               {% render 'icon-error' %}
               {{ 'templates.contact.form.error_heading' | t }}
             </h2>
@@ -63,77 +64,81 @@
           </ul>
         {%- endif -%}
         <div class="contact__fields">
+          <input
+            type="hidden"
+            name="contact[Source]"
+            value="{{ section.settings.form_source | default: 'Lintext' }}">
           <div class="field">
             <input
-                    class="field__input"
-                    autocomplete="name"
-                    type="text"
-                    id="ContactForm-name"
-                    name="contact[{{ 'templates.contact.form.name' | t }}]"
-                    value="{% if form.name %}{{ form.name }}{% elsif customer %}{{ customer.name }}{% endif %}"
-                    placeholder="{{ 'templates.contact.form.name' | t }}">
-            <label class="field__label" for="ContactForm-name">Name</label>
+              class="field__input"
+              autocomplete="name"
+              type="text"
+              id="ContactForm-name"
+              name="contact[{{ 'templates.contact.form.name' | t }}]"
+              value="{% if form.name %}{{ form.name }}{% elsif customer %}{{ customer.name }}{% endif %}"
+              placeholder="{{ 'templates.contact.form.name' | t }}">
+            <label class="field__label" for="ContactForm-name">{{ section.settings.name_label }}</label>
           </div>
           <div class="field field--with-error">
             <input
-                    autocomplete="email"
-                    type="email"
-                    id="ContactForm-email"
-                    class="field__input"
-                    name="contact[email]"
-                    spellcheck="false"
-                    autocapitalize="off"
-                    value="{% if form.email %}{{ form.email }}{% elsif customer %}{{ customer.email }}{% endif %}"
-                    aria-required="true"
-                    {% if form.errors contains 'email' %}
-                      aria-invalid="true"
-                      aria-describedby="ContactForm-email-error"
-                    {% endif %}
-                    placeholder="{{ 'templates.contact.form.email' | t }}">
+              autocomplete="email"
+              type="email"
+              id="ContactForm-email"
+              class="field__input"
+              name="contact[email]"
+              spellcheck="false"
+              autocapitalize="off"
+              value="{% if form.email %}{{ form.email }}{% elsif customer %}{{ customer.email }}{% endif %}"
+              aria-required="true"
+              {% if form.errors contains 'email' %}
+              aria-invalid="true"
+              aria-describedby="ContactForm-email-error"
+              {% endif %}
+              placeholder="{{ 'templates.contact.form.email' | t }}">
             <label class="field__label" for="ContactForm-email">
-              Email
+              {{ section.settings.email_label }}
               <span aria-hidden="true">*</span>
             </label>
             {%- if form.errors contains 'email' -%}
               <small class="contact__field-error" id="ContactForm-email-error">
                 <span class="visually-hidden">{{ 'accessibility.error' | t }}</span>
                 <span class="form__message">
-                {%- render 'icon-error' -%}
+                  {%- render 'icon-error' -%}
                   {{- form.errors.translated_fields.email | capitalize }}
                   {{ form.errors.messages.email -}}
-              </span>
+                </span>
               </small>
             {%- endif -%}
           </div>
         </div>
         <div class="field">
           <input
-                  type="tel"
-                  id="ContactForm-phone"
-                  class="field__input"
-                  autocomplete="tel"
-                  name="contact[{{ 'templates.contact.form.phone' | t }}]"
-                  pattern="[0-9\-]*"
-                  value="{% if form.phone %}{{ form.phone }}{% elsif customer %}{{ customer.phone }}{% endif %}"
-                  placeholder="{{ 'templates.contact.form.phone' | t }}">
-          <label class="field__label" for="ContactForm-phone">Phone</label>
+            type="tel"
+            id="ContactForm-phone"
+            class="field__input"
+            autocomplete="tel"
+            name="contact[{{ 'templates.contact.form.phone' | t }}]"
+            pattern="[0-9\-]*"
+            value="{% if form.phone %}{{ form.phone }}{% elsif customer %}{{ customer.phone }}{% endif %}"
+            placeholder="{{ 'templates.contact.form.phone' | t }}">
+          <label class="field__label" for="ContactForm-phone">{{ section.settings.phone_label }}</label>
         </div>
         <div class="field">
-        <textarea
-                rows="10"
-                id="ContactForm-body"
-                class="text-area field__input"
-                name="contact[{{ 'templates.contact.form.comment' | t }}]"
-                placeholder="{{ 'templates.contact.form.comment' | t }}">
-          {{- form.body -}}
-        </textarea>
+          <textarea
+            rows="10"
+            id="ContactForm-body"
+            class="text-area field__input"
+            name="contact[{{ 'templates.contact.form.comment' | t }}]"
+            placeholder="{{ 'templates.contact.form.comment' | t }}">
+            {{- form.body -}}
+          </textarea>
           <label class="form__label field__label" for="ContactForm-body">
-            Enter your message
+            {{ section.settings.message_label }}
           </label>
         </div>
         <div class="contact__button">
           <button type="submit" class="button">
-            {{ 'submit' | upcase }}
+            {{ section.settings.submit_text | upcase }}
           </button>
         </div>
       {%- endform -%}
@@ -150,6 +155,12 @@
     "name": "Lintext contact",
     "settings": [
       {
+        "type": "text",
+        "id": "form_source",
+        "label": "Form Source",
+        "default": "Lintext"
+      },
+      {
         "type": "image_picker",
         "id": "background",
         "label": "Background image"
@@ -165,8 +176,7 @@
         "id": "text_color",
         "label": "Text color",
         "default": "#1A374D"
-      },
-      {
+      }, {
         "type": "richtext",
         "id": "heading",
         "label": "Section heading",
@@ -191,11 +201,40 @@
         "id": "address",
         "label": "Address",
         "default": "New Hampton, NY, 10958"
-      },
-      {
+      }, {
         "type": "textarea",
         "id": "copy",
         "label": "Section copy"
+      }, {
+        "type": "text",
+        "id": "form_heading",
+        "label": "Form Heading",
+        "default": "Send a Message"
+      }, {
+        "type": "text",
+        "id": "name_label",
+        "label": "Name Field Label",
+        "default": "Name"
+      }, {
+        "type": "text",
+        "id": "email_label",
+        "label": "Email Field Label",
+        "default": "Email"
+      }, {
+        "type": "text",
+        "id": "phone_label",
+        "label": "Phone Field Label",
+        "default": "Phone"
+      }, {
+        "type": "text",
+        "id": "message_label",
+        "label": "Message Field Label",
+        "default": "Enter your message"
+      }, {
+        "type": "text",
+        "id": "submit_text",
+        "label": "Submit Button Text",
+        "default": "submit"
       }
     ],
     "presets": [

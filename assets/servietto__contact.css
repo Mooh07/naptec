@@ -1,291 +1,295 @@
 .servietto__contact {
-    display: flex;
-    position: relative;
-    background-color: #eae7e2;
-    color: rgba(28, 54, 61, 1);
-    flex-direction: column;
-    align-items: center;
+  display: flex;
+  position: relative;
+  background-color: #eae7e2;
+  color: rgba(28, 54, 61, 1);
+  flex-direction: column;
+  align-items: center;
 }
 
 .servietto__contact-bg-image {
-    justify-content: center;
-    position: absolute;
-    width: 100%;
-    display: flex;
-    left: 0;
-    top: 0;
-    z-index: 1;
-    height: 100%;
+  justify-content: center;
+  position: absolute;
+  width: 100%;
+  display: flex;
+  left: 0;
+  top: 0;
+  z-index: 1;
+  height: 100%;
 }
 
 .servietto__contact-bg-image > img {
-    max-width: 100%;
-    height: 100%;
+  max-width: 100%;
+  height: 100%;
 }
 
 .servietto__contact-content {
-    margin-top: 84px;
-    padding-top: 95px;
-    position: relative;
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    z-index: 2;
+  margin-top: 84px;
+  padding-top: 95px;
+  position: relative;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  z-index: 2;
 }
 
 .servietto__contact-content * {
-    color: inherit;
+  color: inherit;
 }
 
 .servietto__contact-content h1 {
-    font-family: "pp hatton";
-    font-size: 84px;
-    font-weight: 500;
-    line-height: 97%;
-    text-align: center;
-    margin: 0;
-    padding-bottom: 36px;
+  font-family: 'pp hatton';
+  font-size: 84px;
+  font-weight: 500;
+  line-height: 97%;
+  text-align: center;
+  margin: 0;
+  padding-bottom: 36px;
 }
 
 .servietto__contact-content p {
-    font-family: "pp hatton";
-    font-size: 48px;
-    font-weight: 200;
-    line-height: 125%;
-    text-align: center;
-    margin: 0;
-    padding-bottom: 112px;
+  font-family: 'pp hatton';
+  font-size: 48px;
+  font-weight: 200;
+  line-height: 125%;
+  text-align: center;
+  margin: 0;
+  padding-bottom: 112px;
 }
 
 .servietto__contact-information {
-    display: flex;
-    justify-content: center;
-    gap: 140px;
-    padding-bottom: 160px;
-    z-index: 2;
-    flex-wrap: wrap;
-    align-items: flex-start;
+  display: flex;
+  justify-content: center;
+  gap: 140px;
+  padding-bottom: 160px;
+  z-index: 2;
+  flex-wrap: wrap;
+  align-items: flex-start;
 }
 
 .servietto__contact-information > div {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .servietto__contact-form-title {
-    font-family: "pp hatton";
-    font-size: 28px;
-    font-weight: 500;
-    line-height: 36px;
-    text-align: center;
-    margin: 0 0 28px 0;
-    color: rgba(41, 45, 50, 1);
+  font-family: 'pp hatton';
+  font-size: 28px;
+  font-weight: 500;
+  line-height: 36px;
+  text-align: center;
+  margin: 0 0 28px 0;
+  color: rgba(41, 45, 50, 1);
 }
 
 .servietto__contact-information p {
-    font-family: "pp hatton";
-    font-size: 24px;
-    font-weight: 200;
-    line-height: 133%;
-    text-align: center;
-    margin: 32px 0 0 0;
+  font-family: 'pp hatton';
+  font-size: 24px;
+  font-weight: 200;
+  line-height: 133%;
+  text-align: center;
+  margin: 32px 0 0 0;
 }
 
 .servietto__contact-form {
-    min-width: 391px;
-    z-index: 1;
-    margin-bottom: 140px;
+  min-width: 391px;
+  z-index: 1;
+  margin-bottom: 140px;
 }
 
 .servietto__contact-form .field label {
-    display: none;
+  display: none;
 }
 
 .servietto__contact-form .field input::placeholder,
 .servietto__contact-form .field textarea::placeholder {
-    opacity: 1;
-    color: rgba(56, 55, 53, 0.72);
-    text-align: center;
-    width: 100%;
-    font-family: "latienne pro";
-    font-size: 16px;
-    font-weight: 400;
-    line-height: 150%;
+  opacity: 1;
+  color: rgba(56, 55, 53, 0.72);
+  text-align: center;
+  width: 100%;
+  font-family: 'latienne pro';
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 150%;
 }
 
 .servietto__contact-form input:focus,
 .servietto__contact-form textarea:focus,
 .servietto__contact-form input:focus-visible,
 .servietto__contact-form textarea:focus-visible {
-    padding: 12px 16px;
+  padding: 12px 16px;
 }
 
 .servietto__contact-form .field::after {
-    box-shadow: none;
+  box-shadow: none;
 }
 
 .servietto__contact-form .field {
-    margin-bottom: 20px;
-    /* border-bottom: 1px solid rgba(56, 55, 53, 0.32); */
+  margin-bottom: 20px;
+  /* border-bottom: 1px solid rgba(56, 55, 53, 0.32); */
 }
 
 .servietto__contact-information > div:nth-child(3) {
-    max-width: 180px;
+  max-width: 180px;
 }
 
 .servietto__contact-form input,
 .servietto__contact-form textarea {
-    background-color: transparent;
-    text-align: center;
-    padding: 12px 16px;
-    color: rgba(28, 54, 61, 1);
+  background-color: transparent;
+  text-align: center;
+  padding: 12px 16px;
+  color: rgba(28, 54, 61, 1);
 }
 
 .servietto__contact-form textarea {
-    min-height: auto;
+  min-height: auto;
 }
 
 .servietto__contact-form .contact__button {
-    padding-top: 20px;
+  padding-top: 20px;
 }
 
 .servietto__contact-form .contact__button > button {
-    width: 100%;
-    border: 1px solid rgba(28, 54, 61, 1);
-    background-color: transparent;
-    border-radius: 100px;
-    text-transform: uppercase;
-    color: rgba(28, 54, 61, 1);
-    padding: 16px 0;
-    font-family: "pp hatton";
-    transition: all .2s linear;
+  width: 100%;
+  border: 1px solid rgba(28, 54, 61, 1);
+  background-color: transparent;
+  border-radius: 100px;
+  text-transform: uppercase;
+  color: rgba(28, 54, 61, 1);
+  padding: 16px 0;
+  font-family: 'pp hatton';
+  transition: all 0.2s linear;
 }
 
 .servietto__contact-form .contact__button > button:hover {
-    color: #fff;
-    background-color: rgba(28, 54, 61, 1);
+  color: #fff;
+  background-color: rgba(28, 54, 61, 1);
 }
 
 .servietto__contact-form .contact__button > button:before,
 .servietto__contact-form .contact__button > button:after {
-    display: none;
+  display: none;
 }
 
 .servietto__contact-form .button:after {
-    box-shadow: none;
+  box-shadow: none;
 }
 
 .servietto__contact-form label {
-    color: rgba(56, 55, 53, 0.72);
-    text-align: center;
-    width: 100%;
-    font-family: "latienne pro";
-    font-size: 16px;
-    font-weight: 400;
-    line-height: 150%;
-    text-align: center;
-    left: 0;
+  color: rgba(56, 55, 53, 0.72);
+  text-align: center;
+  width: 100%;
+  font-family: 'latienne pro';
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 150%;
+  text-align: center;
+  left: 0;
 }
 
-.field__input:focus, .field__input:not(:placeholder-shown), .field__input:-webkit-autofill, .customer .field input:focus, .customer .field input:not(:placeholder-shown), .customer .field input:-webkit-autofill {
-    padding: 12px 16px;
+.field__input:focus,
+.field__input:not(:placeholder-shown),
+.field__input:-webkit-autofill,
+.customer .field input:focus,
+.customer .field input:not(:placeholder-shown),
+.customer .field input:-webkit-autofill {
+  padding: 12px 16px;
 }
 
 .servietto__contact-form .field:after,
 .servietto__contact-form .field:hover,
 .field__input:focus,
 .field:hover.field:after {
-    box-shadow: none;
-    border: none;
-    border-bottom: 1px solid rgba(56, 55, 53, 0.32);
+  box-shadow: none;
+  border: none;
+  border-bottom: 1px solid rgba(56, 55, 53, 0.32);
 }
 
-
 .servietto__contact-form .field:hover {
-    border: none;
+  border: none;
 }
 
 @media screen and (max-width: 1250px) {
-    .servietto__contact-information {
-        gap: 70px;
-    }
+  .servietto__contact-information {
+    gap: 70px;
+  }
 
-    .servietto__contact-content h1 {
-        font-size: 74px;
-    }
+  .servietto__contact-content h1 {
+    font-size: 74px;
+  }
 
-    .servietto__contact-content p {
-        font-size: 38px;
-    }
+  .servietto__contact-content p {
+    font-size: 38px;
+  }
 }
 
 @media screen and (max-width: 992px) {
-    .servietto__contact-information {
-        gap: 35px;
-    }
+  .servietto__contact-information {
+    gap: 35px;
+  }
 
-    .servietto__contact-content h1 {
-        font-size: 54px;
-    }
+  .servietto__contact-content h1 {
+    font-size: 54px;
+  }
 
-    .servietto__contact-content p {
-        font-size: 28px;
-        padding-bottom: 40px;
-    }
+  .servietto__contact-content p {
+    font-size: 28px;
+    padding-bottom: 40px;
+  }
 
-    .servietto__contact-form {
-        min-width: 0;
-        max-width: 100%;
-    }
+  .servietto__contact-form {
+    min-width: 0;
+    max-width: 100%;
+  }
 
-    .servietto__contact-information {
-        padding-bottom: 2rem;
-    }
+  .servietto__contact-information {
+    padding-bottom: 2rem;
+  }
 
-    .servietto__contact-form {
-        width: 50%;
-        margin-bottom: 50px;
-    }
+  .servietto__contact-form {
+    width: 50%;
+    margin-bottom: 50px;
+  }
 
-    .servietto__contact-content {
-        padding-top: 42px;
-    }
+  .servietto__contact-content {
+    padding-top: 42px;
+  }
 }
 
-@media screen and (max-width: 450px) {
-    .servietto__contact-bg-image {
-        display: none;
-    }
+@media screen and (max-width: 768px) {
+  .servietto__contact-bg-image {
+    display: none;
+  }
 
-    .servietto__contact-content h1 {
-        padding-bottom: 10px;
-    }
+  .servietto__contact-content h1 {
+    padding-bottom: 10px;
+  }
 
-    .servietto__contact-content p {
-        padding-bottom: 20px;
-    }
+  .servietto__contact-content p {
+    padding-bottom: 20px;
+  }
 
-    .servietto__contact-form {
-        width: 100%;
-    }
+  .servietto__contact-form {
+    width: 100%;
+  }
 
-    .servietto__contact-form {
-        margin-bottom: 42px;
-    }
+  .servietto__contact-form {
+    margin-bottom: 42px;
+  }
 
-    .servietto__contact-content h1 {
-        font-size: 34px;
-    }
+  .servietto__contact-content h1 {
+    font-size: 34px;
+  }
 
-    .servietto__contact-information {
-        gap: 20px;
-    }
+  .servietto__contact-information {
+    gap: 20px;
+  }
 
-    .servietto__contact-information p {
-        font-size: 16px;
-        margin-bottom: 0;
-    }
+  .servietto__contact-information p {
+    font-size: 16px;
+    margin-bottom: 0;
+  }
 }

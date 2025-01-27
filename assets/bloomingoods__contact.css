@@ -17,7 +17,7 @@
 }
 .bloomingoods__contact-top-text h1 {
   margin: 0;
-  font-family: "latienne pro";
+  font-family: 'latienne pro';
   font-size: 80px;
   font-weight: 400;
   line-height: 115%;
@@ -27,7 +27,7 @@
   margin: 0;
   display: flex;
   align-items: end;
-  font-family: "filson";
+  font-family: 'filson';
   font-size: 32px;
   font-weight: 350;
   line-height: 40px;
@@ -69,14 +69,14 @@
   padding: 0;
 }
 .bloomingoods__contact-text-container h1 {
-  font-family: "milanesa serif";
+  font-family: 'milanesa serif';
   font-size: 80px;
   font-weight: 400;
   line-height: 115%;
   text-align: left;
 }
 .bloomingoods__contact-text-container p {
-  font-family: "latienne pro";
+  font-family: 'latienne pro';
   font-size: 24px;
   font-style: italic;
   font-weight: 400;
@@ -84,7 +84,7 @@
   text-align: left;
 }
 .bloomingoods__contact-form_heading {
-  font-family: "latienne pro";
+  font-family: 'latienne pro';
   font-size: 40px;
   margin: 0;
   margin-bottom: 28px;
@@ -115,7 +115,7 @@
   color: inherit;
 }
 .bloomingoods__contact-form h4 {
-  font-family: "latienne pro";
+  font-family: 'latienne pro';
   font-size: 28px;
   font-style: italic;
   font-weight: 400;
@@ -130,7 +130,7 @@
   flex-wrap: wrap;
 }
 .bloomingoods__contact-information h6 {
-  font-family: "latienne pro";
+  font-family: 'latienne pro';
   font-size: 16px;
   font-weight: 400;
   line-height: 175%;
@@ -138,7 +138,7 @@
   color: rgba(245, 233, 219, 1);
 }
 .bloomingoods__contact-information p {
-  font-family: "latienne pro";
+  font-family: 'latienne pro';
   font-size: 18px;
   font-weight: 500;
   line-height: 28px;
@@ -174,6 +174,7 @@
 .bloomingoods__contact-form form .field:hover,
 .bloomingoods__contact-form #ContactForm > div.contact__button > button:after {
   box-shadow: none;
+  border-radius: 0;
 }
 @media screen and (max-width: 1250px) {
   .bloomingoods__contact-text-container {

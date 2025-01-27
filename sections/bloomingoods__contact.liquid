@@ -4,15 +4,15 @@
     <div class="bloomingoods__contact-form-top">
       <div class="bloomingoods__contact-information">
         <div>
-          <h6>Call us</h6>
+          <h6>{{ section.settings.call_us_label }}</h6>
           <p>{{ section.settings.phone_number }}</p>
         </div>
         <div>
-          <h6>Email us</h6>
+          <h6>{{ section.settings.email_us_label }}</h6>
           <p>{{ section.settings.email }}</p>
         </div>
         <div>
-          <h6>Address</h6>
+          <h6>{{ section.settings.address_label }}</h6>
           <p>{{ section.settings.address }}</p>
         </div>
       </div>
@@ -51,6 +51,10 @@
       {%- endif -%}
       <h2 class="bloomingoods__contact-form_heading">{{ section.settings.form_heading | capitalize }}</h2>
       <div class="contact__fields">
+        <input
+          type="hidden"
+          name="contact[Source]"
+          value="{{ section.settings.form_source | default: 'Bloomingoods' }}">
         <div class="field">
           <input
             class="field__input"
@@ -151,6 +155,21 @@
       },
       {
         "type": "text",
+        "id": "call_us_label",
+        "label": "Call Us Label",
+        "default": "Call us"
+      }, {
+        "type": "text",
+        "id": "email_us_label",
+        "label": "Email Us Label",
+        "default": "Email us"
+      }, {
+        "type": "text",
+        "id": "address_label",
+        "label": "Address Label",
+        "default": "Address"
+      }, {
+        "type": "text",
         "id": "phone_number",
         "label": "Phone number",
         "default": "845-200-3344"
@@ -169,6 +188,11 @@
         "id": "form_heading",
         "label": "Form Heading",
         "default": "Contact us"
+      }, {
+        "type": "text",
+        "id": "form_source",
+        "label": "Form Source",
+        "default": "Bloomingoods"
       }
     ],
     "presets": [

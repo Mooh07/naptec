@@ -65,11 +65,15 @@
     "naperee_contact_form_Nekhqy": {
       "type": "naperee__contact-form",
       "settings": {
+        "call_us_label": "Call us",
+        "email_us_label": "Email us",
+        "address_label": "Address",
         "top_text": "Get in Touch",
         "heading": "We would love to hear from you !",
         "phone_number": "845-200-3344",
-        "email": "845-200-3344",
-        "address": "New Hampton, NY, 10958"
+        "email": "sales@naperee.com",
+        "address": "New Hampton, NY, 10958",
+        "form_source": "Naperee"
       }
     },
     "neperee_contact_images_T974nR": {
