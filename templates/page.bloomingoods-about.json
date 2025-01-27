@@ -11,7 +11,7 @@
     "layout": "theme.bloomingoods",
     "sections": {
         "main": {
-            "type": "brande-about-us",
+            "type": "brands-about-us",
             "settings": {
                 "padding_top": 28,
                 "padding_bottom": 28
