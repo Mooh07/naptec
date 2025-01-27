@@ -23,9 +23,7 @@
               loading="lazy"
             >
           {% endif %}
-          <script>
-            console.log({{ product.featured_image | json }})
-          </script>
+
         {% else %}
           {{ 'product-1' | placeholder_svg_tag }}
         {% endif %}

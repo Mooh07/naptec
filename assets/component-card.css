@@ -204,7 +204,7 @@
   margin-top: 0;
   margin-bottom: 0;
 } */
-.card__heading {
+.card__heading a {
   margin-top: 0;
   margin-bottom: 0;
   font-family: "Faktum";
@@ -221,7 +221,7 @@
 }
 .card__heading a {
   text-decoration: none;
-  color: white;
+  /* color: white; */
 }
 .card__heading .card__heading-vendor {
   font-family: "faktum";
@@ -278,6 +278,7 @@
 
 .card--card.card--media > .card__content {
   margin-top: calc(0rem - var(--image-padding));
+  background: white;
 }
 
 .card--standard.card--text a::after,

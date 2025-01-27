@@ -31,21 +31,10 @@
 
 
   .bloomingoods__low-header-container {
-    /*
 
-  {% if section.settings.sticky_lowheader %}
     position: sticky;
-    top: calc(50px + 74px);
-
-
-  {% else %}
-    position: relative;
-
-
-  {% endif %}   */
-    position: sticky;
-    top: calc(50px + 74px);
-    transition: top .2s ease-out;
+    top: 74px;
+    transition: top 0.2s ease-out;
     left: 0;
     right: 0;
     z-index: 3;
@@ -55,9 +44,12 @@
     top: calc(-1 * var(--header-height));
   }
 
-  .section-header {
-    top: 54px;
-  }
+
+  /*
+   .section-header {
+   top: 54px;
+   }
+*/
 
   .bloomingoods__low-header {
     position: sticky;
@@ -159,31 +151,29 @@
   }
 </style>
 {% schema %}
-{
-  "name": "Bloomingoods low header",
-  "class": "bloomingoods__low-header-container",
-  "settings": [
-    {
-      "type": "link_list",
-      "id": "link_list",
-      "label": "Link list"
-    },
-    {
-      "type": "text",
-      "id": "drawer_title",
-      "label": "Drawer title",
-      "default": "Links"
-    },
-    {
-      "type": "checkbox",
-      "id": "sticky_lowheader",
-      "label": "Sticky under header"
-    }
-  ],
-  "presets": [
-    {
-      "name": "Bloomingoods low header"
-    }
-  ]
-}
+  {
+    "name": "Bloomingoods low header",
+    "class": "bloomingoods__low-header-container",
+    "settings": [
+      {
+        "type": "link_list",
+        "id": "link_list",
+        "label": "Link list"
+      }, {
+        "type": "text",
+        "id": "drawer_title",
+        "label": "Drawer title",
+        "default": "Links"
+      }, {
+        "type": "checkbox",
+        "id": "sticky_lowheader",
+        "label": "Sticky under header"
+      }
+    ],
+    "presets": [
+      {
+        "name": "Bloomingoods low header"
+      }
+    ]
+  }
 {% endschema %}

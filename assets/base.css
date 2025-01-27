@@ -870,6 +870,7 @@ summary::-webkit-details-marker {
 
 .title--primary {
   margin: 4rem 0;
+  color: #143338;
 }
 
 .title-wrapper--self-padded-tablet-down,
@@ -2942,6 +2943,9 @@ details[open] > .search-modal {
   border-bottom: 1px solid rgba(29, 59, 44, 1);
   outline: none;
   box-shadow: none;
+}
+#bloomingoodsSearchInput input:focus {
+  border-radius: 0;
 }
 
 #bloomingoodsSearchInput input {

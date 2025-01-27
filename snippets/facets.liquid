@@ -28,7 +28,7 @@
 
 <div class="facets-container{% if filter_type == 'drawer' %} facets-container-drawer{% endif %}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--fade-in{% endif %}">
   {%- if filter_type == 'vertical' or filter_type == 'horizontal' -%}
-    <facet-filters-form class="facets small-hide">
+    <facet-filters-form class="facets small-hide medium-hide">
       <form
         id="FacetFiltersForm"
         class="{% if filter_type == 'horizontal' %}facets__form{% else %}facets__form-vertical{% endif %}"
@@ -592,7 +592,7 @@
     </facet-filters-form>
     {% comment %} Sorting for vertical filter are grouped with filter when no JS{% endcomment %}
     {%- if enable_sorting and filter_type == 'vertical' -%}
-      <facet-filters-form class="small-hide">
+      <facet-filters-form class="small-hide medium-hide">
         <form class="no-js">
           <div class="facet-filters sorting caption">
             <div class="facet-filters__field">
@@ -643,14 +643,14 @@
   {%- endif -%}
   {% comment %}  Drawer and mobile filter {% endcomment %}
   <menu-drawer
-    class="mobile-facets__wrapper{% if filter_type == 'horizontal' or filter_type == 'vertical' %} medium-hide large-up-hide{% endif %}"
+    class="mobile-facets__wrapper{% if filter_type == 'horizontal' or filter_type == 'vertical' %}  large-up-hide{% endif %}"
     data-breakpoint="mobile"
   >
     <details class="mobile-facets__disclosure disclosure-has-popup">
       <summary class="mobile-facets__open-wrapper focus-offset">
         <span class="mobile-facets__open{% if filter_type == 'drawer' and enable_filtering == false %} medium-hide large-up-hide{% endif %}">
           {% render 'icon-filter' %}
-          <span class="mobile-facets__open-label button-label medium-hide large-up-hide">
+          <span class="mobile-facets__open-label button-label large-up-hide">
             {%- if enable_filtering and enable_sorting -%}
               {{ 'products.facets.filter_and_sort' | t }}
             {%- elsif enable_filtering -%}
@@ -659,7 +659,7 @@
               {{ 'products.facets.sort_button' | t }}
             {%- endif -%}
           </span>
-          <span class="mobile-facets__open-label button-label small-hide">
+          <span class="mobile-facets__open-label button-label small-hide medium-hide">
             {%- if enable_filtering -%}
               {{ 'products.facets.filter_button' | t }}
             {%- endif -%}
@@ -686,7 +686,7 @@
                     {{ 'products.facets.filter_button' | t }}
                   {%- endif -%}
                 </h2>
-                <p class="mobile-facets__count">
+                <p class="mobile-facets__count" style="display: none;">
                   {%- if results.results_count -%}
                     {{ 'templates.search.results_with_count' | t: terms: results.terms, count: results.results_count }}
                   {%- elsif results.products_count == results.all_products_count -%}
@@ -1014,7 +1014,47 @@
                   </div>
                 </div>
               {%- endif -%}
-
+              <div
+              id="Details-Mobile-perpage-{{ section.id }}"
+              class="mobile-facets__details js-filter{% if filter_type == 'drawer' %} medium-hide large-up-hide{% endif %}"
+              data-index="mobile-{{ forloop.index }}"
+            >
+              <div class="mobile-facets__summary">
+                <div class="mobile-facets__sort">
+                  <label for="per-page-mobile">Products per page</label>
+                  <div class="select">
+                    <select
+                      name="sort_by"
+                      class="select__select"
+                      id="per-page-mobile"
+                      aria-describedby="a11y-refresh-page-message"
+                    >
+                      <option
+                        {% if paginate.page_size == 12 %}
+                        selected
+                        {% endif %}
+                        value="12">12</option>
+                      <option
+                        {% if paginate.page_size == 24 %}
+                        selected
+                        {% endif %}
+                        value="24">24</option>
+                      <option
+                        {% if paginate.page_size == 36 %}
+                        selected
+                        {% endif %}
+                        value="36">36</option>
+                      <option
+                        {% if paginate.page_size == 48 %}
+                        selected
+                        {% endif %}
+                        value="48">48</option>
+                    </select>
+                    {% render 'icon-caret' %}
+                  </div>
+                </div>
+              </div>
+            </div>
               <div class="mobile-facets__footer">
                 <facet-remove class="mobile-facets__clear-wrapper">
                   <a href="{{ results_url }}" class="mobile-facets__clear underlined-link">
@@ -1095,7 +1135,7 @@
   </div>
   {% comment %} Sort, product count and filter pills at the end when filter is type of Drawer for the correct tabbing order {% endcomment %}
   {%- if enable_sorting and filter_type == 'drawer' -%}
-    <facet-filters-form class="facets small-hide">
+    <facet-filters-form class="facets small-hide ">
       <form id="FacetSortDrawerForm" class="facets__form">
         <div class="facet-filters sorting caption small-hide">
           <div class="facet-filters__field">
@@ -1144,12 +1184,14 @@
     </facet-filters-form>
   {%- endif -%}
   <div
-    class="product-count light{% if filter_type == 'vertical' or filter_type == 'horizontal' %} medium-hide large-up-hide{% endif %}"
+    class="product-count light{% if filter_type == 'vertical' or filter_type == 'horizontal' %} large-up-hide{% endif %}"
     role="status"
   >
     <h2 class="product-count__text text-body">
       <span id="ProductCount">
-        {%- if results.results_count -%}
+        Showing {{ paginate.current_offset | plus: 1 }} - {{ paginate.current_offset | plus: paginate.page_size }} of {{ paginate.items }} results
+
+        {% comment %} {%- if results.results_count -%}
           {{ 'templates.search.results_with_count' | t: terms: results.terms, count: results.results_count }}
         {%- elsif results.products_count == results.all_products_count -%}
           {{ 'products.facets.product_count_simple' | t: count: results.products_count }}
@@ -1158,7 +1200,7 @@
             'products.facets.product_count'
             | t: product_count: results.products_count, count: results.all_products_count
           }}
-        {%- endif -%}
+        {%- endif -%} {% endcomment %}
       </span>
     </h2>
     {%- render 'loading-spinner' -%}

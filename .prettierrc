@@ -1,0 +1,16 @@
+{
+  "plugins": ["@shopify/prettier-plugin-liquid"],
+  "printWidth": 120,
+  "tabWidth": 2,
+  "useTabs": false,
+  "singleQuote": true,
+  "liquid": {
+    "indentSchema": true,
+    "normalizeSpacing": false,
+    "commentIndentation": false,
+    "commentSpacing": "preserve",
+    "ignoreComments": true
+  },
+  "htmlWhitespaceSensitivity": "ignore",
+  "preserveWhitespace": true
+} 
