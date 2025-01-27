@@ -11,7 +11,7 @@
     "layout": "theme.naperee",
     "sections": {
         "main": {
-            "type": "main-page",
+            "type": "brande-about-us",
             "settings": {
                 "padding_top": 28,
                 "padding_bottom": 28
