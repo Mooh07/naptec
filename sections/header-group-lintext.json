@@ -75,7 +75,7 @@
         "site_logo": "shopify://shop_images/Naptec_Logo_0af931a6-0dd0-4c3f-a746-8168b22f1417.png",
         "header_bg_color": "#143338",
         "header_text_color": "#ffffff",
-        "sticky_bar": true
+        "sticky_bar": false
       }
     },
     "lintext_header_GxNVxg": {
