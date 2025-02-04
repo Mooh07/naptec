@@ -91,7 +91,7 @@
         "menu": "bloomingoods-header-menu",
         "menu_type_desktop": "dropdown",
         "sticky_header_type": "on-scroll-up",
-        "show_line_separator": false,
+        "show_line_separator": true,
         "color_scheme": "",
         "menu_color_scheme": "scheme-3",
         "enable_country_selector": false,
