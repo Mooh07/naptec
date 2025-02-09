@@ -14,8 +14,9 @@
     "naptec_footer_JLcWWw": {
       "type": "naptec__footer",
       "settings": {
+        "background_color": "rgb(7, 59, 67)",
         "contact_number": "845-200-3344",
-        "contact_email": "sales@Naptecpapper.com",
+        "contact_email": "sales@naptecpaper.com",
         "link_list_1": "naptec-footer-menu-1",
         "link_list_2": "naptec-footer-menu-2",
         "all-rights-reserved": "Copyright © 2024 All right reserved.",
