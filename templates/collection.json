@@ -17,6 +17,7 @@
     },
     "banner": {
       "type": "main-collection-banner",
+      "disabled": true,
       "settings": {
         "show_collection_description": true,
         "show_collection_image": false,
@@ -26,6 +27,7 @@
     "product-grid": {
       "type": "main-collection-product-grid",
       "settings": {
+        "hide-solo-values": true,
         "products_per_page": 24,
         "columns_desktop": 3,
         "color_scheme": "scheme-1",

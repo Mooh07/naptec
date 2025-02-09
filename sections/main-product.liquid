@@ -1,3 +1,6 @@
+<script>
+  window.variantsObject = {{ product.variants | json }}
+</script>
 <section
   id="MainProduct-{{ section.id }}"
   class="section-{{ section.id }}-padding product__main gradient page-width color-{{ section.settings.color_scheme }}"
@@ -73,9 +76,11 @@
   {% assign variant_images = product.images | where: 'attached_to_variant?', true | map: 'src' %}
   <div class="main-product-container">
     <div class="product product--{{ section.settings.media_size }} product--{{ section.settings.media_position }} product--{{ section.settings.gallery_layout }} product--mobile-{{ section.settings.mobile_thumbnails }} grid grid--1-col {% if product.media.size > 0 %}grid--2-col-tablet{% else %}product--no-media{% endif %}">
-      <div class="grid__item product__media-wrapper{% if section.settings.media_position == 'right' %} medium-hide large-up-hide{% endif %}">
-        {% render 'product-media-gallery', variant_images: variant_images %}
-      </div>
+      {% unless variant_images.size == 0 %}
+        <div class="grid__item product__media-wrapper{% if section.settings.media_position == 'right' %} medium-hide large-up-hide{% endif %}">
+          {% render 'product-media-gallery', variant_images: variant_images %}
+        </div>
+      {% endunless %}
       <div class="product__info-wrapper grid__item{% if settings.page_width > 1400 and section.settings.media_size == "small" %} product__info-wrapper--extra-padding{% endif %}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}">
         <product-info
           id="ProductInfo-{{ section.id }}"
@@ -213,11 +218,18 @@
                   role="status"
                   {{ block.shopify_attributes }}
                 >
+                {% for plan in product.selling_plan_groups limit: 1 %}
+                  {% assign perentage = plan.selling_plans.first.price_adjustments.first.value %}
+                  {% assign amount_to_substract = perentage | times: product.selected_or_first_available_variant.price | divided_by: 100.0
+                  %}
+                  {% assign new_price = product.selected_or_first_available_variant.price | minus: amount_to_substract %}
+                  {% endfor %}
                   {%- render 'naptec__price',
                     product: product,
                     use_variant: true,
                     show_badges: true,
-                    price_class: 'price--large'
+                    price_class: 'price--large',
+                    money_price_subscribed: new_price
                   -%}
                   {% for tag in product.tags %}
                     {% if tag == "bulk_buy" %}
@@ -245,14 +257,17 @@
                         {% assign tempo2 = split_selected_variant_quantity_size[1] | plus: 0 %}
                         {% assign pack_quantity_size = tempo1 | plus: tempo2 %}
                       {% else %}
-                        {% assign pack_quantity_size = split_selected_variant_quantity_size[0] | plus: 0 %}
+                        {% assign pack_quantity_size = split_selected_variant_quantity_size[0] | plus: 0.0 %}
                       {% endif %}
                     
 
                     {% endif %}
                   {% endfor %}
                   {% if pack_quantity_size > 0 %}
-                  <span class="new-product-unit-price"> {{ block.settings.per-unit }} {{ product.selected_or_first_available_variant.price | divided_by: pack_quantity_size | money }} </span>
+                    {% assign raw_price = product.selected_or_first_available_variant.price | divided_by: pack_quantity_size | times: 100.0 %}
+                    {% assign rounded_price = raw_price | ceil | divided_by: 100.0 %}
+                    {% comment %} {{ rounded_price |  divided_by: 100  }} {% endcomment %}
+                    <span class="new-product-unit-price"> {{ block.settings.per-unit }} ${{ rounded_price | divided_by: 100 }} </span>
                   {% endif %}
                   </div>
                 {%- if product.quantity_price_breaks_configured? -%}

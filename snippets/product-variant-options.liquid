@@ -26,16 +26,12 @@
 {%- assign default_per_row_size = option.values.size -%}
 {% if option.values.size >= 4 %}
   {%- assign default_per_row_size = 4 -%}
-
 {% endif %}
 
 <div style="
-{% if product.options.size == option.position %}
-display: grid;gap: 15px;
-grid-template-columns: repeat({{default_per_row_size}},1fr);
-{% else %}
-display: flex; gap: 15px;flex-wrap: wrap;
-{% endif %}
+display: flex;
+gap: 15px;
+flex-wrap: wrap;
 ">
 
   {%- for value in option.values -%}
@@ -113,13 +109,15 @@ display: flex; gap: 15px;flex-wrap: wrap;
         {% endif %}
         {% if option_disabled %}
         class="disabled"
-        {% endif %}>
-
+      {% endif %}
+      data-variant-price="{{ current_option_variant.price | money }}"
+      >
 
       <label
         {% if is_color %}
         style="background: {{ color_metaobject.value}}; {% if color_metaobject.value_2 %} border: 4px solid {{color_metaobject.value_2}} {% endif %}"
         class="product-swatch-naptec"
+        data-color="{{ value }}"
         {% endif %}
         for="{{ input_id }}">
         {% if is_color and current_option_variant and current_option_variant.featured_image %}

@@ -925,6 +925,8 @@ a.product__text {
 
   .product-media-modal__dialog .global-media-settings--no-shadow {
     overflow: visible !important;
+    max-height: 90vh;
+    object-fit: contain;
   }
 }
 

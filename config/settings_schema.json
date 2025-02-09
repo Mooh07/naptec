@@ -497,6 +497,27 @@
     "settings": [
       {
         "type": "select",
+        "id": "product_card_price_display",
+        "label": "Price Display Format",
+        "options": [
+          {
+            "value": "range",
+            "label": "Price Range (e.g. $24.99 to $159.99)"
+          },
+          {
+            "value": "from",
+            "label": "Starting Price (e.g. From $24.99)"
+          },
+          {
+            "value": "lowest",
+            "label": "Lowest Price Only (e.g. $24.99)"
+          }
+        ],
+        "default": "range",
+        "info": "Choose how product prices are displayed in product cards"
+      },
+      {
+        "type": "select",
         "id": "card_style",
         "options": [
           {

@@ -398,7 +398,7 @@ document.addEventListener('DOMContentLoaded', () => {
     } catch (e) {
       console.error('Failed to save value in localStorage:', e);
     }
-
+    console.log(selectedValue);
     // Update the URL with the new "limit" parameter
     try {
       const url = new URL(window.location.href);
@@ -411,3 +411,31 @@ document.addEventListener('DOMContentLoaded', () => {
   selectElement.addEventListener('change', handleChange);
   selectElementMobile.addEventListener('change', handleChange);
 });
+
+class PerPageSelector extends HTMLElement {
+  constructor() {
+    super();
+    this.querySelector('select').addEventListener('change', this.handleChange.bind(this));
+  }
+
+  handleChange(event) {
+    const selectedValue = event.target.value;
+
+    // Attempt to save the selected value to localStorage
+    try {
+      localStorage.setItem('productsPerPage', selectedValue);
+    } catch (e) {
+      console.error('Failed to save value in localStorage:', e);
+    }
+    console.log(selectedValue);
+    // Update the URL with the new "limit" parameter
+    try {
+      const url = new URL(window.location.href);
+      url.searchParams.set('limit', selectedValue);
+      window.location.href = url.toString();
+    } catch (e) {
+      console.error('Error updating the URL:', e);
+    }
+  }
+}
+customElements.define('per-page-selector', PerPageSelector);

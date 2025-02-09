@@ -33,13 +33,30 @@
   text-underline-position: from-font;
   text-decoration-skip-ink: none;
 }
+
+#subscribed__price.price-item.price-item--subscribed {
+  margin-right: 0;
+  font-size: 44px;
+  font-weight: 300;
+  line-height: 1.4;
+  text-align: left;
+  text-underline-position: from-font;
+  text-decoration-skip-ink: none;
+}
+
 @media screen and (max-width: 1400px) {
   .price__regular .price-item--regular {
+    font-size: 32px;
+  }
+  #subscribed__price.price-item.price-item--subscribed {
     font-size: 32px;
   }
 }
 @media screen and (max-width: 992px) {
   .price__regular .price-item--regular {
+    font-size: 16px;
+  }
+  #subscribed__price.price-item.price-item--subscribed {
     font-size: 16px;
   }
 }

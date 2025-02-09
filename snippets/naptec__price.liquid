@@ -78,8 +78,11 @@
         </span>
       {%- else -%}
         <span class="visually-hidden visually-hidden--inline">{{ 'products.product.price.regular_price' | t }}</span>
-        <span class="price-item price-item--regular">
+        <span class="price-item price-item--regular" id="regular__price">
           {{ money_price }}
+        </span>
+        <span class="price-item price-item--subscribed" id="subscribed__price" style="display: none;">
+          {{ money_price_subscribed | money }}
         </span>
       {%- endif -%}
     </div>

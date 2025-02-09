@@ -57,12 +57,12 @@
         {% break %}
       {% endif %}
     {% endfor %}
-
+    <variant-selector
+  class="variant-selector {% if product.variants.size > 7 %}glide{% else %}variant-icons{% endif %}"
+>
     {% if color_option_index != -1 %}
       {% assign displayed_colors = '' %}
-      <variant-selector
-        class="variant-selector {% if product.variants.size > 7 %}glide{% else %}variant-icons{% endif %}"
-      >
+      
       {% assign available_valid_variants_for_this_product = 0 %}
       {% for variant in product.variants %}
         {% assign color = variant.options[color_option_index] %}     
@@ -124,8 +124,8 @@
         {% else %}
           </div>
         {% endif %}
+      {% endif %}
       </variant-selector>
-    {% endif %}
 
     <div class="global__product-card-footer">
       <div class="global__product-card-review">
@@ -138,16 +138,22 @@
       </div>
       <div class="global__product-card-price">
         {% render 'price',
-          product: product,
-          show_compare_at_price: false,
-          use_variant: true,
-          price_class: 'global__product-price-container'
-        %}
+        product: product,
+        show_compare_at_price: false,
+        use_variant: true,
+        price_class: 'global__product-price-container',
+        product_card: true
+      %}
+        
       </div>
     </div>
     <div class="card__information-add-to-cart">
     {% assign assign product_form_id = 'quick-add-' | append: section_id | append: product.id %}
-    {% render 'buy-buttons', product: product, product_form_id: product_form_id, section_id: section_id %}
+    {%- assign button_label = "View options" -%}
+    {% if product.has_only_default_variant %}
+      {%- assign button_label = "Add to cart" -%}
+    {% endif %}
+    {% render 'buy-buttons', product: product, product_form_id: product_form_id, section_id: section_id, button_label: button_label %}
   </div>
   </div>
 </div>

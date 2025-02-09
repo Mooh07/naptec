@@ -31,12 +31,16 @@
     {% for plan in product.selling_plan_groups limit: 1 %}
       {% assign plan_label = plan.selling_plans.first.description | replace: "%", "<span style='font-family:gotu'>%</span>" %}
       {% assign perentage = plan.selling_plans.first.price_adjustments.first.value %}
-      {% assign amount_to_substract = perentage | times: product.selected_or_first_available_variant.price | divided_by: 100.0
-      %}
+      {% assign amount_to_substract = perentage | times: product.selected_or_first_available_variant.price | divided_by: 100.0 %}
       {% assign new_price = product.selected_or_first_available_variant.price | minus: amount_to_substract %}
+      {% for variant in product.variants %}
+          {% assign variant_amount_to_substract = perentage | times: variant.price | divided_by: 100.0 %}
+          {% assign subscribtion_variant_price = variant.price | minus: variant_amount_to_substract %}
+          <span style="display: none;" data-subscribed-price="{{ subscribtion_variant_price | money }}" data-variant-price="{{ variant.price | money }}" data-variant-id="{{ variant.id }}">{{ subscribtion_variant_price }}</span>
+      {% endfor %}
       <div class="product__selling-plan-container">
         <div>
-          <input
+          <input  
             id="subscribed"
             type="radio"
             name="selling_plan_controller"
@@ -46,7 +50,7 @@
           <span class="product__selling-plan-radio-span"></span>
           <label for="subscribed">
             <span>{{ plan_label }}</span>
-            <span>{{ new_price | money }}</span>
+            <span id="subscribed-label">{{ new_price | money }}</span>
           </label>
         </div>
         <style>

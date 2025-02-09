@@ -127,28 +127,31 @@
             <div class="facet-filters__field">
               <div class="select products-per-page__wrapper">
                 <label for="products-per-page">Products per page</label>
-                <select id="products-per-page" name="products_per_page">
-                  <option
-                    {% if paginate.page_size == 12 %}
-                    selected
-                    {% endif %}
-                    value="12">12</option>
-                  <option
-                    {% if paginate.page_size == 24 %}
-                    selected
-                    {% endif %}
-                    value="24">24</option>
-                  <option
-                    {% if paginate.page_size == 36 %}
-                    selected
-                    {% endif %}
-                    value="36">36</option>
-                  <option
-                    {% if paginate.page_size == 48 %}
-                    selected
-                    {% endif %}
-                    value="48">48</option>
-                </select>
+                <per-page-selector>
+                  <select id="products-per-page" name="products_per_page">
+                    <option
+                      {% if paginate.page_size == 12 %}
+                      selected
+                      {% endif %}
+                      value="12">12</option>
+                    <option
+                      {% if paginate.page_size == 24 %}
+                      selected
+                      {% endif %}
+                      value="24">24</option>
+                    <option
+                      {% if paginate.page_size == 36 %}
+                      selected
+                      {% endif %}
+                      value="36">36</option>
+                    <option
+                      {% if paginate.page_size == 48 %}
+                      selected
+                      {% endif %}
+                      value="48">48</option>
+                  </select>
+                </per-page-selector>
+
               </div>
               <h2 style="display: none;" class="facet-filters__label caption-large text-body">
                 <label for="SortBy">{{ 'products.facets.sort_by_label' | t }}</label>
@@ -186,7 +189,7 @@
             <h2 class="product-count__text text-body" style="margin-left:40px">
               <span id="ProductCountDesktop">
 
-                Showing {{ paginate.current_offset | plus: 1 }} - {{ paginate.current_offset | plus: paginate.page_size }} of {{ paginate.items }} results
+                Showing {{ paginate.current_offset | plus: 1 }} - {{ paginate.current_offset | plus: paginate.page_size | at_most: paginate.items }} of {{ paginate.items }} results
               {% comment %} {%- if collection.results_count -%}
                                                                               {{
                                                                                   'templates.search.results_with_count' | t: terms: collection.terms, count: collection.results_count
@@ -201,7 +204,7 @@
             </h2>
             {%- render 'loading-spinner' -%}
           </div>
-          <h4 class="facets__title" style="width: 304px">Products</h4>
+          <h4 class="facets__title" style="width: 304px">{{ collection.title }}</h4>
         </form>
       </facet-filters-form>
     {%- endif -%}

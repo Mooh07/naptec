@@ -11,25 +11,108 @@
   <div class="page-width">
     <div class="collection-categories__wrapper">
       <h2 class="collection-categories__title">{{ section.settings.title }}</h2>
-      <div class="collection-categories__items">
-        {% for item in collection.metafields.custom.categories.value %}
-          <div class="collection-categories__item">
-            <a href="{{ item.url }}" class="collection-categories__item-link collection-categories__item-link--absolute"></a>
-            <div class="collection-categories__item-image">
-              <img
-                src="{{ item.featured_image | image_url: width: '200' }}"
-                alt="{{ item.featured_image.alt }}"
-                loading="lazy"
-                width="200"
-                height="200"
-                style="height: auto;">
+      <div class="collection-categories__container">
+        <button type="button" class="collection-categories__nav collection-categories__nav--prev" aria-label="Previous items">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M15 18L9 12L15 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </button>
+        <div class="collection-categories__items">
+          {% for item in collection.metafields.custom.categories.value %}
+            <div class="collection-categories__item">
+              <a href="{{ item.url }}" class="collection-categories__item-link collection-categories__item-link--absolute"></a>
+              <div class="collection-categories__item-image">
+                <img
+                  src="{{ item.featured_image | image_url: width: '200' }}"
+                  alt="{{ item.featured_image.alt }}"
+                  loading="lazy"
+                  width="200"
+                  height="200"
+                  style="height: auto;">
+              </div>
+              <p class="collection-categories__item-title">{{ item.title }}</p>
             </div>
-            <p class="collection-categories__item-title">{{ item.title }}</p>
-          </div>
-        {% endfor %}
+          {% endfor %}
+        </div>
+        <button type="button" class="collection-categories__nav collection-categories__nav--next" aria-label="Next items">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M9 18L15 12L9 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </button>
       </div>
     </div>
   </div>
+
+  <script>
+    class CategoryScroller {
+      constructor() {
+        this.container = document.querySelector('.collection-categories__items');
+        this.prevButton = document.querySelector('.collection-categories__nav--prev');
+        this.nextButton = document.querySelector('.collection-categories__nav--next');
+        
+        if (!this.container || !this.prevButton || !this.nextButton) return;
+        
+        // Only initialize if not on a touch device
+        if (!('ontouchstart' in window)) {
+          this.init();
+        }
+      }
+
+      init() {
+        this.scrollAmount = 200; // Scroll distance per click
+        this.updateButtonStates();
+
+        this.prevButton.addEventListener('click', () => this.scroll('left'));
+        this.nextButton.addEventListener('click', () => this.scroll('right'));
+        this.container.addEventListener('scroll', () => this.updateButtonStates());
+        
+        // Also update on window resize as it might affect scrollWidth
+        window.addEventListener('resize', () => this.updateButtonStates());
+      }
+
+      scroll(direction) {
+        const scrollLeft = this.container.scrollLeft;
+        const newPosition = direction === 'left' 
+          ? scrollLeft - this.scrollAmount 
+          : scrollLeft + this.scrollAmount;
+        
+        this.container.scrollTo({
+          left: newPosition,
+          behavior: 'smooth'
+        });
+      }
+
+      updateButtonStates() {
+        const { scrollLeft, scrollWidth, clientWidth } = this.container;
+        
+        // If content isn't scrollable (container width >= scroll width), hide both buttons
+        if (scrollWidth <= clientWidth) {
+          this.prevButton.classList.add('hidden');
+          this.nextButton.classList.add('hidden');
+          return;
+        }
+        
+        // Hide/show prev button based on scroll position
+        if (scrollLeft <= 0) {
+          this.prevButton.classList.add('hidden');
+        } else {
+          this.prevButton.classList.remove('hidden');
+        }
+        
+        // Hide/show next button based on scroll position
+        if (Math.ceil(scrollLeft + clientWidth) >= scrollWidth) {
+          this.nextButton.classList.add('hidden');
+        } else {
+          this.nextButton.classList.remove('hidden');
+        }
+      }
+    }
+
+    // Initialize when DOM is ready
+    document.addEventListener('DOMContentLoaded', () => {
+      new CategoryScroller();
+    });
+  </script>
 {% endif %}
 
 {% schema %}
