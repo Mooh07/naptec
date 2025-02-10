@@ -94,6 +94,7 @@
     },
     "naptec_half_image_half_text_F9BQc8": {
       "type": "naptec__half-image-half-text",
+      "custom_css": [],
       "settings": {
         "image": "shopify://shop_images/bf5407583bd3e260bfb0fa72c64caf72_1_1.png",
         "header": "About Naptec",
