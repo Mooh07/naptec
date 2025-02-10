@@ -255,7 +255,7 @@
                       {% if split_selected_variant_quantity_size.size > 1 %}
                         {% assign tempo1 = split_selected_variant_quantity_size[0] | plus: 0 %}
                         {% assign tempo2 = split_selected_variant_quantity_size[1] | plus: 0 %}
-                        {% assign pack_quantity_size = tempo1 | plus: tempo2 %}
+                        {% assign pack_quantity_size = tempo1 | plus: tempo2 | times: 1.0 %}
                       {% else %}
                         {% assign pack_quantity_size = split_selected_variant_quantity_size[0] | plus: 0.0 %}
                       {% endif %}
@@ -267,7 +267,9 @@
                     {% assign raw_price = product.selected_or_first_available_variant.price | divided_by: pack_quantity_size | times: 100.0 %}
                     {% assign rounded_price = raw_price | ceil | divided_by: 100.0 %}
                     {% comment %} {{ rounded_price |  divided_by: 100  }} {% endcomment %}
-                    <span class="new-product-unit-price"> {{ block.settings.per-unit }} ${{ rounded_price | divided_by: 100 }} </span>
+                    <span class="new-product-unit-price"> {{ product.selected_or_first_available_variant.price | divided_by: pack_quantity_size | money }} </span>
+                    {% comment %} <span class="new-product-unit-price"> {{ block.settings.per-unit }} ${{ rounded_price  | divided_by: 100.0 | round: 2  }} </span>                     {% endcomment %}
+                    {% comment %} <span class="new-product-unit-price"> {{ block.settings.per-unit }} ${{ rounded_price | ceil | divided_by: 100.0 | round: 2  }} </span> {% endcomment %}
                   {% endif %}
                   </div>
                 {%- if product.quantity_price_breaks_configured? -%}
