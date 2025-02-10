@@ -5,6 +5,9 @@
         --background-color: {{ section.settings.header_bg_color }};
         --text-color: {{- section.settings.header_text_color -}};
     }
+    .top-header-wrapper-bg {
+        background-color: {{ section.settings.header_bg_color }};
+    }
 
     {% if section.settings.sticky_bar %}
     .top_bar_naptec_Wrapper {
@@ -95,7 +98,7 @@
 {% schema %}
 {
   "name": "Top Header",
-  "class": "top_header",
+  "class": "top_header top-header-wrapper-bg",
   "settings": [
     {
       "type": "image_picker",

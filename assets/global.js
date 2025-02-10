@@ -1079,13 +1079,14 @@ class VariantSelects extends HTMLElement {
   }
 
   updateMedia() {
+    return;
     if (!this.currentVariant) return;
     if (!this.currentVariant.featured_media) return;
-    return;
     const mediaGalleries = document.querySelectorAll(`[id^="MediaGallery-${this.dataset.section}"]`);
-    mediaGalleries.forEach((mediaGallery) =>
-      mediaGallery.setActiveMedia(`${this.dataset.section}-${this.currentVariant.featured_media.id}`, true),
-    );
+
+    mediaGalleries.forEach((mediaGallery) => {
+      mediaGallery.setActiveMedia(`${this.dataset.section}-${this.currentVariant.featured_media.id}`, true);
+    });
 
     const modalContent = document.querySelector(`#ProductModal-${this.dataset.section} .product-media-modal__content`);
     if (!modalContent) return;
@@ -1186,7 +1187,9 @@ class VariantSelects extends HTMLElement {
         const destination = document.getElementById(`price-${this.dataset.section}`);
         const subscribedInput = document.getElementById('subscribed');
         let subscribedPrice = document.getElementById('subscribed-label');
-        document.querySelector('media-gallery').innerHTML = html.querySelector('media-gallery').innerHTML;
+
+        document.querySelector('media-gallery').outerHTML = html.querySelector('media-gallery').outerHTML;
+
         const source = html.getElementById(
           `price-${this.dataset.originalSection ? this.dataset.originalSection : this.dataset.section}`,
         );

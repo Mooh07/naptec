@@ -306,9 +306,14 @@ summary.list-menu__item {
   }
 
   .header__heading-logo-wrapper svg {
-  w110px
+    width: 110px;
+  }
+
+  
 }
-}
+.servietto__header-wrapper-bg {
+    background-color: #eae7e2
+  }
 </style>
 
 {%- style -%}
@@ -812,7 +817,7 @@ summary.list-menu__item {
 {% schema %}
   {
     "name": "Servietto header",
-    "class": "section-header naptec__header",
+    "class": "section-header naptec__header servietto__header-wrapper-bg",
     "max_blocks": 3,
     "settings": [
       {

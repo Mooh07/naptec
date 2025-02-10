@@ -87,10 +87,14 @@
   .lintext__footer {
     background-color: {{ section.settings.background_color }};
   }
+  .lintext__footer-wrapper-bg {
+    background-color: {{ section.settings.background_color }};
+  }
 </style>
 {% schema %}
 {
   "name": "Lintext footer",
+  "class": "lintext__footer-wrapper-bg",
   "settings": [
     {
       "type": "color",
