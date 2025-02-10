@@ -2,17 +2,10 @@
 <section class="bloomingoods__main-hero page-width">
   {% assign block_count = section.blocks | size %}
   <div class="{% if block_count > 1 %}glide{% endif %}">
-    <div
-      {% if block_count > 1 %}
-      class="glide__track"
-      data-glide-el="track"
-      {% endif %}>
-      <div
-        {% if block_count > 1 %}
-        class="glide__slides"
-        {% endif %}>
+    <div class="glide__track" data-glide-el="track">
+      <div class="glide__slides">
         {% for block in section.blocks %}
-          <div class="bloomingoods__main-hero {% if block_count > 1 %}glide__slide{% endif %}" {{ block.shopify_attributes }}>
+          <div class="bloomingoods__main-hero glide__slide" {{ block.shopify_attributes }}>
             <div class="bloomingoods__main-hero-background-container">
               <img
                 src="{{ block.settings.background_image |  image_url: width: block.settings.background_image.width }}"
