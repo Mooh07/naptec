@@ -12,7 +12,6 @@
 {% endcomment %}
 
 
-{%- assign selected_media = product.media | where: "alt", product.selected_or_first_available_variant.sku -%}
 
 {%- liquid
   if section.settings.hide_variants and variant_images.size == product.media.size

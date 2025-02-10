@@ -1,60 +1,131 @@
 {{ "naptec__main-hero.css" | asset_url | stylesheet_tag }}
+
+<style>
+  .naptec__main-hero {
+    padding: 0 !important;
+  }
+
+  .naptec__main-hero .glide,
+  .naptec__main-hero .glide__track,
+  .naptec__main-hero .glide__slides {
+    height: 100%;
+    width: 100%;
+    padding: 0 !important;
+  }
+
+  .naptec__main-hero .glide__slide {
+    height: 100%;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0
+  }
+</style>
+
 <section class="page-width naptec__main-hero color-scheme-1">
-  <div class="naptec__main-hero-background-container">
-    <img src="{{ section.settings.background | image_url: width: section.settings.background.width }}" alt="{{ section.settings.background.alt }}" width="{{ section.settings.background.width }}" height="{{ section.settings.background.height }}"/>
+  <div class="glide">
+    <div class="glide__track" data-glide-el="track">
+      <ul class="glide__slides">
+        {% for block in section.blocks %}
+          <li class="glide__slide">
+            {% case block.type %}
+              {% when 'hero_content' %}
+                <div class="naptec__main-hero-background-container" {{ block.shopify_attributes }}>
+                  <img
+                    src="{{ block.settings.background | image_url: width: block.settings.background.width }}"
+                    alt="{{ block.settings.background.alt }}"
+                    width="{{ block.settings.background.width }}"
+                    height="{{ block.settings.background.height }}" />
+                </div>
+                <div class="naptec__main-hero-content" {{ block.shopify_attributes }}>
+                  <h2>
+                    {{ block.settings.header }}
+                  </h2>
+                  <p>
+                    {{ block.settings.subheading }}
+                  </p>
+                  <a href="{{ block.settings.cta-url }}" class="naptec__main-hero-cta">
+                    {{ block.settings.cta-content | upcase }}
+                  </a>
+                </div>
+            {% endcase %}
+          </li>
+        {% endfor %}
+      </ul>
+    </div>
   </div>
-  <div class="naptec__main-hero-content">
-    <h2>
-      {{ section.settings.header }}
-    </h2>
-    <p>
-      {{ section.settings.subheading }}
-    </p>
-    <a href="{{ section.settings.cta-url }}" class="naptec__main-hero-cta">
-      {{ section.settings.cta-content | upcase }}
-    </a>
-  </div>
+
 </section>
+{% if section.blocks.size > 1 %}
+  <script>
+     document.addEventListener('DOMContentLoaded', ()=> {
+      const main_hero_glide = new Glide('.naptec__main-hero > .glide', {
+    type: 'carousel',
+    autoplay: {% if section.settings.autoplay %}{{ section.settings.autoplay_speed | times: 1000 }}{% else %}false{% endif %},
+    perView: 1,
+      }).mount()
+     })
+  </script>
+{% endif %}
 {% schema %}
   {
     "name": "Naptec main hero",
-    "settings": [
+    "blocks": [
       {
-        "type": "image_picker",
-        "id": "background",
-        "label": "Background image"
-      },
-      {
-        "type": "html",
-        "id": "header",
-        "label": "Header",
-        "default": "Style without <br> the hassle"
-      },
-      {
-        "type": "html",
-        "id": "subheading",
-        "label": "Text content",
-        "default": "Premium, practical tabletop products,<br> and styles that wow."
-      },
-      {
-        "type": "header",
-        "content": "Call to action button"
-      },
-      {
-        "type": "text",
-        "id": "cta-content",
-        "label": "Button content",
-        "default": "get a quote"
-      },
-      {
-        "type": "url",
-        "id": "cta-url",
-        "label": "Button url"
+        "type": "hero_content",
+        "name": "Hero Content",
+        "settings": [
+          {
+            "type": "image_picker",
+            "id": "background",
+            "label": "Background image"
+          },
+          {
+            "type": "html",
+            "id": "header",
+            "label": "Header",
+            "default": "Style without <br> the hassle"
+          },
+          {
+            "type": "html",
+            "id": "subheading",
+            "label": "Text content",
+            "default": "Premium, practical tabletop products,<br> and styles that wow."
+          },
+          {
+            "type": "text",
+            "id": "cta-content",
+            "label": "Button content",
+            "default": "get a quote"
+          }, {
+            "type": "url",
+            "id": "cta-url",
+            "label": "Button url"
+          }
+        ]
       }
     ],
     "presets": [
       {
         "name": "naptec main hero"
+      }
+    ],
+    "settings": [
+      {
+        "type": "checkbox",
+        "id": "autoplay",
+        "label": "Enable autoplay",
+        "default": true
+      }, {
+        "type": "range",
+        "id": "autoplay_speed",
+        "min": 3,
+        "max": 10,
+        "step": 1,
+        "unit": "sec",
+        "label": "Change slides every",
+        "default": 5
       }
     ]
   }

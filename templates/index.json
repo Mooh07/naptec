@@ -11,12 +11,33 @@
   "sections": {
     "naptec_main_hero_fxjbYa": {
       "type": "naptec__main-hero",
+      "blocks": {
+        "hero_content_A4YnjY": {
+          "type": "hero_content",
+          "settings": {
+            "header": "Style without <br> the hassle",
+            "subheading": "Premium, practical tabletop products,<br> and styles that wow.",
+            "cta-content": "get a quote",
+            "cta-url": ""
+          }
+        },
+        "hero_content_34R3fr": {
+          "type": "hero_content",
+          "settings": {
+            "header": "Style without <br> the hassle",
+            "subheading": "Premium, practical tabletop products,<br> and styles that wow.",
+            "cta-content": "get a quote",
+            "cta-url": ""
+          }
+        }
+      },
+      "block_order": [
+        "hero_content_A4YnjY",
+        "hero_content_34R3fr"
+      ],
       "settings": {
-        "background": "shopify://shop_images/155899f183464ab2ac83921215657d95_1_1.png",
-        "header": "Style without <br> the hassle",
-        "subheading": "Premium, practical tabletop products,<br> and styles that wow.",
-        "cta-content": "Shop now",
-        "cta-url": "shopify://collections/naptec-napkins"
+        "autoplay": true,
+        "autoplay_speed": 5
       }
     },
     "featured_collection": {

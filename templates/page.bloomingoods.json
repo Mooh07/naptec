@@ -12,12 +12,30 @@
   "sections": {
     "bloomingoods_main_hero_EKaGwm": {
       "type": "bloomingoods__main-hero",
+      "blocks": {
+        "slide_4R4P6c": {
+          "type": "slide",
+          "settings": {
+            "heading": "Bringing unforgettable to the table.",
+            "cta_label": "get a quote",
+            "cta_url": ""
+          }
+        },
+        "slide_BMYLzU": {
+          "type": "slide",
+          "settings": {
+            "heading": "Bringing unforgettable to the table.",
+            "cta_label": "get a quote",
+            "cta_url": ""
+          }
+        }
+      },
+      "block_order": [
+        "slide_4R4P6c",
+        "slide_BMYLzU"
+      ],
       "settings": {
-        "text_container_image": "shopify://shop_images/image_3bb75f76-9359-49d7-814e-12319dd64863.png",
-        "heading": "Bringing unforgettable to the table.",
-        "background_image": "shopify://shop_images/bloomingoods_main_hero_background_1.png",
-        "cta_label": "get a quote",
-        "cta_url": "shopify://pages/bloomingoods-contact"
+        "autoplay": true
       }
     },
     "bloomingoods_features_bxA4PQ": {
@@ -160,9 +178,7 @@
       "type": "bloomingoods__main-hero",
       "disabled": true,
       "settings": {
-        "heading": "Bringing unforgettable to the table.",
-        "cta_label": "get a quote",
-        "cta_url": ""
+        "autoplay": true
       }
     },
     "bloomingoods_mission_Nkwgtc": {

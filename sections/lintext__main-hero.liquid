@@ -1,102 +1,186 @@
-<style>
-  .lintext__main-hero {
-    --text-color: {{ section.settings.text_color }};
-    --background-color: {{ section.settings.background_color }};
-    --button-label-color: {{ section.settings.button_label_color }};
-    --button-background-color: {{ section.settings.button_background_color }};
-    --button-background-hover-color: {{ section.settings.button_background_hover_color }};
-  }
-</style>
 {{ 'lintext__main-hero.css' | asset_url | stylesheet_tag }}
 <section class="page-width lintext__main-hero">
-  <div class="lintext__main-hero-content">
-    {{ section.settings.heading }}
-
-    <p>
-      {{ section.settings.paragraph }}
-    </p>
-    <a href="{{ section.settings.cta_button_url }}">{{ section.settings.cta_button_label | upcase }}</a>
-  </div>
-  <div class="lintext__main-hero-images">
-    {% comment %}
-      <img
-        src="{{ section.settings.background-image |image_url: width: section.settings.background-image.width }}"
-        alt="{{ section.settings.background-image.alt }}"
-        width="{{ section.settings.background-image.width }}px"
-        height="{{ section.settings.background-image.height }}px"
-      >
-    {% endcomment %}
-    {% render 'lintext__heading-pattern' %}
+  {% assign block_count = section.blocks | size %}
+  <div class="glide">
+    <div class="glide__track" data-glide-el="track">
+      <div class="glide__slides">
+        {% for block in section.blocks %}
+          <div class="lintext__main-hero-content-{{block.id}} glide__slide" {{ block.shopify_attributes }}>
+            <div>
+              <div class="lintext__main-hero-content">
+                {{ block.settings.heading }}
+                <p>
+                  {{ block.settings.paragraph }}
+                </p>
+                <a href="{{ block.settings.cta_button_url }}">{{ block.settings.cta_button_label | upcase }}</a>
+              </div>
+              <div class="lintext__main-hero-images">
+                {% if block.settings.show_pattern %}
+                  {% render 'lintext__heading-pattern' %}
+                {% endif %}
+              </div>
+            </div>
+          </div>
+        {% endfor %}
+      </div>
+    </div>
+    {% if block_count > 1 %}
+      <div class="glide__bullets" data-glide-el="controls[nav]">
+        {% for block in section.blocks %}
+          <button class="glide__bullet" data-glide-dir="={{ forloop.index0 }}"></button>
+        {% endfor %}
+      </div>
+    {% endif %}
   </div>
 </section>
 
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    {% if section.blocks.size > 1 %}
+      new Glide('.glide', {
+        type: 'slider',
+        autoplay: {% if section.settings.enable_autoplay %}{{ section.settings.autoplay_duration | times: 1000 }}{% else %}false{% endif %},
+        animationDuration: 1000,
+        gap: 0,
+        perView: 1
+      }).mount();
+    {% endif %}
+  });
+</script>
+
+<style>
+  {% for block in section.blocks %}
+    .lintext__main-hero-content-{{ block.id }} {
+      --text-color: {{ block.settings.text_color }};
+      --background-color: {{ block.settings.background_color }};
+      --button-label-color: {{ block.settings.button_label_color }};
+      --button-background-color: {{ block.settings.button_background_color }};
+      --button-background-hover-color: {{ block.settings.button_background_hover_color }};
+    }
+  {% endfor %}
+
+  .lintext__main-hero .glide__bullets {
+    position: absolute;
+    bottom: 2rem;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 1rem;
+    z-index: 2;
+  }
+
+  .lintext__main-hero .glide__bullet {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    border: 2px solid #1a3748;
+    background: transparent;
+    cursor: pointer;
+    padding: 0;
+    transition: all 300ms ease;
+  }
+
+  .lintext__main-hero .glide__bullet--active {
+    background: #1a3748;
+  }
+</style>
+
 {% schema %}
-{
-  "name": "Lintext main hero",
-  "settings": [
-    {
-      "type": "image_picker",
-      "id": "background-image",
-      "label": "Background image"
-    },
-    {
-      "type": "richtext",
-      "id": "heading",
-      "label": "Section heading",
-      "default": "<h1>A touch <br>of class.</h1>"
-    },
-    {
-      "type": "text",
-      "id": "paragraph",
-      "label": "Text content",
-      "default": "We design elegant disposables that feel like heaven at the fingertips – and achieve the delicate balance between form and function, aesthetic and hygiene."
-    },
-    {
-      "type": "text",
-      "id": "cta_button_label",
-      "label": "Button label",
-      "default": "Get a Quote"
-    },
-    {
-      "type": "url",
-      "id": "cta_button_url",
-      "label": "Button url"
-    },
-    {
-      "type": "color",
-      "id": "text_color",
-      "label": "Text color",
-      "default": "#1A3748"
-    },
-    {
-      "type": "color",
-      "id": "background_color",
-      "label": "Background color",
-      "default": "#F4F4F4"
-    },
-    {
-      "type": "color",
-      "id": "button_background_color",
-      "label": "Button background color",
-      "default": "#1A3748"
-    },
-    {
-      "type": "color",
-      "id": "button_background_hover_color",
-      "label": "Button background color",
-      "default": "#1A3748"
-    },
-    {
-      "type": "color",
-      "id": "button_label_color",
-      "label": "Button label color",
-      "default": "#fff"
-    }
-  ],
-  "presets": [
-    {
-      "name": "Lintext main hero"
-    }
-  ]
-}
+  {
+    "name": "Lintext main hero",
+    "settings": [
+      {
+        "type": "checkbox",
+        "id": "enable_autoplay",
+        "label": "Enable autoplay",
+        "default": true
+      }, {
+        "type": "range",
+        "id": "autoplay_duration",
+        "min": 2,
+        "max": 10,
+        "step": 1,
+        "unit": "sec",
+        "label": "Autoplay duration",
+        "default": 5
+      }
+    ],
+    "blocks": [
+      {
+        "type": "slide",
+        "name": "Slide",
+        "settings": [
+          {
+            "type": "richtext",
+            "id": "heading",
+            "label": "Section heading",
+            "default": "<h1>A touch <br>of class.</h1>"
+          },
+          {
+            "type": "text",
+            "id": "paragraph",
+            "label": "Text content",
+            "default": "We design elegant disposables that feel like heaven at the fingertips – and achieve the delicate balance between form and function, aesthetic and hygiene."
+          },
+          {
+            "type": "text",
+            "id": "cta_button_label",
+            "label": "Button label",
+            "default": "Get a Quote"
+          },
+          {
+            "type": "url",
+            "id": "cta_button_url",
+            "label": "Button url"
+          }, {
+            "type": "header",
+            "content": "Design"
+          }, {
+            "type": "checkbox",
+            "id": "show_pattern",
+            "label": "Show pattern",
+            "default": true
+          }, {
+            "type": "header",
+            "content": "Colors"
+          }, {
+            "type": "color",
+            "id": "text_color",
+            "label": "Text color",
+            "default": "#1A3748"
+          }, {
+            "type": "color",
+            "id": "background_color",
+            "label": "Background color",
+            "default": "#F4F4F4"
+          }, {
+            "type": "color",
+            "id": "button_background_color",
+            "label": "Button background color",
+            "default": "#1A3748"
+          }, {
+            "type": "color",
+            "id": "button_background_hover_color",
+            "label": "Button background hover color",
+            "default": "#1A3748"
+          }, {
+            "type": "color",
+            "id": "button_label_color",
+            "label": "Button label color",
+            "default": "#fff"
+          }
+        ]
+      }
+    ],
+    "presets": [
+      {
+        "name": "Lintext main hero",
+        "blocks": [
+          {
+            "type": "slide"
+          }
+        ]
+      }
+    ]
+  }
 {% endschema %}
