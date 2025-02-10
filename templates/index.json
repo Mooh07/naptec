@@ -15,15 +15,17 @@
         "hero_content_A4YnjY": {
           "type": "hero_content",
           "settings": {
+            "background": "shopify://shop_images/155899f183464ab2ac83921215657d95_1_1.png",
             "header": "Style without <br> the hassle",
             "subheading": "Premium, practical tabletop products,<br> and styles that wow.",
             "cta-content": "get a quote",
             "cta-url": ""
           }
         },
-        "hero_content_34R3fr": {
+        "hero_content_PW8kfq": {
           "type": "hero_content",
           "settings": {
+            "background": "shopify://shop_images/155899f183464ab2ac83921215657d95_1_1.png",
             "header": "Style without <br> the hassle",
             "subheading": "Premium, practical tabletop products,<br> and styles that wow.",
             "cta-content": "get a quote",
@@ -33,7 +35,7 @@
       },
       "block_order": [
         "hero_content_A4YnjY",
-        "hero_content_34R3fr"
+        "hero_content_PW8kfq"
       ],
       "settings": {
         "autoplay": true,
