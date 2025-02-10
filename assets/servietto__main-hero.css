@@ -1,4 +1,8 @@
 .servietto__main-hero {
+  padding: 0;
+}
+
+.servietto__main-hero-item {
   height: min(100vh, 760px);
   position: relative;
   display: flex;
@@ -39,7 +43,7 @@
 }
 
 .servietto__main-hero_content h1 {
-  font-family: "pp hatton";
+  font-family: 'pp hatton';
   font-size: 92px;
   font-weight: 500;
   line-height: 108%;
@@ -52,7 +56,7 @@
 }
 
 .servietto__main-hero_content p {
-  font-family: "roc grotesk";
+  font-family: 'roc grotesk';
   font-size: 40px;
   font-weight: 300;
   line-height: 130%;
@@ -63,7 +67,7 @@
 .servietto__main-hero_content a {
   text-decoration: none;
   color: var(--button-color);
-  font-family: "pp hatton";
+  font-family: 'pp hatton';
   font-size: 18px;
   font-weight: 500;
   line-height: 24px;
@@ -84,7 +88,7 @@
 }
 
 @media screen and (max-width: 1250px) {
-  .servietto__main-hero {
+  .servietto__main-hero-item {
     padding: 40px var(--padding-sides);
   }
 }
@@ -96,11 +100,11 @@
 }
 
 @media screen and (max-width: 600px) {
-  .servietto__main-hero {
+  .servietto__main-hero-item {
     padding: 42px var(--padding-sides);
   }
 
-  .servietto__main-hero {
+  .servietto__main-hero-item {
     align-items: flex-start;
   }
 
@@ -114,7 +118,7 @@
     padding-bottom: 12px;
   }
 
-  .servietto__main-hero {
+  .servietto__main-hero-item {
     /* margin-top: 84px; */
   }
 }

@@ -20,15 +20,27 @@
     },
     "servietto_main_hero_Jem8Vq": {
       "type": "servietto__main-hero",
+      "blocks": {
+        "slide_hpwEXm": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/background_8e998a40-5aa3-4de8-aad1-3ac986c64496.png",
+            "heading": "Elegance in every fold",
+            "subheading": "Elevate your hosting expirience.",
+            "cta_label": "Get a Quote",
+            "cta_url": "",
+            "background_color": "#EAE7E2",
+            "text_color": "#1C363D",
+            "button_color": "#000"
+          }
+        }
+      },
+      "block_order": [
+        "slide_hpwEXm"
+      ],
       "settings": {
-        "image": "shopify://shop_images/background_8e998a40-5aa3-4de8-aad1-3ac986c64496.png",
-        "heading": "Elegance in every fold",
-        "subheading": "Elevate your hosting expirience.",
-        "cta_url": "shopify://collections/servietto",
-        "cta_label": "Shop now",
-        "background_color": "#eae7e2",
-        "text_color": "#1c363d",
-        "button_color": "#000000"
+        "enable_autoplay": true,
+        "autoplay_duration": 5
       }
     },
     "servietto_values_VqCBLL": {

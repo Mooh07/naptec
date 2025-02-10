@@ -12,16 +12,42 @@
   "sections": {
     "naperee_main_hero_mEjrEQ": {
       "type": "naperee__main-hero",
+      "blocks": {
+        "slide_L8k48n": {
+          "type": "slide",
+          "settings": {
+            "background_image": "shopify://shop_images/new_bg.png",
+            "title": "<p>Elevate your dining</p><p>experience with Napree.</p>",
+            "subtitle": "Elevate your dining experience",
+            "cta_button_text": "Get a Quote",
+            "cta_button_url": "",
+            "text_color": "#ffffff",
+            "button_label_color": "#292d32",
+            "button_background_color": "#ffffff"
+          }
+        },
+        "slide_UDww4Q": {
+          "type": "slide",
+          "settings": {
+            "background_image": "shopify://shop_images/new_bg.png",
+            "title": "<p>Elevate your dining</p><p>experience with Napree.</p>",
+            "subtitle": "Elevate your dining experience",
+            "cta_button_text": "Get a Quote",
+            "cta_button_url": "",
+            "text_color": "#ffffff",
+            "button_label_color": "#292d32",
+            "button_background_color": "#ffffff"
+          }
+        }
+      },
+      "block_order": [
+        "slide_L8k48n",
+        "slide_UDww4Q"
+      ],
       "custom_css": [],
       "settings": {
-        "background_image": "shopify://shop_images/new_bg.png",
-        "title": "<p>Elevate your dining </p><p>experience with Napree.</p>",
-        "subtitle": "Elegant, Durable, Premium napkins.",
-        "text_color": "#ffffff",
-        "cta_button_url": "shopify://pages/naperee-contact",
-        "cta_button_text": "Get a Quote",
-        "button_label_color": "#292d32",
-        "button_background_color": "#ffffff"
+        "enable_autoplay": true,
+        "autoplay_duration": 5
       }
     },
     "naperee_welcome_dzby8m": {
@@ -78,11 +104,8 @@
       "type": "naptec__main-hero",
       "disabled": true,
       "settings": {
-        "background": "shopify://shop_images/main_hero_background.jpg",
-        "header": "Style without <br> the hassle",
-        "subheading": "Premium, practical tabletop products,<br> and styles that wow.",
-        "cta-content": "get a quote",
-        "cta-url": ""
+        "autoplay": true,
+        "autoplay_speed": 5
       }
     },
     "naperee_screen_wide_image_aHkUxV": {

@@ -1,87 +1,175 @@
-<style>
-    .naperee__main-hero {
-        --text-color: {{ section.settings.text_color }};
-        --button-background-color: {{ section.settings.button_background_color }};
-        --button-label-color: {{ section.settings.button_label_color }};
+{%- style -%}
+  {% for block in section.blocks %}
+    .naperee__main-hero-{{ block.id }} {
+      --text-color: {{ block.settings.text_color }};
+      --button-background-color: {{ block.settings.button_background_color }};
+      --button-label-color: {{ block.settings.button_label_color }};
     }
-</style>
+  {% endfor %}
+{%- endstyle -%}
 {{ "naperee__main-hero.css" | asset_url | stylesheet_tag }}
-<section class="naperee__main-hero page-width">
-    <img
-            src="{{ section.settings.background_image | image_url: width: section.settings.background_image.width }}"
-            alt="{{ section.settings.background_image.alt }}"
-            width="{{ section.settings.background_image.width }}"
-            height="{{ section.settings.background_image.height }}"
-    >
-    <div class="naperee__main-hero-content">
-        <h1 class="naperee__main-hero-title">
-            {{ section.settings.title }}
-        </h1>
-        <h2 class="naperee__main-hero-subtitle">
-            {{ section.settings.subtitle }}
-        </h2>
-        <a
-                href="{{ section.settings.cta_button_url }}"
-                class="naperee__main-hero-call_to_action_button"
-        >
-            {{ section.settings.cta_button_text }}
-        </a>
+<section style="padding: 0;" class="page-width naperee__main-hero-container">
+  {% assign block_count = section.blocks | size %}
+  <div class="glide">
+    <div class="glide__track" data-glide-el="track">
+      <div class="glide__slides">
+        {% for block in section.blocks %}
+          <div class="glide__slide" {{ block.shopify_attributes }}>
+            <div class="naperee__main-hero naperee__main-hero-{{ block.id }}">
+              <img
+                src="{{ block.settings.background_image | image_url: width: block.settings.background_image.width }}"
+                alt="{{ block.settings.background_image.alt }}"
+                width="{{ block.settings.background_image.width }}"
+                height="{{ block.settings.background_image.height }}">
+              <div class="naperee__main-hero-content">
+                <h1 class="naperee__main-hero-title">
+                  {{ block.settings.title }}
+                </h1>
+                <h2 class="naperee__main-hero-subtitle">
+                  {{ block.settings.subtitle }}
+                </h2>
+                <a href="{{ block.settings.cta_button_url }}" class="naperee__main-hero-call_to_action_button">
+                  {{ block.settings.cta_button_text }}
+                </a>
+              </div>
+            </div>
+          </div>
+        {% endfor %}
+      </div>
     </div>
+    {% if block_count > 1 %}
+      <div class="glide__bullets" data-glide-el="controls[nav]">
+        {% for block in section.blocks %}
+          <button class="glide__bullet" data-glide-dir="={{ forloop.index0 }}"></button>
+        {% endfor %}
+      </div>
+    {% endif %}
+  </div>
 </section>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    {% if section.blocks.size > 1 %}
+      new Glide('.glide', {
+        type: 'slider',
+        autoplay: {% if section.settings.enable_autoplay %}{{ section.settings.autoplay_duration | times: 1000 }}{% else %}false{% endif %},
+        animationDuration: 1000,
+        gap: 0,
+        perView: 1
+      }).mount();
+    {% endif %}
+  });
+</script>
+
+<style>
+  .naperee__main-hero-container .glide__bullets {
+    position: absolute;
+    bottom: 2rem;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 1rem;
+    z-index: 2;
+  }
+
+  .naperee__main-hero-container .glide__bullet {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    border: 2px solid #143338;
+    background: transparent;
+    cursor: pointer;
+    padding: 0;
+    transition: all 300ms ease;
+  }
+
+  .naperee__main-hero-container .glide__bullet--active {
+    background: #143338;
+  }
+</style>
+
 {% schema %}
-{
-  "name": "Naperee main hero",
-  "settings": [
-    {
-      "type": "image_picker",
-      "id": "background_image",
-      "label": "Background image"
-    },
-    {
-      "type": "richtext",
-      "id": "title",
-      "label": "Main hero title"
-    },
-    {
-      "type": "text",
-      "id": "subtitle",
-      "label": "Main hero subtitle",
-      "default": "Elegant, Durable, Premium napkins."
-    },
-    {
-      "type": "color",
-      "id": "text_color",
-      "label": "Text color",
-      "default": "#fff"
-    },
-    {
-      "type": "url",
-      "id": "cta_button_url",
-      "label": "Call to action button url"
-    },
-    {
-      "type": "text",
-      "id": "cta_button_text",
-      "label": "Call to action button text",
-      "default": "Get a Quote"
-    },
-    {
-      "type": "color",
-      "id": "button_label_color",
-      "label": "Call to action button label color",
-      "default": "#292D32"
-    },
-    {
-      "type": "color",
-      "id": "button_background_color",
-      "label": "Call to action button background color",
-      "default": "#fff"
-    }
-  ],
-  "presets": [
-    {
-      "name": "Naperee main hero"
-    }
-  ]
-}
+  {
+    "name": "Naperee main hero",
+    "settings": [
+      {
+        "type": "checkbox",
+        "id": "enable_autoplay",
+        "label": "Enable autoplay",
+        "default": true
+      }, {
+        "type": "range",
+        "id": "autoplay_duration",
+        "min": 2,
+        "max": 10,
+        "step": 1,
+        "unit": "sec",
+        "label": "Autoplay duration",
+        "default": 5
+      }
+    ],
+    "blocks": [
+      {
+        "type": "slide",
+        "name": "Slide",
+        "settings": [
+          {
+            "type": "image_picker",
+            "id": "background_image",
+            "label": "Background image"
+          },
+          {
+            "type": "richtext",
+            "id": "title",
+            "label": "Title",
+            "default": "<p>Naperee</p>"
+          },
+          {
+            "type": "text",
+            "id": "subtitle",
+            "label": "Subtitle",
+            "default": "Elevate your dining experience"
+          },
+          {
+            "type": "text",
+            "id": "cta_button_text",
+            "label": "Call to action button text",
+            "default": "Get a Quote"
+          }, {
+            "type": "url",
+            "id": "cta_button_url",
+            "label": "Call to action button url"
+          }, {
+            "type": "header",
+            "content": "Colors"
+          }, {
+            "type": "color",
+            "id": "text_color",
+            "label": "Text color",
+            "default": "#fff"
+          }, {
+            "type": "color",
+            "id": "button_label_color",
+            "label": "Call to action button label color",
+            "default": "#292D32"
+          }, {
+            "type": "color",
+            "id": "button_background_color",
+            "label": "Call to action button background color",
+            "default": "#fff"
+          }
+        ]
+      }
+    ],
+    "presets": [
+      {
+        "name": "Naperee main hero",
+        "blocks": [
+          {
+            "type": "slide"
+          }
+        ]
+      }
+    ]
+  }
 {% endschema %}
