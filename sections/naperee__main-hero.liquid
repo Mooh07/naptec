@@ -5,6 +5,11 @@
       --button-background-color: {{ block.settings.button_background_color }};
       --button-label-color: {{ block.settings.button_label_color }};
     }
+    {% if block.settings.show_overlay == false %}
+      .naperee__main-hero-{{ block.id }}::before {
+        display: none;
+      }
+    {% endif %}
   {% endfor %}
 {%- endstyle -%}
 {{ "naperee__main-hero.css" | asset_url | stylesheet_tag }}
@@ -142,6 +147,12 @@
           }, {
             "type": "header",
             "content": "Colors"
+          }, {
+            "type": "checkbox",
+            "id": "show_overlay",
+            "label": "Show dark overlay",
+            "default": true,
+            "info": "Adds a semi-transparent dark overlay over the background image"
           }, {
             "type": "color",
             "id": "text_color",

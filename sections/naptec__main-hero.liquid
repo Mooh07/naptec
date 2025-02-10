@@ -21,6 +21,31 @@
     justify-content: center;
     padding: 0
   }
+
+  .naptec__main-hero .glide__bullets {
+    position: absolute;
+    bottom: 2rem;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 0.5rem;
+  }
+
+  .naptec__main-hero .glide__bullet {
+    width: 10px;
+    height: 10px;
+    background-color: rgba(255, 255, 255, 0.5);
+    border-radius: 50%;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+
+  .naptec__main-hero .glide__bullet--active {
+    background-color: white;
+    transform: scale(1.2);
+  }
 </style>
 
 <section class="page-width naptec__main-hero color-scheme-1">
@@ -53,6 +78,11 @@
           </li>
         {% endfor %}
       </ul>
+    </div>
+    <div class="glide__bullets" data-glide-el="controls[nav]">
+      {% for block in section.blocks %}
+        <button class="glide__bullet" data-glide-dir="={{ forloop.index0 }}"></button>
+      {% endfor %}
     </div>
   </div>
 
