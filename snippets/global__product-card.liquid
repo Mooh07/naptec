@@ -152,8 +152,13 @@
     {%- assign button_label = "View options" -%}
     {% if product.has_only_default_variant %}
       {%- assign button_label = "Add to cart" -%}
+      {% render 'buy-buttons', product: product, product_form_id: product_form_id, section_id: section_id, button_label: button_label %}
+    {% else %}
+      {%- assign button_label = "View options" -%}
+      <button style="width: 100%;" class="button button--primary" onclick="window.location.href = '{{ product.url }}';">
+        {{ button_label }}
+      </button>
     {% endif %}
-    {% render 'buy-buttons', product: product, product_form_id: product_form_id, section_id: section_id, button_label: button_label %}
   </div>
   </div>
 </div>

@@ -84,6 +84,9 @@
             {% if product.selected_or_first_available_variant.available == false or quantity_rule_soldout %}
               disabled
             {% endif %}
+            {% if button_label == "View options" %}
+              onclick="window.location.href = '{{ product.url }}';"
+            {% endif %}
           >
             <span>
               {%- if product.selected_or_first_available_variant.available == false or quantity_rule_soldout -%}
