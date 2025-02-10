@@ -1,7 +1,7 @@
 {{ 'bloomingoods__main-hero-old.css' | asset_url | stylesheet_tag }}
 <section class="bloomingoods__main-hero page-width">
   {% assign block_count = section.blocks | size %}
-  <div class="{% if block_count > 1 %}glide{% endif %}">
+  <div class="glide">
     <div class="glide__track" data-glide-el="track">
       <div class="glide__slides">
         {% for block in section.blocks %}
