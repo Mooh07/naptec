@@ -985,6 +985,8 @@ class VariantSelects extends HTMLElement {
           this.currentSelectedColor;
       });
     });
+    const mediaGallery = document.querySelector('media-gallery');
+    this.updateModalImages(mediaGallery);
   }
   updateColorOnHover(event) {
     const label = event.target;
@@ -1167,6 +1169,24 @@ class VariantSelects extends HTMLElement {
     if (productForm) productForm.handleErrorMessage();
   }
 
+  updateModalImages(mediaGallery) {
+    const itemsToShow = [];
+    console.log(mediaGallery.querySelectorAll('[data-target-id]'));
+    mediaGallery.querySelectorAll('[data-target-id]').forEach((item) => {
+      const target = item.getAttribute('data-target-id');
+      itemsToShow.push(target);
+    });
+    console.log(itemsToShow);
+    document.querySelectorAll('product-modal img').forEach((img) => {
+      const id = img.getAttribute('data-media-id');
+      if (itemsToShow.includes(id)) {
+        img.classList.remove('hidden');
+      } else {
+        img.classList.add('hidden');
+      }
+    });
+  }
+
   renderProductInfo() {
     const requestedVariantId = this.currentVariant.id;
     const sectionId = this.dataset.originalSection ? this.dataset.originalSection : this.dataset.section;
@@ -1188,7 +1208,9 @@ class VariantSelects extends HTMLElement {
         const subscribedInput = document.getElementById('subscribed');
         let subscribedPrice = document.getElementById('subscribed-label');
 
-        document.querySelector('media-gallery').outerHTML = html.querySelector('media-gallery').outerHTML;
+        var mediaGallery = document.querySelector('media-gallery');
+        mediaGallery.outerHTML = html.querySelector('media-gallery').outerHTML;
+        this.updateModalImages(html.querySelector('media-gallery'));
 
         const source = html.getElementById(
           `price-${this.dataset.originalSection ? this.dataset.originalSection : this.dataset.section}`,

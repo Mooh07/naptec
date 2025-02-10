@@ -84,9 +84,17 @@
             {% unless displayed_colors contains color %}
               {% assign displayed_colors = displayed_colors | append: color | append: ',' %}
               {% assign variant_image = variant.featured_image | default: product.featured_image %}
+              {% assign all_images_of_variant = product.media | where: "alt", variant.sku %}
+              {% if all_images_of_variant.size > 1 %}
+                {% for image in all_images_of_variant %}
+                  {% unless image.id == variant_image.id %}
+                    {% assign variant_image = image %}
+                    {% break %}
+                  {% endunless %}
+                {% endfor %}
+              {% endif %}
               {% assign variant_image_url = variant_image | image_url: width: 150 %}
               {% assign main_variant_image_url = variant_image | image_url: width: 600 %}
-
               {% assign variant_url = product.url | append: '?variant=' | append: variant.id %}
               {% if available_valid_variants_for_this_product > 7 %}
                 <li class="glide__slide">

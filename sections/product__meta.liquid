@@ -263,15 +263,7 @@
         , label: "Size" %}
 
 
-      {% for tag in variant_tags %}
-        {% if tag contains ':' %}
-          {% assign split_tag = tag | split: ':' %}
-          <li>
-            <span class="product__meta-details-title">{{ split_tag[0] }}</span>
-            <span class="product__meta-details-value">{{ split_tag[1] }}</span>
-          </li>
-        {% endif %}
-      {% endfor %}
+   
     </ul>
   </div>
 </section>
