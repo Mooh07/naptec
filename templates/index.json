@@ -324,6 +324,17 @@
         "cta-url": "shopify://pages/contact",
         "image": "shopify://shop_images/46a463dbb2bbc24d47b9b0e1d11c44d9_1.png"
       }
+    },
+    "rich_text_DDHTwG": {
+      "type": "rich-text",
+      "settings": {
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "scheme-e2aaaec1-59de-4358-a55c-fcaad9eda2d5",
+        "full_width": true,
+        "padding_top": 0,
+        "padding_bottom": 16
+      }
     }
   },
   "order": [
@@ -336,6 +347,7 @@
     "naptec_make_custom_design_UK9UWn",
     "naptec_industries_we_serve_jyN4Kt",
     "naptec_separation_image_TCe6z7",
-    "naptec_wholesale_partner_YQMNBe"
+    "naptec_wholesale_partner_YQMNBe",
+    "rich_text_DDHTwG"
   ]
 }
