@@ -23,13 +23,19 @@ if (!customElements.get('media-gallery')) {
 
       onSlideChanged(event) {
         const thumbnail = this.elements.thumbnails.querySelector(
-          `[data-target="${event.detail.currentElement.dataset.mediaId}"]`
+          `[data-target="${event.detail.currentElement.dataset.mediaId}"]`,
         );
         this.setActiveThumbnail(thumbnail);
       }
 
       setActiveMedia(mediaId, prepend) {
-        const activeMedia = this.elements.viewer.querySelector(`[data-media-id="${mediaId}"]`);
+        console.log(mediaId);
+        var activeMedia = this.elements.viewer.querySelector(`[data-media-id="${mediaId}"]`);
+        console.log(this.elements.viewer);
+        if (!activeMedia) {
+          console.log('no active media');
+          return;
+        }
         this.elements.viewer.querySelectorAll('[data-media-id]').forEach((element) => {
           element.classList.remove('is-active');
         });
@@ -105,6 +111,6 @@ if (!customElements.get('media-gallery')) {
         this.elements.viewer.slider.setAttribute('role', 'presentation');
         this.elements.viewer.sliderItems.forEach((slide) => slide.setAttribute('role', 'presentation'));
       }
-    }
+    },
   );
 }

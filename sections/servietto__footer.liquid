@@ -87,10 +87,14 @@
   .servietto__footer {
     background-color: {{ section.settings.background_color }};
   }
+  .servietto__footer-wrapper-bg {
+    background-color: {{ section.settings.background_color }};
+  }
 </style>
 {% schema %}
 {
   "name": "Servietto footer",
+  "class": "servietto__footer-wrapper-bg",
   "settings": [
     {
       "type": "color",

@@ -144,7 +144,9 @@
   .header_color {
     background-color: {{ section.settings.header_background }};
   }
-
+  .naperee__header-wrapper-bg {
+    background-color: #e0d8d0
+  }
 </style>
 
 {%- style -%}
@@ -667,7 +669,7 @@
 {% schema %}
   {
     "name": "Naperee header",
-    "class": "section-header naptec__header",
+    "class": "section-header naptec__header naperee__header-wrapper-bg",
     "max_blocks": 3,
     "settings": [
       {

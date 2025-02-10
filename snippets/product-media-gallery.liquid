@@ -68,7 +68,7 @@
       id="Slider-Gallery-{{ section.id }}{{ id_append }}"
       class="product__media-list contains-media grid grid--peek list-unstyled slider slider--mobile"
       role="list">
-      {%- if product.selected_or_first_available_variant.featured_media != null -%}
+      {% comment %} {%- if product.selected_or_first_available_variant.featured_media != null -%}
         {%- assign featured_media = product.selected_or_first_available_variant.featured_media -%}
         <li
           style="min-width:100%;"
@@ -91,14 +91,15 @@
             , lazy_load: false
           %}
         </li>
-      {%- endif -%}
+      {%- endif -%} {% endcomment %}
+      {% assign skipped_featured = true %}
       {% if selected_media.size > 0 %}
         {%- for media in selected_media -%}
           {%- unless media.id == product.selected_or_first_available_variant.featured_media.id -%}
             <li
               style="min-width:100%"
               id="Slide-{{ section.id }}-{{ media.id }}{{ id_append }}"
-              class="product__media-item grid__item slider__slide{% if single_media_visible %} product__media-item--single{% endif %}{% if product.selected_or_first_available_variant.featured_media == null and forloop.index == 1 %} is-active{% endif %}{% if media.media_type != 'image' %} product__media-item--full{% endif %}{% if section.settings.hide_variants and variant_images contains media.src %} product__media-item--variant{% endif %}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--fade-in{% endif %}"
+              class="product__media-item grid__item slider__slide {% if skipped_featured %} is-active {% endif %} {% if single_media_visible %} product__media-item--single{% endif %}{% if product.selected_or_first_available_variant.featured_media == null and forloop.index == 1 %} is-active{% endif %}{% if media.media_type != 'image' %} product__media-item--full{% endif %}{% if section.settings.hide_variants and variant_images contains media.src %} product__media-item--variant{% endif %}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--fade-in{% endif %}"
               data-media-id="{{ section.id }}-{{ media.id }}">
               {%- liquid
                 assign media_position = media_position | default: 0 | plus: 1
@@ -122,6 +123,7 @@
                 , lazy_load: lazy_load
               %}
             </li>
+            {% assign skipped_featured = false %}
           {%- endunless -%}
         {%- endfor -%}
       {% else %}
@@ -217,7 +219,7 @@
           (min-width: 750px) calc((100vw - 15rem) / 8),
           calc((100vw - 8rem) / 3)
         {%- endcapture -%}
-        {%- if featured_media != null -%}
+        {% comment %} {%- if featured_media != null -%}
           {%- liquid
             capture media_index
               if featured_media.media_type == 'model'
@@ -249,7 +251,7 @@
               }}
             </button>
           </li>
-        {%- endif -%}
+        {%- endif -%} {% endcomment %}
         {% if selected_media.size > 0 %}
           {%- for media in selected_media -%}
             {%- unless media.id == product.selected_or_first_available_variant.featured_media.id -%}

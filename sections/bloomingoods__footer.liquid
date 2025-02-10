@@ -125,10 +125,14 @@
     background-color: {{ section.settings.background_color }};
     color: {{ section.settings.text_color }}
   }
+  .bloomingoods__footer-wrapper-bg {
+    background-color: {{ section.settings.background_color }};
+  }
 </style>
 {% schema %}
   {
     "name": "Bloomingoods footer",
+    "class": "bloomingoods__footer-wrapper-bg",
     "settings": [
       {
         "type": "color",

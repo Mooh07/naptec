@@ -127,6 +127,9 @@ color: white;
   .naptec__header .header__menu-item{
 
   }
+  .naptec-header-bg {
+    background-color: {{ section.settings.header_background }};
+  }
   {% if template == 'collection' %}
     .header_color {
       background-color: white;
@@ -580,7 +583,7 @@ color: white;
 {% schema %}
 {
   "name": "t:sections.header.name",
-  "class": "section-header naptec__header",
+  "class": "section-header naptec__header naptec-header-bg",
   "max_blocks": 3,
   "settings": [
     {
