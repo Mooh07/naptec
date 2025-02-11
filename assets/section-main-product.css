@@ -1950,7 +1950,7 @@ a.product__text {
   color: white;
   padding: 0.5rem;
   border-radius: 5px;
-  width: 100%;
+  width: fit-content;
   pointer-events: none;
 }
 .product-form__input--pill

@@ -109,9 +109,8 @@ flex-wrap: wrap;
         {% endif %}
         {% if option_disabled %}
         class="disabled"
-      {% endif %}
-      data-variant-price="{{ current_option_variant.price | money }}"
-      >
+        {% endif %}
+        data-variant-price="{{ current_option_variant.price | money }}">
 
       <label
         {% if is_color %}
@@ -120,6 +119,9 @@ flex-wrap: wrap;
         data-color="{{ value }}"
         {% endif %}
         for="{{ input_id }}">
+        {% if is_color %}
+          <span>{{ value }}</span>
+        {% endif %}
         {% if is_color and current_option_variant and current_option_variant.featured_image %}
           <img
             style="object-fit: contain;"

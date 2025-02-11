@@ -1,29 +1,63 @@
+{% assign color_option_index = -1 %}
+{% for option in product.options_with_values %}
+  {% if option.name == 'Color' %}
+    {% assign color_option_index = forloop.index0 %}
+    {% break %}
+  {% endif %}
+{% endfor %}
 <div class="global__product-card" data-product-id="{{ product.id }}">
   <a href="{{ product.url }}" class="link link--absolute"></a>
   <div class="global__product-card-top">
     <div class="global__product-card-img-container">
       <div>
         {% if product.featured_image != blank %}
-          {% if product.selected_or_first_available_variant.featured_image != blank %}
+          {% assign all_images_of_variant = product.media | where: "alt", product.selected_or_first_available_variant.sku %}
+          {% if color_option_index != -1 %}
+            {% assign featured_image = product.selected_or_first_available_variant.featured_image %}
+            {% for variant in product.variants %}
+              {% assign color = variant.options[color_option_index] %}    
+              {% if variant.available and color != blank and variant.featured_image != blank %}
+                {% assign all_variants_images = product.media | where: "alt", variant.sku %}
+                {% for image in all_variants_images %}
+                  {% if image.id != featured_image.id %}
+                    {% assign featured_image = image %}
+                    {% break %}
+                  {% endif %}
+                {% endfor %}
+              {% endif %}
+            {% endfor %}
+            {% unless featured_image %}
+              {% assign featured_image = product.featured_image %}
+            {% endunless %}
             <img
               class="global__product-card-img"
-              src="{{ product.selected_or_first_available_variant.featured_image | image_url: width: '600', height: '600' }}"
-              alt="{{ product.selected_or_first_available_variant.featured_image.alt | escape }}"
+              src="{{ featured_image | image_url: width: '600', height: '600' }}"
+              alt="{{ featured_image.alt | escape }}"
               width="600"
               height="600"
               loading="lazy"
             >
           {% else %}
-            <img
-              class="global__product-card-img"
-              src="{{ product.featured_image | image_url: width: '600', height: '600' }}"
-              alt="{{ product.featured_image.alt | escape }}"
-              width="600"
-              height="600"
-              loading="lazy"
-            >
+            {% if product.selected_or_first_available_variant.featured_image != blank %}
+              <img
+                class="global__product-card-img"
+                src="{{ product.selected_or_first_available_variant.featured_image | image_url: width: '600', height: '600' }}"
+                alt="{{ product.selected_or_first_available_variant.featured_image.alt | escape }}"
+                width="600"
+                height="600"
+                loading="lazy"
+              >
+            {% else %}
+              <img
+                class="global__product-card-img"
+                src="{{ product.featured_image | image_url: width: '600', height: '600' }}"
+                alt="{{ product.featured_image.alt | escape }}"
+                width="600"
+                height="600"
+                loading="lazy"
+              >
+            {% endif %}
           {% endif %}
-
         {% else %}
           {{ 'product-1' | placeholder_svg_tag }}
         {% endif %}
@@ -50,13 +84,7 @@
   </div>
 
   <div class="global__product-card-information">
-    {% assign color_option_index = -1 %}
-    {% for option in product.options_with_values %}
-      {% if option.name == 'Color' %}
-        {% assign color_option_index = forloop.index0 %}
-        {% break %}
-      {% endif %}
-    {% endfor %}
+   
     <variant-selector
   class="variant-selector {% if product.variants.size > 7 %}glide{% else %}variant-icons{% endif %}"
 >
@@ -66,10 +94,10 @@
       {% assign available_valid_variants_for_this_product = 0 %}
       {% for variant in product.variants %}
         {% assign color = variant.options[color_option_index] %}     
-          {% if variant.available and color != blank %}
+          {% if variant.available and color != blank and variant.featured_image != blank %}
             {% assign available_valid_variants_for_this_product = available_valid_variants_for_this_product | plus: 1 %}
           {% endif %}
-        {% endfor %}
+      {% endfor %}
         {% if available_valid_variants_for_this_product > 7 %}
           <div class="glide__track" data-glide-el="track">
           <ul class="glide__slides">
@@ -77,9 +105,8 @@
           <div class="variant-items">
         {% endif %}
         {% for variant in product.variants %}
-          {% assign color = variant.options[color_option_index] %}
-         
-          {% if variant.available and color != blank %}
+          {% assign color = variant.options[color_option_index] %}    
+          {% if variant.available and color != blank and variant.featured_image != blank %}
 
             {% unless displayed_colors contains color %}
               {% assign displayed_colors = displayed_colors | append: color | append: ',' %}
@@ -88,13 +115,13 @@
               {% if all_images_of_variant.size > 1 %}
                 {% for image in all_images_of_variant %}
                   {% unless image.id == variant_image.id %}
-                    {% assign variant_image = image %}
-                    {% break %}
+                    {% assign variant_image_to_replace = image %}
+                    {% comment %} {% break %} {% endcomment %}
                   {% endunless %}
                 {% endfor %}
               {% endif %}
               {% assign variant_image_url = variant_image | image_url: width: 150 %}
-              {% assign main_variant_image_url = variant_image | image_url: width: 600 %}
+              {% assign main_variant_image_url = variant_image_to_replace | image_url: width: 600 %}
               {% assign variant_url = product.url | append: '?variant=' | append: variant.id %}
               {% if available_valid_variants_for_this_product > 7 %}
                 <li class="glide__slide">
