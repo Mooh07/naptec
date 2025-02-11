@@ -28,6 +28,7 @@
             "paragraph": "We design elegant disposables that feel like heaven at the fingertips – and achieve the delicate balance between form and function, aesthetic and hygiene.",
             "cta_button_label": "Get a Quote",
             "cta_button_url": "",
+            "show_pattern": true,
             "text_color": "#1a3748",
             "background_color": "#ede6db",
             "button_background_color": "#1a3748",
@@ -37,11 +38,13 @@
         },
         "slide_AqBhUN": {
           "type": "slide",
+          "disabled": true,
           "settings": {
             "heading": "<h1>A touch <br/>of class.</h1>",
             "paragraph": "We design elegant disposables that feel like heaven at the fingertips – and achieve the delicate balance between form and function, aesthetic and hygiene.",
             "cta_button_label": "Get a Quote",
             "cta_button_url": "",
+            "show_pattern": true,
             "text_color": "#1a3748",
             "background_color": "#ede6db",
             "button_background_color": "#1a3748",
@@ -54,7 +57,10 @@
         "slide_6jnXLB",
         "slide_AqBhUN"
       ],
-      "settings": {}
+      "settings": {
+        "enable_autoplay": true,
+        "autoplay_duration": 5
+      }
     },
     "lintext_product_features_RCxcFK": {
       "type": "lintext__product-features",
