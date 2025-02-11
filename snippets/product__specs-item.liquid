@@ -1,0 +1,11 @@
+{% if product.metafields[namespace][key] != blank %}
+  <p>{{ label }}:
+    <strong>{{ product.metafields[namespace][key] }} inches</strong>
+  </p>
+{% endif %}
+
+{% if product.selected_or_first_available_variant.metafields[namespace][key] != blank %}
+  <p>{{ label }}:
+    <strong>{{ product.selected_or_first_available_variant.metafields[namespace][key] }} inches</strong>
+  </p>
+{% endif %}
