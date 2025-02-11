@@ -978,13 +978,15 @@ class VariantSelects extends HTMLElement {
     this.variantInputsLabels.forEach((label) => {
       label.addEventListener('mouseover', this.updateColorOnHover);
     });
-    this.currentSelectedColor = document.querySelector('[data-selected-swatch-value="Color"]').innerHTML;
-    this.variantInputsLabels.forEach((label) => {
-      label.addEventListener('mouseout', () => {
-        label.closest('fieldset').querySelector('[data-selected-swatch-value="Color"]').innerHTML =
-          this.currentSelectedColor;
+    if (document.querySelector('[data-selected-swatch-value="Color"]')) {
+      this.currentSelectedColor = document.querySelector('[data-selected-swatch-value="Color"]').innerHTML;
+      this.variantInputsLabels.forEach((label) => {
+        label.addEventListener('mouseout', () => {
+          label.closest('fieldset').querySelector('[data-selected-swatch-value="Color"]').innerHTML =
+            this.currentSelectedColor;
+        });
       });
-    });
+    }
     const mediaGallery = document.querySelector('media-gallery');
     this.updateModalImages(mediaGallery);
   }

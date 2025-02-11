@@ -1,10 +1,10 @@
 <section class="page-width product__meta">
   <product-meta-tabs class="product__meta-tabs">
     <ul class="product__meta-buttons-container">
-      <li class="product__meta-tab-button selected-button">About</li>
-      <li class="product__meta-tab-button">Reviews/FAQ</li>
-      <li class="product__meta-tab-button">Specs</li>
-      <li class="product__meta-tab-button">Shipping/Returns</li>
+      <li class="product__meta-tab-button selected-button">{{ section.settings.about_tab_title }}</li>
+      <li class="product__meta-tab-button">{{ section.settings.reviews_faq_tab_title }}</li>
+      <li class="product__meta-tab-button">{{ section.settings.specs_tab_title }}</li>
+      <li class="product__meta-tab-button">{{ section.settings.shipping_returns_tab_title }}</li>
     </ul>
     <ul class="product__meta-tabs-container">
       <li class="product__meta-tab selected-tab">
@@ -88,7 +88,7 @@
           }
 
         </style>
-        {% if product.tags contains "WHOLESALE_PRODUCT" or true %}
+        {% if product.tags contains "WHOLESALE_PRODUCT" and false %}
           {% if product.metafields.custom.case_length or product.metafields.custom.case_width or product.metafields.custom.case_height %}
             <div class="product__meta-tab-specs-item">
               <h3>Specs dimensions</h3>
@@ -109,10 +109,10 @@
               {% endif %}
             </div>
           {% endif %}
-          {% if product.selected_or_first_available_variant.weight %}
+          {% if product.selected_or_first_available_variant.weight and section.settings.show_weight_section %}
             <div class="product__meta-tab-specs-item">
-              <h3>Specs Weight</h3>
-              <p>Weight:
+              <h3>{{ section.settings.weight_section_title }}</h3>
+              <p>{{ section.settings.weight_text }}:
                 <strong>{{ product.selected_or_first_available_variant.weight_in_unit }} lbs</strong>
               </p>
             </div>
@@ -139,23 +139,37 @@
 
             </div>
           {% endif %}
+          {% if section.settings.show_specs_info_note %}
           <div class="product__meta-tab-specs-item">
-            <h3>Specs Information Note</h3>
-            <p>Please note that the pallet dimensions and weight are approximate and may vary                          
-                            slightly due to manufacturing processes. 
-                            For specific inquiries regarding palletization and shipping,
-                             please contact our customer service team.</p>
+            <h3>{{ section.settings.specs_info_note_title }}</h3>
+            <p>{{ section.settings.specs_info_note_text }}</p>
           </div>
+          {% endif %}
         {% else %}
-          {% if product.metafields.custom.pack_length or product.metafields.custom.pack_width or product.metafields.custom.pack_height %}
+        
+          {% assign specs_control = shop.metaobjects.specs_control['specs-metafield-decider'] %}
+          {% assign specs_fields = specs_control.specs_fields.value %}
+          
+          <script>
+            console.log('Specs Fields:', {{ specs_fields | json }});
+            console.log('Product Metafields:', {{ product.metafields.custom | json }});
+          </script>
+          
+          {% comment %} {% if product.metafields.custom.pack_length or product.metafields.custom.pack_width or product.metafields.custom.pack_height %} {% endcomment %}
             <div class="product__meta-tab-specs-item">
               <h3>Specs dimensions</h3>
-              {% if product.metafields.custom.pack_length %}
+              {% for field in specs_fields %}
+                {%- assign field_split = field | split: "=" -%}
+                {% render "product__specs-item"
+                  , namespace: "custom"
+                  , key: field_split[0]
+                  , label: field_split[1] %}
+              {% endfor %}
+              {% comment %} {% if product.metafields.custom.pack_length %}
                 <p>Length:
                   <strong>{{ product.metafields.custom.pack_length }} inches</strong>
                 </p>
               {% endif %}
-
               {% if product.metafields.custom.pack_width %}
                 <p>Width:
                   <strong>{{ product.metafields.custom.pack_width }} inches</strong>
@@ -165,25 +179,23 @@
                 <p>Height:
                   <strong>{{ product.metafields.custom.pack_height }} inches</strong>
                 </p>
-              {% endif %}
+              {% endif %} {% endcomment %}
             </div>
-          {% endif %}
-
-          {% if product.selected_or_first_available_variant.weight %}
+          {% comment %} {% endif %} {% endcomment %}
+          {% if product.selected_or_first_available_variant.weight and section.settings.show_weight_section %}
             <div class="product__meta-tab-specs-item">
-              <h3>Specs Weight</h3>
-              <p>Weight:
+              <h3>{{ section.settings.weight_section_title }}</h3>
+              <p>{{ section.settings.weight_text }}:
                 <strong>{{ product.selected_or_first_available_variant.weight_in_unit }} lbs</strong>
               </p>
             </div>
           {% endif %}
+          {% if section.settings.show_specs_info_note %}
           <div class="product__meta-tab-specs-item">
-            <h3>Specs Information Note</h3>
-            <p>Please note that the pallet dimensions and weight are approximate and may vary                          
-                        slightly due to manufacturing processes. 
-                        For specific inquiries regarding palletization and shipping,
-                         please contact our customer service team.</p>
+            <h3>{{ section.settings.specs_info_note_title }}</h3>
+            <p>{{ section.settings.specs_info_note_text }}</p>
           </div>
+          {% endif %}
         {% endif %}
       </li>
 
@@ -210,12 +222,44 @@
   <div class="product__meta-details">
     <h2>Product Details</h2>
     <ul class="product__meta-details-items">
-      {% assign variant_tags = product.selected_or_first_available_variant.metafields.custom.variant_tags | split: "," %}
+      {% comment %} {% assign variant_tags = product.selected_or_first_available_variant.metafields.custom.variant_tags | split: "," %} {% endcomment %}
+      {% comment %} You get metobjact  {% endcomment %}
+      {% assign control = shop.metaobjects.specs_control['details-controller'] %}
+      {% assign fields_to_render = control.specs_fields.value %}
+      {% comment %} You compare list to labels, if label exisf in list then you render that label. {% endcomment %}
       {% render "product__meta-item"
-        , value: product.vendor
-        , label: "Brand" %}
+      , value: product.vendor
+      , label: "Brand" %}
+      
+      {% for field in fields_to_render %}
+        {%- assign field_split = field | split: "=" -%}
+          {% render "product__meta-item"
+          , namespace: 'custom'
+          , key: field_split[0]
+          , label: field_split[1] %}
+      {% endfor %}
 
-      {% render "product__meta-item"
+        {% comment %} {% for field in fields_to_render %}
+          {% case field %}
+            {% when 'main_category' %}
+              {% render "product__meta-item"
+                , namespace: "custom"
+                , key: "main_category"
+                , label: "Main Category" %}
+            {% when 'material' %}
+              {% render "product__meta-item"
+                , namespace: "custom"
+                , key: "material"
+                , label: "Material" %}
+            {% when 'color' %}
+              {% render "product__meta-item"
+                , namespace: "custom"
+                , key: "color"
+                , label: "Color" %}
+          {% endcase %}
+        {% endfor %} {% endcomment %}
+
+      {% comment %} {% render "product__meta-item"
         , namespace: "custom"
         , key: "main_category"
         , label: "Main Category" %}
@@ -239,8 +283,6 @@
         , namespace: "custom"
         , key: "design"
         , label: "Design" %}
-
-
       {% render "product__meta-item"
         , namespace: "custom"
         , key: "fold_shape"
@@ -260,7 +302,7 @@
       {% render "product__meta-item"
         , namespace: "custom"
         , key: "size"
-        , label: "Size" %}
+        , label: "Size" %} {% endcomment %}
 
 
    
@@ -610,7 +652,70 @@
 {% schema %}
   {
     "name": "Product meta",
-    "settings": [],
+    "settings": [
+      {
+        "type": "text",
+        "id": "about_tab_title",
+        "label": "About Tab Title",
+        "default": "About"
+      },
+      {
+        "type": "text",
+        "id": "reviews_faq_tab_title",
+        "label": "Reviews/FAQ Tab Title",
+        "default": "Reviews/FAQ"
+      },
+      {
+        "type": "text",
+        "id": "specs_tab_title",
+        "label": "Specs Tab Title",
+        "default": "Specs"
+      },
+      {
+        "type": "text",
+        "id": "shipping_returns_tab_title",
+        "label": "Shipping/Returns Tab Title",
+        "default": "Shipping/Returns"
+      },
+      {
+        "type": "checkbox",
+        "id": "show_specs_info_note",
+        "label": "Show Specs Information Note",
+        "default": true,
+        "info": "Toggle visibility of the specs information note section"
+      },
+      {
+        "type": "text",
+        "id": "specs_info_note_title",
+        "label": "Specs Information Note Title",
+        "default": "Specs Information Note"
+      },
+      {
+        "type": "textarea",
+        "id": "specs_info_note_text",
+        "label": "Specs Information Note Text",
+        "default": "Please note that the pallet dimensions and weight are approximate and may vary slightly due to manufacturing processes. For specific inquiries regarding palletization and shipping, please contact our customer service team."
+      },
+      {
+        "type": "checkbox",
+        "id": "show_weight_section",
+        "label": "Show Weight Section",
+        "default": true,
+        "info": "Toggle visibility of the weight section"
+      },
+      {
+        "type": "text",
+        "id": "weight_section_title",
+        "label": "Weight Section Title",
+        "default": "Specs Weight"
+      },
+      {
+        "type": "text",
+        "id": "weight_text",
+        "label": "Weight Text",
+        "default": "Weight"
+      }
+    ],
     "presets": [
       {
         "name": "Product meta"
