@@ -36,6 +36,7 @@
         },
         "slide_88geQx": {
           "type": "slide",
+          "disabled": true,
           "settings": {
             "image": "shopify://shop_images/background_8e998a40-5aa3-4de8-aad1-3ac986c64496.png",
             "heading": "Elegance in every fold",
