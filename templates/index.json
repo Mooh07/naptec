@@ -24,6 +24,7 @@
         },
         "hero_content_PW8kfq": {
           "type": "hero_content",
+          "disabled": true,
           "settings": {
             "background": "shopify://shop_images/155899f183464ab2ac83921215657d95_1_1.png",
             "header": "Style without <br> the hassle",
