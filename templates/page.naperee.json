@@ -21,6 +21,7 @@
             "subtitle": "Elevate your dining experience",
             "cta_button_text": "Get a Quote",
             "cta_button_url": "",
+            "show_overlay": true,
             "text_color": "#ffffff",
             "button_label_color": "#292d32",
             "button_background_color": "#ffffff"
@@ -28,12 +29,14 @@
         },
         "slide_UDww4Q": {
           "type": "slide",
+          "disabled": true,
           "settings": {
             "background_image": "shopify://shop_images/new_bg.png",
             "title": "<p>Elevate your dining</p><p>experience with Napree.</p>",
             "subtitle": "Elevate your dining experience",
             "cta_button_text": "Get a Quote",
             "cta_button_url": "",
+            "show_overlay": true,
             "text_color": "#ffffff",
             "button_label_color": "#292d32",
             "button_background_color": "#ffffff"
