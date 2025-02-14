@@ -1198,6 +1198,7 @@ input.mobile-facets__checkbox {
 
   .facets-vertical .product-grid-container {
     /* width: calc(100% - 344px); */
+    width: 100%;
   }
 
   .facets-vertical-form {

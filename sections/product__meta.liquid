@@ -150,11 +150,7 @@
           {% assign specs_control = shop.metaobjects.specs_control['specs-metafield-decider'] %}
           {% assign specs_fields = specs_control.specs_fields.value %}
           
-          <script>
-            console.log('Specs Fields:', {{ specs_fields | json }});
-            console.log('Product Metafields:', {{ product.metafields.custom | json }});
-          </script>
-          
+    
           {% comment %} {% if product.metafields.custom.pack_length or product.metafields.custom.pack_width or product.metafields.custom.pack_height %} {% endcomment %}
             <div class="product__meta-tab-specs-item">
               <h3>Specs dimensions</h3>

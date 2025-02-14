@@ -1477,7 +1477,9 @@ class VariantSelector extends HTMLElement {
     this.variants.forEach((variant) => {
       variant.addEventListener('click', (e) => {
         const variantId = variant.dataset['variantId'];
-        this.buyButtonInput.value = variantId;
+        if (this.buyButtonInput) {
+          this.buyButtonInput.value = variantId;
+        }
       });
     });
   }
