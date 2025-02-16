@@ -111,34 +111,10 @@
         "media_position": "left",
         "image_zoom": "lightbox",
         "mobile_thumbnails": "show",
-        "hide_variants": true,
         "enable_video_looping": false,
         "padding_top": 36,
         "padding_bottom": 12
       }
-    },
-    "related-products": {
-      "type": "related-products",
-      "disabled": true,
-      "settings": {
-        "heading": "You may also like",
-        "heading_size": "h2",
-        "products_to_show": 4,
-        "columns_desktop": 4,
-        "color_scheme": "scheme-1",
-        "image_ratio": "square",
-        "image_shape": "default",
-        "show_secondary_image": true,
-        "show_vendor": false,
-        "show_rating": false,
-        "columns_mobile": "2",
-        "padding_top": 36,
-        "padding_bottom": 28
-      }
-    },
-    "product_meta_EUwwWU": {
-      "type": "product__meta",
-      "settings": {}
     },
     "de851d74c5e7082f3767": {
       "type": "apps",
@@ -155,6 +131,40 @@
       ],
       "settings": {
         "include_margins": true
+      }
+    },
+    "related-products": {
+      "type": "related-products",
+      "disabled": true,
+      "settings": {
+        "heading": "You may also like",
+        "heading_size": "h2",
+        "products_to_show": 5,
+        "columns_desktop": 4,
+        "color_scheme": "scheme-1",
+        "image_ratio": "square",
+        "image_shape": "default",
+        "show_secondary_image": true,
+        "show_vendor": false,
+        "show_rating": false,
+        "columns_mobile": "2",
+        "padding_top": 36,
+        "padding_bottom": 28
+      }
+    },
+    "product_meta_EUwwWU": {
+      "type": "product__meta",
+      "settings": {
+        "about_tab_title": "About",
+        "reviews_faq_tab_title": "Reviews/FAQ",
+        "specs_tab_title": "Specs",
+        "shipping_returns_tab_title": "Shipping/Returns",
+        "show_specs_info_note": true,
+        "specs_info_note_title": "Specs Information Note",
+        "specs_info_note_text": "Please note that the pallet dimensions and weight are approximate and may vary slightly due to manufacturing processes. For specific inquiries regarding palletization and shipping, please contact our customer service team.",
+        "show_weight_section": true,
+        "weight_section_title": "Specs Weight",
+        "weight_text": "Weight"
       }
     }
   },
