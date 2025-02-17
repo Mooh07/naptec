@@ -20,7 +20,7 @@
             "title": "<p>Elevate your dining</p><p>experience with Napree.</p>",
             "subtitle": "Elevate your dining experience",
             "cta_button_text": "Get a Quote",
-            "cta_button_url": "",
+            "cta_button_url": "shopify://pages/naperee-contact",
             "show_overlay": true,
             "text_color": "#ffffff",
             "button_label_color": "#292d32",
