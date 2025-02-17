@@ -61,8 +61,8 @@
           "type": "icon_text_block",
           "settings": {
             "icon": "shopify://shop_images/truck-fast.svg",
-            "bold-text": "Get it as soon as today.",
-            "normal-text": "Schedule your delivery in checkout.",
+            "bold-text": "Buying In Bulk?",
+            "normal-text": "Get in touch with Our Wholesale Team",
             "bold-text-color": "#143338",
             "normal-text-color": "#435c60",
             "block-background": "#f6f7f7"
@@ -112,7 +112,6 @@
         "media_position": "left",
         "image_zoom": "lightbox",
         "mobile_thumbnails": "show",
-        "hide_variants": true,
         "enable_video_looping": false,
         "padding_top": 36,
         "padding_bottom": 12
@@ -139,7 +138,19 @@
     },
     "product_meta_EUwwWU": {
       "type": "product__meta",
-      "settings": {}
+      "settings": {
+        "show_bullets": true,
+        "about_tab_title": "About",
+        "reviews_faq_tab_title": "Reviews/FAQ",
+        "specs_tab_title": "Specs",
+        "shipping_returns_tab_title": "Shipping/Returns",
+        "show_specs_info_note": true,
+        "specs_info_note_title": "Specs Information Note",
+        "specs_info_note_text": "Please note that the pallet dimensions and weight are approximate and may vary slightly due to manufacturing processes. For specific inquiries regarding palletization and shipping, please contact our customer service team.",
+        "show_weight_section": true,
+        "weight_section_title": "Specs Weight",
+        "weight_text": "Weight"
+      }
     },
     "1734314696fc504609": {
       "type": "apps",
