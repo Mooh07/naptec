@@ -27,7 +27,7 @@
             "heading": "<h1>A touch <br/>of class.</h1>",
             "paragraph": "We design elegant disposables that feel like heaven at the fingertips – and achieve the delicate balance between form and function, aesthetic and hygiene.",
             "cta_button_label": "Get a Quote",
-            "cta_button_url": "",
+            "cta_button_url": "shopify://pages/lintext-contact",
             "show_pattern": true,
             "text_color": "#1a3748",
             "background_color": "#ede6db",
