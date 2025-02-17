@@ -61,8 +61,8 @@
           "type": "icon_text_block",
           "settings": {
             "icon": "shopify://shop_images/truck-fast.svg",
-            "bold-text": "Get it as soon as today.",
-            "normal-text": "Schedule your delivery in checkout.",
+            "bold-text": "Buying In Bulk?",
+            "normal-text": "Get in Touch with Our Wholesale Team.",
             "bold-text-color": "#143338",
             "normal-text-color": "#435c60",
             "block-background": "#f6f7f7"
@@ -139,6 +139,7 @@
     "product_meta_EUwwWU": {
       "type": "product__meta",
       "settings": {
+        "show_bullets": true,
         "about_tab_title": "About",
         "reviews_faq_tab_title": "Reviews/FAQ",
         "specs_tab_title": "Specs",
