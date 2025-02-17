@@ -118,8 +118,8 @@
   flex-direction: column;
   align-items: center;
   row-gap: 12px;
-  min-width: 200px;
-  width: 200px;
+  min-width: 150px;
+  width: 150px;
   flex: 0 0 auto;
   scroll-snap-align: start;
 }
@@ -151,7 +151,7 @@
 
 .collection-categories__item-title {
   font-family: 'faktum';
-  font-size: 18px;
+  font-size: 14px;
   font-weight: 500;
   line-height: 24px;
   text-align: center;

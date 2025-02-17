@@ -978,15 +978,15 @@ class VariantSelects extends HTMLElement {
     this.variantInputsLabels.forEach((label) => {
       label.addEventListener('mouseover', this.updateColorOnHover);
     });
-    // if (document.querySelector('[data-selected-swatch-value="Color"]')) {
-    //   this.currentSelectedColor = document.querySelector('[data-selected-swatch-value="Color"]').innerHTML;
-    //   this.variantInputsLabels.forEach((label) => {
-    //     label.addEventListener('mouseout', () => {
-    //       label.closest('fieldset').querySelector('[data-selected-swatch-value="Color"]').innerHTML =
-    //         this.currentSelectedColor;
-    //     });
-    //   });
-    // }
+    if (document.querySelector('[data-selected-swatch-value="Color"]')) {
+      this.currentSelectedColor = document.querySelector('[data-selected-swatch-value="Color"]').innerHTML;
+      this.variantInputsLabels.forEach((label) => {
+        label.addEventListener('mouseout', () => {
+          label.closest('fieldset').querySelector('[data-selected-swatch-value="Color"]').innerHTML =
+            this.currentSelectedColor;
+        });
+      });
+    }
     const mediaGallery = document.querySelector('media-gallery');
     this.updateModalImages(mediaGallery);
   }
@@ -1076,7 +1076,7 @@ class VariantSelects extends HTMLElement {
     } else if (tagName === 'INPUT' && target.type === 'radio') {
       const selectedSwatchValue = this.querySelector(`[data-selected-swatch-value="${name}"]`);
       if (name.toLowerCase() === 'color') {
-        // this.currentSelectedColor = value;
+        this.currentSelectedColor = value;
       }
       if (selectedSwatchValue) selectedSwatchValue.innerHTML = value;
     }

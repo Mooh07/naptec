@@ -133,7 +133,8 @@
 }
 
 @media (max-width: 992px) {
-  #product-grid .grid__item {
+  #product-grid.grid--2-col-tablet-down .grid__item,
+  #product-grid.grid--1-col-tablet-down .grid__item {
     width: calc(50% - 10px);
     max-width: 100%;
   }
@@ -147,13 +148,17 @@
   #ProductGridContainer {
     margin-top: 20px;
   }
+  #product-grid.grid--1-col-tablet-down .grid__item {
+    width: 100%;
+    max-width: 100%;
+  }
 }
 
 @media (max-width: 500px) {
-  #product-grid .grid__item {
+  /* #product-grid.grid--2-col-tablet-down .grid__item {
     width: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
-  }
+  } */
 }

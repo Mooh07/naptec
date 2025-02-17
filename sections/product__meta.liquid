@@ -10,9 +10,13 @@
       <li class="product__meta-tab selected-tab">
         {% comment %} <div style="margin-bottom: 28px;">{{ product.description }}</div> {% endcomment %}
         <ul style="display: flex;flex-direction:column;gap:28px;list-style:none;list-style-type: disc; ">
-          {% for item in product.selected_or_first_available_variant.metafields.custom.bullets.value %}
-            <li>{{ item }}</li>
-          {% endfor %}
+          {% if section.settings.show_bullets %}
+            {% for item in product.selected_or_first_available_variant.metafields.custom.bullets.value %}
+              <li>{{ item }}</li>
+            {% endfor %}
+          {% else %}
+            {{ product.description }}
+          {% endif %}
         </ul>
 
       </li>
@@ -649,6 +653,13 @@
   {
     "name": "Product meta",
     "settings": [
+      {
+        "type": "checkbox",
+        "id": "show_bullets",
+        "label": "Show Bullets",
+        "default": true,
+        "info": "If true, in about tab, the bullets will be shown instead of the description"
+      },
       {
         "type": "text",
         "id": "about_tab_title",

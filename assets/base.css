@@ -4290,3 +4290,39 @@ details-disclosure > details {
 
 .shopify-section-group-header-group-bloomingoods .link--text {
 }
+.shopify-policy__container {
+  color: #383735;
+  margin-bottom: 6rem;
+}
+.shopify-policy__container h1 {
+  font-size: 24px;
+  color: #383735;
+}
+.shopify-policy__container h2 {
+  font-size: 20px;
+  color: #383735;
+}
+.shopify-policy__container h3 {
+  font-size: 18px;
+  color: #383735;
+}
+.shopify-policy__container h4 {
+  font-size: 16px;
+  color: #383735;
+}
+.shopify-policy__container p {
+  font-size: 16px;
+  color: #383735;
+}
+.shopify-policy__container ul {
+  font-size: 16px;
+  color: #383735;
+}
+.shopify-policy__container ol {
+  font-size: 16px;
+  color: #383735;
+}
+.shopify-policy__container li {
+  font-size: 16px;
+  color: #383735;
+}

@@ -1856,14 +1856,26 @@ a.product__text {
   .product-form__submit.button {
     min-height: 56px;
   }
+  
 }
-
+@media screen and (max-width: 992px) {
+  .product__title>*{
+    font-size: 24px;
+  }
+}
 @media screen and (max-width: 600px) {
   .buy-button-quantity-wrapper {
     flex-wrap: wrap;
   }
   .buy-button-quantity-wrapper > div {
     width: 100%;
+  }
+  .product_logo-review-stars svg {
+    width: 12.5px;
+    height: 12.5px;
+  }
+  .product_logo-review img{
+    max-width: 100px;
   }
 }
 .buy-button-quantity-wrapper .product-form {

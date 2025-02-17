@@ -54,10 +54,10 @@
 }
 @media screen and (max-width: 992px) {
   .price__regular .price-item--regular {
-    font-size: 16px;
+    font-size: 24px;
   }
   #subscribed__price.price-item.price-item--subscribed {
-    font-size: 16px;
+    font-size: 24px;
   }
 }
 
