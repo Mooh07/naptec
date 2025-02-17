@@ -140,16 +140,6 @@
             "cta_label": "Visit the Website"
           }
         },
-        "brand_faVbXc": {
-          "type": "brand",
-          "settings": {
-            "logo": "shopify://shop_images/ServiettoMainLogo2.png",
-            "image": "shopify://shop_images/Frame_427319489_1.png",
-            "url": "shopify://pages/servietto",
-            "brand_description": "Elegance in every fold, Elevate your hosting experience",
-            "cta_label": "Visit the Website"
-          }
-        },
         "brand_VTM33q": {
           "type": "brand",
           "settings": {
@@ -157,6 +147,16 @@
             "image": "shopify://shop_images/Frame_427319490.png",
             "url": "shopify://pages/naperee",
             "brand_description": "Elevate your dining experience with Napree. Elegant, Durable, Premium napkins",
+            "cta_label": "Visit the Website"
+          }
+        },
+        "brand_faVbXc": {
+          "type": "brand",
+          "settings": {
+            "logo": "shopify://shop_images/ServiettoMainLogo2.png",
+            "image": "shopify://shop_images/Frame_427319489_1.png",
+            "url": "shopify://pages/servietto",
+            "brand_description": "Elegance in every fold, Elevate your hosting experience",
             "cta_label": "Visit the Website"
           }
         },
@@ -173,8 +173,8 @@
       },
       "block_order": [
         "brand_xWMx4X",
-        "brand_faVbXc",
         "brand_VTM33q",
+        "brand_faVbXc",
         "brand_8BWK7a"
       ],
       "settings": {
