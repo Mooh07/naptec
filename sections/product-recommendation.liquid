@@ -40,7 +40,7 @@
     const productRecommendationsSection = document.querySelector('.naptec__product-recommendations');
     const product_id = {{ product.id }};
     showLoadingSpiner();
-    const request = await fetch(window.Shopify.routes.root + `recommendations/products?product_id=${product_id}&limit=8&section_id=product-recommendation`)
+    const request = await fetch(window.Shopify.routes.root + `recommendations/products?product_id=${product_id}&limit={{ section.settings.products_to_show }}&section_id=product-recommendation`)
     const response = await request.text()
       .then((text)=>{
         const html = document.createElement('div');
@@ -53,11 +53,11 @@
             ".naptec__product-recommendations .glide",
             {
               type: "carousel",
-              perView: 4,
+              perView: {{ section.settings.desktop_items }},
               gap: 38,
               breakpoints: {
                 1200: {
-                  perView: 3,
+                  perView: {{ section.settings.desktop_items | at_most: 3 }},
                   autoplay: 6000
                 },
                 850: {
@@ -299,11 +299,31 @@
         "id": "heading",
         "label": "Heading",
         "default": "Recommended Products"
-      }, {
+      },
+      {
+        "type": "range",
+        "id": "products_to_show",
+        "min": 2,
+        "max": 12,
+        "step": 1,
+        "default": 8,
+        "label": "Maximum products to show"
+      },
+      {
+        "type": "range",
+        "id": "desktop_items",
+        "min": 1,
+        "max": 5,
+        "step": 1,
+        "default": 4,
+        "label": "Number of items per row (Desktop)"
+      },
+      {
         "type": "url",
         "label": "View all url",
         "id": "view_all_url"
-      }, {
+      },
+      {
         "type": "text",
         "label": "View all button label",
         "id": "view_all_label",
