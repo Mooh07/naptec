@@ -27,8 +27,8 @@
             "image": "shopify://shop_images/background_8e998a40-5aa3-4de8-aad1-3ac986c64496.png",
             "heading": "Elegance in every fold",
             "subheading": "Elevate your hosting expirience.",
-            "cta_label": "Get a Quote",
-            "cta_url": "shopify://pages/servietto-contact",
+            "cta_label": "Shop Now",
+            "cta_url": "shopify://collections/servietto",
             "background_color": "#eae7e2",
             "text_color": "#1c363d",
             "button_color": "#000000"
