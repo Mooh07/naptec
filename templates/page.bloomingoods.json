@@ -19,8 +19,8 @@
             "text_container_image": "shopify://shop_images/image_3bb75f76-9359-49d7-814e-12319dd64863.png",
             "heading": "Bringing unforgettable to the table.",
             "background_image": "shopify://shop_images/bloomingoods_main_hero_background_1.png",
-            "cta_label": "get a quote",
-            "cta_url": "shopify://pages/bloomingoods-contact"
+            "cta_label": "Shop now",
+            "cta_url": "shopify://collections/bloomingoods-napkins"
           }
         }
       },
