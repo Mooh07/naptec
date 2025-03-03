@@ -191,4 +191,10 @@
   .naptec__footer-subscription-input-container button {
     font-size: 16px;
   }
+  .naptec__footer-logo {
+    width: 70px;
+  }
+  .naptec__footer-icons svg {
+    width: 100px;
+  }
 }
