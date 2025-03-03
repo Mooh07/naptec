@@ -169,6 +169,9 @@
   .naptec__contact h5{
     font-size: 16px
   }
+  .naptec__contact *{
+    font-size: 16px;
+  }
 }
 
 @media screen and (max-width: 600px) {
