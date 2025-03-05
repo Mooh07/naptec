@@ -14,12 +14,12 @@
     "naptec_footer_JLcWWw": {
       "type": "naptec__footer",
       "settings": {
-        "background_color": "rgb(7, 59, 67)",
+        "background_color": "#073b43",
         "contact_number": "845-200-3344",
         "contact_email": "sales@naptecpaper.com",
         "link_list_1": "naptec-footer-menu-1",
         "link_list_2": "naptec-footer-menu-2",
-        "all-rights-reserved": "Copyright © 2024 All right reserved.",
+        "all-rights-reserved": "Copyright © 2025 All right reserved.",
         "copyright": "Copyright by NaptecPaper.com",
         "text-above-subscription": "Get our news straight to your inbox"
       }
