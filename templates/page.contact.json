@@ -67,7 +67,10 @@
         "information_jMzX39",
         "information_9YbBxa"
       ],
-      "settings": {}
+      "settings": {
+        "form_source": "Naptec",
+        "message_label": "Enter your message"
+      }
     }
   },
   "order": [
