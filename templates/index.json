@@ -236,7 +236,7 @@
         "header": "Make your<br> custom design",
         "content": "Tailor napkins to fit your brand or establishment  by exploring our customization options, including branding and packaging solutions.",
         "cta-label": "Get a Quote",
-        "cta-url": "",
+        "cta-url": "shopify://pages/contact",
         "image": "shopify://shop_images/image_8.png"
       }
     },
