@@ -156,6 +156,8 @@
       "type": "product-recommendation",
       "settings": {
         "heading": "Recommended Products",
+        "products_to_show": 8,
+        "desktop_items": 4,
         "view_all_url": "",
         "view_all_label": "View all"
       }

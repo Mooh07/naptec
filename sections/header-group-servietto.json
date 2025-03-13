@@ -111,9 +111,9 @@
     }
   },
   "order": [
-    "announcement_bar_TVwUeb",
     "header",
     "naptec_top_header_wwnATB",
-    "servietto_header_G7bW6h"
+    "servietto_header_G7bW6h",
+    "announcement_bar_TVwUeb"
   ]
 }
