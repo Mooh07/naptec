@@ -155,6 +155,7 @@
     "product_meta_EUwwWU": {
       "type": "product__meta",
       "settings": {
+        "show_bullets": true,
         "about_tab_title": "About",
         "reviews_faq_tab_title": "Reviews/FAQ",
         "specs_tab_title": "Specs",
