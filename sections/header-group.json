@@ -25,6 +25,7 @@
       "block_order": [
         "announcement_UadQUF"
       ],
+      "disabled": true,
       "settings": {
         "color_scheme": "scheme-e2aaaec1-59de-4358-a55c-fcaad9eda2d5",
         "show_line_separator": true,
