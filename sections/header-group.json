@@ -17,7 +17,7 @@
         "announcement_UadQUF": {
           "type": "announcement",
           "settings": {
-            "text": "Free Shipping on all order! No Minimum!",
+            "text": "Free Shipping on All Orders - No Minimum",
             "link": ""
           }
         }
@@ -25,7 +25,6 @@
       "block_order": [
         "announcement_UadQUF"
       ],
-      "disabled": true,
       "settings": {
         "color_scheme": "scheme-e2aaaec1-59de-4358-a55c-fcaad9eda2d5",
         "show_line_separator": true,

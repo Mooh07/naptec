@@ -89,6 +89,7 @@
         },
         "announcement_HghXn8": {
           "type": "announcement",
+          "disabled": true,
           "settings": {
             "text": "No Minimum!",
             "link": ""
