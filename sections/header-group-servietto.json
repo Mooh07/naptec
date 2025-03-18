@@ -23,9 +23,8 @@
         },
         "announcement_HghXn8": {
           "type": "announcement",
-          "disabled": true,
           "settings": {
-            "text": "No Minimum!",
+            "text": "Free Shipping on All Orders - No Minimums",
             "link": ""
           }
         }
