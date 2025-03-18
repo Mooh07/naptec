@@ -26,7 +26,7 @@
         "announcement-bar-0": {
           "type": "announcement",
           "settings": {
-            "text": "Welcome to our store",
+            "text": "Free Shipping on All Orders - No Minimums",
             "link": ""
           }
         }
@@ -34,7 +34,6 @@
       "block_order": [
         "announcement-bar-0"
       ],
-      "disabled": true,
       "settings": {
         "color_scheme": "scheme-1",
         "show_line_separator": true,
@@ -112,8 +111,8 @@
     }
   },
   "order": [
-    "naptec_top_header_aRrK8c",
     "announcement-bar",
+    "naptec_top_header_aRrK8c",
     "header",
     "bloomingoods_header_pf6HiH",
     "bloomingoods_low_header_KTTmLi"
