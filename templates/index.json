@@ -86,8 +86,8 @@
         "perk_ARfHTm"
       ],
       "custom_css": [
-        "section {padding-bottom: 15px;}",
-        "section {padding-top: 15px;}"
+        "section {padding-top: 15px;}",
+        "section {padding-bottom: 15px;}"
       ],
       "settings": {}
     },
@@ -163,8 +163,8 @@
         "products_product_hVnUAN"
       ],
       "custom_css": [
-        "section {padding-bottom: 20px;}",
-        "section {padding-top: 20px;}"
+        "section {padding-top: 20px;}",
+        "section {padding-bottom: 20px;}"
       ],
       "settings": {
         "title": "Product Categories",
