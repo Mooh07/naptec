@@ -16,8 +16,8 @@
           "type": "hero_content",
           "settings": {
             "background": "shopify://shop_images/155899f183464ab2ac83921215657d95_1_1.png",
-            "header": "Style without <br> the hassle",
-            "subheading": "Premium, practical tabletop products,<br> and styles that wow.",
+            "header": "Napkin Manufacturer,<br>Ensuring Perfection",
+            "subheading": "Premium, practical, disposable tabletop products,<br> and styles that wow.",
             "cta-content": "Shop Now",
             "cta-url": "shopify://collections/naptec-napkins"
           }
@@ -315,6 +315,13 @@
           "settings": {
             "industry_name": "Bars"
           }
+        },
+        "industriy_jmi3ek": {
+          "type": "industriy",
+          "disabled": true,
+          "settings": {
+            "industry_name": ""
+          }
         }
       },
       "block_order": [
@@ -329,7 +336,8 @@
         "industriy_Un4cFt",
         "industriy_qNDBXN",
         "industriy_haHDTX",
-        "industriy_mApJb7"
+        "industriy_mApJb7",
+        "industriy_jmi3ek"
       ],
       "settings": {
         "title": "Industries we serve"
