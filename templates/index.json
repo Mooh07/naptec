@@ -219,6 +219,48 @@
         "text": "Shop Our Brands"
       }
     },
+    "naperee_bestsellers_i93Ykj": {
+      "type": "naperee__bestsellers",
+      "blocks": {
+        "product_bXtJ44": {
+          "type": "product",
+          "settings": {
+            "product": "bloomingoods-disposable-bathroom-napkins-linen-feel-guest-towels-12-x-17-white-airlaid-paper-npkins"
+          }
+        },
+        "product_9jnenq": {
+          "type": "product",
+          "settings": {
+            "product": "servietto-disposable-linen-feel-dinner-napkins-airlaid-paper-12-x17"
+          }
+        },
+        "product_8MH7zK": {
+          "type": "product",
+          "settings": {
+            "product": "lintext-disposable-linen-feel-beverage-napkins-airlaid-paper-10-x10-1000-pack"
+          }
+        },
+        "product_MGaJ6A": {
+          "type": "product",
+          "settings": {
+            "product": "naperee-disposable-cloth-like-beverage-napkins-10x10-100-pack-copy-2"
+          }
+        }
+      },
+      "block_order": [
+        "product_bXtJ44",
+        "product_9jnenq",
+        "product_8MH7zK",
+        "product_MGaJ6A"
+      ],
+      "settings": {
+        "header": "Discover Your Style",
+        "collection": "",
+        "subheader": "Bestsellers",
+        "background_color": "#fff",
+        "text_color": "#383735"
+      }
+    },
     "naptec_half_image_half_text_F9BQc8": {
       "type": "naptec__half-image-half-text",
       "disabled": true,
@@ -366,6 +408,7 @@
     "featured_collection",
     "naptec_products_QkVi6i",
     "naptec_our_brands_LdjaVG",
+    "naperee_bestsellers_i93Ykj",
     "naptec_half_image_half_text_F9BQc8",
     "naptec_make_custom_design_UK9UWn",
     "naptec_industries_we_serve_jyN4Kt",
