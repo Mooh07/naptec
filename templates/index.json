@@ -215,6 +215,7 @@
         "brand_VTM33q",
         "brand_8BWK7a"
       ],
+      "custom_css": [],
       "settings": {
         "text": "Shop Our Brands"
       }
@@ -253,11 +254,12 @@
         "product_8MH7zK",
         "product_MGaJ6A"
       ],
+      "custom_css": [],
       "settings": {
         "header": "Discover Your Style",
         "collection": "",
         "subheader": "Bestsellers",
-        "background_color": "#fff",
+        "background_color": "#ffffff",
         "text_color": "#383735"
       }
     },
@@ -380,6 +382,10 @@
         "industriy_haHDTX",
         "industriy_mApJb7",
         "industriy_jmi3ek"
+      ],
+      "custom_css": [
+        "section {padding-bottom: 10px}",
+        "section {padding-top: 10px}"
       ],
       "settings": {
         "title": "Industries we serve"
