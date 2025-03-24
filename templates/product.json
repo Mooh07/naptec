@@ -84,6 +84,12 @@
           "type": "description",
           "disabled": true,
           "settings": {}
+        },
+        "e37c593a-3a6e-4d46-84bf-28bb4f98368e": {
+          "type": "shopify://apps/yotpo-product-reviews/blocks/star-rating/eb7dfd7d-db44-4334-bc49-c893b51b36cf",
+          "settings": {
+            "product": "{{product}}"
+          }
         }
       },
       "block_order": [
@@ -91,6 +97,7 @@
         "logo_review_MVtbpR",
         "title",
         "price",
+        "e37c593a-3a6e-4d46-84bf-28bb4f98368e",
         "variant_picker",
         "selling_plans_89D9ja",
         "buy_button_quantity_ALtrkN",
