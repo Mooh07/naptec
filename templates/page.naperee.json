@@ -91,6 +91,10 @@
         "product_feature_TFrkHn",
         "product_feature_LA9qFc"
       ],
+      "custom_css": [
+        "section {padding-bottom: 10px;}",
+        "section {padding-top: 10px;}"
+      ],
       "settings": {
         "section_title": "Welcome to Napree",
         "main_text_title": "<h2>Discover the <em>luxury napkins</em> created for your <em>finest moments.</em></h2>",
@@ -204,6 +208,10 @@
         "category_pkPW6F",
         "category_TwTyA6",
         "category_eWPzCE"
+      ],
+      "custom_css": [
+        "section {padding-bottom: 10px}",
+        "section {padding-top: 10px}"
       ],
       "settings": {
         "text_color": "#403c3c",

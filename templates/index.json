@@ -85,6 +85,10 @@
         "perk_6RJnyR",
         "perk_ARfHTm"
       ],
+      "custom_css": [
+        "section {padding-bottom: 15px}",
+        "section {padding-top: 15px}"
+      ],
       "settings": {}
     },
     "featured_collection": {
@@ -158,6 +162,10 @@
         "products_product_XhHdi7",
         "products_product_hVnUAN"
       ],
+      "custom_css": [
+        "section {padding-bottom: 20px;}",
+        "section {padding-top: 20px;}"
+      ],
       "settings": {
         "title": "Product Categories",
         "text_content": "<p>Bring something new to the table.</p>",
@@ -216,8 +224,8 @@
         "brand_8BWK7a"
       ],
       "custom_css": [
-        "section {padding-bottom: 5px}",
-        "section {padding-top: 20px}"
+        "section {padding-bottom: 15px;}",
+        "section {padding-top: 25px;}"
       ],
       "settings": {
         "text": "Shop Our Brands"
