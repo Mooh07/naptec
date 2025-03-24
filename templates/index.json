@@ -266,8 +266,8 @@
         "product_MGaJ6A"
       ],
       "custom_css": [
-        "section {padding-bottom: 20px;}",
-        "section {padding-top: 30px;}"
+        "section {padding-top: 30px;}",
+        "section {padding-bottom: 30px;}"
       ],
       "settings": {
         "header": "Discover Your Style",
