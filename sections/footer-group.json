@@ -13,6 +13,10 @@
   "sections": {
     "naptec_footer_JLcWWw": {
       "type": "naptec__footer",
+      "custom_css": [
+        "section {padding-bottom: 10px}",
+        "section {padding-top: 50px}"
+      ],
       "settings": {
         "background_color": "#073b43",
         "contact_number": "845-200-3344",

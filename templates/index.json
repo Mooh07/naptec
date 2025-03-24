@@ -86,8 +86,8 @@
         "perk_ARfHTm"
       ],
       "custom_css": [
-        "section {padding-bottom: 15px}",
-        "section {padding-top: 15px}"
+        "section {padding-bottom: 15px;}",
+        "section {padding-top: 15px;}"
       ],
       "settings": {}
     },
@@ -266,8 +266,8 @@
         "product_MGaJ6A"
       ],
       "custom_css": [
-        "section {padding-bottom: 10px;}",
-        "section {padding-top: 10px;}"
+        "section {padding-bottom: 20px;}",
+        "section {padding-top: 20px;}"
       ],
       "settings": {
         "header": "Discover Your Style",
@@ -413,6 +413,10 @@
     },
     "naptec_wholesale_partner_YQMNBe": {
       "type": "naptec__wholesale-partner",
+      "custom_css": [
+        "section {padding-bottom: 15px;}",
+        "section {padding-top: 10px;}"
+      ],
       "settings": {
         "header": "How to become <br> a wholesale partner",
         "content": "<p>Becoming a Naptech wholesale partner is easy. Simply fill out our wholesale account registration form, and one of our representatives will get in touch with you shortly to discuss your requirements and set up your wholesale account.</p>",
