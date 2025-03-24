@@ -43,35 +43,6 @@
         "autoplay_speed": 5
       }
     },
-    "featured_collection": {
-      "type": "featured-collection",
-      "disabled": true,
-      "settings": {
-        "title": "Featured products",
-        "heading_size": "h2",
-        "description": "",
-        "show_description": false,
-        "description_style": "body",
-        "collection": "all",
-        "products_to_show": 8,
-        "columns_desktop": 4,
-        "full_width": false,
-        "show_view_all": true,
-        "view_all_style": "solid",
-        "enable_desktop_slider": false,
-        "color_scheme": "scheme-1",
-        "image_ratio": "adapt",
-        "image_shape": "default",
-        "show_secondary_image": true,
-        "show_vendor": false,
-        "show_rating": false,
-        "enable_quick_add": false,
-        "columns_mobile": "2",
-        "swipe_on_mobile": false,
-        "padding_top": 44,
-        "padding_bottom": 36
-      }
-    },
     "naptec_perks_JbpjXN": {
       "type": "naptec__perks",
       "blocks": {
@@ -116,15 +87,82 @@
       ],
       "settings": {}
     },
-    "naptec_half_image_half_text_F9BQc8": {
-      "type": "naptec__half-image-half-text",
-      "custom_css": [],
+    "featured_collection": {
+      "type": "featured-collection",
+      "disabled": true,
       "settings": {
-        "image": "shopify://shop_images/bf5407583bd3e260bfb0fa72c64caf72_1_1.png",
-        "header": "About Naptec",
-        "content": "<p>Naptec is the manufacturer behind four premium napkin brands, setting us apart as leaders in the industry. Beginning with our flagship brand and product, we set            out on our mission to help every host, be it at home, a hall, a hotel, or anywhere visitors frequent, add a touch of class to their guest experience. Since then, we’ve launched 4 brands and numerous products, all with the same mission of bringing practical elegance to anyone, anywhere.</p>",
-        "image-bottom": "shopify://shop_images/Group_9.png",
-        "image-right": false
+        "title": "Featured products",
+        "heading_size": "h2",
+        "description": "",
+        "show_description": false,
+        "description_style": "body",
+        "collection": "all",
+        "products_to_show": 8,
+        "columns_desktop": 4,
+        "full_width": false,
+        "show_view_all": true,
+        "view_all_style": "solid",
+        "enable_desktop_slider": false,
+        "color_scheme": "scheme-1",
+        "image_ratio": "adapt",
+        "image_shape": "default",
+        "show_secondary_image": true,
+        "show_vendor": false,
+        "show_rating": false,
+        "enable_quick_add": false,
+        "columns_mobile": "2",
+        "swipe_on_mobile": false,
+        "padding_top": 44,
+        "padding_bottom": 36
+      }
+    },
+    "naptec_products_QkVi6i": {
+      "type": "naptec__products",
+      "blocks": {
+        "products_product_af7HAU": {
+          "type": "products_product",
+          "settings": {
+            "collection": "white-napkins",
+            "title": "WHITE <br> NAPKINS",
+            "image": "shopify://shop_images/image_7.png"
+          }
+        },
+        "products_product_VzXrVh": {
+          "type": "products_product",
+          "settings": {
+            "collection": "colored-napkins",
+            "title": "Colored <br> NAPKINS",
+            "image": "shopify://shop_images/2Z1A2545.jpg"
+          }
+        },
+        "products_product_XhHdi7": {
+          "type": "products_product",
+          "settings": {
+            "collection": "naptec-tablecloths-runners",
+            "title": "Tablecloths <br> &amp; Runners",
+            "image": "shopify://shop_images/2Z1A2166.jpg"
+          }
+        },
+        "products_product_hVnUAN": {
+          "type": "products_product",
+          "settings": {
+            "collection": "naptec-designed-monogrammed",
+            "title": "Designed &amp; <br> Monogrammed",
+            "image": "shopify://shop_images/91qwzZ-nTML.jpg"
+          }
+        }
+      },
+      "block_order": [
+        "products_product_af7HAU",
+        "products_product_VzXrVh",
+        "products_product_XhHdi7",
+        "products_product_hVnUAN"
+      ],
+      "settings": {
+        "title": "Product Categories",
+        "text_content": "<p>Bring something new to the table.</p>",
+        "view-all-label": "ALL CATEGORIES",
+        "view-all-url": "shopify://collections/all-products"
       }
     },
     "naptec_our_brands_LdjaVG": {
@@ -181,53 +219,16 @@
         "text": "Shop Our Brands"
       }
     },
-    "naptec_products_QkVi6i": {
-      "type": "naptec__products",
-      "blocks": {
-        "products_product_af7HAU": {
-          "type": "products_product",
-          "settings": {
-            "collection": "white-napkins",
-            "title": "WHITE <br> NAPKINS",
-            "image": "shopify://shop_images/image_7.png"
-          }
-        },
-        "products_product_VzXrVh": {
-          "type": "products_product",
-          "settings": {
-            "collection": "colored-napkins",
-            "title": "Colored <br> NAPKINS",
-            "image": "shopify://shop_images/2Z1A2545.jpg"
-          }
-        },
-        "products_product_XhHdi7": {
-          "type": "products_product",
-          "settings": {
-            "collection": "naptec-tablecloths-runners",
-            "title": "Tablecloths <br> &amp; Runners",
-            "image": "shopify://shop_images/2Z1A2166.jpg"
-          }
-        },
-        "products_product_hVnUAN": {
-          "type": "products_product",
-          "settings": {
-            "collection": "naptec-designed-monogrammed",
-            "title": "Designed &amp; <br> Monogrammed",
-            "image": "shopify://shop_images/91qwzZ-nTML.jpg"
-          }
-        }
-      },
-      "block_order": [
-        "products_product_af7HAU",
-        "products_product_VzXrVh",
-        "products_product_XhHdi7",
-        "products_product_hVnUAN"
-      ],
+    "naptec_half_image_half_text_F9BQc8": {
+      "type": "naptec__half-image-half-text",
+      "disabled": true,
+      "custom_css": [],
       "settings": {
-        "title": "Product Categories",
-        "text_content": "<p>Bring something new to the table.</p>",
-        "view-all-label": "ALL CATEGORIES",
-        "view-all-url": "shopify://collections/all-products"
+        "image": "shopify://shop_images/bf5407583bd3e260bfb0fa72c64caf72_1_1.png",
+        "header": "About Naptec",
+        "content": "<p>Naptec is the manufacturer behind four premium napkin brands, setting us apart as leaders in the industry. Beginning with our flagship brand and product, we set            out on our mission to help every host, be it at home, a hall, a hotel, or anywhere visitors frequent, add a touch of class to their guest experience. Since then, we’ve launched 4 brands and numerous products, all with the same mission of bringing practical elegance to anyone, anywhere.</p>",
+        "image-bottom": "shopify://shop_images/Group_9.png",
+        "image-right": false
       }
     },
     "naptec_make_custom_design_UK9UWn": {
@@ -235,8 +236,8 @@
       "settings": {
         "header": "Make your<br> custom design",
         "content": "Tailor napkins to fit your brand or establishment  by exploring our customization options, including branding and packaging solutions.",
-        "cta-label": "Get a Quote",
-        "cta-url": "shopify://pages/contact",
+        "cta-label": "Coming Soon",
+        "cta-url": "#",
         "image": "shopify://shop_images/image_8.png"
       }
     },
@@ -353,11 +354,11 @@
   },
   "order": [
     "naptec_main_hero_fxjbYa",
-    "featured_collection",
     "naptec_perks_JbpjXN",
-    "naptec_half_image_half_text_F9BQc8",
-    "naptec_our_brands_LdjaVG",
+    "featured_collection",
     "naptec_products_QkVi6i",
+    "naptec_our_brands_LdjaVG",
+    "naptec_half_image_half_text_F9BQc8",
     "naptec_make_custom_design_UK9UWn",
     "naptec_industries_we_serve_jyN4Kt",
     "naptec_separation_image_TCe6z7",
