@@ -162,6 +162,11 @@
         "settings": {
           "product": ""
         }
+      },
+      "15551562133269743879": {
+        "type": "shopify://apps/codeinspire-accessibility-tool/blocks/app-embed/9c320235-d5d5-4e1c-baf6-809572578ea3",
+        "disabled": false,
+        "settings": {}
       }
     },
     "color_schemes": {
