@@ -414,8 +414,8 @@
     "naptec_wholesale_partner_YQMNBe": {
       "type": "naptec__wholesale-partner",
       "custom_css": [
-        "section {padding-bottom: 15px;}",
-        "section {padding-top: 10px;}"
+        "section {padding-top: 30px;}",
+        "section {padding-bottom: 30px;}"
       ],
       "settings": {
         "header": "How to become <br> a wholesale partner",
