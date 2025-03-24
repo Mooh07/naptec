@@ -58,6 +58,23 @@
         "autoplay_duration": 5
       }
     },
+    "servietto_product_categories_gKwLFW": {
+      "type": "servietto__product-categories",
+      "settings": {
+        "heading": "Product Categories",
+        "left_image": "shopify://shop_images/left_image_new.png",
+        "first_category_url": "shopify://collections/servietto-cocktail-napkin",
+        "first_category": "Cocktail Napkins",
+        "middle_image": "shopify://shop_images/centger_img_new.png",
+        "second_category_url": "shopify://collections/servietto-dinner-napkins",
+        "second_category": "Dinner Napkins",
+        "right_image": "shopify://shop_images/right_image_new.png",
+        "third_category_url": "shopify://collections/servietto-guest-towels",
+        "third_category": "Guest Towels",
+        "background_color": "#ffffff",
+        "text_color": "#1c363d"
+      }
+    },
     "servietto_values_VqCBLL": {
       "type": "servietto__values",
       "settings": {
@@ -80,23 +97,6 @@
         "right_image": "shopify://shop_images/right_image.png",
         "image_text": "Our disposable hand towels and napkins were designed to look and feel just like luxurious linen so that ghosts everywhere can pamper their quests without the hassle.",
         "bottom_text": "Add a Timeless Touch.",
-        "background_color": "#ffffff",
-        "text_color": "#1c363d"
-      }
-    },
-    "servietto_product_categories_gKwLFW": {
-      "type": "servietto__product-categories",
-      "settings": {
-        "heading": "Product Categories",
-        "left_image": "shopify://shop_images/left_image_new.png",
-        "first_category_url": "shopify://collections/servietto-cocktail-napkin",
-        "first_category": "Cocktail Napkins",
-        "middle_image": "shopify://shop_images/centger_img_new.png",
-        "second_category_url": "shopify://collections/servietto-dinner-napkins",
-        "second_category": "Dinner Napkins",
-        "right_image": "shopify://shop_images/right_image_new.png",
-        "third_category_url": "shopify://collections/servietto-guest-towels",
-        "third_category": "Guest Towels",
         "background_color": "#ffffff",
         "text_color": "#1c363d"
       }
@@ -213,10 +213,10 @@
   "order": [
     "main",
     "servietto_main_hero_Jem8Vq",
-    "servietto_values_VqCBLL",
-    "servietto_our_values_CEwLNJ",
     "servietto_product_categories_gKwLFW",
     "servietto_bestsellers_GmHVp8",
+    "servietto_values_VqCBLL",
+    "servietto_our_values_CEwLNJ",
     "servietto_why_choose_servietto_tk7LEc",
     "servietto_collaborate_MtpVV8"
   ]
