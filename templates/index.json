@@ -267,7 +267,7 @@
       ],
       "custom_css": [
         "section {padding-bottom: 20px;}",
-        "section {padding-top: 20px;}"
+        "section {padding-top: 30px;}"
       ],
       "settings": {
         "header": "Discover Your Style",
