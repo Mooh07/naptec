@@ -224,8 +224,8 @@
         "brand_8BWK7a"
       ],
       "custom_css": [
-        "section {padding-top: 30px;}",
-        "section {padding-bottom: 25px;}"
+        "section {padding-bottom: 25px;}",
+        "section {padding-top: 25px;}"
       ],
       "settings": {
         "text": "Shop Our Brands"
