@@ -274,7 +274,7 @@
         "collection": "",
         "subheader": "Bestsellers",
         "background_color": "#ffffff",
-        "text_color": "#383735"
+        "text_color": "#073b43"
       }
     },
     "naptec_half_image_half_text_F9BQc8": {
@@ -291,6 +291,7 @@
     },
     "naptec_make_custom_design_UK9UWn": {
       "type": "naptec__make-custom-design",
+      "custom_css": [],
       "settings": {
         "header": "Make your<br> custom design",
         "content": "Tailor napkins to fit your brand or establishment  by exploring our customization options, including branding and packaging solutions.",
