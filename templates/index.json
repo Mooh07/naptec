@@ -86,8 +86,8 @@
         "perk_ARfHTm"
       ],
       "custom_css": [
-        "section {padding-top: 15px;}",
-        "section {padding-bottom: 15px;}"
+        "section {padding-top: 20px;}",
+        "section {padding-bottom: 20px;}"
       ],
       "settings": {}
     },
@@ -163,8 +163,8 @@
         "products_product_hVnUAN"
       ],
       "custom_css": [
-        "section {padding-top: 20px;}",
-        "section {padding-bottom: 20px;}"
+        "section {padding-top: 30px;}",
+        "section {padding-bottom: 30px;}"
       ],
       "settings": {
         "title": "Product Categories",
@@ -225,7 +225,7 @@
       ],
       "custom_css": [
         "section {padding-bottom: 25px;}",
-        "section {padding-top: 25px;}"
+        "section {padding-top: 45px;}"
       ],
       "settings": {
         "text": "Shop Our Brands"
@@ -267,10 +267,10 @@
       ],
       "custom_css": [
         "section {padding-top: 30px;}",
-        "section {padding-bottom: 30px;}"
+        "section {padding-bottom: 40px;}"
       ],
       "settings": {
-        "header": "Discover Your Style",
+        "header": "",
         "collection": "",
         "subheader": "Bestsellers",
         "background_color": "#ffffff",
