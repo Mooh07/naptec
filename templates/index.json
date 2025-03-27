@@ -16,8 +16,8 @@
           "type": "hero_content",
           "settings": {
             "background": "shopify://shop_images/155899f183464ab2ac83921215657d95_1_1.png",
-            "header": "<center><h2>Excellence in <br>Napkin Manufacturing </h2></center>",
-            "subheading": "<center><h3>Premium, practical, disposable tabletop products,<br> and styles that wow.</h3></center>",
+            "header": "Excellence in <br>Napkin Manufacturing",
+            "subheading": "Premium, practical, disposable tabletop products,<br> and styles that wow.",
             "cta-content": "Shop Now",
             "cta-url": "shopify://collections/naptec-napkins"
           }
