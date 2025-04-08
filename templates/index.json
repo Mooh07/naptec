@@ -86,8 +86,8 @@
         "perk_ARfHTm"
       ],
       "custom_css": [
-        "section {padding-top: 20px;}",
-        "section {padding-bottom: 20px;}"
+        "section {padding-top: 25px;}",
+        "section {padding-bottom: 25px;}"
       ],
       "settings": {}
     },
