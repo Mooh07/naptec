@@ -279,7 +279,6 @@
     },
     "naptec_half_image_half_text_F9BQc8": {
       "type": "naptec__half-image-half-text",
-      "disabled": true,
       "custom_css": [],
       "settings": {
         "image": "shopify://shop_images/bf5407583bd3e260bfb0fa72c64caf72_1_1.png",
@@ -432,9 +431,9 @@
     "naptec_perks_JbpjXN",
     "featured_collection",
     "naptec_products_QkVi6i",
+    "naptec_half_image_half_text_F9BQc8",
     "naptec_our_brands_LdjaVG",
     "naperee_bestsellers_i93Ykj",
-    "naptec_half_image_half_text_F9BQc8",
     "naptec_make_custom_design_UK9UWn",
     "naptec_industries_we_serve_jyN4Kt",
     "naptec_separation_image_TCe6z7",
