@@ -16,7 +16,7 @@
           "type": "hero_content",
           "settings": {
             "background": "shopify://shop_images/155899f183464ab2ac83921215657d95_1_1.png",
-            "header": "Excellence in <br>Napkin Manufacturing",
+            "header": "<a href=\"https://naptecpaper.com/collections/naptec-napkins\">\n    Excellence in <br>Napkin Manufacturing\n  </a>",
             "subheading": "Premium, practical, disposable tabletop products,<br> and styles that wow.",
             "cta-content": "Shop Now",
             "cta-url": "shopify://collections/naptec-napkins"
@@ -173,6 +173,17 @@
         "view-all-url": "shopify://collections/all-products"
       }
     },
+    "naptec_half_image_half_text_F9BQc8": {
+      "type": "naptec__half-image-half-text",
+      "custom_css": [],
+      "settings": {
+        "image": "shopify://shop_images/bf5407583bd3e260bfb0fa72c64caf72_1_1.png",
+        "header": "About Naptec",
+        "content": "<p>Naptec is the manufacturer behind four premium napkin brands, setting us apart as leaders in the industry. Beginning with our flagship brand and product, we set            out on our mission to help every host, be it at home, a hall, a hotel, or anywhere visitors frequent, add a touch of class to their guest experience. Since then, we’ve launched 4 brands and numerous products, all with the same mission of bringing practical elegance to anyone, anywhere.</p>",
+        "image-bottom": "shopify://shop_images/Group_9.png",
+        "image-right": false
+      }
+    },
     "naptec_our_brands_LdjaVG": {
       "type": "naptec__our-brands",
       "blocks": {
@@ -275,17 +286,6 @@
         "subheader": "Bestsellers",
         "background_color": "#ffffff",
         "text_color": "#073b43"
-      }
-    },
-    "naptec_half_image_half_text_F9BQc8": {
-      "type": "naptec__half-image-half-text",
-      "custom_css": [],
-      "settings": {
-        "image": "shopify://shop_images/bf5407583bd3e260bfb0fa72c64caf72_1_1.png",
-        "header": "About Naptec",
-        "content": "<p>Naptec is the manufacturer behind four premium napkin brands, setting us apart as leaders in the industry. Beginning with our flagship brand and product, we set            out on our mission to help every host, be it at home, a hall, a hotel, or anywhere visitors frequent, add a touch of class to their guest experience. Since then, we’ve launched 4 brands and numerous products, all with the same mission of bringing practical elegance to anyone, anywhere.</p>",
-        "image-bottom": "shopify://shop_images/Group_9.png",
-        "image-right": false
       }
     },
     "naptec_make_custom_design_UK9UWn": {
