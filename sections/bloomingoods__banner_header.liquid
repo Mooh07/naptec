@@ -1,6 +1,168 @@
-{% schema %}
-  {
-    "name": "Section name",
-    "settings": []
+<style>
+  .bloomingoods_banner_container{
+    width: 100%;
+    display: grid;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
   }
+  .bloomingoods_banner_container-darken{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+    padding-inline: 10%;
+    -webkit-backdrop-filter: brightness(0.5);
+    backdrop-filter: brightness(0.5);
+  }
+  .bloomingoods_font{
+    font-family: Latienne Pro;
+    color: rgba(29, 59, 44, 1);
+    line-height: normal;
+  }
+  .bloomingoods_banner_Logo{
+    width: 40%;
+  }
+  .bloomingoods_banner_textContainer {
+    background: transparent;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content:center;
+    padding: 5% 4%;
+  }
+  .bloomingoods_banner_text{
+    font-weight: 500;
+    font-size: 42px;
+    text-align: center;
+    line-height: 46px;
+  }
+
+   .beige-box {
+
+            clip-path: polygon(
+                var(--beige-polygon-size, 20px) 0%,
+                calc(100% - var(--beige-polygon-size, 20px)) 0%,
+                100% var(--beige-polygon-size, 20px),
+                100% calc(100% - var(--beige-polygon-size, 20px)),
+                calc(100% - var(--beige-polygon-size, 20px)) 100%,
+                var(--beige-polygon-size, 20px) 100%,
+                0% calc(100% - var(--beige-polygon-size, 20px)),
+                0% var(--beige-polygon-size, 20px)
+            );
+     position: relative;
+        }
+
+        .beige-box::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(ellipse var(--beige-box-size, 35px 30px) at top left, transparent 75%, var(--beige-box-color, #f0ead6) 5%),
+                        radial-gradient(ellipse var(--beige-box-size, 35px 30px) at top right, transparent 75%, var(--beige-box-color, #f0ead6) 5%),
+                        radial-gradient(ellipse var(--beige-box-size, 35px 30px) at bottom right, transparent 75%, var(--beige-box-color, #f0ead6) 5%),
+                        radial-gradient(ellipse var(--beige-box-size, 35px 30px) at bottom left, transparent 75%, var(--beige-box-color, #f0ead6) 5%);
+            background-size: 51% 51%;
+            background-position: top left, top right, bottom right, bottom left;
+            background-repeat: no-repeat;
+            z-index: -1;
+        }
+  .bloomingoods-shopNow{
+    display: grid;
+    place-content: center;
+    color: white;
+    width: 200px;
+    height: 50px;
+    text-transform: uppercase;
+    margin-top: 2%;
+  }
+    @media screen and (max-width:1024px){
+    .bloomingoods_banner_text{
+      font-size: 30px;
+      line-height: 32px;
+    }
+      .bloomingoods-shopNow{
+        width: 200px;
+        height: 50px;
+      }
+  }
+  @media screen and (max-width:768px){
+    .bloomingoods_banner_text{
+      font-size: 20px;
+      line-height: 24px;
+    }
+    .bloomingoods_banner_container-darken{
+      flex-direction: column;
+      padding-block: 4%;
+    }
+  }
+</style>
+<div
+  class="bloomingoods_banner_container"
+  style="background-image: url({{ section.settings.header_image | image_url }})"
+>
+  <div class="bloomingoods_banner_container-darken">
+    <div class="bloomingoods_banner_Logo">
+      <img
+        src="https://cdn.shopify.com/s/files/1/0611/8129/6700/files/BloominGoodsNoBgLogo.png?v=1750235054"
+        alt="blomingLogo"
+        width="100%"
+      >
+    </div>
+    <div class="bloomingoods_banner_textContainer beige-box">
+      <div class="bloomingoods_banner_text bloomingoods_font">Bringing unforgettable to the table</div>
+      <div
+        class="beige-box bloomingoods-shopNow"
+        style="--beige-box-color : rgba(29, 59, 44, 1); --beige-box-size: 12px 10px; --beige-polygon-size: 5px;"
+      >
+        Shop now
+      </div>
+    </div>
+  </div>
+</div>
+{% schema %}
+{
+  "name": "Bloomingoods Banner",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "logo_image",
+      "label": "Logo"
+    },
+    {
+      "type": "image_picker",
+      "id": "header_image",
+      "label": "Header Backgroundimage"
+    },
+    {
+      "type": "color",
+      "id": "header_background",
+      "label": "Header background",
+      "default": "#fff"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Link text color",
+      "default": "#fff"
+    },
+    {
+      "type": "text",
+      "id": "cta_label",
+      "label": "Button content",
+      "default": "GET A QUOTE"
+    },
+    {
+      "type": "url",
+      "id": "cta_url",
+      "label": "Button url"
+    }
+  ]
+}
 {% endschema %}
