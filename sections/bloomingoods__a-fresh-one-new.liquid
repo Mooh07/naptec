@@ -1,6 +1,116 @@
-{% schema %}
-  {
-    "name": "Section name",
-    "settings": []
+<section class="bloomingoods__a-fresh-one page-width">
+  <div class="bloomingoods__a-fresh-one-left-text">
+    {{ section.settings.right_text }}
+  </div>
+  <div class="bloomingoods__a-fresh-one-content-container">
+    <img
+      src="{{ section.settings.left_image |  image_url: width: section.settings.left_image.width }}"
+      alt="{{ section.settings.left_image.alt }}"
+      height="{{ section.settings.left_image.height }}"
+      width="{{ section.settings.left_image.width }}"
+      loading="lazy"
+    >
+  </div>
+  <div class="bloomingoods__a-fresh-one-background-container">
+    <img
+      src="{{ section.settings.background_image |  image_url: width: section.settings.background_image.width }}"
+      alt="{{ section.settings.background_image.alt }}"
+      width="{{ section.settings.background_image.width }}"
+      height="{{ section.settings.background_image.height }}"
+      loading="lazy"
+    >
+  </div>
+</section>
+<style>
+  .bloomingoods__a-fresh-one {
+    position: relative;
+    height: 720px;
+    padding: 0;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-bewteen;
+
   }
+  .bloomingoods__a-fresh-one .bloomingoods__a-fresh-one-background-container {
+    width: 50%;
+    height: 100%;
+    position: relative;
+
+  }
+  .bloomingoods__a-fresh-one .bloomingoods__a-fresh-one-background-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  .bloomingoods__a-fresh-one-content-container {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 0;
+    display: flex;
+    align-items: end;
+    justify-content: space-between;
+    padding: 172px var(--padding-sides);
+  }
+  .bloomingoods__a-fresh-one-right-text p {
+    margin: 0;
+    font-family: Latienne Pro;
+    font-size: 58px;
+    font-weight: 400;
+    line-height: 105%;
+    text-align: left;
+    text-underline-position: from-font;
+    text-decoration-skip-ink: none;
+  }
+  .bloomingoods__a-fresh-one-right-text p:last-child {
+    margin-left: 8rem;
+  }
+  @media screen and (max-width: 992px) {
+    .bloomingoods__a-fresh-one-content-container {
+      padding: 100px var(--padding-sides);
+    }
+  }
+  @media screen and (max-width: 772px) {
+    .bloomingoods__a-fresh-one-right-text p:last-child {
+      margin-left: 5rem;
+    }
+  }
+  @media screen and (max-width: 772px) {
+    .bloomingoods__a-fresh-one-content-container {
+      flex-direction: column;
+      align-items: center;
+    }
+    .bloomingoods__a-fresh-one-right-text p {
+      font-size: 48px;
+    }
+  }
+</style>
+{% schema %}
+{
+  "name": "BloomingoodsFreshOneNew",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "background_image",
+      "label": "Background image"
+    }, {
+      "type": "image_picker",
+      "label": "Left image",
+      "id": "left_image"
+    }, {
+      "type": "html",
+      "label": "Right text",
+      "id": "right_text"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Bloomingoods a fresh one New"
+    }
+  ]
+}
 {% endschema %}
