@@ -1,6 +1,83 @@
-{% schema %}
-  {
-    "name": "Section name",
-    "settings": []
+<style>
+  .naperee__bestsellers {
+    --background-color: {{ section.settings.background_color }};
+    --text-color: {{ section.settings.text_color }};
   }
+</style>
+{{ 'naperee__bestsellers.css' | asset_url | stylesheet_tag }}
+{{ 'global__product-card.css' | asset_url | stylesheet_tag }}
+
+<section class="page-width naperee__bestsellers ">
+  <h6 class="naperee__bestsellers-subheader">{{ section.settings.header }}</h6>
+  <h2
+    class="naperee__bestsellers-header"
+    style="text-align:center; "
+  >
+    {{ section.settings.subheader }}
+  </h2>
+  <ul class="naperee__bestsellers_products">
+    {% if section.settings.collection != blank %}
+      {% for product in section.settings.collection.products limit: 4 %}
+        <li>
+          {% render 'global__product-card', product: product, section_id: section.id %}
+        </li>
+      {% endfor %}
+    {% endif %}
+  </ul>
+</section>
+
+{% schema %}
+{
+  "name": "Brand Landing Bestsellers",
+  "settings": [
+    {
+      "type": "text",
+      "id": "header",
+      "label": "header",
+      "default": "Discover Your Style"
+    },
+    {
+      "type": "collection",
+      "id": "collection",
+      "label": "collection"
+    },
+    {
+      "type": "text",
+      "id": "subheader",
+      "label": "subheader",
+      "default": "Bestsellers"
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Background color",
+      "default": "#fff"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Text color",
+      "default": "#383735"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "product",
+      "name": "product",
+      "limit": 4,
+      "settings": [
+        {
+          "type": "product",
+          "id": "product",
+          "label": "product"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Brand Landing Bestsellers"
+    }
+  ]
+}
 {% endschema %}
