@@ -1,6 +1,310 @@
-{% schema %}
-  {
-    "name": "Section name",
-    "settings": []
+<section class=" page-width" style="max-width: unset; padding: 0px;">
+  <div class="bloomingoods__categories">
+    <div class="bloomingoods__categories-text-container">
+      <h3>{{ section.settings.section_name | upcase }}</h3>
+      <h2>{{ section.settings.heading }}</h2>
+      <div class="">
+        {{ section.settings.paragraph }}
+      </div>
+    </div>
+    <ul>
+      {% for block in section.blocks %}
+        <li>
+          <div class="bloomingoods__categories-category-image-container">
+            <img
+              src="{{ block.settings.image |  image_url: width: block.settings.image.width }}"
+              alt="{{ block.settings.image.alt }}"
+              height="{{ block.settings.image.height }}"
+              width="{{ block.settings.image.width }}"
+              loading="lazy"
+            >
+          </div>
+          <a href="{{ block.settings.url }}">
+            <div class="bloomingoods__categories-category-text-container" style="justify-content: center;">
+              <h5 style="text-align: center; font-family: 'filson';">
+                {{ block.settings.category_name }}
+              </h5>
+            </div>
+          </a>
+        </li>
+      {% endfor %}
+    </ul>
+  </div>
+  <div class="bloomingoods_img_banner">
+    <div class="bloomingoods_img_banner_imgContainer">
+      <img
+        src="{{ section.settings.section_image |  image_url }}"
+        alt="{{ section.settings.section_image.alt }}"
+        loading="lazy"
+        width="100%"
+        class="bloomingoods-img-mask"
+      >
+    </div>
+    <div class="bloomingoods_img_banner_TextContainer">
+      <h2 class="bloomingoods_font">{{ section.settings.section_heading }}</h2>
+      <div class="">
+        {{ section.settings.section_paragraph }}
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .bloomingoods__categories {
+    display: flex;
+    flex-direction: column;
+    background-color: rgba(245, 232, 213, 1);
+    color: rgba(29, 59, 44, 1);
+    padding: 92px var(--padding-sides);
   }
+  .bloomingoods__categories-text-container {
+    display: flex;
+    flex-direction: column;
+  }
+  .bloomingoods__categories-text-container h3 {
+    font-family: Latienne Pro;
+    font-size: 20px;
+    font-style: italic;
+    font-weight: 400;
+    line-height: 100%;
+    text-align: center;
+    text-underline-position: from-font;
+    text-decoration-skip-ink: none;
+    margin: 0 0 32px;
+    color: rgba(29, 59, 44, 1);
+  }
+  .bloomingoods__categories-text-container h2 {
+    font-family: Latienne Pro;
+    font-size: 60px;
+    font-weight: 500;
+    line-height: 113%;
+    text-align: center;
+    text-underline-position: from-font;
+    text-decoration-skip-ink: none;
+    margin: 0 0 12px;
+    color: rgba(29, 59, 44, 1);
+  }
+  .bloomingoods__categories-text-container div p {
+    font-family: "filson";
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 125%;
+    text-align: center;
+    text-underline-position: from-font;
+    text-decoration-skip-ink: none;
+    margin: 0;
+  }
+  .bloomingoods__categories ul {
+    margin: 60px 0 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  .bloomingoods__categories ul li {
+    width: calc(25% - 32px);
+    position: relative;
+  }
+  .bloomingoods__categories ul li a {
+    text-decoration: none;
+  }
+  .bloomingoods__categories ul li a::after {
+    position: absolute;
+    content: " ";
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+  }
+  .bloomingoods__categories ul li a .bloomingoods__categories-category-text-container {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .bloomingoods__categories ul li a .bloomingoods__categories-category-text-container svg {
+    min-width: 24px;
+  }
+
+  .bloomingoods__categories-category-image-container {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+  }
+  .bloomingoods__categories-category-image-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  .bloomingoods__categories-category-text-container h5 {
+    font-family: Milanesa Serif;
+    font-size: 24px;
+    font-weight: 400;
+    line-height: 133%;
+    text-align: left;
+    text-underline-position: from-font;
+    text-decoration-skip-ink: none;
+    margin: 0;
+    color: rgba(29, 59, 44, 1);
+  }
+
+  .bloomingoods_img_banner{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+  }
+  .bloomingoods_img_banner_TextContainer{
+    width: 50%;
+    padding-left: 10%;
+  }
+  .bloomingoods_img_banner{
+    padding: 10%;
+  }
+  .bloomingoods_img_banner_imgContainer{
+    aspect-ratio: 1 / 1;
+    width: 500px;
+    height: 500px;
+  }
+  .bloomingoods_img_banner_TextContainer h2, .bloomingoods_img_banner_TextContainer div{
+    color: rgba(29, 59, 44, 1);
+  }
+  .bloomingoods_img_banner_TextContainer h2{
+    font-size: 45px;
+    font-weight: 500;
+  }
+  .bloomingoods_img_banner_TextContainer div{
+    font-size: 30px;
+    line-height: normal;
+  }
+  .bloomingoods-img-mask{
+    mask: url(https://cdn.shopify.com/s/files/1/0611/8129/6700/files/napkinMask2.svg?v=1750398200) no-repeat center;
+    object-fit: cover;
+  }
+
+  @media screen and (max-width: 1265px) {
+    .bloomingoods__categories-category-text-container h5 {
+      font-size: 18px;
+    }
+    .bloomingoods__categories-category-text-container h5 svg {
+      width: 18px;
+    }
+  }
+  @media screen and (max-width: 992px) {
+    .bloomingoods__categories-text-container h2 {
+      font-size: 48px;
+    }
+
+    .bloomingoods__categories ul {
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 32px;
+    }
+    .bloomingoods__categories ul li {
+      width: calc(50% - 10px);
+    }
+    .bloomingoods__categories-category-text-container h5 {
+      font-size: 14px;
+    }
+    .bloomingoods__categories ul li a .bloomingoods__categories-category-text-container {
+      gap: 8px;
+    }
+    .bloomingoods__categories ul li a .bloomingoods__categories-category-text-container svg {
+      width: 18px;
+      object-fit: contain;
+    }
+
+  }
+
+  @media screen and (max-width: 768px) {
+    .bloomingoods_img_banner{
+      flex-direction: column;
+    }
+    .bloomingoods_img_banner_TextContainer{
+      width: auto;
+    }
+  }
+
+  @media screen and (max-width: 600px) {
+    .bloomingoods__categories-text-container div p {
+      font-size: 12px;
+    }
+    .bloomingoods__categories ul {
+      margin-top: 16px;
+    }
+  }
+  @media screen and (max-width: 500px) {
+    .bloomingoods__categories-text-container div p {
+      font-size: 10px;
+    }
+  }
+  @media screen and (max-width: 390px) {
+    .bloomingoods__categories ul {
+      gap: 30px;
+    }
+    .bloomingoods__categories ul li {
+      width: 100%;
+    }
+
+  }
+</style>
+{% schema %}
+{
+  "name": "Bloomingoods Prd New",
+  "settings": [
+    {
+      "type": "text",
+      "label": "Section's name",
+      "id": "section_name",
+      "default": "PRODUCTS"
+    }, {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Product Categories"
+    }, {
+      "type": "html",
+      "id": "paragraph",
+      "label": "Paragraph"
+    },
+    {
+          "type": "image_picker",
+          "id": "section_image",
+          "label": "Section Image"
+        },{
+      "type": "text",
+      "id": "section_heading",
+      "label": "Section Heading"
+    }, {
+      "type": "html",
+      "id": "section_paragraph",
+      "label": "Section Paragraph"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "category",
+      "name": "Category",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Category cover image"
+        }, {
+          "type": "text",
+          "id": "category_name",
+          "label": "Category name"
+        }, {
+          "type": "url",
+          "label": "Category collection page",
+          "id": "url"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Bloomingoods categories New"
+    }
+  ]
+}
 {% endschema %}
