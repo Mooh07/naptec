@@ -9,15 +9,100 @@
  */
 {
   "sections": {
+    "bloomingoods-banner-header": {
+      "type": "bloomingoods__banner_header",
+      "settings": {
+        "header_image": "shopify://shop_images/bloomingoods_main_hero_background_1.png",
+        "header_background": "#ffffff",
+        "text_color": "#ffffff",
+        "cta_label": "GET A QUOTE",
+        "cta_url": ""
+      }
+    },
+    "bloomingoods_product_categories_new_XQ3R4U": {
+      "type": "bloomingoods__product-categories_new",
+      "blocks": {
+        "category_BARBq3": {
+          "type": "category",
+          "settings": {
+            "image": "shopify://shop_images/Wedding_Napkin_on_wedding_table.webp",
+            "category_name": "Guest Towels",
+            "url": ""
+          }
+        },
+        "category_zU4pmR": {
+          "type": "category",
+          "settings": {
+            "image": "shopify://shop_images/Wedding_Napkin_on_wedding_table.webp",
+            "category_name": "Napkins",
+            "url": ""
+          }
+        },
+        "category_PL469C": {
+          "type": "category",
+          "settings": {
+            "image": "shopify://shop_images/Wedding_Napkin_on_wedding_table.webp",
+            "category_name": "Tablecloths & Runners",
+            "url": ""
+          }
+        },
+        "category_ji4eHJ": {
+          "type": "category",
+          "settings": {
+            "image": "shopify://shop_images/Wedding_Napkin_on_wedding_table.webp",
+            "category_name": "Design and Monogrammed Napkins",
+            "url": ""
+          }
+        }
+      },
+      "block_order": [
+        "category_BARBq3",
+        "category_zU4pmR",
+        "category_PL469C",
+        "category_ji4eHJ"
+      ],
+      "name": "Bloomingoods categories New",
+      "settings": {
+        "section_name": "",
+        "heading": "Product Categories",
+        "paragraph": "",
+        "section_image": "shopify://shop_images/Wedding_Napkin_on_wedding_table.webp",
+        "section_heading": "Our mission is to make hosting with flair total no-brainer",
+        "section_paragraph": "Our goal is to design products that are both stylish, practical, and affordable – striking the balance between form and function, aesthetics and hygiene."
+      }
+    },
+    "bloomingoods_new_bestsellers_rjgA6U": {
+      "type": "bloomingoods_new_bestsellers",
+      "name": "Brand Landing Bestsellers",
+      "settings": {
+        "header": "",
+        "collection": "bloomingoods",
+        "subheader": "Bestsellers",
+        "background_color": "#ffffff",
+        "text_color": "#333333"
+      }
+    },
     "main": {
       "type": "main-page",
+      "disabled": true,
       "settings": {
         "padding_top": 28,
         "padding_bottom": 28
       }
+    },
+    "bloomingoods_a_fresh_one_new_93ALzG": {
+      "type": "bloomingoods__a-fresh-one-new",
+      "name": "Bloomingoods a fresh one New",
+      "settings": {
+        "right_text": ""
+      }
     }
   },
   "order": [
-    "main"
+    "bloomingoods-banner-header",
+    "bloomingoods_product_categories_new_XQ3R4U",
+    "bloomingoods_new_bestsellers_rjgA6U",
+    "main",
+    "bloomingoods_a_fresh_one_new_93ALzG"
   ]
 }
