@@ -16,9 +16,36 @@
         "padding_top": 28,
         "padding_bottom": 28
       }
+    },
+    "lintext_main_banner_NpbbLE": {
+      "type": "lintext__main-banner",
+      "blocks": {
+        "slide_xr4VTY": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/tempImagejsY00S_1.png",
+            "heading": "At Lintext, we have a soft spot for small, thoughtful touches.",
+            "subheading": "",
+            "cta_label": "Shop All Products",
+            "cta_url": "",
+            "background_color": "#EAE7E2",
+            "text_color": "#1C363D",
+            "button_color": "#000"
+          }
+        }
+      },
+      "block_order": [
+        "slide_xr4VTY"
+      ],
+      "name": "Lintext main Banner",
+      "settings": {
+        "enable_autoplay": true,
+        "autoplay_duration": 5
+      }
     }
   },
   "order": [
-    "main"
+    "main",
+    "lintext_main_banner_NpbbLE"
   ]
 }
