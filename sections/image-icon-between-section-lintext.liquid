@@ -1,0 +1,55 @@
+{% schema %}
+{
+  "name": "Icon B/w Section Lintext",
+  "tag": "section",
+  "class": "section-icon-between",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "icon_image",
+      "label": "Icon Image"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Icon B/w Sections Lintext"
+    }
+  ]
+}
+{% endschema %}
+
+<div class="icon-between-container">
+  {% if section.settings.icon_image %}
+    <img 
+      src="{{ section.settings.icon_image | image_url: width: 400 }}" 
+      alt="Between Sections Icon"
+      class="icon-between-img"
+    >
+  {% endif %}
+</div>
+
+<style>
+.icon-between-container {
+  position: relative;
+  height: 0;
+  z-index: 10;
+}
+
+.icon-between-img {
+  position: absolute;
+  top: -75px; /* Half the image height (adjust as needed) */
+  /* left: 50%;
+  transform: translateX(-50%); */
+  max-height: 250px;
+  width: auto;
+  z-index: 10;
+  pointer-events: none; /* So it doesn't block clicks */
+}
+
+@media screen and (max-width: 768px) {
+  .icon-between-img {
+    top: -100px;
+    max-height: 150px;
+  }
+}
+</style>
