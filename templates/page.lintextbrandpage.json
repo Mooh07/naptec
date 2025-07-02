@@ -24,6 +24,7 @@
           "type": "slide",
           "settings": {
             "image": "shopify://shop_images/tempImagejsY00S_1.png",
+            "icon_image": "shopify://shop_images/LintextLogo-2.png",
             "heading": "At Lintext, we have a soft spot for small, thoughtful touches.",
             "subheading": "",
             "cta_label": "Shop All Products",
@@ -148,8 +149,8 @@
         "title": "Bestsellers",
         "collection": "",
         "subheader": "Bestsellers",
-        "background_color": "#fff",
-        "text_color": "#1C363D"
+        "background_color": "#ffffff",
+        "text_color": "#1c363d"
       }
     },
     "lintext_mission_new_9Lj8Dj": {
@@ -186,9 +187,9 @@
             "subheading": "Whether you're hosting a lavish dinner party or a cozy get-together, Lintext brings together sophistication and simplicity.Elevate your tabletop with the beauty of linen-like disposables—and enjoy all the elegance, none of the wash.",
             "cta_label": "Get a Quote",
             "cta_url": "",
-            "background_color": "#EAE7E2",
-            "text_color": "#1C363D",
-            "button_color": "#000"
+            "background_color": "#eae7e2",
+            "text_color": "#1c363d",
+            "button_color": "#000000"
           }
         }
       },
