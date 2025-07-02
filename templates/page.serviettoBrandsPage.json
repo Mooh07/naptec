@@ -169,8 +169,34 @@
         "title": "Bestsellers",
         "collection": "",
         "subheader": "Bestsellers",
-        "background_color": "#fff",
-        "text_color": "#1C363D"
+        "background_color": "#ffffff",
+        "text_color": "#1c363d"
+      }
+    },
+    "servietto_main_banner_left_9EHYYR": {
+      "type": "servietto__main-banner-left",
+      "blocks": {
+        "slide_rXfPW3": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/servietto_h.png",
+            "heading": "At Servietto we believe increating beautiful things forthoughtful people.",
+            "subheading": "Our disposable hand towels and napkins were designed to lookand feel just like luxurious linen so that hosts everywhere canpamper their guests without the hassle.",
+            "cta_label": "",
+            "cta_url": "",
+            "background_color": "#243a41",
+            "text_color": "#ffffff",
+            "button_color": "#000"
+          }
+        }
+      },
+      "block_order": [
+        "slide_rXfPW3"
+      ],
+      "name": "Servietto main Banner Left",
+      "settings": {
+        "enable_autoplay": true,
+        "autoplay_duration": 5
       }
     }
   },
@@ -179,6 +205,7 @@
     "servietto_main_banner_pqnwJp",
     "collection_list_servietto_MLeApq",
     "image_with_text_servietto_wKBJMd",
-    "servietto_bestsellers_kQHtje"
+    "servietto_bestsellers_kQHtje",
+    "servietto_main_banner_left_9EHYYR"
   ]
 }
