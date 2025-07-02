@@ -42,10 +42,59 @@
         "enable_autoplay": true,
         "autoplay_duration": 5
       }
+    },
+    "collection_list_lintext_LTyBBF": {
+      "type": "collection-list-lintext",
+      "blocks": {
+        "featured_collection_WeXRXC": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": ""
+          }
+        },
+        "featured_collection_HGGzF3": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": ""
+          }
+        },
+        "featured_collection_B4fYHm": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": ""
+          }
+        },
+        "featured_collection_LzppMg": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": ""
+          }
+        }
+      },
+      "block_order": [
+        "featured_collection_WeXRXC",
+        "featured_collection_HGGzF3",
+        "featured_collection_B4fYHm",
+        "featured_collection_LzppMg"
+      ],
+      "name": "Collection List Lintext",
+      "settings": {
+        "title": "Products That Elevate Every Occasion",
+        "heading_size": "h1",
+        "image_ratio": "square",
+        "columns_desktop": 4,
+        "color_scheme": "scheme-e2aaaec1-59de-4358-a55c-fcaad9eda2d5",
+        "show_view_all": false,
+        "columns_mobile": "2",
+        "swipe_on_mobile": true,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
     }
   },
   "order": [
     "main",
-    "lintext_main_banner_NpbbLE"
+    "lintext_main_banner_NpbbLE",
+    "collection_list_lintext_LTyBBF"
   ]
 }
