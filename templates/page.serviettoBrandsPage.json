@@ -11,13 +11,41 @@
   "sections": {
     "main": {
       "type": "main-page",
+      "disabled": true,
       "settings": {
         "padding_top": 28,
         "padding_bottom": 28
       }
+    },
+    "servietto_main_banner_pqnwJp": {
+      "type": "servietto__main-banner",
+      "blocks": {
+        "slide_xi6EjM": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/Clip_path_frame_1.png",
+            "heading": "Elegance in every fold",
+            "subheading": "We offer a beautiful assortment of napkins, table cloths, table runners,and place mats, in an array of vibrant colors to complement anyatmosphere. From pocket napkins to dinner napkins, guest towels toplace mats, Servietto’s tableware has the look and feel of pillowylinen, is ultra-absorbent, and completely disposable.",
+            "cta_label": "Show All Products",
+            "cta_url": "",
+            "background_color": "#EAE7E2",
+            "text_color": "#ffffff",
+            "button_color": "#000"
+          }
+        }
+      },
+      "block_order": [
+        "slide_xi6EjM"
+      ],
+      "name": "Servietto main Banner",
+      "settings": {
+        "enable_autoplay": true,
+        "autoplay_duration": 5
+      }
     }
   },
   "order": [
-    "main"
+    "main",
+    "servietto_main_banner_pqnwJp"
   ]
 }
