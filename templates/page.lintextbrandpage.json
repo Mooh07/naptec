@@ -151,6 +151,29 @@
         "background_color": "#fff",
         "text_color": "#1C363D"
       }
+    },
+    "lintext_mission_new_9Lj8Dj": {
+      "type": "lintext__mission-new",
+      "blocks": {
+        "feature_QEgg38": {
+          "type": "feature",
+          "settings": {
+            "feature_icon": "shopify://shop_images/image_67.png",
+            "feature_description": ""
+          }
+        }
+      },
+      "block_order": [
+        "feature_QEgg38"
+      ],
+      "name": "Lintext mission New",
+      "settings": {
+        "image": "shopify://shop_images/image_8_1_51ce8398-a8a1-4b60-bd87-6435d0a64a49.png",
+        "heading": "Our mission",
+        "text": "<p>Our mission is simple- design elegant disposables that feel like heaven at the fingertips – and achieve the delicate balance between form and function, aesthetic and hygiene.</p><p>With a line of hand towels and napkins that look and feel just like luxurious linen, hosts everywhere can pamper their guests and then throw out the mess.</p>",
+        "background_color": "#d96652",
+        "text_color": "#ffffff"
+      }
     }
   },
   "order": [
@@ -159,6 +182,7 @@
     "collection_list_lintext_LTyBBF",
     "image_with_text_svg_lintext_6zFACQ",
     "image_icon_between_section_lintext_hmLQji",
-    "lintext_bestsellers_9jk9nF"
+    "lintext_bestsellers_9jk9nF",
+    "lintext_mission_new_9Lj8Dj"
   ]
 }
