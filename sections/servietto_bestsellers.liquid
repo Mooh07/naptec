@@ -7,8 +7,8 @@
 </style>
 {{ "servietto_bestsellers.css" | asset_url | stylesheet_tag }}
 {{ "global__product-card.css" | asset_url | stylesheet_tag }}
-<section class="page-width servietto__bestsellers">
-  <h2 class="servietto__bestsellers-header">{{ section.settings.title }}</h2>
+<section class="servietto__bestsellers">
+  <h2 class="servietto__bestsellers-header" style="text-align: center; font-size: 35px">{{ section.settings.title }}</h2>
   <ul class="servietto__bestsellers_products">
     {% if section.settings.collection != blank %}
       {% for product in section.settings.collection.products %}
@@ -30,6 +30,16 @@
     {% endif %}
   </ul>
 </section>
+
+<style>
+  .servietto__bestsellers{
+        padding: 50px var(--padding-sides) 70px var(--padding-sides)!important;
+  }
+  .servietto__bestsellers-header{
+    text-align: center;
+    margin-bottom: 2rem!important;
+  }
+</style>
 
 
 {% schema %}
