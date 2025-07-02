@@ -1,0 +1,144 @@
+<style>
+  .lintext__mission {
+    --background-color: {{ section.settings.background_color }};
+    --text-color: {{ section.settings.text_color }};
+  }
+</style>
+{{ 'lintext__mission.css' | asset_url | stylesheet_tag }}
+<section class="lintext__mission" style="display: flex">
+  <div class="lintext__mission-image">
+    <img
+      src="{{ section.settings.image | image_url: width: section.settings.image.width }}"
+      alt="{{ section.settings.image.alt }}"
+      width="{{ section.settings.image.width }}px"
+      height="{{ section.settings.image.height }}px"
+      loading="lazy"
+    >
+  </div>
+  
+  <ul class="lintext__product-features-icons">
+    <h2 style="font-weight: bold; font-size: 26px;">Thoughtful Details, Elevated Style</h2>
+    {% for block in section.blocks %}
+      {% case block.type %}
+        {% when 'feature' %}
+        <li class="lintext-icon" style="">
+          <img
+            src="{{ block.settings.feature_icon | image_url: width: block.settings.feature_icon.width }}"
+            alt="{{ block.settings.feature_icon.alt }}"
+            width="{{ '80' }}"
+            height="{{ '80' }}"
+            loading="lazy"
+          >
+          <span class="lintext__feature-description">
+            {{ block.settings.feature_description }}
+          </span>
+        </li>
+      {% endcase %}
+    {% endfor %}
+  </ul>
+  <div class="lintext__mission-text-1" >
+    <h2 style="display: flex;">
+      <img src="https://cdn.shopify.com/s/files/1/0611/8129/6700/files/Pillow_soft.png?v=1716566937"/>&nbsp;&nbsp;<span><b>Pillow‑Soft Texture</b> <br>Delicate to the touch</span>
+    </h2>
+    <h2 style="display: flex;">
+      <img src="https://cdn.shopify.com/s/files/1/0611/8129/6700/files/Air-laid_Technology.png?v=1716566937"/>&nbsp;&nbsp;<span><b>Advanced Air‑Laid Technology</b> <br>Luxuriously absorbent</span>
+    </h2>
+    <h2 style="display: flex;">
+      <img src="https://cdn.shopify.com/s/files/1/0611/8129/6700/files/premium_thickness.png?v=1716566937"/>&nbsp;&nbsp;<span><b>Premium Thickness & Elegance</b> <br>Durable and refined</span>
+    </h2>
+    
+  </div>
+</section>
+
+<style>
+  .lintext__product-features-icons{
+    max-width: 350px;
+    width: 100%;
+    margin-top: 5%;
+  }
+  .lintext-icon{
+    list-style: none;
+    margin-left: -75px;
+  }
+  .lintext__mission-text-1 {
+    display: flex;
+    flex-direction: column;
+    /* justify-content: end; */
+    margin-top: 200px;
+    margin-left: -150px;
+}
+
+@media screen and (max-width: 768px){
+  .lintext__mission-text-1 {
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+    margin-left: 20px;
+}
+  .lintext-icon {
+    list-style: none;
+    text-align: center;
+}
+}
+</style>
+
+{% schema %}
+{
+  "name": "Lintext mission New",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Image"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Section heading",
+      "default": "Our mission"
+    },
+    {
+      "type": "richtext",
+      "id": "text",
+      "label": "text",
+      "default": "<p>Our mission is simple- design elegant disposables that feel like heaven at the fingertips – and achieve the delicate balance between form and function, aesthetic and hygiene.</p> <p>With a line of hand towels and napkins that look and feel just like luxurious linen, hosts everywhere can pamper their guests and then throw out the mess.</p>"
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Background color",
+      "default": "#F4F4F4"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Text color",
+      "default": "#1A3748"
+    }
+  ],
+  "blocks": [
+      {
+        "type": "feature",
+        "name": "feature",
+        "limit": 5,
+        "settings": [
+          {
+            "type": "image_picker",
+            "id": "feature_icon",
+            "label": "Icon"
+          },
+          {
+            "type": "text",
+            "id": "feature_description",
+            "label": "Feature name"
+          }
+        ]
+      }
+    ],
+  "presets": [
+    {
+      "name": "Lintext mission New"
+    }
+  ]
+}
+{% endschema %}
