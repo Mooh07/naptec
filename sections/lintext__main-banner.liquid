@@ -5,7 +5,7 @@
     <div class="glide__track" data-glide-el="track">
       <div class="glide__slides">
         {% for block in section.blocks %}
-          <div class="glide__slide servietto__main-hero-item servietto__main-hero-item-{{ block.id }}" {{ block.shopify_attributes }}>
+          <div class="glide__slide overlay-section-1 servietto__main-hero-item servietto__main-hero-item-{{ block.id }}" {{ block.shopify_attributes }}>
             {% if block.settings.image %}
               <div class="servietto__main-hero_image">
                 <img
@@ -15,6 +15,9 @@
                   height="{{ block.settings.image.height }}" style="object-fit: cover; opacity: 0.4;">
               </div>
             {% endif %}
+           {% if block.settings.icon_image %}
+    <img src="{{ block.settings.icon_image | image_url: width: '100x' }}" alt="Icon Image" class="icon-overlay-1" loading="lazy" style="z-index: 1;"/>
+  {% endif %}
 
             <div class="servietto__main-hero_content">
               {% liquid
