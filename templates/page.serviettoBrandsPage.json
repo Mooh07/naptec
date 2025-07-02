@@ -129,12 +129,56 @@
         "padding_top": 36,
         "padding_bottom": 36
       }
+    },
+    "servietto_bestsellers_kQHtje": {
+      "type": "servietto_bestsellers",
+      "blocks": {
+        "product_ipBYfM": {
+          "type": "product",
+          "settings": {
+            "product": "servietto-disposable-linen-feel-guest-towels-airlaid-paper-12-x17-100-pack"
+          }
+        },
+        "product_mJ9V33": {
+          "type": "product",
+          "settings": {
+            "product": "servietto-disposable-linen-feel-placematss-airlaid-paper-12-x18-100-pack"
+          }
+        },
+        "product_F8ftte": {
+          "type": "product",
+          "settings": {
+            "product": "servietto-disposable-linen-like-table-cloth-roll-airlaid-paper-paper-55-wide-x-80-long"
+          }
+        },
+        "product_LnWHWa": {
+          "type": "product",
+          "settings": {
+            "product": "servietto-disposable-linen-feel-dinner-pocket-napkins-airlaid-paper-12-x16-50-pack"
+          }
+        }
+      },
+      "block_order": [
+        "product_ipBYfM",
+        "product_mJ9V33",
+        "product_F8ftte",
+        "product_LnWHWa"
+      ],
+      "name": "Servietto bestsellers",
+      "settings": {
+        "title": "Bestsellers",
+        "collection": "",
+        "subheader": "Bestsellers",
+        "background_color": "#fff",
+        "text_color": "#1C363D"
+      }
     }
   },
   "order": [
     "main",
     "servietto_main_banner_pqnwJp",
     "collection_list_servietto_MLeApq",
-    "image_with_text_servietto_wKBJMd"
+    "image_with_text_servietto_wKBJMd",
+    "servietto_bestsellers_kQHtje"
   ]
 }
