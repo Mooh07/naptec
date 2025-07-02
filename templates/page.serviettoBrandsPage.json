@@ -28,9 +28,9 @@
             "subheading": "We offer a beautiful assortment of napkins, table cloths, table runners,and place mats, in an array of vibrant colors to complement anyatmosphere. From pocket napkins to dinner napkins, guest towels toplace mats, Servietto’s tableware has the look and feel of pillowylinen, is ultra-absorbent, and completely disposable.",
             "cta_label": "Show All Products",
             "cta_url": "",
-            "background_color": "#EAE7E2",
+            "background_color": "#eae7e2",
             "text_color": "#ffffff",
-            "button_color": "#000"
+            "button_color": "#000000"
           }
         }
       },
@@ -42,10 +42,59 @@
         "enable_autoplay": true,
         "autoplay_duration": 5
       }
+    },
+    "collection_list_servietto_MLeApq": {
+      "type": "collection-list-servietto",
+      "blocks": {
+        "featured_collection_8ba9pC": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "servietto-guest-towels"
+          }
+        },
+        "featured_collection_XacXyk": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "servietto-dinner-napkins"
+          }
+        },
+        "featured_collection_drNEgK": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "servietto-cocktail-napkin"
+          }
+        },
+        "featured_collection_jzfEXz": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "servietto-collection"
+          }
+        }
+      },
+      "block_order": [
+        "featured_collection_8ba9pC",
+        "featured_collection_XacXyk",
+        "featured_collection_drNEgK",
+        "featured_collection_jzfEXz"
+      ],
+      "name": "Collection List Servietto",
+      "settings": {
+        "title": "Product Categories",
+        "heading_size": "h1",
+        "image_ratio": "square",
+        "columns_desktop": 4,
+        "color_scheme": "",
+        "show_view_all": false,
+        "columns_mobile": "2",
+        "swipe_on_mobile": true,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
     }
   },
   "order": [
     "main",
-    "servietto_main_banner_pqnwJp"
+    "servietto_main_banner_pqnwJp",
+    "collection_list_servietto_MLeApq"
   ]
 }
