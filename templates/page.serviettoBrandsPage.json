@@ -198,6 +198,33 @@
         "enable_autoplay": true,
         "autoplay_duration": 5
       }
+    },
+    "servietto_main_banner_right_yUAVtr": {
+      "type": "servietto__main-banner-right",
+      "blocks": {
+        "slide_hDedrJ": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/image_2_42237b54-dd83-4e51-81ee-5685f159bc6d.png",
+            "icon_image": "shopify://shop_images/image_67.png",
+            "heading": "Interested in collaboratingwith Servietto?",
+            "subheading": "Joining as a Servietto wholesale partner is hassle-free.Just fill out our wholesale account registration form,and our team will promptly contact you to delve intoyour specific needs and swiftly set up your wholesale account.",
+            "cta_label": "Join Us",
+            "cta_url": "",
+            "background_color": "#EAE7E2",
+            "text_color": "#1C363D",
+            "button_color": "#000"
+          }
+        }
+      },
+      "block_order": [
+        "slide_hDedrJ"
+      ],
+      "name": "Servietto main Banner Right",
+      "settings": {
+        "enable_autoplay": true,
+        "autoplay_duration": 5
+      }
     }
   },
   "order": [
@@ -206,6 +233,7 @@
     "collection_list_servietto_MLeApq",
     "image_with_text_servietto_wKBJMd",
     "servietto_bestsellers_kQHtje",
-    "servietto_main_banner_left_9EHYYR"
+    "servietto_main_banner_left_9EHYYR",
+    "servietto_main_banner_right_yUAVtr"
   ]
 }
