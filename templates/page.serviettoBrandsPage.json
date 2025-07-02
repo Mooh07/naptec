@@ -90,11 +90,51 @@
         "padding_top": 36,
         "padding_bottom": 36
       }
+    },
+    "image_with_text_servietto_wKBJMd": {
+      "type": "image-with-text-servietto",
+      "blocks": {
+        "heading_gdjGXB": {
+          "type": "heading",
+          "settings": {
+            "heading": "Sophistication Meets Simplicity",
+            "heading_size": "h1"
+          }
+        },
+        "text_dc3KeT": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Servietto is for someone with traditional taste anda motley of needs. We offer a beautiful assortmentof napkins, table cloths, table runners, and placemats, in an array of vibrant colors to complement anyatmosphere. From pocket napkins to dinner napkins,guest towels to place mats, Servietto’s tableware hasthe look and feel of pillowy linen, is ultra-absorbent,and completely disposable.</p>",
+            "text_style": "body"
+          }
+        }
+      },
+      "block_order": [
+        "heading_gdjGXB",
+        "text_dc3KeT"
+      ],
+      "name": "Image With Text Servietto",
+      "settings": {
+        "image": "shopify://shop_images/2Z1A2074.jpg",
+        "height": "adapt",
+        "desktop_image_width": "medium",
+        "layout": "image_first",
+        "desktop_content_position": "top",
+        "desktop_content_alignment": "left",
+        "content_layout": "no-overlap",
+        "section_color_scheme": "",
+        "color_scheme": "",
+        "image_behavior": "none",
+        "mobile_content_alignment": "left",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
     }
   },
   "order": [
     "main",
     "servietto_main_banner_pqnwJp",
-    "collection_list_servietto_MLeApq"
+    "collection_list_servietto_MLeApq",
+    "image_with_text_servietto_wKBJMd"
   ]
 }
