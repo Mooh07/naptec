@@ -108,6 +108,49 @@
       "settings": {
         "icon_image": "shopify://shop_images/BloomingoodsGreenLogo.png"
       }
+    },
+    "lintext_bestsellers_9jk9nF": {
+      "type": "lintext_bestsellers",
+      "blocks": {
+        "product_8JMMrh": {
+          "type": "product",
+          "settings": {
+            "product": "lintext-disposable-linen-feel-guest-towels-airlaid-paper-8-x17-150-pack"
+          }
+        },
+        "product_fzdcjR": {
+          "type": "product",
+          "settings": {
+            "product": "lintext-disposable-linen-feel-guest-towels-airlaid-paper-12-x17"
+          }
+        },
+        "product_VMzRia": {
+          "type": "product",
+          "settings": {
+            "product": "lintext-disposable-linen-feel-lunchoen-napkins-airlaid-paper-13-x13-1000-pack"
+          }
+        },
+        "product_E9jefF": {
+          "type": "product",
+          "settings": {
+            "product": ""
+          }
+        }
+      },
+      "block_order": [
+        "product_8JMMrh",
+        "product_fzdcjR",
+        "product_VMzRia",
+        "product_E9jefF"
+      ],
+      "name": "Lintext bestsellers",
+      "settings": {
+        "title": "Bestsellers",
+        "collection": "",
+        "subheader": "Bestsellers",
+        "background_color": "#fff",
+        "text_color": "#1C363D"
+      }
     }
   },
   "order": [
@@ -115,6 +158,7 @@
     "lintext_main_banner_NpbbLE",
     "collection_list_lintext_LTyBBF",
     "image_with_text_svg_lintext_6zFACQ",
-    "image_icon_between_section_lintext_hmLQji"
+    "image_icon_between_section_lintext_hmLQji",
+    "lintext_bestsellers_9jk9nF"
   ]
 }
