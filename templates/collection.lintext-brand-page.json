@@ -1,0 +1,75 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "collection-categories": {
+      "type": "collection-categories",
+      "settings": {
+        "title": "Categories"
+      }
+    },
+    "banner": {
+      "type": "main-collection-banner",
+      "disabled": true,
+      "settings": {
+        "show_collection_description": true,
+        "show_collection_image": false,
+        "color_scheme": "scheme-2"
+      }
+    },
+    "product-grid": {
+      "type": "main-collection-product-grid",
+      "settings": {
+        "hide-solo-values": true,
+        "products_per_page": 24,
+        "columns_desktop": 3,
+        "color_scheme": "scheme-1",
+        "image_ratio": "square",
+        "image_shape": "default",
+        "show_secondary_image": false,
+        "show_vendor": false,
+        "show_rating": false,
+        "enable_quick_add": false,
+        "enable_filtering": true,
+        "filter_type": "vertical",
+        "enable_sorting": true,
+        "columns_mobile": "2",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "naptec_half_image_half_text_E8TaMF": {
+      "type": "naptec__half-image-half-text",
+      "disabled": true,
+      "settings": {
+        "header": "About Neptech",
+        "content": "",
+        "image-right": false
+      }
+    },
+    "custom_liquid_UTjGdR": {
+      "type": "custom-liquid",
+      "disabled": true,
+      "settings": {
+        "custom_liquid": "<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n    <meta charset=\"UTF-8\">\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=2.0\">\n    <meta name=\"description\" content=\"Discover Naptec’s premium disposable napkins, tablecloths, napkin holders, and plastic tableware. Perfect for fine dining, events, and upscale hospitality.\">\n    <meta name=\"keywords\" content=\"disposable linen-feel napkins, disposable guest towels, disposable tablecloths, plastic tableware, napkin holders, cocktail napkins, dinner napkins\">\n    <meta name=\"author\" content=\"Naptec\">\n    <style>\n        body {\n            text-align: center;\n            font-family: Arial, sans-serif;\n        }\n        section {\n            margin: 20px auto;\n            max-width: 800px;\n        }\n        ul {\n            display: inline-block;\n            text-align: left;\n        }\n    </style>\n</head>\n<body>\n\n<header>\n    <h1>Luxury Disposable Napkins, Tablecloths &amp; Tableware</h1>\n</header>\n\n<section>\n    <h2>Elevate Your Table Setting with Naptec</h2>\n    <p>Naptec offers a high-quality collection of <strong>disposable linen-feel napkins, tablecloths, napkin holders, and plastic tableware</strong>, designed for both elegance and practicality. Whether you're hosting a <strong>formal event, wedding, or upscale dinner</strong>, our products ensure a sophisticated and effortless dining experience.</p>\n</section>\n\n<section>\n    <h2>Explore Our Best-Selling Disposable Tableware</h2>\n    \n    <h3>Disposable Linen-Feel Napkins</h3>\n    <p>Our <strong>disposable linen-feel napkins</strong> offer the look and softness of real linen with the convenience of disposability. Choose from <strong>guest towels, cocktail napkins, and dinner napkins</strong> to add a refined touch to any setting.</p>\n    \n    <h3>Disposable Tablecloths &amp; Runners</h3>\n    <p>Set the perfect table with <strong>disposable linen-like tablecloths and table runners</strong>. Available in multiple colors and styles, they provide an elegant foundation for <strong>weddings, restaurants, and home entertaining</strong>.</p>\n    \n    <h3>Napkin Holders for Every Occasion</h3>\n    <p>Keep your napkins organized and easily accessible with our stylish <strong>napkin holders</strong>. Designed for both casual and fine dining, they complement any <strong>table setup or buffet arrangement</strong>.</p>\n    \n    <h3>Durable Plastic Tableware</h3>\n    <p>Our <strong>high-quality plastic tableware</strong> combines durability with elegance. Perfect for <strong>large gatherings, catering services, and restaurant use</strong>, these products ensure both style and convenience.</p>\n</section>\n\n<section>\n    <h2>Why Choose Naptec Disposable Tableware?</h2>\n    <ul>\n        <li><strong>Premium Linen-Like Quality</strong> – Soft, absorbent, and elegant.</li>\n        <li><strong>Convenient &amp; Disposable</strong> – Perfect for easy cleanup.</li>\n        <li><strong>Versatile for Any Occasion</strong> – Ideal for events, weddings, and everyday dining.</li>\n    </ul>\n</section>\n\n<section>\n    <h2>Shop Naptec’s Premium Tableware Today</h2>\n    <h3>Effortless Elegance for Every Occasion</h3>\n    <p>Upgrade your dining experience with <strong>Naptec’s premium disposable napkins, tablecloths, napkin holders, and plastic tableware</strong>. Designed for <strong>restaurants, special events, and home entertaining</strong>, our collection provides a <strong>refined touch with the ease of disposability</strong>. <strong>Shop now</strong> to add style and convenience to your table setting.</p>\n</section>\n\n</body>\n</html>",
+        "color_scheme": "scheme-e2aaaec1-59de-4358-a55c-fcaad9eda2d5",
+        "padding_top": 40,
+        "padding_bottom": 52
+      }
+    }
+  },
+  "order": [
+    "collection-categories",
+    "banner",
+    "product-grid",
+    "naptec_half_image_half_text_E8TaMF",
+    "custom_liquid_UTjGdR"
+  ]
+}
