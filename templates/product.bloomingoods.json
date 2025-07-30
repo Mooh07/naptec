@@ -53,6 +53,11 @@
             "default_plan_message": "Deliver one-time only"
           }
         },
+        "bundler_volume_target_element_G4JXPj": {
+          "type": "shopify://apps/bundler/blocks/volume-target-element/7a6ae1b8-3b16-449b-8429-8bb89a62c664",
+          "disabled": true,
+          "settings": {}
+        },
         "buy_button_quantity_ALtrkN": {
           "type": "buy-button-quantity",
           "settings": {}
@@ -94,6 +99,7 @@
         "price",
         "variant_picker",
         "selling_plans_89D9ja",
+        "bundler_volume_target_element_G4JXPj",
         "buy_button_quantity_ALtrkN",
         "icon_text_block_3pgxJB",
         "buy_buttons",
