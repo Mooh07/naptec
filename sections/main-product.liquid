@@ -22,6 +22,11 @@
   {%- endif -%}
 
   {%- style -%}
+
+.bundler-volume-target-element {
+  display: none;
+}
+
     .section-{{ section.id }}-padding {
       padding: var(--padding-sides);
       padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
